@@ -1,7 +1,7 @@
 package Gerhard;
 
-public class HelloooWorld {
+public class HelloWorld {
     public static void main(String[] args) {
-        System.out.println("Helloooooo Gerhard");
+        System.out.println("Helloooooooooo World");
     }
 }
