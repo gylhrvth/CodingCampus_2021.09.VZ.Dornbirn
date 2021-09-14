@@ -5,6 +5,8 @@ public class HelloWorld {
         System.out.println("Hello Ingo");
         System.out.println("Fertig");
         System.out.println("Gut gemacht: ALLE");
+        System.out.println("Neues Commit gecheckt");
+
 
 
     }
