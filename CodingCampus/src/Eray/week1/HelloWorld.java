@@ -1,4 +1,4 @@
-package Eray;
+package Eray.week1;
 
 public class HelloWorld
 {
