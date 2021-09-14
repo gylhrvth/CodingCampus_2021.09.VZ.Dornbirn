@@ -4,6 +4,7 @@ public class AAA {
 
         public static void main(String[] args) {
 
+
             byte zahl1 = 3;
             byte zahl2 = 7;
             double zahl3 = 3;
@@ -24,11 +25,12 @@ public class AAA {
             System.out.println("div 3" + (zahl5 / zahl6));
             System.out.println("add 1" + (zahl7+ zahl8));
             System.out.println("sub 1" + (zahl9-zahl10));
+            System.out.println("mul 1" + (zahl9*zahl10));
             System.out.println("div 5" + (zahl11/zahl12));
 
 
 
-            System.exit(0);
+
 
 
 
