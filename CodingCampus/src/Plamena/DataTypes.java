@@ -52,6 +52,7 @@ public class DataTypes {
             System.out.println(floatOne/doubleTwo);
             System.out.println(shortOne/longTwo);
             System.out.println(intOne%intTwo);
+            System.out.println(doubleOne+doubleTwo);
 
 
 
