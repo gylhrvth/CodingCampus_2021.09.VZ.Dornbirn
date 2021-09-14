@@ -1,4 +1,4 @@
-package Danny;
+package Danny.Woche1;
 
 public class AAA {
 
