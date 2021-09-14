@@ -1,12 +1,11 @@
 package Gyula;
 
-public class HelloooWorld {
+public class HelloWorld {
     public static void main(String[] args) {
-        double n = 1;
-        int counter = 500000;
 
+        System.out.println("Hello World");
 
 
         }
     }
-}
+
