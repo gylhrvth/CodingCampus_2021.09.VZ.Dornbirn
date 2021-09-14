@@ -17,6 +17,7 @@ public class Main {
         System.out.println("   \\  \\:\\ ");
         System.out.println("    \\__\\/");
 
+
         int number1 = 15;
         int number2 = 7;
 
