@@ -27,12 +27,6 @@ public class Aufgabe1_Schleifen {
 
         }
 
-        // AufgabeWhile
-        i = 5;
-        while (i < 25) {
-            System.out.println("*");
-            i += 5;
-        }
 
     }
 }
