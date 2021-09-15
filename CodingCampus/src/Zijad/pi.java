@@ -6,6 +6,19 @@ public class pi {
         System.out.println(losung);
 
 
-    }
+
+
+
+            double pi = 0;
+            for (int i = 1 ; i < 1000000; i += 4)
+
+
+            {        pi += 8.0 /(i* (i + 2L));
+            }
+
+            {       System.out.println(pi);
+
+            }
+}
 }
 
