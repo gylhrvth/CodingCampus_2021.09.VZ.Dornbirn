@@ -18,7 +18,6 @@ public class Aufgabe1_Schleifen {
         }
 
 
-
         for (int y = 0; y < 4; y++) {
             for (int x = 0; x < 5; x++) {
                 System.out.print("X");
@@ -29,13 +28,14 @@ public class Aufgabe1_Schleifen {
         }
 
         // AufgabeWhile
-        int i = 5;
+        i = 5;
         while (i < 25) {
             System.out.println("*");
             i += 5;
         }
 
-
+    }
+}
 
 
 
