@@ -14,7 +14,7 @@ public class Schleifen {
 //            System.out.println("X");
 //        }
 
-        //Pfeilspitze
+
         for (int m = 0; m < 6; m++) {
             for (int l = 0; l < m; l++) {
                 System.out.print("*");
