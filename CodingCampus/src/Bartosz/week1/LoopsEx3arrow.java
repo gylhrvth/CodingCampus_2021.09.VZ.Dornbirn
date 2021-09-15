@@ -9,15 +9,14 @@ public class LoopsEx3arrow {
         while (counter < rows ) {
 
             if (counter < 5) {
-                for (int m = 0; m <= counter; m++) {
+                for (int kontroller = 0; kontroller <= counter; kontroller++) {
                     System.out.print("*");
                 }
             } else {
-                for (int m = rows; m > counter; m--) {
+                for (int kontroller = rows; kontroller > counter; kontroller--) {
                     System.out.print("*");
                 }
             }
-
 
             System.out.println();
             counter++;
