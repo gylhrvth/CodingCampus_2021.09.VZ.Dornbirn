@@ -1,6 +1,6 @@
 package Danny.Woche1;
 
-public class Aufgabe1_Schleifen {
+public class While {
     public static void main(String[] args) {
 
         // AufgabeWhile
@@ -10,7 +10,6 @@ public class Aufgabe1_Schleifen {
             i += 5;
         }
 
-    }
     }
 
 
