@@ -15,11 +15,11 @@ public class AritmethicOperatorsWithDataTypes
         byte Divide = (byte)(Num1Byte / Num2Byte);
         byte Modulo = (byte)(Num1Byte % Num2Byte);
 
-        System.out.println(Plus);
-        System.out.println(Subtraction);
-        System.out.println(Multiplication);
-        System.out.println(Divide);
-        System.out.println(Modulo);
+        System.out.println("Plus: " + Plus);
+        System.out.println("Subtraction: " + Subtraction);
+        System.out.println("Multiplication: " + Multiplication);
+        System.out.println("Divide: " + Divide);
+        System.out.println("Modulo: " + Modulo);
         //End of byte Datatype
 
 
@@ -36,11 +36,11 @@ public class AritmethicOperatorsWithDataTypes
         short DivideShort = (short)(Num1Short / Num2Short);
         short ModuloShort = (short)(Num1Short % Num2Short);
 
-        System.out.println(PlusShort);
-        System.out.println(SubtractionShort);
-        System.out.println(MultiplicationShort);
-        System.out.println(DivideShort);
-        System.out.println(ModuloShort);
+        System.out.println("Plus: " + PlusShort);
+        System.out.println("Subtraction: " + SubtractionShort);
+        System.out.println("Multiplication: " + MultiplicationShort);
+        System.out.println("Divide: " + DivideShort);
+        System.out.println("Modulo: " + ModuloShort);
         //End of short Datatype
 
 
@@ -57,11 +57,11 @@ public class AritmethicOperatorsWithDataTypes
         int DivideInt = (int)(Num1Int / Num2Int);
         int ModuloInt = (int)(Num1Int % Num2Int);
 
-        System.out.println(PlusInt);
-        System.out.println(SubtractionInt);
-        System.out.println(MultiplicationInt);
-        System.out.println(DivideInt);
-        System.out.println(ModuloInt);
+        System.out.println("Plus: " + PlusInt);
+        System.out.println("Subtraction: " + SubtractionInt);
+        System.out.println("Multiplication: " + MultiplicationInt);
+        System.out.println("Divide: " + DivideInt);
+        System.out.println("Modulo: " + ModuloInt);
         //End of int Datatype
 
 
@@ -78,11 +78,11 @@ public class AritmethicOperatorsWithDataTypes
         long  DivideLong = (long )(Num1long / Num2long);
         long  ModuloLong = (long )(Num1long % Num2long);
 
-        System.out.println(PlusLong);
-        System.out.println(SubtractionLong);
-        System.out.println(MultiplicationLong);
-        System.out.println(DivideLong);
-        System.out.println(ModuloLong);
+        System.out.println("Plus: " + PlusLong);
+        System.out.println("Subtraction: " + SubtractionLong);
+        System.out.println("Multiplication: " + MultiplicationLong);
+        System.out.println("Divide: " + DivideLong);
+        System.out.println("Modulo: " + ModuloLong);
         //End of long Datatype
 
 
@@ -99,11 +99,11 @@ public class AritmethicOperatorsWithDataTypes
         float  DivideFloat = ( float )(Num1Float / Num2Float);
         float  ModuloFloat = ( float )(Num1Float % Num2Float);
 
-        System.out.println(PlusFloat);
-        System.out.println(SubtractionFloat);
-        System.out.println(MultiplicationFloat);
-        System.out.println(DivideFloat);
-        System.out.println(ModuloFloat);
+        System.out.println("Plus: " + PlusFloat);
+        System.out.println("Subtraction: " + SubtractionFloat);
+        System.out.println("Multiplication: " + MultiplicationFloat);
+        System.out.println("Divide: " + DivideFloat);
+        System.out.println("Modulo: " + ModuloFloat);
         //End of float Datatype
 
 
@@ -120,11 +120,11 @@ public class AritmethicOperatorsWithDataTypes
         double  DivideDouble = ( double )(Num1Double / Num2Double);
         double  ModuloDouble = ( double )(Num1Double % Num2Double);
 
-        System.out.println(PlusDouble);
-        System.out.println(SubtractionDouble);
-        System.out.println(MultiplicationDouble);
-        System.out.println(DivideDouble);
-        System.out.println(ModuloDouble);
+        System.out.println("Plus: " + PlusDouble);
+        System.out.println("Subtraction: " + SubtractionDouble);
+        System.out.println("Multiplication: " + MultiplicationDouble);
+        System.out.println("Divide: " + DivideDouble);
+        System.out.println("Modulo: " + ModuloDouble);
         //End of double Datatype
 
     }
