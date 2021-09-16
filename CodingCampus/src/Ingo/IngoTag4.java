@@ -1,6 +1,7 @@
-package Lukas.tag4;
+package Ingo;
 
-public class Loops {
+public class IngoTag4 {
+
     public static void main(String[] args) {
         //Raufzählen von 0 bis inklusive 10 in 1er Schritten
 //        for(int i = 0; i<11;i++) {
@@ -10,6 +11,7 @@ public class Loops {
             System.out.println(i);
         }
         for (int j = 11; j <= 20; j++) {
+
             System.out.println(j);
         }
 
@@ -78,10 +80,10 @@ public class Loops {
                 System.out.println("Sehr gut!");
             }
         }
-        for (int c=0; c<8; c++) {
+        for (int c = 0; c < 8; c++) {
             System.out.println("Wer bist du?");
 
-            for (int d=0; d<7; d++) {
+            for (int d = 0; d < 7; d++) {
                 System.out.println("Ich bin Ich!");
 
             }
@@ -90,15 +92,27 @@ public class Loops {
         int width = 10;
         int counter = 0;
 
-        for (int d = 0; d < height; d++){
-            for (int j=0; j < width; j++){
+        for (int d = 0; d < height; d++) {
+            for (int j = 0; j < width; j++) {
 
                 System.out.print("*");
-                counter++;}
-            
-                System.out.println();
-
+                counter++;
             }
+
+            System.out.println();
+
+        }
+        for (int c = -1; c <= 10; c++) {
+            System.out.println(c);
+        }
+
+        for (int a = 0; a <= 100; a += 5) {
+            System.out.println(a);
+        }
+
+        for (int a = 100; a >= 10; a -= 5) {
+            System.out.println(a);
+        }
 
 
         //Ich möchte einen Würfel, die Breite und die Höhe soll in einer separaten
@@ -120,5 +134,6 @@ public class Loops {
         // }
 
         //  System.out.println("Soviele Zeichen wurden ausgegeben: "+counter);
+
     }
 }
