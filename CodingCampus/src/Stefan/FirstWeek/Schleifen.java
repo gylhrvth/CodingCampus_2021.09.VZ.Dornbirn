@@ -15,16 +15,18 @@ public class Schleifen {
 //        }
 
 
-        for (int m = 0; m < 6; m++) {
-            for (int l = 0; l < m; l++) {
+        int width = 10;
+        int height = 10;
+
+        for (int a = 0; a < width; a++) {
+            for (int b = 0; b < a; b++) {
                 System.out.print("*");
             }
             System.out.println();
-
         }
 
-        for (int j = 4; j > 0; j--) {
-            for (int r = 0; r < j; r++) {
+        for (int c = height; c > 0; c--) {
+            for  (int d = 0; d < c; d++) {
                 System.out.print("*");
             }
             System.out.println();
