@@ -3,25 +3,21 @@ package Stefan.FirstWeek;
 public class Tannenbaum {
     public static void main(String[] args) {
 
-        int widthLeerSpitze = 10;
-        int widthAbstandRand = 4;
-
-        int behang = 4;
-
-        int widthStamm = 3;
-        int widthLeerStamm = 3;
-
-        int widthFuss = 4;
-        int heightFuss = 1;
-        int widthLeerFuss = 2;
+        int heightSpitze = 20;
+        int widthAbstandRand = heightSpitze;
+        int behang = (heightSpitze * 2 - 1) / 2;
+        int stammAbstand = behang - 2;
+        int widthStamm = heightSpitze / 3;
+        int fussAbstand = behang - 3;
+        int widthFuss = (heightSpitze * 2 - 1) / 5;
 
 
         //Baumspitze
-        for (int i = 1; i < widthLeerSpitze; i += 2) {
-            for (int k = 0; k < (widthAbstandRand - i / 2); k++) {
+        for (int i = 0; i < heightSpitze; i++) {
+            for (int k = 1; k < (widthAbstandRand - i); k++) {
                 System.out.print(" ");
             }
-            for (int j = 0; j < i; j++) {
+            for (int j = 0; j < i * 2 + 1; j++) {
                 System.out.print("*");
             }
             System.out.println("");
@@ -37,7 +33,7 @@ public class Tannenbaum {
 
         //Baumstamm
         for (int i = 3; i < 4; i++) {
-            for (int k = 0; k < widthLeerStamm; k++) {
+            for (int k = 0; k < stammAbstand; k++) {
                 System.out.print(" ");
             }
             for (int j = 0; j < widthStamm; j++) {
@@ -47,7 +43,7 @@ public class Tannenbaum {
         }
 
         for (int i = 3; i < 4; i++) {
-            for (int k = 0; k < widthLeerStamm; k++) {
+            for (int k = 0; k < stammAbstand; k++) {
                 System.out.print(" ");
             }
             for (int j = 0; j < widthStamm; j++) {
@@ -57,9 +53,9 @@ public class Tannenbaum {
         }
 
 
-        //Halterung
-        for (int i = 1; i <= heightFuss; i++) {
-            for (int k = 0; k < widthLeerFuss; k++) {
+        //Fuss
+        for (int i = 0; i < 1; i++) {
+            for (int k = 0; k < fussAbstand; k++) {
                 System.out.print(" ");
             }
             for (int j = 0; j <= widthFuss; j++) {
