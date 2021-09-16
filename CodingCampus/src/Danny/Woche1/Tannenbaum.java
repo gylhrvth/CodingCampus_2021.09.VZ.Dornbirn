@@ -2,7 +2,7 @@ package Danny.Woche1;
 
 public class Tannenbaum {
     public static void main(String[] args) {
-//Krone
+//Krone_
 
         int kroneHoehe = 15;
         int spitzeWert = 1;
