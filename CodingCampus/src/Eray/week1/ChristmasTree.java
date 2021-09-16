@@ -3,36 +3,51 @@ package Eray.week1;
 public class ChristmasTree {
     public static void main(String[] args) {
 
-        int treeTrunkHeight = 5;
-        int height = 10;
 
-        for (int i = 1; i < height; i++) {
-            for (int space = 1; space < height - i; space++) {
+        int height = 6;
+        int trunkHeight = 3;
+        int spaces = height - 1;
+        int stars = 1;
+        //TrunkHeight
+
+        for (int i = 0; i < height; i++) {
+            for (int j = 0; j < spaces; j++) {
                 System.out.print(" ");
             }
+            spaces--;
 
-            for (int Tree = 1; Tree <= i * 2 - 1; Tree++) {
-                System.out.print("X");
+            for (int k = 0; k < stars; k++) {
+                System.out.print("*");
+            }
+            stars += 2;
+            System.out.println();
+
+        }
+
+
+        int treeBottomWidth = (height * 2) - 1;
+        int trunkWidth = 3;
+        float treeCenter = treeBottomWidth / 2f;
+        int trunkLeftSpaces = (int) (treeCenter - (trunkWidth / 2f));
+
+
+
+        for (int l = 0; l < trunkHeight; l++) {
+            for (int m = 0; m < trunkLeftSpaces; m++) {
+                System.out.print(" ");
+
+            }
+            for (int n = 0; n < trunkHeight; n++) {
+                System.out.print("*");
             }
 
             System.out.println();
         }
-
-        for (int l = 0; l < 10; l++) {
-            System.out.println("       XXX");
-        }
-
-        int trunkSpaces = (height * 2 - 1) / 2 - 3;
-        System.out.println(trunkSpaces);
-//        for (int h = 0; h < treeTrunkHeight; h++) {
-//            for(int treeTrunkSpace = 1; treeTrunkSpace < ; treeTrunkSpace++ ){
-//                System.out.print("X");
-//            }
-//            System.out.println();
-//        }
-
     }
 }
+
+
+
 
 
 
