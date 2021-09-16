@@ -1,20 +1,10 @@
 package Bartosz.week1;
 
-public class LoopsExcerciseRightAngle {
+public class LoopsEx5 {
     public static void main(String[] args) {
 
-//        int breite = 5;
-//        int höhe = 10;
-//        for (int counter1 = 0; counter1 < höhe ; counter1++) {
-//
-//            for (int counter2 = 0; counter2 < breite ; counter2++) {
-//                System.out.print("X");
-//            }
-//            System.out.println(" " + counter1);
-//        }
         int height = 10;
         int width = 10;
-        int jNumber = 0;
 
         for (int i = 0; i < height; i++) {      // solange laufen lassen bis counter == height
             if (i == 0 || i == height - 1) {    // Wenn erste oder letzte Reihe
@@ -38,3 +28,5 @@ public class LoopsExcerciseRightAngle {
 
     }
 }
+
+
