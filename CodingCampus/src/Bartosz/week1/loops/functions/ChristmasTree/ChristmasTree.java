@@ -1,10 +1,10 @@
 package Bartosz.week1.loops.functions.ChristmasTree;
 
 public class ChristmasTree {
-    public static void LoopsEx4Tree(int height) {
+    public static void LoopsEx4Tree(int h) {
         // Baum
-        for (int rows = 0; rows < height +1; rows++) {         // Solange die Reihenanzahl kleiner als Höhe des Baumes ist:
-            for (int space = 1; space < (height+1 - rows); space++) {   // Solange der Abstand kleiner ist als Höhe - Reihen
+        for (int rows = 0; rows < h +1; rows++) {         // Solange die Reihenanzahl kleiner als Höhe des Baumes ist:
+            for (int space = 1; space < (h+1 - rows); space++) {   // Solange der Abstand kleiner ist als Höhe - Reihen
                 System.out.print(" ");
             }
 
@@ -15,4 +15,5 @@ public class ChristmasTree {
             System.out.println();                               // Zeilenumbruch nach fertiger Reihe}
         }
     }
+
 }
