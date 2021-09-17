@@ -1,14 +1,28 @@
 package Danny.Woche1;
 
-import Danny.Woche1.methods;
-
 public class Kreis {
     public static void main(String[] args) {
 
-        int radius = 50;
-        int circleHigh = radius * 2;
-        int circlelength = radius = 2;
+        int circleRadius = 5;
+        int circleHigh = circleRadius * 2 + 1;
+        int b = circleRadius;
+        int kor = 3;
+        for (int x = 0; x < circleHigh; x++) {
+            for (int y = -circleRadius * kor; y < circleRadius * kor + 1; y++) {
+                double cQ = circleRadius * circleRadius;
+                double bQ = b * b;
+                double circlePoint = Math.sqrt(cQ - bQ) * kor;
+                int cP = (int) Math.round(circlePoint);
+                if (y == cP || y == -cP) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            b--;
+            System.out.println();
 
 
+        }
     }
 }
