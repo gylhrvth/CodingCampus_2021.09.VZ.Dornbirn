@@ -1,4 +1,4 @@
-package Bartosz.week1;
+package Bartosz.week1.loops;
 
 public class LoopsEx3arrow {
     public static void main(String[] args) {
