@@ -1,6 +1,6 @@
 package Oemer;
 
-public class Main {
+public class Tag2Booleans {
 
     public static void main(String[] args) {
         // write your code here
