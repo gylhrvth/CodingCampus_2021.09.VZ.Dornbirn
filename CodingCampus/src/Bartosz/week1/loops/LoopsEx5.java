@@ -1,10 +1,10 @@
-package Bartosz.week1;
+package Bartosz.week1.loops;
 
 public class LoopsEx5 {
     public static void main(String[] args) {
 
-        int height = 10;
-        int width = 10;
+        int height = 5;
+        int width = 5;
 
         for (int i = 0; i < height; i++) {      // solange laufen lassen bis counter == height
             if (i == 0 || i == height - 1) {    // Wenn erste oder letzte Reihe

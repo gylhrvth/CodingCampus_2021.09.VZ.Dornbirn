@@ -1,4 +1,4 @@
-package Bartosz.week1;
+package Bartosz.week1.loops;
 
 public class LoopsEx2 {
 
