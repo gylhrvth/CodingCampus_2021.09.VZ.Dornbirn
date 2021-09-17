@@ -1,6 +1,10 @@
 package Danny.Woche1;
 
 public class Methods {
+    public static void main(String[] args) {
+printStar(2,"x");
+    }
+
 
     public static void printStar(int pices, String charater) {
 
@@ -9,7 +13,10 @@ public class Methods {
         }
 
     }
+
+
 }
+
 
 
 
