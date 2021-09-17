@@ -4,10 +4,15 @@ public class Tannenbaum {
 
     public static void main(String[] args) {
 
-        int width = 15;
-        int widthHalf = width/2;
-        int space = widthHalf;
+        int width = 9;
+        int widthTrunk = width / 2;
+        int space = widthTrunk;
         int leave = 1;
+        int neW = widthTrunk/2;
+        int New = widthTrunk/4;
+
+
+
         while (leave <= width) {
 
             for (int i = 0; i < space; i++) {
@@ -23,11 +28,16 @@ public class Tannenbaum {
             space -= 1;
         }
 
-
-        for (int i = 0; i < widthHalf - (7 / 2); i++) {
+        for (int i = 0; i < widthTrunk - neW; i++) {
             System.out.print(" ");
         }
-        System.out.println("HHHHHHH");
-    }
-}
+        for (int i = 0; i < widthTrunk; i++) {
+            System.out.print("H");
+        }
+        System.out.println();
 
+
+
+    }
+
+}

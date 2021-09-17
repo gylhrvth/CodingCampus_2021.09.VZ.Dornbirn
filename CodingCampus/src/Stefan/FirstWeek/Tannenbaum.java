@@ -3,25 +3,15 @@ package Stefan.FirstWeek;
 public class Tannenbaum {
     public static void main(String[] args) {
 
-        int widthLeerSpitze = 10;
-        int widthAbstandRand = 4;
-
-        int behang = 4;
-
-        int widthStamm = 3;
-        int widthLeerStamm = 3;
-
-        int widthFuss = 4;
-        int heightFuss = 1;
-        int widthLeerFuss = 2;
-
+        int heightSpitze = 10;
+        int widthAbstandRand = heightSpitze;
 
         //Baumspitze
-        for (int i = 1; i < widthLeerSpitze; i += 2) {
-            for (int k = 0; k < (widthAbstandRand - i / 2); k++) {
+        for (int i = 0; i < heightSpitze; i++) {
+            for (int k = 1; k < (widthAbstandRand - i); k++) {
                 System.out.print(" ");
             }
-            for (int j = 0; j < i; j++) {
+            for (int j = 0; j < i * 2 + 1; j++) {
                 System.out.print("*");
             }
             System.out.println("");
@@ -29,6 +19,8 @@ public class Tannenbaum {
 
 
         //Kreise
+        int behang = (heightSpitze * 2 - 1) / 2;
+
         for (int m = 0; m <= behang; m++) {
             System.out.print("O ");
         }
@@ -36,36 +28,32 @@ public class Tannenbaum {
 
 
         //Baumstamm
-        for (int i = 3; i < 4; i++) {
-            for (int k = 0; k < widthLeerStamm; k++) {
+        int stammAbstand = behang - 2;
+        int widthStamm = heightSpitze / 3;
+        int heightStamm = heightSpitze / 3;
+
+        for (int i = 0; i < heightStamm; i++) {
+            for (int k = 0; k < stammAbstand; k++) {
                 System.out.print(" ");
             }
-            for (int j = 0; j < widthStamm; j++) {
+            for (int j = 0; j <= widthStamm; j++) {
                 System.out.print("*");
             }
             System.out.println("");
         }
 
-        for (int i = 3; i < 4; i++) {
-            for (int k = 0; k < widthLeerStamm; k++) {
-                System.out.print(" ");
-            }
-            for (int j = 0; j < widthStamm; j++) {
-                System.out.print("*");
-            }
-            System.out.println("");
-        }
-
-
-        //Halterung
-        for (int i = 1; i <= heightFuss; i++) {
-            for (int k = 0; k < widthLeerFuss; k++) {
-                System.out.print(" ");
-            }
-            for (int j = 0; j <= widthFuss; j++) {
-                System.out.print("*");
-            }
-            System.out.println("");
-        }
+        //Fuss
+//        int fussAbstand = behang - 3;
+//        int widthFuss = (heightSpitze * 2 - 1) / 4;
+//
+//        for (int i = 0; i < 1; i++) {
+//            for (int k = 0; k < fussAbstand; k++) {
+//                System.out.print(" ");
+//            }
+//            for (int j = 0; j <= widthFuss; j++) {
+//                System.out.print("*");
+//            }
+//            System.out.println("");
+//        }
     }
 }

@@ -4,7 +4,7 @@ public class Schleifen {
 
     public static void main(String[] args) {
 
-        int row = 4;
+        int row = 6;
 
         for (int i = 1; i <= 10; i++) {
             System.out.println(i * row);
@@ -49,8 +49,8 @@ public class Schleifen {
         }
 
 
-        int high = 12;
-        int highTribe = 3;
+        int high = 40;
+        int highTribe = 10;
         int count = 1;
 
         for (int i = 1; i <= high; i++) {
@@ -80,7 +80,7 @@ public class Schleifen {
             }
 //Stamm
             if (i > (high - highTribe)) {
-                for (int n = high - 2; n >= 0; n--) {
+                for (int n = high-2; n >= 0; n--) {
                     System.out.print(" ");
                 }
                 for (int j = 0; j < highTribe; j++) {

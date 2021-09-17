@@ -16,5 +16,7 @@ public class AAA {
         System.out.println("  \\   \\:\\");
         System.out.println("   \\   \\:\\");
         System.out.println("    \\___\\/");
+
+
     }
 }

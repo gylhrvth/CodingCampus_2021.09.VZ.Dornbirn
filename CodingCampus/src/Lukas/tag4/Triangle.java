@@ -1,8 +1,16 @@
-package Eray.week1;
+package Lukas.tag4;
 
-public class ArrowTask {
+public class Triangle {
     public static void main(String[] args) {
-        //Arrow solution
+        //*
+        //**
+        //***
+        //****
+        //****
+        //***
+        //**
+        //*
+
         int height = 5;
         int upperHeight = height / 2;
 

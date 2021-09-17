@@ -7,12 +7,14 @@ public class PiCalculater {
         double pi = 0.0;
         int n = 4;
 
-        while (divisor <= 15000000) {
+        while (divisor <= 150) {
             pi = pi + (double) n / (double) divisor;
             pi = pi - (double) n / (double) (divisor + 2);
             divisor = divisor + 4;
             System.out.println(pi);
         }
+
+        System.out.println(divisor);
 
     }
 }
