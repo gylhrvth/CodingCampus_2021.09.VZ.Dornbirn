@@ -11,10 +11,10 @@ public class CreateBox{
                 System.out.println();
             } else {
                 for (int k = 0; k < width; k++) {       //solange laufen lassen bis Zeilenbreite erreicht
-                    if (k <= 0 || k == width -1) {     // Wenn Erste oder letzte Stelle
+                    if (k == 0 || k == width -1) {     // Wenn Erste oder letzte Stelle
                         System.out.print("X");
                     } else {
-                        System.out.print(".");
+                        System.out.print(" ");
                     }
                 }
                 System.out.println();
