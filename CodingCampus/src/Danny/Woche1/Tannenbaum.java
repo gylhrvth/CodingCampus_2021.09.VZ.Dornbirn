@@ -10,14 +10,9 @@ public class Tannenbaum {
         int y = 0;
 
         for (int k = 0; k <= kroneHoehe; k++) {
-            for (int x = 0; x < abstandRand; x++) {
-                System.out.print(" ");
-            }
+            printStar(abstandRand, " ");
             y = 0;
-            for (; y < spitzeWert; y++) {
-                System.out.print("X");
-            }
-
+            printStar(spitzeWert, "X");
             System.out.println();
             spitzeWert += 2;
             abstandRand--;
@@ -27,7 +22,7 @@ public class Tannenbaum {
         int s = y;
         int m = 2;
 
-        for (int f = 0; f < y; f++)
+        for (int f = 0; f < y; f++) {
             if (s % m != 0) {
                 System.out.print("*");
                 s--;
@@ -35,14 +30,13 @@ public class Tannenbaum {
                 System.out.print(" ");
                 s--;
             }
-        {
-            System.out.println();
         }
+        System.out.println();
 //Stamm
 
         int stammH = (kroneHoehe / 2 + 1);
         int stammB = (y / 3);
-        int einrue = ((y-stammB) / 2);
+        int einrue = ((y - stammB) / 2);
 
         for (int h = 0; h < stammH; h++) {
             for (s = 0; s < einrue; s++) {
@@ -55,6 +49,14 @@ public class Tannenbaum {
                 System.out.println();
             }
         }
+    }
+
+    public static void printStar(int pices, String charater) {
+
+        for (int x = 0; x < pices; x++) {
+            System.out.print(charater);
+        }
+
     }
 }
 
