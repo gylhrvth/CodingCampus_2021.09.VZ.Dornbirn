@@ -3,13 +3,13 @@ package Stefan.FirstWeek;
 public class Tannenbaum {
     public static void main(String[] args) {
 
-        int heightSpitze = 20;
+        int heightSpitze = 10;
         int widthAbstandRand = heightSpitze;
         int behang = (heightSpitze * 2 - 1) / 2;
         int stammAbstand = behang - 2;
         int widthStamm = heightSpitze / 3;
         int fussAbstand = behang - 3;
-        int widthFuss = (heightSpitze * 2 - 1) / 5;
+        int widthFuss = (heightSpitze * 2 - 1) / 4;
 
 
         //Baumspitze
