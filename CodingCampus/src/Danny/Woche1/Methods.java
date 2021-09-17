@@ -1,6 +1,6 @@
 package Danny.Woche1;
 
-public class methods {
+public class Methods {
 
     public static void printStar(int pices, String charater) {
 
