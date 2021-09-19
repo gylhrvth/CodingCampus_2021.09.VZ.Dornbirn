@@ -6,7 +6,7 @@ public class HelloWorld {
 
         System.out.println("Hello World:)");
         System.out.println("Fertig");
-
+Methods.simpleCal(100,"/",20);
 
     }
 
