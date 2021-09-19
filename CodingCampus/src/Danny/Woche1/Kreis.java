@@ -7,6 +7,7 @@ public class Kreis {
         int circleHigh = circleRadius * 2 + 1;
         int b = circleRadius;
         int kor = 3;
+
         for (int x = 0; x < circleHigh; x++) {
             for (int y = -circleRadius * kor; y < circleRadius * kor + 1; y++) {
                 double cQ = circleRadius * circleRadius;
