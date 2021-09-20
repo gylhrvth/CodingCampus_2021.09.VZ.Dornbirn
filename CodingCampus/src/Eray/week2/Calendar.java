@@ -2,7 +2,8 @@ package Eray.week2;
 
 public class Calendar {
     public static void main(String[] args) {
-        //Write a Month from Januar to Dezember
+        //Write a Month from Januar to Dezember and set the Start Day! :)
+
         AutoDaysFill("Januar", 2);
 
     }
@@ -10,29 +11,35 @@ public class Calendar {
 
     public static void AutoDaysFill(String month, int startDay) {
         DaysHead();
-
-
+        int overAll = 1;
         for (int i = 1; i <= CheckMonth(month) + startDay; i++) {
 
 
             if (i - startDay > 0) {
-                if (i < 10) {
+                if(overAll % 6 == 0 || overAll % 7 == 0){
+                    System.out.print(String.format("|%3s ", "WE"));
+                }else {
+                    if (i < 10) {
 
-                    System.out.print(String.format("|%3d ", i - startDay));
+                        System.out.print(String.format("|%3d ", i - startDay));
 
-                } else {
-                    System.out.print(String.format("|%3d ", i - startDay));
+                    } else {
+                        System.out.print(String.format("|%3d ", i - startDay));
 
+                    }
                 }
-
             } else {
                 System.out.print(String.format("|%3s ", ""));
             }
 
             CheckIfModulo7isZero(i);
-
+            overAll++;
+            if (i % 7 == 0) {
+                overAll = 1;
+            }
 
         }
+
 
         int missing = 7 - ((CheckMonth(month) + startDay) % 7);
 
@@ -40,6 +47,7 @@ public class Calendar {
             System.out.print(String.format("|%3s ", ""));
         }
         System.out.print(String.format("|%3s ", ""));
+
     }
 
 
