@@ -3,7 +3,7 @@ package Stefan.FirstWeek;
 public class Tannenbaum {
     public static void main(String[] args) {
 
-        int heightSpitze = 10;
+        int heightSpitze = 6;
         int widthAbstandRand = heightSpitze;
 
         //Baumspitze
