@@ -5,7 +5,7 @@ public class Tag5Methoden {
         for (int a=0; a<10;a++) {
             printStar();
         }
-        printTriangle(200);
+        printTriangle(10);
 
        // repeat(10,"-");
     }
