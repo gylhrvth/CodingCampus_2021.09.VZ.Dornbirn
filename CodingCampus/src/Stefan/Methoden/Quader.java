@@ -2,7 +2,7 @@ package Stefan.Methoden;
 
 public class Quader {
     public static void main(String[] args) {
-        printStar(5);
+        printStar(10);
     }
 
     //Methoden
@@ -11,7 +11,7 @@ public class Quader {
         int width = height;
         for (int a = 0; a < height; a++) {
             for (int b = width; b > 0; b--) {
-                System.out.print("*");
+                System.out.print("*  ");
             }
             System.out.println();
         }
