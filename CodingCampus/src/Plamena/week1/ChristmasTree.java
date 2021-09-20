@@ -1,10 +1,10 @@
 package Plamena.week1;
 
-public class Tannenbaum {
+public class ChristmasTree {
     public static void main(String[] args) {
 
 
-        //Tannenbaum
+        //ChristmasTree
         int height = 25;
         int width = (height * 2 - 1);
         float heightTrunk = height / 4f;
@@ -14,7 +14,7 @@ public class Tannenbaum {
         float widthStand = width / 2.5f;
 
 
-        //Baum
+        //TreeTop
         for (int i = 0; i <= height; i++) {
             for (int j = 0; j <= height - i; j++) {
                 System.out.print(" ");
@@ -25,7 +25,7 @@ public class Tannenbaum {
             System.out.println();
         }
 
-        //Kugeln
+        //Balls
         for (int j = 0; j <= width; ++j) {
             if (j <= distanceLeft) {
                 if (j % 2 != 0) {
@@ -47,8 +47,8 @@ public class Tannenbaum {
         }
         System.out.println();
 
+        //Trunk
 
-//Stamm
 
         for (float i = 0; i <= heightTrunk; i++) {
             for (float j = 0; j <= distanceLeft; j++) {
@@ -60,7 +60,7 @@ public class Tannenbaum {
             System.out.println();
         }
 
-        //Staender
+        //Stand
 
         for (float i = 0; i <= heightStand; i++) {
             for (float j = 0; j <= ((width - widthStand) / 2); j++) {
@@ -71,6 +71,5 @@ public class Tannenbaum {
             }
             System.out.println();
         }
-
     }
 }
