@@ -3,7 +3,7 @@ package Stefan.Methoden;
 public class Triangle {
     public static void main(String[] args) {
 
-        triangle(20);
+        triangle(10);
     }
 
     //Methoden
