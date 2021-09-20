@@ -7,6 +7,7 @@ public class CalendarRun {
     public static void main(String[] args) {
         WeekDays.printWeekdays();
         System.out.println();
+
         monthAndDate.printDate();
     }
 }
