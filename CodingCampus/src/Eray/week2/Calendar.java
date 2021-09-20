@@ -24,11 +24,12 @@ public class Calendar {
                     System.out.print(String.format("|%3d ", i - startDay));
 
                 }
-                CheckIfModulo7isZero(i);
+
             } else {
                 System.out.print(String.format("|%3s ", ""));
             }
 
+            CheckIfModulo7isZero(i);
 
 
         }
