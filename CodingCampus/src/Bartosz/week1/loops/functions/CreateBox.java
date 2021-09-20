@@ -2,6 +2,8 @@ package Bartosz.week1.loops.functions;
 
 public class CreateBox{
     public static void CreateConsoleBox(int height, int width) {
+
+
         for (int i = 0; i < height; i++) {  //Reienschleife
 
             if (i == 0 || i == height - 1) {
