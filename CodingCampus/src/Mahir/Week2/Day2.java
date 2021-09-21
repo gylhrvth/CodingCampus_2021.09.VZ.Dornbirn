@@ -8,6 +8,7 @@ import java.util.GregorianCalendar;
 public class Day2 {
 
 
+
     public static void main(String[] args) {
         GregorianCalendar day = new GregorianCalendar(2021, 8, 17);
         GregorianCalendar start = new GregorianCalendar(
