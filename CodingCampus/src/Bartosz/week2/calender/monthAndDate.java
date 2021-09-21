@@ -1,11 +1,7 @@
 package Bartosz.week2.calender;
 
 public class monthAndDate {
-    public static void printDate(/*int maxDays, int offset*/) {
-
-        int maxDays = 31;
-        int offset = 6;
-
+    public static void printDate(int maxDays, int offset) {
 
         for (int counterDays = 1; counterDays <= maxDays + offset; counterDays++) {   // Tagzähler
 
@@ -30,6 +26,12 @@ public class monthAndDate {
                 System.out.print("|  " + "  ");
             }
 
+        }
+
+        int missingSpaces = 7 - ((maxDays + offset) % 7); // Es fehlen X Tage unten.
+
+        for (int i = 0; i < missingSpaces; i++) {
+            System.out.print("    |");
         }
 
     }
