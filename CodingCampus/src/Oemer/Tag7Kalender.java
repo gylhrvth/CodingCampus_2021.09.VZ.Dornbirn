@@ -9,7 +9,7 @@ public class Tag7Kalender {
         GregorianCalendar firstDay = new GregorianCalendar(
                 today.get(Calendar.YEAR),
                 today.get(Calendar.MONTH),
-                1;)
+                1);
 
         ;
         int offset = firstDay.get(Calendar.DAY_OF_WEEK) - 2;
@@ -32,7 +32,8 @@ public class Tag7Kalender {
             System.out.printf("%2d ", i);
         }
         {
-            int restDaysOfMonth= offset+ firstDay.getActualMaximum()
+            // Corrected by Gyula
+            //int restDaysOfMonth= offset+ firstDay.getActualMaximum();
 
             if (dayOfWeek % 7 == 0) {
                 System.out.println("|");
