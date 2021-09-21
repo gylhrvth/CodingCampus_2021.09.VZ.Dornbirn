@@ -17,7 +17,6 @@ public class Calendar {
 
         System.out.println("| Mo | Di | Mi | Do | Fr | Sa | So |");
 
-
         for (int i = 1; i < startDay; i++) {
             System.out.print("|    ");
         }
