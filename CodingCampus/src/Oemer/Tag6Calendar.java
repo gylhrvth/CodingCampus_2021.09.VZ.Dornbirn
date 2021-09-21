@@ -18,6 +18,27 @@ public class Tag6Calendar {
             System.out.print("|");
         }
     }
+    public static void drawCalender(int amountofDays,int offset){
+        for (int i=1; i<=amountofDays+offset;i++){
+            printNumber(i-offset);
+            checkLineEnd(i);
+        }
+
+        int missing= 7-(amountofDays+offset)%7;
+         for (int i =0;i<missing;i++){
+             System.out.println("|   ");
+         }
+
+
+
+
+    }
+
+
+
+
+
+
 
 
 
