@@ -4,7 +4,7 @@ public class dateAndWeekend {
     public static void main(String[] args) {
 
         int maxDays = 31;
-        int offset = 6;
+        int offset = 0;
 
 
 
@@ -15,29 +15,37 @@ public class dateAndWeekend {
 
             if (counterDays - offset > 0) {  // Wenn Anfangsposition größer als 0 ist, gib zahlenZellen aus
 
-                if (counterDays < 10 + offset) {
-                    System.out.print("|  " + (counterDays - offset) + " ");
-
-                } else {
-                    if (counterDays == maxDays + offset)  {
-                        System.out.print("| " + (counterDays - offset) + " |");
+                if (counterDays % 6 ==0) {
+                    System.out.print("| WE ");
+                }
+                else if (counterDays % 7 == 0) {
+                    System.out.print("| WE |");
+                    System.out.println();
+                }
+                else {
+                    if (counterDays < 10 + offset) {
+                        System.out.print("|  " + (counterDays - offset) + " ");
 
                     } else {
-                        System.out.print("| " + (counterDays - offset) + " ");
+                        if (counterDays == maxDays + offset) {
+                            System.out.print("| " + (counterDays - offset) + " |");
+
+                        } else {
+                            System.out.print("| " + (counterDays - offset) + " ");
+                        }
+                    }
+
+
+                    if (counterDays % 7 == 0) {
+                        if (counterDays == maxDays + offset) {
+                            System.out.println();
+
+                        } else {
+                            System.out.print("|");
+                            System.out.println();
+                        }
                     }
                 }
-
-
-                if (counterDays % 7 == 0) {
-                    if (counterDays == maxDays + offset)  {
-                        System.out.println();
-
-                    } else {
-                        System.out.print("|");
-                        System.out.println();
-                    }
-                }
-
             } else {    // Wenn Anfangsposition kleiner als 0 ist, gib leerZellen aus
                 System.out.print("|  " + "  ");
             }
