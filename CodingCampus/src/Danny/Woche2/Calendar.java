@@ -3,60 +3,45 @@ package Danny.Woche2;
 public class Calendar {
     public static void main(String[] args) {
 
-        System.out.println("| Mo | Di | Mi | Do | Fr | Sa | So |");
-        int daysPerMonth = 31;
-        int startDay = 3;
 
-
-        startPoint(startDay);
-        days(daysPerMonth, startDay);
-        rest(daysPerMonth);
+        calendar(31,2);
 
     }
 
-    public static void startPoint(int startDay) {
+    public static void calendar(int daysPerMonth, int startDay) {
+
+
+        int aktuellerTag = 1;
+        int daysPerMonthRest = daysPerMonth;
+
+
+        System.out.println("| Mo | Di | Mi | Do | Fr | Sa | So |");
 
         for (int i = 1; i < startDay; i++) {
             System.out.print("|    ");
         }
-    }
 
-
-    public static void days(int daysPerMonth, int startDay) {
-        for (int x = startDay; x <= daysPerMonth; x++) {
-
-                if (x < 10)
-                    if (x % 7 != 0) {
-                        System.out.print("| 0" + x + " ");
-                    } else {
-                        System.out.print("| WE ");
-                        System.out.print("|");
-                        System.out.println();
-
-                    }
-
-
-                if (x >= 10)
-                    if (x % 7 != 0) {
-                        System.out.print("| " + x + " ");
-                    } else {
-                        System.out.print("| WE ");
-                        System.out.print("|");
-                        System.out.println();
-                    }
+        for (int x = startDay; x < daysPerMonth + startDay; x++) {
+            if (x % 6 != 0) {
+                if (aktuellerTag < 10) {
+                    System.out.print("| 0" + aktuellerTag + " ");
+                    aktuellerTag++;
+                } else {
+                    System.out.print("| " + aktuellerTag + " ");
+                    aktuellerTag++;
+                }
+            } else {
+                System.out.println("| WE | WE |");
+                aktuellerTag += 2;
+                daysPerMonth--;
             }
         }
 
-
-
-    public static void rest(int daysPerMonth) {
-        int y = daysPerMonth % 7;
-        int z = 7 - y;
-        for (int i = 0; i < z; i++) {
+        int rest = startDay + daysPerMonthRest;
+        for (int x = 0; x <= (7 - (rest % 7)); x++) {
             System.out.print("|    ");
         }
         System.out.print("|");
     }
-
 
 }

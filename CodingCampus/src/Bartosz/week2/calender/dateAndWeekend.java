@@ -1,7 +1,15 @@
 package Bartosz.week2.calender;
 
-public class monthAndDate {
-    public static void printDate(int maxDays, int offset) {
+public class dateAndWeekend {
+    public static void main(String[] args) {
+
+        int maxDays = 31;
+        int offset = 6;
+
+
+
+        WeekDays.printWeekdays();
+        System.out.println();
 
         for (int counterDays = 1; counterDays <= maxDays + offset; counterDays++) {
 
@@ -50,5 +58,4 @@ public class monthAndDate {
         }
 
     }
-
 }
