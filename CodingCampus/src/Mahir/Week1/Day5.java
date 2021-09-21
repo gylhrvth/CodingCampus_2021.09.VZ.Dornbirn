@@ -1,6 +1,6 @@
-package Mahir;
+package Mahir.Week1;
 
-public class Tag5 {
+public class Day5 {
     public static void main(String[] args) {
         int scale = 50;
 
@@ -12,6 +12,8 @@ public class Tag5 {
 
 
     }
+
+
 
 
     public static void printStar() {

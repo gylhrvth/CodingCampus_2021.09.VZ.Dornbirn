@@ -1,6 +1,6 @@
-package Mahir;
+package Mahir.Week1;
 
-public class Tag3 {
+public class Day3 {
     public static void main(String[] args) {
 
 
@@ -49,24 +49,25 @@ public class Tag3 {
             }
             System.out.println();
         }
+        int height = 10;
+        int spaces = height;
+        int stars = 1;
 
-
-        for(int x = 0;x <=10; x++){
-
-            for(int y = 0;y < x; y++){
-
+        for (int a = 0; a < height; a++) {
+            for (int l = 0; l < spaces; l++) {
                 System.out.print(" ");
-
-                for(int z = 5;z < y; z++){
-
-                    System.out.print("x");
-
-                }
             }
+            for (int c = 0; c < stars; c++) {
+                System.out.print("*");
+            }
+
             System.out.println();
 
-
+            spaces--;
+            stars += 2;
         }
+        int widht = stars;
+
     }
 
 
