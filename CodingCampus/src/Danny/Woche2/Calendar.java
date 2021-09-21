@@ -1,10 +1,26 @@
 package Danny.Woche2;
 
+import java.util.GregorianCalendar;
+
 public class Calendar {
     public static void main(String[] args) {
 
 
-        calendar(31,2);
+        GregorianCalendar today = new GregorianCalendar();
+        int daysPerMonth = today.getActualMaximum(today.DAY_OF_MONTH);
+
+        System.out.println("| Mo | Di | Mi | Do | Fr | Sa | So |");
+        empty(7);
+        calendar(daysPerMonth, 7);
+
+
+    }
+
+    public static void empty(int startDay) {
+
+        for (int i = 1; i < startDay; i++) {
+            System.out.print("|    ");
+        }
 
     }
 
@@ -14,12 +30,6 @@ public class Calendar {
         int aktuellerTag = 1;
         int daysPerMonthRest = daysPerMonth;
 
-
-        System.out.println("| Mo | Di | Mi | Do | Fr | Sa | So |");
-
-        for (int i = 1; i < startDay; i++) {
-            System.out.print("|    ");
-        }
 
         for (int x = startDay; x < daysPerMonth + startDay; x++) {
             if (x % 6 != 0) {
@@ -35,6 +45,7 @@ public class Calendar {
                 aktuellerTag += 2;
                 daysPerMonth--;
             }
+
         }
 
         int rest = startDay + daysPerMonthRest;
