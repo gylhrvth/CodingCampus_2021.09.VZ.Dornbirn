@@ -8,11 +8,12 @@ public class Calendar2 {
     public static void main(String[] args) {
 
 
-        GregorianCalendar today = new GregorianCalendar();
+        GregorianCalendar today = new GregorianCalendar(2021, 4, 15);
         GregorianCalendar firstDayOfMonth = new GregorianCalendar(
                 today.get(Calendar.YEAR),
                 today.get(Calendar.MONTH),
                 1);
+        System.out.println(firstDayOfMonth);
 
         int i = 0;
         int actualDayOfMonth = today.get(Calendar.DAY_OF_MONTH);
@@ -20,7 +21,6 @@ public class Calendar2 {
         int space = firstDayOfMonth.get(Calendar.DAY_OF_WEEK) - 2;
         if (space < 0) {
             space += 7;
-
         }
 
         System.out.println("| Mo | Di | Mi | Do | Fr | Sa | So |");
@@ -29,18 +29,28 @@ public class Calendar2 {
             System.out.print("|    ");
         }
         for (int x = 1; x <= daysPerMonth; x++) {
-            if (x == actualDayOfMonth) {
-                System.out.printf("| %2d*", x);
+            if (x == actualDayOfMonth && ((x + space - i) % 6 == 0)) {
+                System.out.printf("|WE%1d*", x);
             } else {
-                if ((x + space - i) % 6 == 0) {
-                    System.out.printf("|WE%2d", x);
+                if (x == actualDayOfMonth && ((x + space ) % 7 == 0)) {
+                    System.out.printf("|WE%1d*", x);
+                    System.out.println("|");
+                    i++;
                 } else {
-                    if ((x + space) % 7 == 0) {
-                        System.out.printf("|WE%2d", x);
-                        System.out.println("|");
-                        i++;
+                    if (x == actualDayOfMonth) {
+                        System.out.printf("| %2d*", x);
                     } else {
-                        System.out.printf("| %2d ", x);
+                        if ((x + space - i) % 6 == 0) {
+                            System.out.printf("|WE%2d", x);
+                        } else {
+                            if ((x + space) % 7 == 0) {
+                                System.out.printf("|WE%2d", x);
+                                System.out.println("|");
+                                i++;
+                            } else {
+                                System.out.printf("| %2d ", x);
+                            }
+                        }
                     }
                 }
             }
