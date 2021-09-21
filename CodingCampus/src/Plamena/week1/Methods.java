@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Methods {
     public static void main(String[] args) {
-       ChristmasTree(9);
+       //ChristmasTree(9);
 
     }
 
@@ -32,7 +32,7 @@ public class Methods {
     }
 
 
-    public static void Calculater (){
+    public static void Calculator (){
 
         Scanner scanner1 = new Scanner(System.in);
 
@@ -102,16 +102,8 @@ public class Methods {
     }
 
 
-    public static void ChristmasTree(int height){
 
-
-        int width = (height * 2 - 1);
-        float heightTrunk = height / 4f;
-        float widthTrunk = width / 4f;
-        float distanceLeft = ((width * (1 / 2f)) - widthTrunk / 2f);
-        float heightStand = height / 6f;
-        float widthStand = width / 2.5f;
-
+    public static void drawTreeTop (int height) {
 
         //Treetop
         for (int i = 0; i <= height; i++) {
@@ -123,6 +115,20 @@ public class Methods {
             }
             System.out.println();
         }
+    }
+
+    public static void drawChristmasTree(int height){
+
+
+        int width = (height * 2 - 1);
+        float heightTrunk = height / 4f;
+        float widthTrunk = width / 4f;
+        float distanceLeft = ((width * (1 / 2f)) - widthTrunk / 2f);
+        float heightStand = height / 6f;
+        float widthStand = width / 2.5f;
+
+        drawTreeTop(height);
+
 
         //Balls
         for (int j = 0; j <= width; ++j) {
@@ -169,6 +175,8 @@ public class Methods {
             }
             System.out.println();
         }
+
+
     }
 
 }
