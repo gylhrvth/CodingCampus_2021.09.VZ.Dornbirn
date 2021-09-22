@@ -1,12 +1,25 @@
 package Bartosz.week2.calender;
 
+import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 public class CalendarGregorian {
     public static void main(String[] args) {
 
-        int maxDays=31;
-        int offset = 4;
+        WeekDays.printWeekdays();
+
+        GregorianCalendar today = new GregorianCalendar();
+        GregorianCalendar firstDayOfMonth = new GregorianCalendar(
+          today.get(Calendar.YEAR),
+          today.get(Calendar.MONTH),
+          1
+        );
+
+        int maxDays = today.getActualMaximum(Calendar.DAY_OF_MONTH);
+        int offset = firstDayOfMonth.get(Calendar.DAY_OF_WEEK) - 2;
+        if (offset < 0) {
+            offset += 7;
+        }
 
 
             for (int counterDays = 1; counterDays <= maxDays + offset; counterDays++) {

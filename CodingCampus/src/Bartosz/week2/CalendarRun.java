@@ -8,6 +8,6 @@ public class CalendarRun {
         WeekDays.printWeekdays();
         System.out.println();
 
-        monthAndDate.printDate(30, 2);
+        monthAndDate.printDate(31, 4);
     }
 }

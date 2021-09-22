@@ -8,7 +8,7 @@ public class WeekDays {
         for (int dayRegister = 0; dayRegister < weekdays.length; dayRegister++) {
             System.out.print(" " + weekdays[dayRegister] + " " + "|");
         }
-
+        System.out.println();
     }
 }
 
