@@ -17,6 +17,7 @@ public class CalendarMet {
         int actualDayOfMonth = today.get(Calendar.DAY_OF_MONTH);
         int daysPerMonth = today.getActualMaximum(Calendar.DAY_OF_MONTH);
         int space = firstDayOfMonth.get(Calendar.DAY_OF_WEEK) - 2;
+
         if (space < 0) {
             space += 7;
         }
