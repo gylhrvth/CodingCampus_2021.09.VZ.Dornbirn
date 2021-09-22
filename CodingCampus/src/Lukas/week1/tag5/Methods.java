@@ -1,4 +1,4 @@
-package Lukas.tag5;
+package Lukas.week1.tag5;
 
 public class Methods {
     public static void main(String[] args) {
@@ -8,6 +8,8 @@ public class Methods {
         //printTriangle(200);
 
         repeat(10, "-");
+
+
     }
 
     public static void printStar() {
@@ -23,7 +25,7 @@ public class Methods {
         for (int a = 0; a < upperHeight; a++) {
             repeat(a);
         }
-        for(int a = lowerHeight; a > 0; a--) {
+        for (int a = lowerHeight; a > 0; a--) {
             repeat(a);
         }
     }

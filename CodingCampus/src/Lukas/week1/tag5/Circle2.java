@@ -1,4 +1,4 @@
-package Lukas.tag5;
+package Lukas.week1.tag5;
 
 import java.util.Arrays;
 
