@@ -1,4 +1,4 @@
-package Lukas.tag3;
+package Lukas.week1.tag3;
 
 import java.util.Random;
 

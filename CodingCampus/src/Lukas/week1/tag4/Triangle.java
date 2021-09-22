@@ -1,4 +1,4 @@
-package Lukas.tag4;
+package Lukas.week1.tag4;
 
 public class Triangle {
     public static void main(String[] args) {

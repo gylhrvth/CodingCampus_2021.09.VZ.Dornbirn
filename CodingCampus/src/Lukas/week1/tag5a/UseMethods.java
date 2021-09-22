@@ -1,6 +1,6 @@
-package Lukas.tag5a;
+package Lukas.week1.tag5a;
 
-import Lukas.tag5.Methods;
+import Lukas.week1.tag5.Methods;
 
 public class UseMethods {
     public static void main(String[] args) {
