@@ -1,6 +1,6 @@
 package Bartosz.week1.loops.functions.ChristmasTree;
 
-public class LoopEx4Trunk {
+public class LoopsEx4Trunk {
     public static void printTrunk(int height) {
         System.out.println();
 
