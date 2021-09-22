@@ -22,7 +22,7 @@ public class Christbaum2 {
 
         //Christbaumkugeln
         //int width = height * 2 - 1;
-        int width = stars - 2;
+       /* int width = stars - 2;
 
         for (int i = 0; i < width; i++) {
             if (i % 2 == 0) {
@@ -50,5 +50,7 @@ public class Christbaum2 {
             System.out.println();
 
         }
+
+        */
     }
 }
