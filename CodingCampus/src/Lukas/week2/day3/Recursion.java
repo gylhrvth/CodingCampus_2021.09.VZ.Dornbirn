@@ -1,4 +1,4 @@
-package Lukas.week2;
+package Lukas.week2.day3;
 
 public class Recursion {
     public static void main(String[] args) {

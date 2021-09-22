@@ -1,6 +1,6 @@
 package Bartosz.week2.calender;
 
-public class WeekDays {
+public class weekDays {
     public static void printWeekdays() {
         String[] weekdays = {"Mo", "Di", "Mi", "Do", "Fr", "Sa", "So"};
 
