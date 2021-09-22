@@ -1,4 +1,4 @@
-package Lukas.week2;
+package Lukas.week2.day3;
 
 import java.util.GregorianCalendar;
 

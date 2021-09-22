@@ -2,16 +2,17 @@ package Mahir.Week1;
 
 public class Day5Methods {
     public static void main(String[] args) {
+        calc(7);
         printStar(10);
         printtriangle(20);
         System.out.println();
 
-        printChristmasTree(20);
-        square(15,15,"+");
+        printChristmasTree(10);
+        square(15, 15, "+");
     }
 
     public static void printChristmasTree(int height) {
-        treeTop(height,"*");
+        treeTop(height, "*");
         christmasBalls(height);
         treeTrunk(height);
     }
@@ -22,7 +23,15 @@ public class Day5Methods {
         }
         System.out.println();
     }
-    public static void square(int wide,int height,String charakter){
+
+    public static void calc(int numb) {
+        for (int a = 0; a <= 10; a = ++a) {
+
+            System.out.println(a * numb);
+        }
+    }
+
+    public static void square(int wide, int height, String charakter) {
         for (int c = 0; c < height; c++) {
 
             for (int d = 0; d < wide; d++) {
@@ -56,7 +65,7 @@ public class Day5Methods {
         System.out.println();
     }
 
-    public static void treeTop(int height,String charakter) {
+    public static void treeTop(int height, String charakter) {
 
         int spaces = height;
         int stars = 1;
@@ -73,10 +82,9 @@ public class Day5Methods {
             spaces--;
             stars += 2;
         }
-
     }
 
-    public static void christmasBalls(int height){
+    public static void christmasBalls(int height) {
         int stars = height * 2 + 1;
         int width = stars - 1;
 
@@ -86,8 +94,6 @@ public class Day5Methods {
             } else {
                 System.out.print(" ");
             }
-
-
         }
         System.out.println();
     }
