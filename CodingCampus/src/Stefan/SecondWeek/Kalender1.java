@@ -1,48 +1,64 @@
 package Stefan.SecondWeek;
 
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Locale;
 
 public class Kalender1 {
 
     public static void main(String[] args) {
+        String ANSI_GREEN = "\u001B[32m";
+        String ANSI_YELLOW = "\u001B[33m";
+        String ANSI_RESET = "\u001B[0m";
+        GregorianCalendar today = new GregorianCalendar();
+        GregorianCalendar firstDayOfMonth = new GregorianCalendar(
+                today.get(Calendar.YEAR),
+                today.get(Calendar.MONTH),
+                1);
+
+        int actualDayOfMonth = today.get(Calendar.DAY_OF_MONTH);
+        int maxDays = today.getActualMaximum(Calendar.DAY_OF_MONTH);
+        int offset = firstDayOfMonth.get(Calendar.DAY_OF_WEEK) - 2;
+        if (offset < 0) {
+            offset += 7;
+        }
 
 
-        GregorianCalendar cal = new GregorianCalendar();
-        String monat = new SimpleDateFormat("MMMM  yyyy", Locale.GERMAN).format(cal.getTime());
-        System.out.println(monat + "\n");
+        String monat = new SimpleDateFormat("MMMM  yyyy", Locale.GERMAN).format(today.getTime());
+        System.out.printf(ANSI_YELLOW + monat + ANSI_RESET + "\n");
 
-
-        int days = 30;
-        int offset = 5;
 
         String headline = "| MO | DI | MI | DO | FR | SA | SO |";
-
-
         System.out.println(headline);
 
-        for (int monthDays = 1; monthDays < days + offset; monthDays++) {
-            if (monthDays - offset < 0) {
-                System.out.print("|    ");
-            }
-            else if (monthDays - offset +1  < 10) {
-                System.out.print("| " + (monthDays - offset +1) + "  ");
-            } else {
-                System.out.print("| " + (monthDays - offset +1) + " ");
-            }
-            if (monthDays % 7 == 0) {
-                System.out.print("|");
-                System.out.println();
-            }
-        }
-
-        int missingSpaces = 7 - ((days + offset -1) % 7);
-
-        for (int i = 0; i < missingSpaces; i++) {
+        for (int i = 0; i < offset; i++) {
             System.out.print("|    ");
         }
-        System.out.print("|");
+        for (int i = 1; i <= maxDays; i++) {
+
+            System.out.print("| ");
+
+            if (i == actualDayOfMonth) {
+                System.out.printf("%s%2d%s ", ANSI_GREEN, i, ANSI_RESET);
+            } else {
+
+                System.out.printf("%2d ", i);
+
+            }
+
+            if ((offset + i) % 7 == 0) {
+                System.out.println("|");
+            }
+        }
+        int restDaysOfMonth = offset + maxDays;
+        if (restDaysOfMonth % 7 != 0) {
+            while (restDaysOfMonth % 7 != 0) {
+                ++restDaysOfMonth;
+                System.out.print("|    ");
+            }
+            System.out.println("|");
+        }
 
     }
 }
