@@ -1,21 +1,21 @@
-package Mahir;
+package Mahir.Week1;
 
-public class Main {
+public class Day2 {
 
     public static void main(String[] args) {
 
 
-        System.out.println("     ___");
-        System.out.println("    /  /\\ ");
-        System.out.println("   /  /::\\ ");
-        System.out.println("  /  /:/\\:\\ ");
-        System.out.println(" /  /:/~/::\\ ");
-        System.out.println("/__/:/ /:/\\:\\ ");
-        System.out.println("\\  \\:\\/:/__\\/");
-        System.out.println(" \\  \\::/");
-        System.out.println("  \\  \\:\\ ");
-        System.out.println("   \\  \\:\\ ");
-        System.out.println("    \\__\\/");
+        System.out.println("     ___                    ");
+        System.out.println("    /  /\\                  ");
+        System.out.println("   /  /::\\                 ");
+        System.out.println("  /  /:/\\:\\               ");
+        System.out.println(" /  /:/~/::\\               ");
+        System.out.println("/__/:/ /:/\\:\\             ");
+        System.out.println("\\  \\:\\/:/__\\/           ");
+        System.out.println(" \\  \\::/                  ");
+        System.out.println("  \\  \\:\\                 ");
+        System.out.println("   \\  \\:\\                ");
+        System.out.println("    \\__\\/                 ");
 
 
         int intNumber1 = 15;
@@ -66,6 +66,12 @@ public class Main {
 
 
 
+        }
+
+
+
+
+
 
 
 
@@ -74,4 +80,4 @@ public class Main {
 
 
     }
-}
+
