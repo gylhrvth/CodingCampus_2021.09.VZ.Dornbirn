@@ -1,4 +1,5 @@
-package Lukas.week2.day3;
+package Danny.Woche2;
+
 
 public class LogicPuzzle {
     public static void main(String[] args) {
@@ -10,8 +11,9 @@ public class LogicPuzzle {
         //der Rückgabewert soll die Summe plus das Produkt enthalten
         //crazySumAndProduct
 
-
         crazySumAndProduct(10);
+
+
     }
 
     public static void crazySumAndProduct(int upperLimit) {
