@@ -8,9 +8,10 @@ import java.util.Locale;
 public class Kalender1 {
 
     public static void main(String[] args) {
-        String ANSI_GREEN = "\u001B[32m";
         String ANSI_YELLOW = "\u001B[33m";
         String ANSI_RESET = "\u001B[0m";
+        String ANSI_RED = "\u001B[31m";
+        String ANSI_PURPLE = "\u001B[35m";
         GregorianCalendar today = new GregorianCalendar();
         GregorianCalendar firstDayOfMonth = new GregorianCalendar(
                 today.get(Calendar.YEAR),
@@ -38,19 +39,21 @@ public class Kalender1 {
         for (int i = 1; i <= maxDays; i++) {
 
             System.out.print("| ");
-
             if (i == actualDayOfMonth) {
-                System.out.printf("%s%2d%s ", ANSI_GREEN, i, ANSI_RESET);
+                System.out.printf("%s%2d%s ", ANSI_PURPLE, i, ANSI_RESET);
+            } else if ((offset + i) % 7 == 0) {
+                System.out.printf("%s%2d%s ", ANSI_RED, i, ANSI_RESET);
             } else {
-
                 System.out.printf("%2d ", i);
-
             }
 
             if ((offset + i) % 7 == 0) {
                 System.out.println("|");
             }
+
+
         }
+
         int restDaysOfMonth = offset + maxDays;
         if (restDaysOfMonth % 7 != 0) {
             while (restDaysOfMonth % 7 != 0) {
@@ -60,5 +63,9 @@ public class Kalender1 {
             System.out.println("|");
         }
 
+
+        {
+
+        }
     }
 }
