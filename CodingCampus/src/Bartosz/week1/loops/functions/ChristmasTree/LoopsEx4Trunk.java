@@ -4,7 +4,7 @@ public class LoopsEx4Trunk {
     public static void printTrunk(int height) {
         System.out.println();
 
-        int width = height / 3;
+        int width = (height * 2) - 1;
 
         int trunkWidth = width / 3;
         int trunkHeight = height / 3;
