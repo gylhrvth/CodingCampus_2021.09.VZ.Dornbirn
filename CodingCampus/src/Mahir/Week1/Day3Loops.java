@@ -1,6 +1,6 @@
 package Mahir.Week1;
 
-public class Day3 {
+public class Day3Loops {
     public static void main(String[] args) {
 
 

@@ -17,18 +17,18 @@ public class Day2 {
                 1
         );
 
+
+
+        int maxDaysOfMonth = day.getActualMaximum(GregorianCalendar.DAY_OF_MONTH);
+        int offset = start.get(Calendar.DAY_OF_WEEK) - 2;
+        int daysOfWeek = day.get(GregorianCalendar.DAY_OF_WEEK);
+        if (offset < 0) {
+            offset = 7 + offset;
+        }
         SimpleDateFormat sdf = new SimpleDateFormat("MMMM Y");
         System.out.println(sdf.format(day.getTime()));
         headline();
 
-        int maxDaysOfMonth = day.getActualMaximum(GregorianCalendar.DAY_OF_MONTH);
-        int offset = start.get(Calendar.DAY_OF_WEEK) - 2;
-        if (offset < 0) {
-            offset = 7 + offset;
-        }
-
-
-        int overallCounter = 1;
         System.out.println();
         for (int i = 0; i < offset; i++) {
             System.out.print("|      ");

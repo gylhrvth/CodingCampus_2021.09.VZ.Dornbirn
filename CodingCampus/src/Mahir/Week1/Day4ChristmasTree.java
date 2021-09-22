@@ -1,6 +1,6 @@
 package Mahir.Week1;
 
-public class Day4 {
+public class Day4ChristmasTree {
     public static void main(String[] args) {
 
         for (int a = 0; a <= 10; a++) {
