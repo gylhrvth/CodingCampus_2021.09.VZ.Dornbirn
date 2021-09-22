@@ -3,10 +3,10 @@ package Bartosz.week2.calender;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
-public class CalendarGregorian {
+public class calendarGregorian {
     public static void main(String[] args) {
 
-        WeekDays.printWeekdays();
+        weekDays.printWeekdays();
 
         GregorianCalendar today = new GregorianCalendar();
         GregorianCalendar firstDayOfMonth = new GregorianCalendar(

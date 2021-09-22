@@ -8,7 +8,7 @@ public class dateAndWeekend {
 
 
 
-        WeekDays.printWeekdays();
+        weekDays.printWeekdays();
         System.out.println();
 
         for (int counterDays = 1; counterDays <= maxDays + offset; counterDays++) {
