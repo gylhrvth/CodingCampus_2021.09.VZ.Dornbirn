@@ -2,7 +2,7 @@ package Stefan.SecondWeek.Scanner;
 
 public class christmasTree {
     public static void main(String[] args) {
-        christmasTree(6);
+//        christmasTree(6);
 
     }
 
@@ -12,19 +12,14 @@ public class christmasTree {
 
         int heightSpitze = hight;
         int widthAbstandRand = heightSpitze;
-        int colorCounter = 1;
+
         //Baumspitze
         for (int i = 0; i < heightSpitze; i++) {
             for (int k = 1; k < (widthAbstandRand - i); k++) {
                 System.out.print(" ");
             }
             for (int j = 0; j < i * 2 + 1; j++) {
-                String color = ANSI_GREEN + colorCounter +  "m";
-                System.out.print(color + "*");
-                colorCounter++;
-                if(colorCounter > 7) {
-                    colorCounter = 1;
-                }
+                System.out.print("*");
             }
             System.out.println("");
         }

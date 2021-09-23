@@ -1,7 +1,8 @@
-package Stefan;
+package Stefan.SecondWeek;
 
 import java.text.SimpleDateFormat;
-import java.util.*;
+import java.util.GregorianCalendar;
+import java.util.Locale;
 
 public class Kalender {
 

@@ -8,6 +8,10 @@ import java.util.Locale;
 public class Kalender1 {
 
     public static void main(String[] args) {
+
+    }
+
+    public static void calendar() {
         String ANSI_YELLOW = "\u001B[33m";
         String ANSI_RESET = "\u001B[0m";
         String ANSI_RED = "\u001B[31m";
@@ -68,4 +72,6 @@ public class Kalender1 {
 
         }
     }
+
+
 }
