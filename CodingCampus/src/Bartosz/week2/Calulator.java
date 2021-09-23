@@ -5,7 +5,7 @@ import Bartosz.week2.calculatorMethods.Calculate;
 import java.util.Scanner;
 
 public class Calulator {
-    public static void main(String[] args) {
+    public static void printCalculator() {
 
         System.out.println("type in your first number");
         Scanner number1Scanner = new Scanner(System.in);
