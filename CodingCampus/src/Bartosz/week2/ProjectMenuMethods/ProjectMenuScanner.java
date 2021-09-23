@@ -1,4 +1,4 @@
-package Bartosz.week2.ShortMethods;
+package Bartosz.week2.ProjectMenuMethods;
 
 public class ProjectMenuScanner {
     public static void menuHeader() {
