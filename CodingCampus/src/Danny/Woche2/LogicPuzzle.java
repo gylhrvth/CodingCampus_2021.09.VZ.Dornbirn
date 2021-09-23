@@ -12,24 +12,37 @@ public class LogicPuzzle {
         //crazySumAndProduct
 
         int upperLimit = 10;
-        result(addition(upperLimit), multiplikation(upperLimit));
+        int upperLimithalf = upperLimit / 2;
+        int upperLimithalf1 = upperLimit - upperLimithalf + 1;
+
+        result(additionRec(upperLimithalf), multiplikationRec(upperLimithalf1, upperLimit));
+//        result(addition(upperLimithalf), multiplikation(upperLimithalf1, upperLimit));
     }
 
-    public static int addition(int upperLimit) {
-        int x = 0;
-        for (int i = 1; i <= upperLimit / 2; i++) {
-            x += i;
-        }
-        return x;
+//    public static int addition(int upperLimit) {
+//        int x = 0;
+//        for (int i = 1; i <= upperLimit; i++) {
+//            x += i;
+//        }
+//        return x;
+//    }
+
+    public static int additionRec(int upperLimit) {
+        return upperLimit == 0 ? 0 : upperLimit + additionRec(upperLimit - 1);
     }
 
-    public static long multiplikation(int upperLimit) {
-        long y = 1;
-        for (int s = (upperLimit / 2) + 1; s <= upperLimit; s++) {
-            y *= s;
-        }
-        return y;
+//    public static long multiplikation(int lowerLimit, int upperLimit) {
+//        long y = 1;
+//        for (int s = lowerLimit; s <= upperLimit; s++) {
+//            y *= s;
+//        }
+//        return y;
+//    }
+
+    public static long multiplikationRec(int lowerLimit, int upperLimit) {
+        return lowerLimit == upperLimit ? upperLimit : lowerLimit * multiplikationRec((lowerLimit) + 1, upperLimit);
     }
+
 
     public static void result(int x, long y) {
         long result = (x + y);
