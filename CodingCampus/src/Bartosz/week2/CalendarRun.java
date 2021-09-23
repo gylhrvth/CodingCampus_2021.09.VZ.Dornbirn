@@ -4,7 +4,7 @@ import Bartosz.week2.calender.weekDays;
 import Bartosz.week2.calender.monthAndDate;
 
 public class CalendarRun {
-    public static void main(String[] args) {
+    public static void printCalendar() {
         weekDays.printWeekdays();
         System.out.println();
 
