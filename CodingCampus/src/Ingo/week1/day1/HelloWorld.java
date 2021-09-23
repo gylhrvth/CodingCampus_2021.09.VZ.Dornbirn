@@ -1,4 +1,4 @@
-package Ingo;
+package Ingo.week1.day1;
 
 public class HelloWorld {
     public static void main(String[] args) {
@@ -7,12 +7,5 @@ public class HelloWorld {
         System.out.println("Gut gemacht: ALLE");
         System.out.println("Neues Commit gecheckt");
         System.out.println("Der neueste Commit");
-
-
-
-
-
     }
-
-
 }
