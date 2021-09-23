@@ -1,4 +1,4 @@
-package Oemer;
+package Oemer.Week1;
 
 public class Tag4Whg {
     public static void main(String[] args) {

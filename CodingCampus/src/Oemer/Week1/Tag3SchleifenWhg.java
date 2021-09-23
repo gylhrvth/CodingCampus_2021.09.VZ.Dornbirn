@@ -1,4 +1,4 @@
-package Oemer;
+package Oemer.Week1;
 
 public class Tag3SchleifenWhg {
     public static void main(String[] args) {
@@ -7,7 +7,7 @@ public class Tag3SchleifenWhg {
             System.out.println(i);
 
         }
-        for (int i = -2; i <= 90; i= i+2) {
+        for (int i = -2; i <= 90; i = i + 2) {
             System.out.println(i);
 
         }

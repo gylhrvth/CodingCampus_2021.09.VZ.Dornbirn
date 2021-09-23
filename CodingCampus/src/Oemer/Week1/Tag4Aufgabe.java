@@ -1,4 +1,4 @@
-package Oemer;
+package Oemer.Week1;
 
 public class Tag4Aufgabe {
     public static void main(String[] args) {
@@ -24,7 +24,7 @@ public class Tag4Aufgabe {
             stars += 2;
 
         }
-        
+
         //ChristBaumKugel
 
         int width = stars - 2;
@@ -44,8 +44,7 @@ public class Tag4Aufgabe {
         int trunkWight = width / 3;
         int trunkHeight = height / 4;
 
-        int center = height;
-        int trunkLeftSpaces = center - (trunkWight / 2);
+        int trunkLeftSpaces = height - (trunkWight / 2);
 
         for (int i = 0; i < trunkHeight; i++) {
             for (int u = 0; u < trunkLeftSpaces; u++) {
