@@ -10,6 +10,6 @@ public class FibonacciRun {
         Scanner number1Scanner = new Scanner(System.in);
         int repeat = number1Scanner.nextInt();
 
-        FibonacciCalc.printFibonacci(repeat);
+
     }
 }
