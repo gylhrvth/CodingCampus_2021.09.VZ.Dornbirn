@@ -2,7 +2,8 @@ package Stefan.SecondWeek.Scanner;
 
 public class Quader {
     public static void main(String[] args) {
-        printStar(10);
+
+//        printStar(10);
     }
 
     //Methoden

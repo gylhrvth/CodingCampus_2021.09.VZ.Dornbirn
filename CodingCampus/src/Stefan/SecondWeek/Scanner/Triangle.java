@@ -3,7 +3,7 @@ package Stefan.SecondWeek.Scanner;
 public class Triangle {
     public static void main(String[] args) {
 
-        triangle(10);
+        Triangle.triangle(10);
     }
 
     //Methoden
