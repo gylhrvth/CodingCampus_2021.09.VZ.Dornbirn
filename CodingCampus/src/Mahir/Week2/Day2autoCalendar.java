@@ -5,7 +5,7 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 
-public class Day2 {
+public class Day2autoCalendar {
 
 
     public static void main(String[] args) {

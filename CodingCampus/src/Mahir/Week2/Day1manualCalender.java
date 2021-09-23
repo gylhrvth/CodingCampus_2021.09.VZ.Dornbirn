@@ -1,9 +1,7 @@
 package Mahir.Week2;
 
-import java.util.GregorianCalendar;
 
-
-public class Day1 {
+public class Day1manualCalender {
 
 
     public static void main(String[] args) {
