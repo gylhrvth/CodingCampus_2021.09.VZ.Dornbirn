@@ -6,6 +6,10 @@ import java.util.GregorianCalendar;
 public class CalendarForMenu {
     public static void main(String[] args) {
 
+       printCalendar();
+    }
+
+    public static void printCalendar(){
         //Here you can write a Date in
         GregorianCalendar today = new GregorianCalendar();
         GregorianCalendar firstDayOfMonth = new GregorianCalendar(
