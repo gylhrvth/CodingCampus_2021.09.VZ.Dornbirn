@@ -10,8 +10,8 @@ public class Calender {
 
 
     public static void main(String[] args) throws ParseException {
-        Calendar now = new GregorianCalendar();
-        GregorianCalendar midday = new GregorianCalendar(
+       /*// Calendar now = new GregorianCalendar();
+     //   GregorianCalendar midday = new GregorianCalendar(
                 now.get(Calendar.YEAR),
                 now.get(Calendar.MONTH),
                 now.get(Calendar.DAY_OF_MONTH),
@@ -21,12 +21,12 @@ public class Calender {
         GregorianCalendar tomorrow = (GregorianCalendar) midday.clone();
         tomorrow.add(Calendar.DAY_OF_MONTH, 1);
 
-        System.out.println(now.getTime());
+        System.out.println(now.getTime());*/
 
 
         drawCalender();
 
-        findeDifferenz(tomorrow.getTime());
+      //  findeDifferenz(tomorrow.getTime());
 
 
     }
@@ -51,12 +51,14 @@ public class Calender {
     }
 
     public static void checkLineEnd(int i) {
+
         if (i % 7 == 0) {
             System.out.println("|");
         }
     }
 
     public static void printNumber(int i, Calendar calendar) {
+        int count =0;
         if (i > 0) {
             if (i < 10) {
                 System.out.print("| " + i + "  ");
@@ -86,9 +88,9 @@ public class Calender {
 
 
     public static int getOffset(Calendar calendar) {
-        int offset = 2;
+        int offset = 0;
 
-        offset = (calendar.get(Calendar.DAY_OF_MONTH) + calendar.get(Calendar.DAY_OF_WEEK)) % 7 - 1;
+        offset = ((calendar.get(Calendar.DAY_OF_MONTH)+1 + calendar.get(Calendar.DAY_OF_WEEK))+1) % 7;
 
 
         return offset;
