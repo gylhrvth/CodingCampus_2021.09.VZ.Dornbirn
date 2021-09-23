@@ -8,58 +8,69 @@ public class Day4Menu {
     public static void main(String[] args) {
 
         while (true) {
-            System.out.println("What would you like to print?" );
+
+            System.out.println("\033[0;35m" + "What would you like to print?" + "\033[0m");
             System.out.println();
-            System.out.println("(1) Print square");
-            System.out.println("(2) Print christmastree");
-            System.out.println("(3) Print triangle");
+            System.out.println("(1)" + "\033[0;32m" + "Print square"+"\033[0m" );
+            System.out.println("(2)" + "\033[0;32m" + "Print christmastree"+"\033[0m" );
+            System.out.println("(3)" + "\033[0;32m" + "Print triangle"+"\033[0m" );
+            System.out.println("(0)" + "\033[0;31m" + "exit" + "\033[0m");
 
 
             Scanner scanner = new Scanner(System.in);
             int input = scanner.nextInt();
 
+            if (input == 0){
+                System.out.println("");
+                break;
+            }
+
 
             if (input == 1) {
 
-                System.out.println("wide?");
+                System.out.println("\u001B[36m" + "wide?");
                 int wide = scanner.nextInt();
 
 
                 System.out.println("height?");
                 int height = scanner.nextInt();
 
-                System.out.println("charackter?");
+                System.out.println("charackter?" + "\033[0m");
                 String charackter = scanner.next();
 
                 Day5Methods.square(wide, height, charackter);
 
                 System.out.println();
-                break;
+
             } else if (input == 2) {
 
-                System.out.println("height?");
+                System.out.println("\u001B[36m" + "height?" + "\033[0m");
                 int height = scanner.nextInt();
 
                 Day5Methods.printChristmasTree(height);
 
                 System.out.println("");
-                break;
+
             } else if (input == 3) {
 
-                System.out.println("height?");
+                System.out.println("\u001B[36m" + "height?" + "\033[0m");
                 int height = scanner.nextInt();
 
                 Day5Methods.printtriangle(height);
 
                 System.out.println();
-                break;
+
             } else {
-                System.out.println("Invalid Input");
-                System.out.println("Please retry");
+                System.out.println();
+                System.out.println("\033[0;31m" + "Invalid Input");
+                System.out.println("Please retry" + "\033[0m");
                 System.out.println();
             }
 
+
+
         }
+
 
     }
 }
