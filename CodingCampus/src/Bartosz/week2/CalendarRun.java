@@ -4,10 +4,8 @@ import Bartosz.week2.calender.weekDays;
 import Bartosz.week2.calender.monthAndDate;
 
 public class CalendarRun {
-    public static void printCalendar() {
+    public static void printCalendar(int maxDays, int offset) {
         weekDays.printWeekdays();
-        System.out.println();
-
-        monthAndDate.printDate(31, 4);
+        monthAndDate.printDate(maxDays, offset);
     }
 }
