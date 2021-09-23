@@ -4,7 +4,7 @@ import Bartosz.week2.calculatorMethods.Calculate;
 
 import java.util.Scanner;
 
-public class Calulator {
+public class CalulatorRun {
     public static void printCalculator(double number1, String operator, double number2) {
 
 /*        System.out.println("type in your first number");

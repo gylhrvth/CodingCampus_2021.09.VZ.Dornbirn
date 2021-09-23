@@ -40,7 +40,7 @@ public class ProjectMenuRun {
                     double number1 = ProjectMenuScanners.number1Scanner();
                     String operator = ProjectMenuScanners.operatorScanner();
                     double number2 = ProjectMenuScanners.number2Scanner();
-                    Calulator.printCalculator(number1, operator, number2);
+                    CalulatorRun.printCalculator(number1, operator, number2);
                 }
                 case 5 -> {
                     int maxDays = ProjectMenuScanners.maxDaysScanner();
