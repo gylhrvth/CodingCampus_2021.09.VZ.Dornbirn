@@ -1,8 +1,9 @@
-package Eray.week1;
+package Eray.week2.MenuMethods;
 
 public class NewChristmasForMenu {
     public static void main(String[] args) {
 
+        christmasTree(10);
 
     }
 
