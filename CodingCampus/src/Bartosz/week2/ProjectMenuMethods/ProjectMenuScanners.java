@@ -6,6 +6,12 @@ public class ProjectMenuScanners {
     public static int inputScanner() {
         System.out.println("type in the number: ");
         Scanner inputScanner = new Scanner(System.in);
+
+        while(!inputScanner.hasNextInt()){
+            System.out.println("type in one of the numbers!");
+            inputScanner.nextLine();
+        }
+
         int input = inputScanner.nextInt();
         return input;
     }

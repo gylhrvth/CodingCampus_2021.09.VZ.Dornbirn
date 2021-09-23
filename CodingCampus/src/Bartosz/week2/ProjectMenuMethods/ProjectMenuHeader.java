@@ -1,6 +1,6 @@
 package Bartosz.week2.ProjectMenuMethods;
 
-public class ProjectMenuHeaderScanner {
+public class ProjectMenuHeader {
     public static void menuHeader() {
         System.out.println("Welcome to the Menu - what do you want to print?");
         System.out.println("------------------------------------------------");
