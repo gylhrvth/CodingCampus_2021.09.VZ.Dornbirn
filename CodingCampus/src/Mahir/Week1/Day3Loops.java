@@ -69,8 +69,6 @@ public class Day3Loops {
         int widht = stars;
 
     }
-
-
 }
 
 
