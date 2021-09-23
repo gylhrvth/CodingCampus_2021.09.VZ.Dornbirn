@@ -5,11 +5,11 @@ import Bartosz.week2.calculatorMethods.Calculate;
 import java.util.Scanner;
 
 public class Calulator {
-    public static void printCalculator() {
+    public static void printCalculator(double number1, String operator, double number2) {
 
-        System.out.println("type in your first number");
+/*        System.out.println("type in your first number");
         Scanner number1Scanner = new Scanner(System.in);
-        double zahl1 = number1Scanner.nextDouble();
+        double number1 = number1Scanner.nextDouble();
 
         System.out.println("type in the operation");
         Scanner operatorScanner = new Scanner(System.in);
@@ -17,21 +17,21 @@ public class Calulator {
 
         System.out.println("type in the second number");
         Scanner number2Scanner = new Scanner(System.in);
-        double zahl2 = number2Scanner.nextDouble();
+        double number2 = number2Scanner.nextDouble();
+        */
 
-        System.out.println("Is " + zahl1 + " " + operator + " " + zahl2 + " correct?");
+        System.out.println("Is " + number1 + " " + operator + " " + number2 + " correct?");
         System.out.print("yes/no");
         System.out.println();
         Scanner correctScanner = new Scanner(System.in);
         String correct = correctScanner.nextLine();
 
         if (correct.equals("yes")) {
-
-            System.out.println("the result is: " + Calculate.calculate(zahl1, operator, zahl2));
+            double result = Calculate.calculate(number1, operator, number2);
+            System.out.println("the result is: " + result);
         } else {
             System.out.println("Restart the programm.");
         }
-
     }
 }
 

@@ -6,6 +6,12 @@ public class ProjectMenuScanners {
     public static int inputScanner() {
         System.out.println("type in the number: ");
         Scanner inputScanner = new Scanner(System.in);
+
+        while(!inputScanner.hasNextInt()){
+            System.out.println("type in one of the numbers!");
+            inputScanner.nextLine();
+        }
+
         int input = inputScanner.nextInt();
         return input;
     }
@@ -24,10 +30,10 @@ public class ProjectMenuScanners {
         return width;
     }
 
-    public static int number1Scanner() {
+    public static double number1Scanner() {
         System.out.println("type in the first number: ");
         Scanner number1Scanner = new Scanner(System.in);
-        int number1 = number1Scanner.nextInt();
+        double number1 = number1Scanner.nextDouble();
         return number1;
     }
 
@@ -38,11 +44,24 @@ public class ProjectMenuScanners {
         return operator;
     }
 
-    public static int number2Scanner() {
+    public static double number2Scanner() {
         System.out.println("type in the second number: ");
         Scanner number2Scanner = new Scanner(System.in);
-        int number2 = number2Scanner.nextInt();
+        double number2 = number2Scanner.nextDouble();
         return number2;
     }
 
+    public static int maxDaysScanner() {
+        System.out.println("type in the Max Days of month: ");
+        Scanner maxDaysScanner = new Scanner(System.in);
+        int maxDays = maxDaysScanner.nextInt();
+        return maxDays;
+    }
+
+    public static int offsetScanner() {
+        System.out.println("type in the Weekday at monthstart: ");
+        Scanner offsetScanner = new Scanner(System.in);
+        int offset = offsetScanner.nextInt();
+        return offset;
+    }
 }

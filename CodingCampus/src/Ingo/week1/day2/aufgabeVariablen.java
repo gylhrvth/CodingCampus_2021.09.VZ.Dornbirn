@@ -1,4 +1,4 @@
-package Ingo;
+package Ingo.week1.day2;
 
 
 public class aufgabeVariablen {
