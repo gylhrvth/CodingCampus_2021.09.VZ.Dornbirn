@@ -1,7 +1,7 @@
 package Mahir.Week1;
 
 public class Day5Methods {
-    public static void main(String[] args) {
+    public static void main() {
         calc(7);
         printStar(10);
         printtriangle(20);
