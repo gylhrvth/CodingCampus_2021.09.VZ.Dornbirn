@@ -55,15 +55,6 @@ public class ProjectMenuRun {
             }   // End Switch
 
 //            if(!wiederholen) {
-//
-//
-////                long now = System.currentTimeMillis();
-////                while(System.currentTimeMillis() - now < 5000);
-////                try {
-////                    Thread.sleep(5000);
-////                } catch (InterruptedException e) {
-////                    //noop
-////                }
 //                break;
 //            }
 

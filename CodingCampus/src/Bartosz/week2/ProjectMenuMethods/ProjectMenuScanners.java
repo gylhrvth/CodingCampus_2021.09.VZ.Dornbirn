@@ -30,6 +30,13 @@ public class ProjectMenuScanners {
         return width;
     }
 
+    public static int readInt(String message, String errorMessage) {
+        System.out.println(message);
+        Scanner widthScanner = new Scanner(System.in);
+        int width = widthScanner.nextInt();
+        return width;
+    }
+
     public static double number1Scanner() {
         System.out.println("type in the first number: ");
         Scanner number1Scanner = new Scanner(System.in);
