@@ -13,7 +13,7 @@ public class ProjectMenuRun {
 
         for (boolean wiederholen = true; wiederholen; ) {
 
-            System.out.print("\033[H\033[2J");
+            System.out.print("\033[H \033[2J");
             System.out.flush();
 
             ProjectMenuHeader.menuHeader();
