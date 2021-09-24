@@ -3,8 +3,10 @@ package Oemer.Week2;
 public class Tag6 {
     public static void main(String[] args) {
 
-        weinachtsBaum(20);
+
+        weinachtsBaum(20)  ;
     }
+
 
     public static void printChristmastree(int height) {
         baumDreieck(height);
@@ -48,7 +50,7 @@ public class Tag6 {
         int sterne = hohe * 2 - 1;
         int stammBreite = sterne / 4;
         int stammHohe = stammBreite / 3;
-        int stammStart = sterne/2-stammBreite/2;
+        int stammStart = sterne / 2 - stammBreite / 2;
 
         for (int a = 0; a < stammHohe; a++) {
             for (int b = 0; b < stammStart; b++) {

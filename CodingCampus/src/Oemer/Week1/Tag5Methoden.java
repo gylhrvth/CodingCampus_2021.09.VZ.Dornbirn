@@ -21,10 +21,13 @@ public class Tag5Methoden {
         int upperHeight = height / 2;
         int lowerHeight = height - upperHeight;
         for (int a = 0; a < upperHeight; a++) {
+            System.out.print("");
         }
         for (int a = lowerHeight; a > 0; a--) {
+            System.out.print("");
 
         }
+        System.out.println();
     }
 
     public static void repeat(int times) {
