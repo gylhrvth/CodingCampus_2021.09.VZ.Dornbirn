@@ -1,10 +1,7 @@
-package Stefan;
+package Stefan.SecondWeek.Scanner;
 
 
 import Stefan.SecondWeek.Kalender1;
-import Stefan.SecondWeek.Scanner.Quader;
-import Stefan.SecondWeek.Scanner.Triangle;
-import Stefan.SecondWeek.Scanner.christmasTree;
 
 import java.util.Scanner;
 
@@ -33,8 +30,6 @@ public class ScannerInputTest {
                 input = scanner.nextInt();
                 scanner.nextLine();
             }
-
-
 
 
             switch (input) {
@@ -90,25 +85,6 @@ public class ScannerInputTest {
                 run = false;
             }
 
-
-//            else {
-//                while(true) {
-//                    System.out.println("Geben sie ein valide Zahl ein!");
-//                    Scanner startScanner = new Scanner(System.in);
-//
-//                    while (!startScanner.hasNextInt()) {
-//                        startScanner.nextInt();
-//
-//                    }
-//                    int start = startScanner.nextInt();
-//
-//                    if(start > 5  || start < 0) {
-//                        break;
-//                    }
-//
-//                }
-//
-//            }
         }
 
     }
