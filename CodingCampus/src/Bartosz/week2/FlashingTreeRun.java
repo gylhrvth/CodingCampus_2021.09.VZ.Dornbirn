@@ -12,7 +12,7 @@ public class FlashingTreeRun {
         int height = treeHeight.nextInt();
 
         ////                long now = System.currentTimeMillis();
-////                while(System.currentTimeMillis() - now < 5000);
+////                while(System.currentTimeMillis() - now < 5000); // Alle 5 sekunden machen
 ////                try {
 ////                    Thread.sleep(5000);
 ////                } catch (InterruptedException e) {

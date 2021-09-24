@@ -11,13 +11,13 @@ public class Menu {
 
         int input = 1;
 
-
+/*
         while (input != 0) {
             input = MenuWithUserInput();
             switch (input){
                 case 1: // if(input ==1){
                 System.out.println("Please enter height: ");
-                Methods.drawChristmasTree(sc.nextInt());
+                Methods.drawChristmasTree(sc.nextInt());                        your classes don't work, please check your code before you push it - Bartosz
                 break;
                 case 2:
                 System.out.println("Please enter radius: ");
@@ -46,7 +46,7 @@ public class Menu {
                 System.out.println("Invalid enter!");
             }
         }
-
+*/
 
     }
 

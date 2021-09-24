@@ -15,7 +15,7 @@ public class ProjectMenuRun {
 
             System.out.print("\033[H \033[2J");
             System.out.flush();
-
+            System.out.println();
             ProjectMenuHeader.menuHeader();
 
             int input = ProjectMenuScanners.inputScanner();
@@ -54,9 +54,6 @@ public class ProjectMenuRun {
                 default -> System.out.println("What type of mushrooms did you eat? I can't see this listed.");
             }   // End Switch
 
-//            if(!wiederholen) {
-//                break;
-//            }
 
             System.out.println("Do you want to see the other projects? type 'yes' and confirm whit enter.");
             Scanner repeatMenuScanner = new Scanner(System.in);
