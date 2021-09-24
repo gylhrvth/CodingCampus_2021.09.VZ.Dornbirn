@@ -11,7 +11,12 @@ public class FlashingTreeRun {
         Scanner treeHeight = new Scanner(System.in);
         int height = treeHeight.nextInt();
 
-        ////                long now = System.currentTimeMillis();
+        System.out.println("Welche Farbe sollen die Kugeln haben? (blue / cyan / green / purple / red / yellow / white )");
+        Scanner ballColorScanner = new Scanner(System.in);
+        String color = ballColorScanner.next();
+
+
+////                long now = System.currentTimeMillis();
 ////                while(System.currentTimeMillis() - now < 5000); // Alle 5 sekunden machen
 ////                try {
 ////                    Thread.sleep(5000);
@@ -19,7 +24,23 @@ public class FlashingTreeRun {
 ////                    //noop
 ////                }
 
-        FlashingTreeAssemble.assemble(height);
+
+
+        for (int repeat = 0; repeat < 2; repeat++) {
+
+            if (repeat % 2 == 0) {
+                FlashingTreeAssemble.assemble(height, color);
+            }
+            else {
+                FlashingTreeAssemble.assemble(height, color);
+            }
+
+            try {
+                Thread.sleep(5000);
+            } catch (InterruptedException e) {
+                //noop
+            }
+        }
     }
 
 }
