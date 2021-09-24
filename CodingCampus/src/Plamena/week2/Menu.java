@@ -11,6 +11,7 @@ public class Menu {
 
         int input = 1;
 
+
         while (input != 0) {
             input = MenuWithUserInput();
             switch (input){
@@ -45,6 +46,7 @@ public class Menu {
                 System.out.println("Invalid enter!");
             }
         }
+
 
     }
 
