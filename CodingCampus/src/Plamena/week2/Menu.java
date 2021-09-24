@@ -14,9 +14,9 @@ public class Menu {
         while (input != 0) {
             input = MenuWithUserInput();
             switch (input){
-                case 1: // if(input ==1){
+                case 1:
                 System.out.println("Please enter height: ");
-                Methods.drawChristmasTree(sc.nextInt());                    //    your classes don't work, please check your code before you push it - Bartosz
+                Methods.drawChristmasTree(sc.nextInt());
                 break;
                 case 2:
                 System.out.println("Please enter radius: ");
