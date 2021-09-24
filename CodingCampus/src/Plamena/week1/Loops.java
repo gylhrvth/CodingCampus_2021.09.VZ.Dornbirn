@@ -123,7 +123,7 @@ public class Loops {
 
 
 
-        //empty Circle
+        //hollow  Circle
 
         double r1 = 5;
 

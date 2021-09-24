@@ -1,6 +1,6 @@
 package Plamena.week2;
 
-public class Calender {
+public class Calendar {
     public static void main(String[] args) {
 
 
@@ -25,7 +25,7 @@ public class Calender {
 
 
     public static void printWeekdays() {
-        System.out.println("| Mo| Di| Mi| Do| Fr| Sa| So|");
+        System.out.println("| Mo | Di | Mi | Do | Fr | Sa | So |");
     }
 
 

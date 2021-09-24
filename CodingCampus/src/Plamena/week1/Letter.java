@@ -1,4 +1,4 @@
-package Plamena;
+package Plamena.week1;
 
 public class Letter {
 

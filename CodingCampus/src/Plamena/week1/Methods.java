@@ -4,25 +4,25 @@ import java.util.Scanner;
 
 public class Methods {
     public static void main(String[] args) {
-       //ChristmasTree(9);
+        //ChristmasTree(9);
 
     }
 
-    public static void Arrow (int height){
+    public static void drawArrow(int height) {
 
 
         int upperHalf = height / 2;
         int lowerHalf = height - upperHalf;
 
-        for (int i = 0; i <= upperHalf; i++) {
+        for (int i = 0; i < upperHalf; i++) {
             for (int j = 0; j <= i; j++) {
                 System.out.print("*");
             }
             System.out.println();
         }
 
-        for (int k = 0; k <= lowerHalf; k++){
-            for (int j = lowerHalf-k; j >= 0; j--) {
+        for (int k = 0; k <= lowerHalf; k++) {
+            for (int j = lowerHalf - k; j > 0; j--) {
                 System.out.print("*");
 
             }
@@ -32,7 +32,7 @@ public class Methods {
     }
 
 
-    public static void Calculator (){
+    public static void Calculator() {
 
         Scanner scanner1 = new Scanner(System.in);
 
@@ -47,7 +47,7 @@ public class Methods {
     }
 
 
-    public static void Square (int width){
+    public static void drawSquare(int width) {
 
         for (int m = 0; m < width; m++) {
             for (int n = 0; n < width; n++) {
@@ -58,11 +58,11 @@ public class Methods {
     }
 
 
-    public static void emptySquare (int width){
+    public static void drawHollowSquare(int width) {
 
-        for (int i = 0; i<=width-1;i++){
-            for ( int j = 0; j <= width-1; j++){
-                if ( i == 0 || i == width-1 || j ==0 || j == width-1){
+        for (int i = 0; i <= width - 1; i++) {
+            for (int j = 0; j <= width - 1; j++) {
+                if (i == 0 || i == width - 1 || j == 0 || j == width - 1) {
                     System.out.print(" * ");
                 } else {
                     System.out.print("   ");
@@ -73,13 +73,13 @@ public class Methods {
     }
 
 
-    public static void Circle ( double radius){
+    public static void drawCircle(double radius) {
 
         for (double i = -radius; i <= radius; i++) {
             for (double j = -radius; j <= radius; j++) {
-                if (Math.sqrt((Math.pow(i, 2.0))+ Math.pow(j, 2.0)) <= (radius+0.5) ) {
+                if (Math.sqrt((Math.pow(i, 2.0)) + Math.pow(j, 2.0)) <= (radius + 0.5)) {
                     System.out.print(" * ");
-                } else{
+                } else {
                     System.out.print("   ");
                 }
             }
@@ -87,13 +87,13 @@ public class Methods {
         }
     }
 
-    public static void emptyCircle ( double radius){
+    public static void drawHollowCircle(double radius) {
 
         for (double i = -radius; i <= radius; i++) {
             for (double j = -radius; j <= radius; j++) {
-                if (Math.sqrt((Math.pow(i, 2.0))+ Math.pow(j, 2.0)) <= (radius+0.5) && Math.sqrt((Math.pow(i, 2.0))+ Math.pow(j, 2.0)) >= (radius-0.5)) {
+                if (Math.sqrt((Math.pow(i, 2.0)) + Math.pow(j, 2.0)) <= (radius + 0.5) && Math.sqrt((Math.pow(i, 2.0)) + Math.pow(j, 2.0)) >= (radius - 0.5)) {
                     System.out.print(" * ");
-                } else{
+                } else {
                     System.out.print("   ");
                 }
             }
@@ -102,8 +102,7 @@ public class Methods {
     }
 
 
-
-    public static void drawTreeTop (int height) {
+    public static void drawTreeTop(int height) {
 
         //Treetop
         for (int i = 0; i <= height; i++) {
@@ -117,8 +116,7 @@ public class Methods {
         }
     }
 
-    public static void drawChristmasTree(int height){
-
+    public static void drawChristmasTree(int height) {
 
         int width = (height * 2 - 1);
         float heightTrunk = height / 4f;
@@ -128,7 +126,6 @@ public class Methods {
         float widthStand = width / 2.5f;
 
         drawTreeTop(height);
-
 
         //Balls
         for (int j = 0; j <= width; ++j) {
