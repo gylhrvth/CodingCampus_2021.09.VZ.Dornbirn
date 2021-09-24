@@ -28,7 +28,7 @@ public class Loops {
 
 
 
-        //Calculator
+        //CalculatorMethod
 
         Scanner scanner1 = new Scanner(System.in);
 

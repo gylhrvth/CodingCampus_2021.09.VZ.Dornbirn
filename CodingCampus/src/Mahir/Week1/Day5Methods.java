@@ -2,13 +2,13 @@ package Mahir.Week1;
 
 public class Day5Methods {
     public static void main() {
-        calc(7);
+        multTable(7);
         printStar(10);
         printtriangle(20);
         System.out.println();
 
         printChristmasTree(10);
-        square(15, 15, "+");
+        square(15);
     }
 
     public static void printChristmasTree(int height) {
@@ -24,19 +24,19 @@ public class Day5Methods {
         System.out.println();
     }
 
-    public static void calc(int numb) {
+    public static void multTable(int numb) {
         for (int a = 0; a <= 10; a = ++a) {
 
             System.out.println(a * numb);
         }
     }
 
-    public static void square(int wide, int height, String charakter) {
+    public static void square(int height) {
         for (int c = 0; c < height; c++) {
 
-            for (int d = 0; d < wide; d++) {
+            for (int d = 0; d < height; d++) {
                 System.out.print(" ");
-                System.out.print(charakter);
+                System.out.print("*");
             }
             System.out.println();
         }
