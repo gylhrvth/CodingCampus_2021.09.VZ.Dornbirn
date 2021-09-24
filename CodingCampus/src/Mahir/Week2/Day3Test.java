@@ -5,11 +5,11 @@ import Mahir.Week1.Day5Methods;
 public class Day3Test {
     public static void main(String[] args) {
 
-        Day5Methods.square(10, 10, "*");
+        Day5Methods.square(10);
 
         System.out.println();
 
-        Day5Methods.calc(10);
+        Day5Methods.multTable(10);
 
         System.out.println();
 
