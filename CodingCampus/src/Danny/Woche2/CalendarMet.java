@@ -7,8 +7,11 @@ public class CalendarMet {
 
     public static void main(String[] args) {
 
+calendar(2021,11,24);
 
-        GregorianCalendar today = new GregorianCalendar(2021, 7, 10); // für aktuelles Datum leer lassen
+    }
+public static void calendar(int yaer, int month, int dayOfMonth) {
+        GregorianCalendar today = new GregorianCalendar(yaer,month,dayOfMonth); // für aktuelles Datum leer lassen
         GregorianCalendar firstDayOfMonth = new GregorianCalendar(
                 today.get(Calendar.YEAR),
                 today.get(Calendar.MONTH),
