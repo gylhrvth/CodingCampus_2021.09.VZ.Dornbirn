@@ -18,7 +18,7 @@ public class Tag8Menu {
         Scanner scanner = new Scanner(System.in);
         System.out.println();
 
-scanner.nextInt()
+scanner.nextInt();
 
 
     }
