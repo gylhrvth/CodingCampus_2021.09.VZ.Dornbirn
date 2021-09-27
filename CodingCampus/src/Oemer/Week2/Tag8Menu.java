@@ -100,7 +100,7 @@ public class Tag8Menu {
 
             } else {
                 System.out.println();
-                System.out.println("Invalid Inpu0t");
+                System.out.println("Invalid Input");
                 System.out.println("Please retry");
                 System.out.println();
             }
