@@ -10,7 +10,7 @@ public class Tag8Menu {
     public static void main(String[] args) {
 
         System.out.println("What would you like to print?");
-         while (true) {
+        while (true) {
             System.out.println();
             System.out.println("1 " + "weinachtsBaum");
             sleepFor(200);
@@ -100,7 +100,7 @@ public class Tag8Menu {
 
             } else {
                 System.out.println();
-                System.out.println("Invalid Input");
+                System.out.println("Invalid Inpu0t");
                 System.out.println("Please retry");
                 System.out.println();
             }
