@@ -7,6 +7,7 @@ import java.util.Scanner;
 public class Day4Menu {
     public static void main(String[] args) throws InterruptedException {
 
+
         System.out.println("\033[0;35m" + "What would you like to print?" + "\033[0m");
         while (true) {
 
@@ -15,22 +16,18 @@ public class Day4Menu {
 
             System.out.println();
 
-            invalidInput(scanner);
-            int input = scanner.nextInt();
-            scanner.nextLine();
+            int input = invalidInput(scanner);
+              scanner.nextLine();
 
             if (input == 0) {
                 System.out.println("\033[0;32m" + "Goodbye" + "\033[0m");
                 break;
-            }
-
-            if (input == 1) {
+            } else if (input == 1) {
 
                 System.out.println("\u001B[36m" + "height?" + "\033[0m");
-                invalidInput(scanner);
+                int height = invalidInput(scanner);
 
-                int height = scanner.nextInt();
-                scanner.nextLine();
+
 
                 Day5Methods.square(height);
                 Thread.sleep(1000);
@@ -41,9 +38,7 @@ public class Day4Menu {
 
                 System.out.println("\u001B[36m" + "height?" + "\033[0m");
 
-                invalidInput(scanner);
-                int height = scanner.nextInt();
-                scanner.nextLine();
+               int height =  invalidInput(scanner);
 
                 Day5Methods.printChristmasTree(height);
                 Thread.sleep(1000);
@@ -54,9 +49,8 @@ public class Day4Menu {
 
                 System.out.println("\u001B[36m" + "height?" + "\033[0m");
 
-                invalidInput(scanner);
-                int height = scanner.nextInt();
-                scanner.nextLine();
+                int height = invalidInput(scanner);
+
 
                 Day5Methods.printtriangle(height);
                 Thread.sleep(1000);
@@ -67,9 +61,7 @@ public class Day4Menu {
 
                 System.out.println("\u001B[36m" + "number?" + "\033[0m");
 
-                invalidInput(scanner);
-                int num = scanner.nextInt();
-                scanner.nextLine();
+                int num = invalidInput(scanner);
 
                 Day5Methods.multTable(num);
                 Thread.sleep(1000);
@@ -81,15 +73,15 @@ public class Day4Menu {
                 System.out.println("\033[0;31m" + "Invalid Input");
                 System.out.println("Please retry" + "\033[0m");
                 System.out.println();
-               Thread.sleep(1000);
-                }
+                Thread.sleep(1000);
             }
-            System.out.println("\033[0;35m" + "What would you like to print next?" + "\033[0m");
-
-
         }
+        System.out.println("\033[0;35m" + "What would you like to print next?" + "\033[0m");
 
-        //Methods
+
+    }
+
+    //Methods
 
 
     public static int getIntValue(Scanner sc) {
@@ -110,12 +102,13 @@ public class Day4Menu {
         return value;
     }
 
-    public static void invalidInput(Scanner scanner) throws InterruptedException {
+    public static int invalidInput(Scanner scanner) throws InterruptedException {
         while (!scanner.hasNextInt()) {
             System.out.println("\033[0;31m" + "Invalid Input Please retry" + "\033[0m");
             Thread.sleep(1000);
             scanner.nextLine();
         }
+        return scanner.nextInt();
     }
 
     public static void selectMenu() {
@@ -126,7 +119,6 @@ public class Day4Menu {
         System.out.println("(4)" + "\033[0;32m" + "simple multiplication" + "\033[0m");
         System.out.println("(0)" + "\033[0;31m" + "exit" + "\033[0m");
     }
-
 
 
 }
