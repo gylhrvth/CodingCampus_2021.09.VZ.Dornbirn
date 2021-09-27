@@ -5,13 +5,13 @@ public class Strings_Aufgabe2_Met {
 
         stringAusgabeB("Ich heiße Lukas", 5, 2);
 
-        //stringAusgabe("Ich heiße Lukas", 4, 5);
+        //stringAusgabe("Ich heiße Lukas", 5, 6);
 
     }
 
     public static void stringAusgabe(String meinSubstring, int start, int end) {
         for (int i = start; i <= end; i++) {
-            System.out.print(meinSubstring.charAt(i));
+            System.out.print(meinSubstring.charAt(i - 1));
         }
     }
 
