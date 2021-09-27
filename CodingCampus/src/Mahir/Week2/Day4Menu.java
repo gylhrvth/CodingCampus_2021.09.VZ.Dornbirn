@@ -82,16 +82,14 @@ public class Day4Menu {
                 System.out.println("Please retry" + "\033[0m");
                 System.out.println();
                Thread.sleep(1000);
-
-
                 }
             }
-
-
             System.out.println("\033[0;35m" + "What would you like to print next?" + "\033[0m");
 
 
         }
+
+        //Methods
 
 
     public static int getIntValue(Scanner sc) {
