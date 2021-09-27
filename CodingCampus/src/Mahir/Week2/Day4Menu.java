@@ -32,7 +32,6 @@ public class Day4Menu {
                 scanner.nextLine();
             }
 
-
             int input = scanner.nextInt();
             scanner.nextLine();
 
