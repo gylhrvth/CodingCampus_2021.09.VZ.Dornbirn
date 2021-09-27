@@ -24,7 +24,7 @@ public class Trial {
         }*/
 
 
-        GregorianCalender.printAnyYearWithWE(2020);
+        Methods.drawTreeWithLights(18);
 
     }
 }
