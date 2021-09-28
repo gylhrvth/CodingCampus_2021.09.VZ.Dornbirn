@@ -32,6 +32,7 @@ package Danny.Woche2;
 import Danny.Woche1.Kreis;
 import Danny.Woche1.Methods;
 import Danny.Woche1.Tannenbaum;
+
 import java.util.Scanner;
 
 public class Menu {
@@ -39,53 +40,66 @@ public class Menu {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        System.out.println("---------------------");
-        System.out.println("What do you want to do?");
-        System.out.println("1 = Calculator");
-        System.out.println("2 = Circle");
-        System.out.println("3 = Christmastree");
-        System.out.println("4 = Calendar");
-        System.out.println("---------------------");
-        System.out.println("Please enter a number...");
+        boolean neverEnd = true;
+        while (neverEnd) {
 
-        int input = scanner.nextInt();
-        if (input == 1) {
-            Scanner simpleCal = new Scanner(System.in);
-            System.out.println("Erste Zahl eingeben");
-            int Zahl1 = scanner.nextInt();
-            System.out.println("+,-,/,* eingeben");
-            String operation = scanner.next();
-            System.out.println("Zweite Zahl eingeben");
-            int Zahl2 = scanner.nextInt();
-            System.out.println();
-            Methods.simpleCal(Zahl1, operation, Zahl2);
-        }
-        if (input == 2) {
-            Scanner simpleCal = new Scanner(System.in);
-            System.out.println("Radius eingeben");
-            int radius = scanner.nextInt();
-            Kreis.circle(radius);
-        }
-        if (input == 3) {
-            Scanner christmastree = new Scanner(System.in);
-            System.out.println("Höhe eingeben");
-            int kronenHoehe = scanner.nextInt();
-            Tannenbaum.christmastree(kronenHoehe);
-        }
-        if (input == 4) {
-            Scanner calendar = new Scanner(System.in);
-            System.out.println("Jahr eingeben");
-            int yaer = scanner.nextInt();
-            System.out.println("Monat eingeben");
-            int month = scanner.nextInt();
-            System.out.println("Tag eingeben");
-            int day = scanner.nextInt();
-            CalendarMet.calendar(yaer,month,day);
-        }
-        else {
-            System.out.println("Keine Aktion");
+            System.out.println("---------------------");
+            System.out.println("What do you want to do?");
+            System.out.println("1 = Calculator");
+            System.out.println("2 = Circle");
+            System.out.println("3 = Christmastree");
+            System.out.println("4 = Calendar");
+            System.out.println("5 = Exit");
+            System.out.println("---------------------");
+            System.out.println("Please enter a number...");
 
-
+            if (scanner.hasNextInt()) {
+                switch (scanner.nextInt()) {
+                    case 1: {
+                        System.out.println("Erste Zahl eingeben");
+                        int Zahl1 = scanner.nextInt();
+                        System.out.println("+,-,/,* eingeben");
+                        String operation = scanner.next();
+                        System.out.println("Zweite Zahl eingeben");
+                        int Zahl2 = scanner.nextInt();
+                        System.out.println();
+                        Methods.simpleCal(Zahl1, operation, Zahl2);
+                        break;
+                    }
+                    case 2: {
+                        System.out.println("Radius eingeben");
+                        int radius = scanner.nextInt();
+                        Kreis.circle(radius);
+                        break;
+                    }
+                    case 3: {
+                        System.out.println("Höhe eingeben");
+                        int kronenHoehe = scanner.nextInt();
+                        Tannenbaum.christmastree(kronenHoehe);
+                        break;
+                    }
+                    case 4: {
+                        System.out.println("Jahr eingeben");
+                        int yaer = scanner.nextInt();
+                        System.out.println("Monat eingeben");
+                        int month = scanner.nextInt();
+                        System.out.println("Tag eingeben");
+                        int day = scanner.nextInt();
+                        CalendarMet.calendar(yaer, month, day);
+                        break;
+                    }
+                    case 5: {
+                        neverEnd = false;
+                        break;
+                    }
+                    default: {
+                        System.out.println("Bitte korrekte Zahl eingeben");
+                    }
+                }
+            } else {
+                System.out.println("Das ist keine Zahl...");
+                System.out.println("Bitte korrekte Zahl eingeben");
+            }
         }
     }
 }

@@ -73,8 +73,8 @@ public class ScannerInputTest {
                         System.out.println("Geben Sie die Zahl 1 ein!!!");
                         restartScanner.nextLine();
                     }
-                    int restart = restartScanner.nextInt();
 
+                    int restart = restartScanner.nextInt();
 
                     if (restart == 1) {
                         break;

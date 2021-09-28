@@ -1,6 +1,6 @@
 package Danny.Woche2;
 
-public class LogicPuzzle {
+public class LogicPuzzleRecursiv {
 
     public static void main(String[] args) {
         //crazySumAndProduct(10) (1 + 2 + 3 + 4 + 5) + (6 * 7 * 8 * 9 * 10) = 30255

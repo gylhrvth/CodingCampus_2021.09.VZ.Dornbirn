@@ -20,15 +20,15 @@ public class Methods {
 
         if ( "+".equals(operation)) {
             System.out.println(Zahl1 + " + " + Zahl2 + " = " + (Zahl1 + Zahl2));
-        }
-        if ("-".equals(operation)) {
+        } else if ("-".equals(operation)) {
             System.out.println(Zahl1 + " - " + Zahl2 + " = " + (Zahl1 - Zahl2));
-        }
-        if ("*".equals(operation)) {
+        } else if ("*".equals(operation)) {
             System.out.println(Zahl1 + " * " + Zahl2 + " = " + (Zahl1 * Zahl2));
-        }
-        if ("/".equals(operation)) {
+        } else if ("/".equals(operation)) {
             System.out.println(Zahl1 + " : " + Zahl2 + " = " + (Zahl1 / Zahl2));
+        }
+        else {
+            System.out.println("das ist kein gültiger Operator");
         }
     }
 

@@ -7,6 +7,8 @@ import java.util.Scanner;
 public class Menu {
     public static void main(String[] args) {
 
+
+        Methods.drawArrow(5);
         Scanner sc = new Scanner(System.in);
 
         int input = 1;
