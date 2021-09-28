@@ -14,6 +14,13 @@ public class FlashingTreeBalls {
         String ANSI_CYAN = "\u001B[36m";
         String ANSI_WHITE = "\u001B[37m";
 
+        String colorOrder[] = {
+                ANSI_RED,
+                ANSI_YELLOW,
+
+
+        };
+
         for (int d = 0; d < width; d++) {
             if (d % 2 == 0) {
                 switch (color) {
@@ -33,5 +40,39 @@ public class FlashingTreeBalls {
 
     }
 
+    public static void main(String[] args) {
+        int myArray[] = { 1, 4, 8, 123, 15};
+        int sum = 0;
+
+        String sArray[] = {
+               "wert1",
+                "wert2",
+                "wert3",
+        };
+
+        int my2dArray[][] = {
+
+                {1, 4, 8, 123, 15},
+                {2, 4, 8, 123, 135},
+                {3, 4, 8, 12, 15},
+                {1, 4, 8, 13423, 15},
+        };
+
+
+        for(int i = 0; i < 4; i++ ) {
+
+            for (int j = 0; j < 5; j++) {
+
+                System.out.print(my2dArray[i][j] + " ");
+                sum += my2dArray[i][j];
+
+            }
+            System.out.println();
+        }
+        System.out.println(sum);
+
+
+
+    }
 
 }

@@ -2,16 +2,17 @@ package Bartosz.week2.ShortMethods;
 
 public class FibonacciCalc {
     public static void main(String[] args) {
-        printAddition(2,2);
+        printFibonacci(0,1);
     }
 
     public static void printFibonacci(int firstNumber, int secondNumber) {
-        if (secondNumber > 1000) {  //Sobald die Zweite Zahl so oft addiert wurde um mehr als 1000 zu sein
+        if (secondNumber > 100) {  //Sobald die Zweite Zahl so oft addiert wurde um mehr als 1000 zu sein
             return;                 // Ende
         }
         int thirdNumber = firstNumber + secondNumber;       //Summe = DritteZahl
         System.out.print(thirdNumber + " ");
-        printFibonacci(secondNumber, thirdNumber);
+        printFibonacci(secondNumber, thirdNumber);      // Code wird der Rheie nach verarbeitet, obererblock -> fuktion -> sout number3
+        System.out.print(thirdNumber + " ");
     }
 
     public static void printAddition(int add1, int add2) {
