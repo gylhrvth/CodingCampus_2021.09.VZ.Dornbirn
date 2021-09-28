@@ -1,7 +1,7 @@
 package Lukas.week1.tag4;
 
 public class Christbaum2 {
-    public static void main(String[] args) {
+    public static void tree(){
         int height = 50;
 
         //Baumkrone
@@ -21,8 +21,8 @@ public class Christbaum2 {
         }
 
         //Christbaumkugeln
-        //int width = height * 2 - 1;
-       /* int width = stars - 2;
+        int width = height * 2 - 1;
+       //int width = stars - 2;
 
         for (int i = 0; i < width; i++) {
             if (i % 2 == 0) {
@@ -51,6 +51,5 @@ public class Christbaum2 {
 
         }
 
-        */
     }
 }
