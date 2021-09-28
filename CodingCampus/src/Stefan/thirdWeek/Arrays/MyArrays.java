@@ -99,6 +99,7 @@ public class MyArrays {
                 System.out.print(+ zahlen[i] + ", ");
             }
         }
+        System.out.println();
     }
 
 
