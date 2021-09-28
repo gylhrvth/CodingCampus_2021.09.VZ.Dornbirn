@@ -335,4 +335,25 @@ public class Methods {
 */
 
     }
+
+    public static void substringGenerator() {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Gib Text ein:");
+
+        String input = sc.nextLine();
+
+        System.out.println("Gib Start ein: ");
+        int start = sc.nextInt()-1;
+
+        System.out.println("Gib Ende ein");
+        int end = sc.nextInt();
+
+        char[] stringToChar = input.toCharArray();
+
+        System.out.println(String.valueOf(stringToChar, start, end));
+
+
+    }
 }
