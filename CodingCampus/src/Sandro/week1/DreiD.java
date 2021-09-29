@@ -1,4 +1,4 @@
-package Sandro;
+package Sandro.week1;
 
 public class DreiD {
         public static void main(String[] args) {

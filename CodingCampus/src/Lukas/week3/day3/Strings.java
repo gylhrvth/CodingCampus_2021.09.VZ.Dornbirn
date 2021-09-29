@@ -1,4 +1,4 @@
-package Lukas.week3;
+package Lukas.week3.day3;
 
 public class Strings {
     public static void main(String[] args) {

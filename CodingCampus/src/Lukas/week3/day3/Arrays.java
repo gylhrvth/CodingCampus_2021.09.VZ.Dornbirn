@@ -1,4 +1,4 @@
-package Lukas.week3;
+package Lukas.week3.day3;
 
 public class Arrays {
     public static void main(String[] args) {
@@ -9,11 +9,16 @@ public class Arrays {
 
         System.out.println(java.util.Arrays.toString(intArray1));
 
+        //Nur möglich wenn Deklaration mit direkter initialisierung erfolgt
         int[] intArray2 = {1, 2, 3};
+        //NICHT MÖGLICH
+        //intArray2 = {1,2,3};
 
         System.out.println(java.util.Arrays.toString(intArray2));
 
         int[] intArray3 = new int[]{1, 2, 3};
+        //MÖGLICH
+        //intArray3 = new int[]{1,2,3};
 
         System.out.println(java.util.Arrays.toString(intArray3));
 
@@ -110,6 +115,12 @@ public class Arrays {
         for (char myChar : myCharArray) {
             System.out.println(myChar);
         }
+
+        //Umwandlung von char array zu String
+        char[] myCharArray2 = new char[]{'H', 'a', 'l', 'l', 'o'};
+
+        String myString2 = new String(myCharArray2);
+        System.out.println(myString2);
     }
 
     //1)
@@ -117,11 +128,24 @@ public class Arrays {
     //Eine Zeile aus der Kommandozeile einlesen
     //Zeile ausgeben
     //Zeile in Character Array verwandeln und umdrehen
-    //Umgedrehte Zeile ausgeben
+    //Variante a) Direkt umgedreht ausgeben
+    //Variante b) Umdrehen mithilfe eines Strings -> String ausgeben
+    //Variante c) Umdrehen mithilfe eines neuen Character Arrays -> Character Array in String umwandeln und ausgeben
+    //Variante d) Umdrehen im bestehenden Array des Inputs -> Character Array in String umwandeln und ausgeben
+
 
     //2)
     //Text aus Kommandozeile einlesen
     //Buchstaben case insensitive Zählen (A zählt für a)
     //und ausgeben wie oft jeder Buchstabe vorkommt
     //TIP aus einem Character kann man eine Zahl gewinnen, bzw. man kann diesen als Zahl annehmen
+
+    //3)
+    //Schlaue Menge
+    //Lies dir folgendes durch:
+    //https://www.brandeins.de/magazine/brand-eins-wirtschaftsmagazin/2005/die-mitte/schlaue-menge
+    //Entwickle ein Program welches zuerst fragt, wieviele Teilnehmer beim Expirement mitmachen
+    //erstelle ein Array in der größe der Teilnehmer, der Typ des Arrays soll Float sein.
+    //Frage jeden Teilnehmer nach seiner Schätzung.
+    //Am Ende berechne den Durchschnitt (arithmetisches Mittel) aller Werte und gib diesen aus.
 }
