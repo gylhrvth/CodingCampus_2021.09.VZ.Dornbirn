@@ -21,14 +21,22 @@ public class Day1Lift {
         int maxweight = 1600;
 
         for (int i = 0; i <weight2.length; i++) {
-            weight2[i] = rnd.nextInt();
+            weight2[i] = rnd.nextInt(150);
             totalKg += weight2[i];
             if (totalKg > maxweight){
-                System.out.println( totalKg- maxweight + " over max weightt");
+                weight2[i] = totalKg;
             }
+        }
+        if (totalKg > maxweight){
+            System.out.println(Arrays.toString(weight2));
+            System.out.println(totalKg - maxweight + " Kg  over max weightt");
+        }else{
+            System.out.println(Arrays.toString(weight2));
+            System.out.println(maxweight - totalKg + " Kg  left weight");
+        }
 
-        }
-        }
+
+    }
 
 
 
