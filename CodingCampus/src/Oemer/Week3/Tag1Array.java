@@ -48,7 +48,7 @@ public class Tag1Array {
         int min = arrays[0];
         int pos = 0;
 
-        for (int a = 0; a < arrays.length; a++){
+        for (int a = 0; a < arrays.length; a++) {
 
 
         }

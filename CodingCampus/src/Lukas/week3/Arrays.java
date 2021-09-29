@@ -9,11 +9,16 @@ public class Arrays {
 
         System.out.println(java.util.Arrays.toString(intArray1));
 
+        //Nur möglich wenn Deklaration mit direkter initialisierung erfolgt
         int[] intArray2 = {1, 2, 3};
+        //NICHT MÖGLICH
+        //intArray2 = {1,2,3};
 
         System.out.println(java.util.Arrays.toString(intArray2));
 
         int[] intArray3 = new int[]{1, 2, 3};
+        //MÖGLICH
+        //intArray3 = new int[]{1,2,3};
 
         System.out.println(java.util.Arrays.toString(intArray3));
 
@@ -110,6 +115,12 @@ public class Arrays {
         for (char myChar : myCharArray) {
             System.out.println(myChar);
         }
+
+        //Umwandlung von char array zu String
+        char[] myCharArray2 = new char[]{'H', 'a', 'l', 'l', 'o'};
+
+        String myString2 = new String(myCharArray2);
+        System.out.println(myString2);
     }
 
     //1)
@@ -124,4 +135,6 @@ public class Arrays {
     //Buchstaben case insensitive Zählen (A zählt für a)
     //und ausgeben wie oft jeder Buchstabe vorkommt
     //TIP aus einem Character kann man eine Zahl gewinnen, bzw. man kann diesen als Zahl annehmen
+
+
 }

@@ -15,10 +15,11 @@ public class FlashingTreeBalls {
         String ANSI_WHITE = "\u001B[37m";
 
         String colorOrder[] = {
+                ANSI_RESET,
                 ANSI_RED,
                 ANSI_YELLOW,
-
-
+                ANSI_GREEN,
+                ANSI_BLUE,
         };
 
         for (int d = 0; d < width; d++) {
