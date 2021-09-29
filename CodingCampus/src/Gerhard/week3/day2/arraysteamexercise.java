@@ -50,7 +50,7 @@ public class arraysteamexercise {
         //TODO: Primzahlen (nur die Primzahl Experten)
         System.out.println();
         System.out.println();
-        System.out.println("\u001B[36m" + "Ausgabe der Primzahlen: (not working)" + "\u001B[0m");
+        System.out.println("\u001B[36m" + "Ausgabe der Primzahlen: " + "\u001B[0m");
 
         for (int i = 0; i < anArray.length; i++) {
             boolean isPrimzahl = true;
