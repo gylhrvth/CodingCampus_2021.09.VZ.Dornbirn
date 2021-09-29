@@ -12,7 +12,6 @@ public class PrimeNumbers {
             for (int j = 2; j < i && primNumber ; j++) {
                 if(i%j== 0){
                     primNumber = false;
-        //            System.out.println(i + " ist keine PrimZahl");
                 }
             }
 
