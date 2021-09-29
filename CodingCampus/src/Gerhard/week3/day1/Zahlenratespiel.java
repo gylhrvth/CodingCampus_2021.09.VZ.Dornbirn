@@ -3,6 +3,7 @@ package Gerhard.week3.day1;
 import java.util.Random;
 import java.util.Scanner;
 
+
 public class Zahlenratespiel {
 
 

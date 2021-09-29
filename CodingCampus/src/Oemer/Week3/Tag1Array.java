@@ -49,7 +49,7 @@ public class Tag1Array {
         int pos = 0;
 
         for (int a = 0; a < arrays.length; a++){
-            if (arrays[a]);
+
 
         }
 
