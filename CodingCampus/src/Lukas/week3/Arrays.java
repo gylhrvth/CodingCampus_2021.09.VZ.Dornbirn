@@ -128,7 +128,11 @@ public class Arrays {
     //Eine Zeile aus der Kommandozeile einlesen
     //Zeile ausgeben
     //Zeile in Character Array verwandeln und umdrehen
-    //Umgedrehte Zeile ausgeben
+    //Variante a) Direkt umgedreht ausgeben
+    //Variante b) Umdrehen mithilfe eines Strings -> String ausgeben
+    //Variante c) Umdrehen mithilfe eines neuen Character Arrays -> Character Array in String umwandeln und ausgeben
+    //Variante d) Umdrehen im bestehenden Array des Inputs -> Character Array in String umwandeln und ausgeben
+
 
     //2)
     //Text aus Kommandozeile einlesen
