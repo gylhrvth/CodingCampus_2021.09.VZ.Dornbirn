@@ -1,24 +1,42 @@
 package Rauan;
 
-class christbaum {
+public class Methodes {
+    private static int width;
+    private static int height;
+
     public static void main(String[] args) {
 
-        //christbaumkrone
+        //chistbaumkrone
+        drawchristbaum();
+
+        //christbaumkugeln
+        drawchristbaumkugeln();
+
+        //christbaumstamm
+        drawchristbaumstamm( width, height);
+    }
+
+    public static void drawchristbaum() {
         int height = 10;
         int stars = 1;
-        int space = height - 1;
+        int spaces = height - 1;
+
         for (int i = 0; i < height; i++) {
-            for (int J = 0; J < space; J++) {
+            for (int j = 0; j < spaces; j++) {
                 System.out.print(" ");
             }
-            for (int f = 0; f < stars; f++) {
+            for (int j = 0; j < stars; j++) {
                 System.out.print("*");
             }
-            stars += 2;
-            space--;
             System.out.println();
+            stars += 2;
+            spaces--;
         }
-        //christbaumkugeln
+
+    }
+
+    public static void drawchristbaumkugeln() {
+        int stars = 1;
         int width = stars - 2;
 
         for (int i = 0; i < width; i++) {
@@ -30,7 +48,9 @@ class christbaum {
         }
         System.out.println();
 
-        //christbaumstamm
+    }
+
+    public static void drawchristbaumstamm(int width, int height) {
 
         int trunkWidth = width / 3;
         int trunkHeight = height / 4;
@@ -48,6 +68,12 @@ class christbaum {
             System.out.println();
 
         }
-
     }
 }
+
+
+
+
+
+
+
