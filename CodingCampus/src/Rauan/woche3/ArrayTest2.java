@@ -16,7 +16,7 @@ public class ArrayTest2 {
         ana[4] = 5;
         System.out.println(java.util.Arrays.toString(ana));
 
-        //Eine Zeile aus der Kommandozeile einlesen
+        //Eine Zeile aus der Kommandozeile einlesen.
         //Zeile ausgeben
         Scanner nummbers = new Scanner(System.in);
         System.out.println("bitte geben sie ein Satz ein");
