@@ -37,7 +37,6 @@ public class Day3 {
             System.out.print(arr[i]);
         }
         System.out.println();
-
         //1b)
         String hallo2 = "";
 
@@ -56,6 +55,7 @@ public class Day3 {
 
             System.out.println();
         }
+
 
 
 
