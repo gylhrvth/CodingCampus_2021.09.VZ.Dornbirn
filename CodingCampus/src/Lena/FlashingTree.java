@@ -2,6 +2,7 @@ package Lena;
 
 public class FlashingTree {
     public static void main(String[] args) {
+
         flashingTree(9);
     }
 
