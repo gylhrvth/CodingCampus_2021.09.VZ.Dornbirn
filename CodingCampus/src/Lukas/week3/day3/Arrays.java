@@ -127,7 +127,7 @@ public class Arrays {
     //Leichte Aufgabe zum Aufwärmen
     //Eine Zeile aus der Kommandozeile einlesen
     //Zeile ausgeben
-    //Zeile in Character Array verwandeln und umdrehen
+    //Zeile in Character Array verwandeln
     //Variante a) Direkt umgedreht ausgeben
     //Variante b) Umdrehen mithilfe eines Strings -> String ausgeben
     //Variante c) Umdrehen mithilfe eines neuen Character Arrays -> Character Array in String umwandeln und ausgeben
