@@ -45,16 +45,18 @@ public class ArrayEx2 {
         int countertmp = 0;
         for (int i = initArray.length - 1; i < initArray.length && i >= 0; i--) {
             tmp[countertmp] = initArray[i];
-            while (countertmp < initArray.length) {
+            if (countertmp < initArray.length) {
                 countertmp++;
-            }
+            } else{ break;}
         }
         String reverseString = new String(tmp);
         return reverseString;
     } // Variant C
 
     public static String reverseStringInPlace(char[] initArray) {
+        char[] tmp;
         for (int i = 0; i < initArray.length; i++) {
+
         }
         return new String(initArray);
     }
