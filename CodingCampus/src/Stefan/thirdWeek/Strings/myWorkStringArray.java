@@ -44,7 +44,7 @@ public class myWorkStringArray {
 
         //Ausgabe der Menge aller Buchstaben Variante 1
         Map<Character, Integer> charMap = new HashMap<Character, Integer>();
-        System.out.println("Gezählte Buchstaben: ");
+        System.out.println("Gezählte Buchstaben mit HashMap: ");
         for (int i = 0; i < textEingabe1.length(); i++) {
             Character key = textEingabe1.toLowerCase().charAt(i);
             if (charMap.containsKey(key)) {
@@ -59,6 +59,7 @@ public class myWorkStringArray {
             System.out.print("[" + character + "] = " + charMap.get(character) + ", ");
         }
         System.out.println();
+        System.out.println();
 
 
 
@@ -66,6 +67,7 @@ public class myWorkStringArray {
         String neuer = textEingabe.toLowerCase();
         char [] character = neuer.toCharArray();
         int[] zähler = new int[26];
+        System.out.println("Gezählte Buchstaben mit Array: ");
         for (int i = 0; i < character.length; i++) {
 
             char myChar = character[i];
@@ -76,11 +78,9 @@ public class myWorkStringArray {
         }
         for (int i = 0; i < zähler.length; i++) {
             if (zähler[i] != 0) {
-                System.out.print(((char) (i + 97)) + " " + zähler[i]);
+                System.out.print(("[" + (char) (i + 97)) + "]" + " = " + zähler[i] + ", ");
             }
         }
-
-
 
     }
 
