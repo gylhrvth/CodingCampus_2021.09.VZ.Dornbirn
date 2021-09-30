@@ -1,7 +1,9 @@
-package Rauan;
+package Rauan.Aufgaben;
 
-public class DreiD {
-    public static void main(String[] args){
+public class Aufgabe3 {
+    public static void main(String[] args) {
+
+        //Versucht einen bliebigen Buchstaben in 3D auszugeben, z.B.: "A"
 
         System.out.println("          ___              ");
         System.out.println("         /  /\\            ");
@@ -14,7 +16,6 @@ public class DreiD {
         System.out.println("       \\  \\:\\           ");
         System.out.println("        \\  \\:\\          ");
         System.out.println("         \\__\\/           ");
-
 
     }
 }
