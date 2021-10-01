@@ -16,7 +16,6 @@ package Mahir.Week3;
 //und ausgeben wie oft jeder Buchstabe vorkommt
 //TIP aus einem Character kann man eine Zahl gewinnen, bzw. man kann diesen als Zahl annehmen
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Day4Arrays {
@@ -42,36 +41,7 @@ public class Day4Arrays {
         System.out.println(reverseChar(letters));
 //Variante d) Umdrehen im bestehenden Array des Inputs -> Character Array in String umwandeln und ausgeben
         System.out.println("Variante d");
-
-
-
-        Scanner scanner = new Scanner(System.in);
-        String hallo = scanner.next();
-        char[] arr = hallo.toCharArray();
-        //1a)
-        System.out.println(Arrays.toString(arr));
-        for (int i = arr.length - 1; i >= 0; i--) {
-            System.out.print(arr[i]);
-        }
-        System.out.println();
-        //1b)
-        String hallo2 = "";
-
-
-        for (int i = arr.length - 1; i >= 0; i--) {
-            hallo2 += arr[i];
-
-        }
-        System.out.println(hallo2);
-
-        //1c)
-
-        char[] newArr = hallo2.toCharArray();
-
-        for (int i = newArr.length - 1; i >= 0; i--) {
-
-        }
-        System.out.println(newArr);
+        reverseStringPlaces(letters);
 
 
     }
@@ -96,20 +66,34 @@ public class Day4Arrays {
         }
         return tmp;
     }
-    public static String reverseChar(char[] letters){
+
+    public static String reverseChar(char[] letters) {
         char[] tmp = new char[letters.length];
-        for (int i = letters.length - 1; i >= 0; i--) {
-            tmp[i] = letters[i];
+        int counter = 0;
+        for (int i = letters.length - 1; i < letters.length && i >= 0; i--) {
+            tmp[counter] = letters[i];
+            if (counter < letters.length){
+                counter++;
+            }else{break;}
+
         }
-return new String(tmp);
+        return new String(tmp);
     }
-    public static void reverseStringPlaces(char[] letters){
+
+   public static void reverseStringPlaces(char[] letters) {
+
+        String[] tmp = new String[letters.length];
+
+
+        for (int i = 0; i > letters.length; i++) {
+
+
+        }
 
     }
 
 
 }
-
 
 
 
