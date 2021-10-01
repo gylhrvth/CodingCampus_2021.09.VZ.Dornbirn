@@ -17,26 +17,31 @@ public class AufgabenVonLukas {
         String line = readLine();
 
         System.out.println("Ihre Eingabe war: " + line);
+        System.out.println();
 
         char[] letters = line.toCharArray();
 
         //Variante a)
         System.out.println("Variante a)");
         printReverse(letters);
+        System.out.println();
 
         //Variante b)
         System.out.println("Variante b)");
         //System.out.println(reverseString(letters));
         String output = reverseString(letters);
         System.out.println(output);
+        System.out.println();
 
         //Variante c)
         System.out.println("Variante c)");
         System.out.println(reverseStringWithNewArray(letters));
+        System.out.println();
 
         //Variante d)
         System.out.println("Variante d)");
         System.out.println(reverseStringInPlace(letters));
+        System.out.println();
     }
 
     //T o n i    < length: 4
