@@ -1,6 +1,5 @@
 package Lukas.week3.day4;
 
-
 import java.util.Scanner;
 
 public class Arrays {
@@ -38,6 +37,13 @@ public class Arrays {
         //Variante d)
         System.out.println("Variante d)");
         System.out.println(reverseStringInPlace(letters));
+
+
+        System.out.println("---");
+        System.out.println(Runtime.getRuntime().freeMemory() / 1024f / 1024f);
+        System.out.println(Runtime.getRuntime().maxMemory() / 1024f / 1024f);
+        System.out.println(Runtime.getRuntime().totalMemory() / 1024f / 1024f);
+
     }
 
     //T o n i    < length: 4

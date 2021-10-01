@@ -1,16 +1,16 @@
 package Saadaq.Week3;
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class ArrayUbung {
 
     public static void main(String[] args) {
 
 
-
         //1)
         //Leichte Aufgabe zum Aufwärmen
 
-        int[]  ArrayUbung = new int[5];
+        int[] ArrayUbung = new int[5];
         ArrayUbung[0] = 50;
         ArrayUbung[1] = 45;
         ArrayUbung[2] = 35;
@@ -21,11 +21,42 @@ public class ArrayUbung {
         System.out.println(Arrays.toString(ArrayUbung));
 
 
-
         //Eine Zeile aus der Kommandozeile einlesen
+
+
+        Scanner intput = new Scanner(System.in);
+        System.out.println("Btte geben sie ein satz ein ");
         //Zeile ausgeben
-        //Zeile in Character Array verwandeln und umdrehen
-        //Variante a) Direkt umgedreht ausgeben
+        String input = intput.nextLine();
+        System.out.println("satz ist:" + input);
+
+
+        //Zeile in Character Array verwandeln und Umdrehen
+
+        char[] CharArray = input.toCharArray();
+
+        for (int myChar : CharArray) {
+            System.out.println(myChar);
+
+        }
+
+        System.out.println(CharArray);
+        for (int i = CharArray.length - 1; i >0; i--) {
+
+            System.out.println(CharArray[i]);
+        }
+
+
+
+
+
+        //9
+
+
+
+
+
+
         //Variante b) Umdrehen mithilfe eines Strings -> String ausgeben
         //Variante c) Umdrehen mithilfe eines neuen Character Arrays -> Character Array in String umwandeln und ausgeben
         //Variante d) Umdrehen im bestehenden Array des Inputs -> Character Array in String umwandeln und ausgeben
@@ -45,12 +76,44 @@ public class ArrayUbung {
         //erstelle ein Array in der größe der Teilnehmer, der Typ des Arrays soll Float sein.
         //Frage jeden Teilnehmer nach seiner Schätzung.
         //Am Ende berechne den Durchschnitt (arithmetisches Mittel) aller Werte und gib diesen aus.
-    }
 
 
 
 
-    }
+
+
+
+
+
+
+
+
+
+    }// end of the Main
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}// end of the Class
+
+
+
+
+
+
+
+
+
 
 
 

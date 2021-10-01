@@ -41,7 +41,7 @@ public class Day4Arrays {
         System.out.println(reverseChar(letters));
 //Variante d) Umdrehen im bestehenden Array des Inputs -> Character Array in String umwandeln und ausgeben
         System.out.println("Variante d");
-        reverseStringPlaces(letters);
+        reverseStringInPlaces(letters);
 
 
     }
@@ -70,30 +70,48 @@ public class Day4Arrays {
     public static String reverseChar(char[] letters) {
         char[] tmp = new char[letters.length];
         int counter = 0;
-        for (int i = letters.length - 1; i < letters.length && i >= 0; i--) {
+        for (int i = letters.length - 1; i >= 0; i--) {
             tmp[counter] = letters[i];
-            if (counter < letters.length){
-                counter++;
-            }else{break;}
-
+            counter++;
         }
         return new String(tmp);
     }
 
-   public static void reverseStringPlaces(char[] letters) {
-
-        String[] tmp = new String[letters.length];
-
-
-        for (int i = 0; i > letters.length; i++) {
-
+    public static void reverseStringInPlaces(char[] letters) {
+        System.out.println("start");
+        if (letters == null || letters.length < 2) {
+            return;
+        }
+        for (int i = 0; i < letters.length / 2; i++) {
+            char temp = letters[i];
+            letters[i] = letters[letters.length - 1 - i];
+            letters[letters.length - 1 - i] = temp;
 
         }
+        System.out.println(letters);
+
 
     }
+    //2)
+    //Text aus Kommandozeile einlesen
+    //Buchstaben case insensitive Zählen (A zählt für a)
+    //und ausgeben wie oft jeder Buchstabe vorkommt
+    //TIP aus einem Character kann man eine Zahl gewinnen, bzw. man kann diesen als Zahl annehmen
+
+    //3)
+    //Schlaue Menge
+    //Lies dir folgendes durch:
+    //https://www.brandeins.de/magazine/brand-eins-wirtschaftsmagazin/2005/die-mitte/schlaue-menge
+    //Entwickle ein Program welches zuerst fragt, wieviele Teilnehmer beim Expirement mitmachen
+    //erstelle ein Array in der größe der Teilnehmer, der Typ des Arrays soll Float sein.
+    //Frage jeden Teilnehmer nach seiner Schätzung.
+    //Am Ende berechne den Durchschnitt (arithmetisches Mittel) aller Werte und gib diesen aus.
 
 
 }
+
+
+
 
 
 
