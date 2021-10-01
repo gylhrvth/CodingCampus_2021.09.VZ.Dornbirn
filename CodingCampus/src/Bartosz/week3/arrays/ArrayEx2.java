@@ -56,11 +56,10 @@ public class ArrayEx2 {
     } // Variant C
 
     public static void reverseStringInPlace(char[] initArray) {
-        int counter = initArray.length-1;
-        if(counter >= initArray.length /2) {
-            for (int i = 0; i < initArray.length; counter--, i++) {
-                initArray[i] = initArray[counter];
-            }
+        for (int i = 0; i < initArray.length/2; i++) {
+            char temp = initArray[i];
+            initArray[i] = initArray[initArray.length - 1 - i];
+            initArray[initArray.length -1 - i] = temp;
         }
 
         System.out.println(initArray);
