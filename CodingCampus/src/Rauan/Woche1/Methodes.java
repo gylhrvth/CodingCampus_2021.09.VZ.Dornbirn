@@ -13,7 +13,7 @@ public class Methodes {
         drawchristbaumkugeln();
 
         //christbaumstamm
-        drawchristbaumstamm( width, height);
+        drawchristbaumstamm(width, height);
     }
 
     public static void drawchristbaum() {
@@ -69,7 +69,11 @@ public class Methodes {
 
         }
     }
+
+
 }
+
+
 
 
 
