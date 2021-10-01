@@ -6,7 +6,7 @@ public class ArrayTest2 {
 
 
     public static void main(String[] args) {
-
+/*
         //leichte aufgabe
         int[] ana = new int[5];
         ana[0] = 1;
@@ -42,6 +42,9 @@ public class ArrayTest2 {
             }
 
         }
+
+ */
+
     }
 }
 
