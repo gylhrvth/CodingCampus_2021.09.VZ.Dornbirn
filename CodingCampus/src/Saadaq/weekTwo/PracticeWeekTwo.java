@@ -7,7 +7,7 @@ public class PracticeWeekTwo {
 
     public static void main(String[] args) {
 
-        // it calls the Scanner Calls and it expects you to inter something
+       /* // it calls the Scanner Calls and it expects you to inter something
         Scanner input = new Scanner(System.in);
 
         // it prints System out
@@ -25,10 +25,20 @@ public class PracticeWeekTwo {
         System.out.println("The sum number you entered is 5 * 5 and result is  = " + num1 * num2);
 
 
-    }
+*/
 
 
-}
+        //
+
+
+
+
+
+
+    }// Emd of Main
+
+
+}// End of Class
 
 
 

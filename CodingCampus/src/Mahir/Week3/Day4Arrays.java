@@ -16,7 +16,6 @@ package Mahir.Week3;
 //und ausgeben wie oft jeder Buchstabe vorkommt
 //TIP aus einem Character kann man eine Zahl gewinnen, bzw. man kann diesen als Zahl annehmen
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Day4Arrays {
@@ -42,36 +41,7 @@ public class Day4Arrays {
         System.out.println(reverseChar(letters));
 //Variante d) Umdrehen im bestehenden Array des Inputs -> Character Array in String umwandeln und ausgeben
         System.out.println("Variante d");
-
-
-
-        Scanner scanner = new Scanner(System.in);
-        String hallo = scanner.next();
-        char[] arr = hallo.toCharArray();
-        //1a)
-        System.out.println(Arrays.toString(arr));
-        for (int i = arr.length - 1; i >= 0; i--) {
-            System.out.print(arr[i]);
-        }
-        System.out.println();
-        //1b)
-        String hallo2 = "";
-
-
-        for (int i = arr.length - 1; i >= 0; i--) {
-            hallo2 += arr[i];
-
-        }
-        System.out.println(hallo2);
-
-        //1c)
-
-        char[] newArr = hallo2.toCharArray();
-
-        for (int i = newArr.length - 1; i >= 0; i--) {
-
-        }
-        System.out.println(newArr);
+        reverseStringInPlaces(letters);
 
 
     }
@@ -96,19 +66,51 @@ public class Day4Arrays {
         }
         return tmp;
     }
-    public static String reverseChar(char[] letters){
+
+    public static String reverseChar(char[] letters) {
         char[] tmp = new char[letters.length];
+        int counter = 0;
         for (int i = letters.length - 1; i >= 0; i--) {
-            tmp[i] = letters[i];
+            tmp[counter] = letters[i];
+            counter++;
         }
-return new String(tmp);
+        return new String(tmp);
     }
-    public static void reverseStringPlaces(char[] letters){
+
+    public static void reverseStringInPlaces(char[] letters) {
+        System.out.println("start");
+        if (letters == null || letters.length < 2) {
+            return;
+        }
+        for (int i = 0; i < letters.length / 2; i++) {
+            char temp = letters[i];
+            letters[i] = letters[letters.length - 1 - i];
+            letters[letters.length - 1 - i] = temp;
+
+        }
+        System.out.println(letters);
+
 
     }
+    //2)
+    //Text aus Kommandozeile einlesen
+    //Buchstaben case insensitive Zählen (A zählt für a)
+    //und ausgeben wie oft jeder Buchstabe vorkommt
+    //TIP aus einem Character kann man eine Zahl gewinnen, bzw. man kann diesen als Zahl annehmen
+
+    //3)
+    //Schlaue Menge
+    //Lies dir folgendes durch:
+    //https://www.brandeins.de/magazine/brand-eins-wirtschaftsmagazin/2005/die-mitte/schlaue-menge
+    //Entwickle ein Program welches zuerst fragt, wieviele Teilnehmer beim Expirement mitmachen
+    //erstelle ein Array in der größe der Teilnehmer, der Typ des Arrays soll Float sein.
+    //Frage jeden Teilnehmer nach seiner Schätzung.
+    //Am Ende berechne den Durchschnitt (arithmetisches Mittel) aller Werte und gib diesen aus.
 
 
 }
+
+
 
 
 

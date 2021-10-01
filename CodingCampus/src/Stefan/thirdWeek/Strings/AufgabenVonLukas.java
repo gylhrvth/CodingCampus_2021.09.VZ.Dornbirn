@@ -1,8 +1,8 @@
-package Lukas.week3.day4;
+package Stefan.thirdWeek.Strings;
 
 import java.util.Scanner;
 
-public class Arrays {
+public class AufgabenVonLukas {
     //Leichte Aufgabe zum Aufwärmen
     //Eine Zeile aus der Kommandozeile einlesen
     //Zeile ausgeben
@@ -17,67 +17,83 @@ public class Arrays {
         String line = readLine();
 
         System.out.println("Ihre Eingabe war: " + line);
+        System.out.println();
 
         char[] letters = line.toCharArray();
 
         //Variante a)
         System.out.println("Variante a)");
         printReverse(letters);
+        System.out.println();
 
         //Variante b)
         System.out.println("Variante b)");
         //System.out.println(reverseString(letters));
         String output = reverseString(letters);
         System.out.println(output);
+        System.out.println();
 
         //Variante c)
         System.out.println("Variante c)");
         System.out.println(reverseStringWithNewArray(letters));
+        System.out.println();
 
         //Variante d)
         System.out.println("Variante d)");
         System.out.println(reverseStringInPlace(letters));
-
-
-        System.out.println("---");
-        System.out.println(Runtime.getRuntime().freeMemory() / 1024f / 1024f);
-        System.out.println(Runtime.getRuntime().maxMemory() / 1024f / 1024f);
-        System.out.println(Runtime.getRuntime().totalMemory() / 1024f / 1024f);
-
+        System.out.println();
     }
 
     //T o n i    < length: 4
     //0 1 2 3
+
+
+    //Variante a)
     public static void printReverse(char[] letters) {
-        for (int i = 0; i < letters.length; i++) {
+        for (int i = letters.length - 1; i >= 0; i--) {
             System.out.print(letters[i]);
         }
         System.out.println();
     }
 
+
+    //Variante b)
     public static String reverseString(char[] letters) {
         String tmp = "";
-        for (int i = 0; i < letters.length; i++) {
+        for (int i = letters.length - 1; i >= 0; i--) {
             tmp += letters[i];
         }
         return tmp;
     }
 
+
+    //Variante c)
     public static String reverseStringWithNewArray(char[] letters) {
         char[] tmp = new char[letters.length];
-        for (int i = 0; i < letters.length; i++) {
-            tmp[i] = letters[i];
+        int counter = 0;
+        for (int i = letters.length -1; i >= 0; i--) {
+                tmp[counter] = letters[i];
+                counter++;
         }
+
         String reverseString = new String(tmp);
         return reverseString;
     }
 
+
+    //Variante d)
     public static String reverseStringInPlace(char[] letters) {
         char tmp;
-        for (int i = 0; i < letters.length; i++) {
-
+        int swapper = letters.length - 1;
+        for (int i = 0; i < swapper; i++, swapper--) {
+            char t = letters[i];
+            letters[i] = letters[swapper];
+            letters[swapper] = t;
         }
-        return new String(letters);
+
+
+            return new String(letters);
+
     }
 
     public static String readLine() {

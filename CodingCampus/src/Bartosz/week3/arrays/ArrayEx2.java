@@ -15,6 +15,7 @@ public class ArrayEx2 {
         System.out.println();
 
         //Variante b)
+        System.out.println();
         System.out.println("Variante b)");
         //System.out.println(reverseString(letters));
         String output = reverseString(initArray);
@@ -22,13 +23,13 @@ public class ArrayEx2 {
         System.out.println();
 
         //Variante c)
-        System.out.println("Variante c)");
+        System.out.println("Variante c)");  // unveränderter origin array
         System.out.println(reverseStringWithNewArray(initArray));
         System.out.println();
 
         //Variante d)
-        System.out.println("Variante d)");
-        System.out.println(reverseStringInPlace(initArray));
+        System.out.println("Variante d)");      // überschreibt origin array
+        reverseStringInPlace(initArray);
     }
 
 
@@ -43,23 +44,26 @@ public class ArrayEx2 {
     public static String reverseStringWithNewArray(char[] initArray) {
         char[] tmp = new char[initArray.length];
         int countertmp = 0;
-        for (int i = initArray.length - 1; i < initArray.length && i >= 0; i--) {
+        for (int i = initArray.length - 1; i >= 0; i--) {
             tmp[countertmp] = initArray[i];
             if (countertmp < initArray.length) {
                 countertmp++;
-            } else{ break;}
+            }
         }
         String reverseString = new String(tmp);
         return reverseString;
+
     } // Variant C
 
-    public static String reverseStringInPlace(char[] initArray) {
-        char[] tmp;
-        for (int i = 0; i < initArray.length; i++) {
-
+    public static void reverseStringInPlace(char[] initArray) {
+        for (int i = 0; i < initArray.length/2; i++) {
+            char temp = initArray[i];
+            initArray[i] = initArray[initArray.length - 1 - i];
+            initArray[initArray.length -1 - i] = temp;
         }
-        return new String(initArray);
-    }
+
+        System.out.println(initArray);
+    }   // Variante D
 
 
     public static String programInit() {
@@ -84,14 +88,4 @@ public class ArrayEx2 {
     }       //Variante a
 
 
-//    public static void insensitivesAddieren(String init) {
-//        init = init.toLowerCase();      // überschreiben alles klein für leichteres zählen
-//        char[] ex2Array = init.toCharArray();
-//
-//        for (int counter = 0; counter < ex2Array.length;counter++ ) {
-//            int index = ex2Array[counter];
-//            int[] letterCounter = {index};
-//            System.out.println(ex2Array[counter] + " mal " + letterCounter  + " ausgegeben");
-//        }
-//    }
 }
