@@ -5,20 +5,23 @@ import java.util.Arrays;
 public class ArrayExercise {
 
     public static void main(String[] args) {
-        System.out.println("Start");
 
 
-        System.out.println(primZahlCheck(43112609));
-        System.out.println(primZahlCheck2(43112609));
 
-
-        int[] numbers = {4, 5, 7, 9, 3, 5, 10, 1, 12, 13, 13};
-        System.out.println(getMax(numbers));
+        /*System.out.println(primZahlCheck(43112609));
+        System.out.println(primZahlCheck2(43112609));*/
+        /*System.out.println(getMax(numbers));
         // System.out.println(getSecondMax(numbers));
         System.out.println(getMin(numbers));
         System.out.println(getSecondMin(numbers));
-        getPrimzahlen(numbers);
-        System.out.println(getAnyMax(numbers, 4));
+        getPrimzahlen(numbers);*/
+
+        int[] numbers = {4, -5, -7, -9, 3, 5, -4, 4, -4, 10, -13};
+
+
+        int anyMaxIndex =5;
+
+        System.out.println("Die " +anyMaxIndex+". größte Zahl im Array ist: "+getAnyMax(numbers, anyMaxIndex));
 
 
     }
@@ -38,40 +41,34 @@ public class ArrayExercise {
         return max;
     }
 
+    /**
+     *
+     * @param numbers
+     * @param anyMaxIndex
+     * @return
+     */
     public static int getAnyMax(int[] numbers, int anyMaxIndex) {
         int[] helpArray = new int[anyMaxIndex];
-
-
-
-            for (int i = 0; i < numbers.length; i++) {
-                for (int j = 0; j < helpArray.length; j++) {
-                if (numbers[i] > helpArray[j]) {
-                    System.out.println(numbers[i]);
-                    helpArray[j] = numbers[i];
-                    break;
+        for (int i = 0; i < helpArray.length; i++) {
+            helpArray[i] = Integer.MIN_VALUE;
+        }
+        for (int number : numbers) {
+            if (number > helpArray[0]) {
+                helpArray[0] = number;
+                for (int j = 1; j < helpArray.length; j++) {
+                    if (helpArray[j - 1] > helpArray[j]) {
+                        int helpVar = helpArray[j];
+                        helpArray[j] = helpArray[j - 1];
+                        helpArray[j - 1] = helpVar;
+                    }
                 }
             }
         }
-        int anymax = helpArray[0];
-        for (int i = 0; i < helpArray.length; i++) {
-            if (helpArray[i] < anymax) {
-                anymax = helpArray[i];
-            }
-        }
-        number(1);
-        return anymax;
+        return helpArray[0];
     }
 
-    /**
-     * This method multiplies the given number by 2
-     * <li>
-     *     <ul>Hallo</ul>
-     *     <ul>asdf</ul>
-     * </li>
-     *
-     * @param number Number which should be multiplied
-     * @return Number multiplied by two
-     */
+
+
     public static int number(int number) {
         return number * 2;
     }
@@ -88,18 +85,6 @@ public class ArrayExercise {
         return min;
     }
 
-    public static int getSecondMin(int[] numbers) {
-        int min = getMin(numbers);
-        int secondMin = numbers[0];
-
-        for (int i = 0; i < numbers.length; i++) {
-            if (numbers[i] < secondMin && numbers[i] > min) {
-                secondMin = numbers[i];
-            }
-
-        }
-        return secondMin;
-    }
 
     public static boolean primZahlCheck(int number) {
         if (number == 1) {

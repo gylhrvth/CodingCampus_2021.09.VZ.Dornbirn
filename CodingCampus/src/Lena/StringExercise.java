@@ -8,7 +8,8 @@ public class StringExercise {
 
     public static void main(String[] args) {
 
-        countLetters();
+
+        System.out.println(caeserDecryption("Hallo", 1));
 
     }
 
@@ -111,16 +112,26 @@ public class StringExercise {
         }
 
 
-
-
     }
 
-    //2)
-    //Text aus Kommandozeile einlesen
-    //Buchstaben case insensitive Zählen (A zählt für a)
-    //und ausgeben wie oft jeder Buchstabe vorkommt
-    //TIP aus einem Character kann man eine Zahl gewinnen, bzw. man kann diesen als Zahl annehmen
 
+
+   public static String caeserDecryption (String string, int key){
+        String decryptedString="";
+
+        char[]charArray = string.toUpperCase().toCharArray();
+
+       for (int i = 0; i < charArray.length; i++) {
+           charArray[i]=(char)(charArray[i]+key);
+       }
+
+       for (int i = 0; i < charArray.length; i++) {
+           decryptedString+=charArray[i];
+       }
+
+        return decryptedString;
+
+   }
 
 
 
