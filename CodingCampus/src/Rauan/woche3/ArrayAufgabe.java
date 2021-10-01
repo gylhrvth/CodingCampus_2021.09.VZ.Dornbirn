@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class ArrayAufgabe {
     public static void main(String[] args) {
-
+/*
         int[] ana = new int[5];
         ana[0] = 1;
         ana[1] = 2;
@@ -32,9 +32,29 @@ public class ArrayAufgabe {
                 ana[i] = tmp;
             }
         }
+
+ */
+        int[] ana = new int[4];
+        ana[0] = 1;
+        ana[1] = 2;
+        ana[2] = 3;
+        ana[3] = 4;
+        System.out.println(Arrays.toString(ana));
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("bitte geben sie ein satz ein");
+        String input = scanner.nextLine();
+        System.out.println("dis satz ist :" + input);
+
+        char[] mycharArray = input.toCharArray();
+        for (int i = mycharArray.length - 1; i >= 0; i--) {
+            System.out.print(mycharArray[i]);
+        }
+        System.out.println();
+        for (int myChar : mycharArray) {
+            System.out.println(myChar);
+        }
+
     }
-
-
 }
-
     
