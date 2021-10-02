@@ -1,4 +1,4 @@
-package Rauan.woche3;
+package Rauan.woche3.Array;
 
 public class GeradeZahlen {
     public static void main(String[] args) {

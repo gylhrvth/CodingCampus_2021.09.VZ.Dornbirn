@@ -1,4 +1,4 @@
-package Rauan;
+package Rauan.woche3.Methode;
 
 public class Methodes {
     private static int width;
