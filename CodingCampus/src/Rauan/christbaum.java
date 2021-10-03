@@ -31,9 +31,8 @@ class christbaum {
         System.out.println();
 
         //christbaumstamm
-
-        int trunkWidth = width / 3;
         int trunkHeight = height / 4;
+        int trunkWidth = width / 3;
 
         int center = width / 2;
         int trunkLeftSpaces = center - (trunkWidth / 2);

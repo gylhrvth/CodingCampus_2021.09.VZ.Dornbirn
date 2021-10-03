@@ -15,47 +15,48 @@ public class ArrayTest2 {
         //Variante c) Umdrehen mithilfe eines neuen Character Arrays -> Character Array in String umwandeln und ausgeben
         //Variante d) Umdrehen im bestehenden Array des Inputs -> Character Array in String umwandeln und ausgeben
         //Lukas Array Aufgabe
+
         Scanner scanner = new Scanner(System.in);
         System.out.println("bitte geben sie ein satz ein");
-        String line = scanner.nextLine();
-        System.out.println("die satz ist:" + line);
-        char[] letters = line.toCharArray();
+        String input = scanner.nextLine();
+        System.out.println("sie satz ist:" + input);
+        char[] letters = input.toCharArray();
+        char[] myArray = input.toCharArray();
+        for (int myChar : myArray) {
+            System.out.println(myChar);
+
+        }
 
         //variante A
         System.out.println("variante A");
         printreverse(letters);
 
-        //Variante B
+        //variante B
         System.out.println("variante B");
-        String output= reverseString(letters);
+        String output = reverseString(letters);
         System.out.println(output);
 
-        //variante C
-        System.out.println("variante C");
-        System.out.println(reverseStringWithNewArray(letters));
+
     }
+
 
     public static void printreverse(char[] letters) {
         for (int i = letters.length - 1; i >= 0; i--) {
             System.out.print(letters[i]);
         }
         System.out.println();
+
     }
 
     public static String reverseString(char[] letters) {
-       String tmp="";
-       for (int i=letters.length-1; i>=0; i--){
-           tmp+= letters[i];
-       }
-        return tmp;
-    }
-    public static String reverseStringWithNewArray(char[]letters){
-        char[]tmp =new char[letters.length];
-        for (int i = letters.length-1; i >=0 ; i--) {
-            tmp [i]= letters[i];
+        String tmp = "";
+        for (int i = letters.length - 1; i >= 0; i--) {
+            tmp += letters[i];
         }
-        String reverseString = new String(tmp);
-        return reverseString;
-    }
+        return tmp;
 
+    }
 }
+
+
+
