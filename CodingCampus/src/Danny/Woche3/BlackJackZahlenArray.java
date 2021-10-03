@@ -144,10 +144,10 @@ public class BlackJackZahlenArray {
             wert = 10; //Bube
         } else if (positonnummerDerKarte == 12 || (positonnummerDerKarte - 12) % 13 == 0) {
             wert = 10; //Dame
-            ;
+
         } else if (positonnummerDerKarte == 13 || (positonnummerDerKarte - 13) % 13 == 0) {
             wert = 10; //König
-            ;
+
         } else if (positonnummerDerKarte == 1 || (positonnummerDerKarte - 1) % 13 == 0) {
             if (dealerOver21 == true) { //ASS
                 wert = 1;
