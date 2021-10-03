@@ -2,6 +2,9 @@ package Rauan.Woche2;
 
 
 public class CalculatorMethodes {
+    public static void main(String[] args) {
+
+    }
 
 
     public static int calculator(int num1, int num2, String operator) {

@@ -1,4 +1,4 @@
-package Rauan.woche3;
+package Rauan.woche3.Array;
 
 
 import java.util.Arrays;
