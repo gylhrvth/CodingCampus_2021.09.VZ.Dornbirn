@@ -62,8 +62,16 @@ public class BlackJack {
                 playerInTheGame = false;
             }
         }
-
+        if(whoWon(playerHand, dealerHand)==3){
+            System.out.println();
+            System.out.println(setColorYellow()+"--TIE GAME--"+resetColor());
+            System.out.println();
+            System.out.println("Dei Kontostand beträgt "+playerCredit+"€.");
+            newRound(playerCredit);
+        }
         if (!playerInTheGame) {
+            System.out.println();
+            System.out.println(setColorYellow() + "--BANK GEWINNT--" + resetColor());
             playerCredit = playerLost(playerCredit, playersBet);
             newRound(playerCredit);
         } else {
@@ -74,15 +82,16 @@ public class BlackJack {
 
     public static int whoWon(int[] playerHand, int[] dealerHand) {
 
-        //return 1-> Player won, return 2->Bank won
+        //return 1-> Player won, return 2->Bank won, return 3->tieGame
         if (getHandValue(dealerHand) > 21) {
             return 1;
         }
         if (getHandValue(playerHand) > getHandValue(dealerHand)) {
             return 1;
         }
-        System.out.println();
-        System.out.println(setColorYellow() + "--BANK GEWINNT--" + resetColor());
+        if(getHandValue(playerHand)== getHandValue(dealerHand)){
+            return 3;
+        }
         return 2;
     }
 
@@ -91,8 +100,8 @@ public class BlackJack {
         System.out.println(setColorGreen() + "--GEWONNEN!!--" + resetColor());
         System.out.println();
         System.out.println("Du hast deinen Einsatz verdoppelt!");
-        System.out.println("Dein neuer Kontostand beträgt:" + (playersCredit + playersBet * 2) + "€.");
-        return playersCredit + playersBet * 2;
+        System.out.println("Dein neuer Kontostand beträgt:" + (playersCredit + playersBet ) + "€.");
+        return playersCredit + playersBet ;
     }
 
     public static boolean dealerHandCheck(int[] hand) {
