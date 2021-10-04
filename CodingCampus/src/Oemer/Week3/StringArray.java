@@ -13,6 +13,7 @@ public class StringArray {
         }
         Scanner scanner = new Scanner(System.in);
         System.out.println("Bitte geben Sie einen Satz ein:");
+
         String input = scanner.nextLine();
 
         System.out.println(input);
@@ -27,27 +28,49 @@ public class StringArray {
             System.out.print(inputArray[i] + "  ");
         }
         System.out.println();
-
-        String tmp = "";
-        tmp += inputArray;
-
-        //1.a
-        System.out.println();
-        for (int i = inputArray.length - 1; i <= 0; i--) {
-            System.out.print(inputArray[i] + "  ");
-
-            //1.b
-            tmp += inputArray;
-
-            System.out.println();
-            for (i = 0; i >= 0; i++) {
-                System.out.print(inputArray[i] + (""));
-
-
-            }
-
-            String myString1 = "Hello";
-            char[] mycharArray1 = myString1.toCharArray();
-        }
     }
+
+
+    public static void printReverse(char[] letters) {
+        for (int i = 0; i < letters.length; i++) {
+            System.out.print(letters[i]);
+        }
+        System.out.println();
+
+    }
+
+
+    public static String reverseString(char[] letters) {
+        String tmp = "";
+        for (int i = 0; i < letters.length; i++) {
+            tmp += letters[i];
+        }
+        return tmp;
+    }
+
+    public static String reverseStringWithArray(char[] letters) {
+        char[] tmp = new char[letters.length];
+        for (int i = 0; i < letters.length; i++) {
+            tmp[i] = letters[i];
+        }
+        String reverseString = new String(tmp);
+        return reverseString;
+    }
+
+    public static String reverseStringInPlace(char[] letters) {
+        char tmp;
+        for (int i = 0; i < letters.length; i++) {
+
+        }
+        return new String(letters);
+    }
+
+
+    public static String readLine() {
+        Scanner scanner = new Scanner(System.in);
+        return scanner.nextLine();
+
+
+    }
+
 }
