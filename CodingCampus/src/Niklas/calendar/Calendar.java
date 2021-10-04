@@ -1,4 +1,4 @@
-package Niklas;
+package Niklas.calendar;
 
 public class Calendar {
 
