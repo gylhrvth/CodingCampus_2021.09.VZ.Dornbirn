@@ -2,8 +2,10 @@ package Danny.Woche1;
 
 public class Kreis {
     public static void main(String[] args) {
+        circle(8);
+    }
 
-        int circleRadius = 5;
+    public static void circle(int circleRadius) {
         int circleHigh = circleRadius * 2 + 1;
         int b = circleRadius;
         int kor = 3;
@@ -22,8 +24,6 @@ public class Kreis {
             }
             b--;
             System.out.println();
-
-
         }
     }
 }

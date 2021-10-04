@@ -27,7 +27,8 @@ public class Loops {
 
 
 
-    //Calculater
+
+        //CalculatorMethod
 
         Scanner scanner1 = new Scanner(System.in);
 
@@ -40,19 +41,20 @@ public class Loops {
             System.out.println(i + "*" + counter + " = " + result);
         }
 
-    //Square
+
+
+        //Square
 
         for (int m = 1; m < 101; m++){
             System.out.print(" x ");
            if (m%10 == 0){
                System.out.println();
-           }else {
-               continue;
            }
         }
 
-        //Viereck
 
+
+        //Quadrangle
 
         for (int m = 0; m < 5; m++){
             for ( int n = 0; n < 4; n++){
@@ -62,7 +64,8 @@ public class Loops {
         }
 
 
-//Arrow#1
+
+        //Arrow#1
 
         for (int y = 0; y < 10; y++) {
             if (y < 6) {
@@ -78,7 +81,9 @@ public class Loops {
         }
 
 
+
         //Arrow#2
+
         int height = 11;
         int upperHalf = height / 2;
         int lowerHalf = height - upperHalf;
@@ -100,11 +105,7 @@ public class Loops {
 
 
 
-
-
-
-
-//Circle
+         //Circle
 
         double r = 5;
 
@@ -120,8 +121,9 @@ public class Loops {
             System.out.println();
         }
 
-        //empty Circle
 
+
+        //hollow  Circle
 
         double r1 = 5;
 
@@ -136,6 +138,7 @@ public class Loops {
             }
             System.out.println();
         }
+
 
 
         //Square

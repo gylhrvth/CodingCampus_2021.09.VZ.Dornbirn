@@ -5,7 +5,7 @@ public class ChristmasTree {
 
 
         //ChristmasTree
-        int height = 25;
+        int height = 11;
         int width = (height * 2 - 1);
         float heightTrunk = height / 4f;
         float widthTrunk = width / 4f;
@@ -48,7 +48,6 @@ public class ChristmasTree {
         System.out.println();
 
         //Trunk
-
 
         for (float i = 0; i <= heightTrunk; i++) {
             for (float j = 0; j <= distanceLeft; j++) {

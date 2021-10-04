@@ -1,7 +1,7 @@
 package Bartosz.week1.loops.functions.ChristmasTree;
 
 public class LoopsEx4Tree {
-    public static void loopsEx4Tree(int h) {
+    public static void printTree(int h) {
         // Baum
         for (int rows = 0; rows < h +1; rows++) {         // Solange die Reihenanzahl kleiner als Höhe des Baumes ist:
             for (int space = 1; space < (h+1 - rows); space++) {   // Solange der Abstand kleiner ist als Höhe - Reihen

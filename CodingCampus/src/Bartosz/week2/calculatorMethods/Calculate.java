@@ -17,6 +17,8 @@ public class Calculate {
             } else if (operator.equals("/")) {
                 result = zahl1 / zahl2;
 
+            } else if (operator.equals("%")) {
+                result = zahl1 % zahl2;
             } else {
                 System.out.println("Unknown operator");
             }
