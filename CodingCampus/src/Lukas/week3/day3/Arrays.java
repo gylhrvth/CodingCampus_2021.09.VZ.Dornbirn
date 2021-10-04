@@ -1,6 +1,6 @@
 package Lukas.week3.day3;
 
-public class Arrays {
+public class  Arrays {
     public static void main(String[] args) {
         int[] intArray1 = new int[3];
         intArray1[0] = 1;
