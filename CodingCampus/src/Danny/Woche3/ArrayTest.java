@@ -147,7 +147,6 @@ public class ArrayTest {
         int e = 0;
         int r = rand.length - 1;
         for (int s = 0; s <= rand.length - 1; s++) {
-
             if (array2[r] != 0 && counter2 > 0) {
                 count[e] = array2[r];
                 counter2--;

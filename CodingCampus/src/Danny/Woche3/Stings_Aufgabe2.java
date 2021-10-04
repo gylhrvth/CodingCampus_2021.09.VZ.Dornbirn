@@ -25,9 +25,11 @@ public class Stings_Aufgabe2 {
             System.out.print(meinSubstring.charAt(i));
         }
     }
-        public static void aufgabeAlsChar (String meinSubstring, int start, int count) {
+
+    public static void aufgabeAlsChar(String meinSubstring, int start, int count) {
+        System.out.println(meinSubstring.substring(start - 1, start - 1 + count));
         int offset = start - 1;
-        char[] meinSubstringC = meinSubstring.toCharArray() ;
+        char[] meinSubstringC = meinSubstring.toCharArray();
         System.out.println(String.valueOf(meinSubstringC, offset, count));
     }
 
