@@ -1,6 +1,5 @@
 package Danny.Woche3;
 
-import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -21,9 +20,6 @@ public class BlackJackZahlenArray {
         boolean wertOver21 = false;
         boolean wertOver17 = true;
 
-
-        System.out.println(Arrays.toString(deck));
-
 //Spieler erstellen [1] Player [2] Kartendeck
         System.out.println("Wieviele Spieler wollen mitspielen?");
         int[][] player = new int[scanner.nextInt() + 1][52];
@@ -43,36 +39,35 @@ public class BlackJackZahlenArray {
             if (aktuellPL < player.length - 1) {
                 kartendeckAnzeigenSpieler(aktuellPL, player, deck);
                 System.out.println();
-                kartenWertAnzeigenSpieler(player, deck);
+                kartenWertAnzeigenSpieler(aktuellPL, player, deck);
                 System.out.println();
-                //Gesammtwert anzeigen
-                gesammtWert = 0;
-                for (int c = 0; c < player[aktuellPL][51]; c++) {
-                    gesammtWert += kartenWert(deck[player[aktuellPL][c]], false);
+                gesammtWertausgebenSpieler(aktuellPL, player, deck, gesammtWert, endPoints, wertOver21);
+                if (endPoints[aktuellPL] == 21) {
+                    wertOver21 = true;
+                    System.out.println("Du hast gewonnen");
                 }
-                System.out.println("Gesammtpunkte " + gesammtWert);
-                System.out.println("--------------------");
+                System.out.println();
             } else {
                 kartendeckAnzeigenDealer(aktuellPL, player, deck);
                 System.out.println();
-                kartenWertAnzeigenSpieler(player, deck);
+                kartenWertAnzeigenSpieler(aktuellPL, player, deck);
                 System.out.println();
-                //Gesammtwert anzeigen
-                gesammtWert = 0;
-                for (int d = 0; d < player[aktuellPL][51]; d++) {
-                    gesammtWert += kartenWert(deck[player[aktuellPL][d]], false);
+                gesammtWertausgebenDealer(aktuellPL, player, deck, gesammtWert, endPoints, wertOver21);
+                if (endPoints[aktuellPL] == 21) {
+                    wertOver21 = true;
+                    System.out.println("Du hast gewonnen");
                 }
-                System.out.println("Gesammtpunkte " + gesammtWert);
-                System.out.println("--------------------");
+                System.out.println();
             }
         }
 
 //Ab Runde 2 ohne Dealer bis Player fertig
-        for (int anktuellPL = 0; anktuellPL < player.length - 1; anktuellPL++) {
+
+        for (int aktuellPL = 0; aktuellPL < player.length - 1; aktuellPL++) {
             int jANein = 0;
-            wertOver21 = true;
+            wertOver21 = false;
             while (jANein != 2 && wertOver21 == false) {
-                System.out.println("Spieler " + (anktuellPL + 1) + " möchtest du eine weitere Karte");
+                System.out.println("Spieler " + (aktuellPL + 1) + " möchtest du eine weitere Karte");
                 System.out.println("1 = JA");
                 System.out.println("2 = NEIN");
                 System.out.println("--------------------");
@@ -80,35 +75,86 @@ public class BlackJackZahlenArray {
 
                 //Spieler zieht Karte
                 if (jANein == 1) {
-                    cout = player[anktuellPL][51];
-                    player[anktuellPL][cout] = kartenPositionImDeck;
+                    cout = player[aktuellPL][51];
+                    player[aktuellPL][cout] = kartenPositionImDeck;
                     kartenPositionImDeck++;
                     cout++;
-                    player[anktuellPL][51] = cout;
-                    kartendeckAnzeigenSpieler(anktuellPL, player, deck);
+                    player[aktuellPL][51] = cout;
+                    kartendeckAnzeigenSpieler(aktuellPL, player, deck);
                     System.out.println();
-                    kartenWertAnzeigenSpieler(player,deck);
+                    kartenWertAnzeigenSpieler(aktuellPL, player, deck);
                     System.out.println();
-                    gesammtWertausgebenSpieler(anktuellPL,player,deck,gesammtWert,endPoints);
-                    if (gesammtWert > 21) {
+                    gesammtWertausgebenSpieler(aktuellPL, player, deck, gesammtWert, endPoints, wertOver21);
+                    if (endPoints[aktuellPL] > 21) {
                         wertOver21 = true;
                         System.out.println("Game Over");
-                    } else if (gesammtWert == 21) {
+                    } else if (endPoints[aktuellPL] == 21) {
                         wertOver21 = true;
                         System.out.println("Du hast gewonnen");
                     }
                     System.out.println("--------------------");
-                }
+                }}}
+        //Dealer isr an der Reihe
+        aktuellPL = player.length - 1;
+        wertOver17 = false;
+        while (wertOver17 == false && endPoints[aktuellPL] < 17) {
+            //Dealer zieht Karte
+            cout = player[aktuellPL][51];
+            player[aktuellPL][cout] = kartenPositionImDeck;
+            kartenPositionImDeck++;
+            cout++;
+            player[aktuellPL][51] = cout;
+            kartendeckAnzeigenDealer(aktuellPL, player, deck);
+            System.out.println();
+            kartenWertAnzeigenSpieler(aktuellPL, player, deck);
+            System.out.println();
+            gesammtWertausgebenDealer(aktuellPL, player, deck, gesammtWert, endPoints, wertOver21);
+            if (endPoints[aktuellPL] > 21) {
+                wertOver21 = true;
+                System.out.println("Game Over");
+            } else if (endPoints[aktuellPL] == 21) {
+                wertOver21 = true;
+                System.out.println("Du hast gewonnen");
+            }
+            System.out.println("--------------------");
+
+        }
+        //Punkte aller Spieler anzeigen und Gewinner ermitteln
+        int playerGewinner = 0;
+        int gewinnerPunkte = 0;
+        for (int i = 0; i < endPoints.length; i++) {
+
+            if (i == endPoints.length - 1) {
+                System.out.println("Dealer " + "Punkte " + endPoints[i]);
+            } else {
+                System.out.println("Spieler " + (i + 1) + " Punkte " + endPoints[i]);
+            }
+            if (endPoints[i] > gewinnerPunkte && endPoints[i] <= 21) {
+                gewinnerPunkte = endPoints[i];
+                playerGewinner = i;
             }
         }
+        if (playerGewinner == endPoints.length - 1) {
+            System.out.println("Dealer gewinnt mit" + gewinnerPunkte + "Punkten");
+        } else {
+            System.out.println("Spieler " + (playerGewinner + 1) + " gewinnt mit " + gewinnerPunkte + " Punkten");
+        }
+
     }
 
 
+//////////////////////////////////////////////////////////////////////
 
-    public static int[] gesammtWertausgebenSpieler (int aktuellPL, int[][] player, int[] deck, int gesammtWert, int[] endPoints) {
+    public static int[] gesammtWertausgebenDealer(int aktuellPL, int[][] player, int[] deck, int gesammtWert, int[] endPoints, boolean wertOver21) {
         gesammtWert = 0;
         for (int x = 0; x < player[aktuellPL][51]; x++) {
             gesammtWert += kartenWert(deck[player[aktuellPL][x]], false);
+        }
+        if (gesammtWert > 21) {
+            gesammtWert = 0;
+            for (int x = 0; x < player[aktuellPL][51]; x++) {
+                gesammtWert += kartenWert(deck[player[aktuellPL][x]], true);
+            }
         }
         System.out.println("Gesammtpunkte " + gesammtWert);
         endPoints[aktuellPL] = gesammtWert;
@@ -116,7 +162,26 @@ public class BlackJackZahlenArray {
         return endPoints;
     }
 
-    public static void kartenWertAnzeigenSpieler(int[][] player, int[] deck) {
+
+    public static int[] gesammtWertausgebenSpieler(int aktuellPL, int[][] player, int[] deck, int gesammtWert, int[] endPoints, boolean wertOver21) {
+        gesammtWert = 0;
+        for (int x = 0; x < player[aktuellPL][51]; x++) {
+            gesammtWert += kartenWert(deck[player[aktuellPL][x]], false);
+        }
+        if (gesammtWert > 21) {
+            gesammtWert = 0;
+            for (int x = 0; x < player[aktuellPL][51]; x++) {
+                gesammtWert += kartenWert(deck[player[aktuellPL][x]], true);
+            }
+        }
+        System.out.println("Gesammtpunkte " + gesammtWert);
+        endPoints[aktuellPL] = gesammtWert;
+
+
+        return endPoints;
+    }
+
+    public static void kartenWertAnzeigenSpieler(int aktuellPL, int[][] player, int[] deck) {
 
         for (int w = 0; w < player[aktuellPL][51]; w++) {
             System.out.print("Punkte " + kartenWert(deck[player[aktuellPL][w]], false) + ", ");
