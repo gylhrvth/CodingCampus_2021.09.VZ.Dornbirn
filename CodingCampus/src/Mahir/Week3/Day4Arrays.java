@@ -43,7 +43,6 @@ public class Day4Arrays {
         System.out.println("Variante d");
         reverseStringInPlaces(letters);
 
-
     }
 
 
@@ -78,7 +77,6 @@ public class Day4Arrays {
     }
 
     public static void reverseStringInPlaces(char[] letters) {
-        System.out.println("start");
         if (letters == null || letters.length < 2) {
             return;
         }
@@ -90,24 +88,7 @@ public class Day4Arrays {
         }
         System.out.println(letters);
 
-
     }
-    //2)
-    //Text aus Kommandozeile einlesen
-    //Buchstaben case insensitive Zählen (A zählt für a)
-    //und ausgeben wie oft jeder Buchstabe vorkommt
-    //TIP aus einem Character kann man eine Zahl gewinnen, bzw. man kann diesen als Zahl annehmen
-
-    //3)
-    //Schlaue Menge
-    //Lies dir folgendes durch:
-    //https://www.brandeins.de/magazine/brand-eins-wirtschaftsmagazin/2005/die-mitte/schlaue-menge
-    //Entwickle ein Program welches zuerst fragt, wieviele Teilnehmer beim Expirement mitmachen
-    //erstelle ein Array in der größe der Teilnehmer, der Typ des Arrays soll Float sein.
-    //Frage jeden Teilnehmer nach seiner Schätzung.
-    //Am Ende berechne den Durchschnitt (arithmetisches Mittel) aller Werte und gib diesen aus.
-
-
 }
 
 
