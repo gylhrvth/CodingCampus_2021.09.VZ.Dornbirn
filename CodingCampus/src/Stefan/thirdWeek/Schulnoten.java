@@ -12,7 +12,7 @@ public class Schulnoten {
 //
 //        System.out.println("Gib deine Schulnote ein:");
 //        textEingabe = schulnoten.nextInt();
-
+//
 //        switch (textEingabe) {
 //            case 1:
 //                System.out.println("Sehr Gut");
