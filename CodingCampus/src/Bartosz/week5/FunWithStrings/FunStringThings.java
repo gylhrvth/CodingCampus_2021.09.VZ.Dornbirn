@@ -1,5 +1,7 @@
 package Bartosz.week5.FunWithStrings;
 
+import java.util.Arrays;
+
 public class FunStringThings {
 
     public static void main(String[] args) {
@@ -19,6 +21,7 @@ public class FunStringThings {
         char[] mSArray = myString4.toCharArray();
         System.out.println(mSArray);
 
-        System.out.println(myString1.split(" ", 2));
+        String[] words = myString3.split(" ");
+        System.out.println(Arrays.toString(words));
     }
 }
