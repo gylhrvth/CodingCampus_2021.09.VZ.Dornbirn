@@ -1,15 +1,46 @@
 package Bartosz.projects.blackjack;
 
 import java.util.Scanner;
+import java.util.Random;
 
 public class initArray {
 
-     int[] cardDeck = new int[52];
 
-     public static void shuffleCards(int[] cardDeck) {
-         for (int i = 1; i < cardDeck.length; i++) {
+    public static void main(String[] args) {
+        int[] cardDeck = new int[52];
+        int[] playHand = new int [10];
+        int[] dealerHand = new int [10];
+        int playerPoints= 0;
+        int dealerPoints;
+        shuffleCards(cardDeck);
+    }
 
+    // reset playerHand
+    public static int[] getPlayerHand(int[] cardDeck) {
+        int[] playerHand = new int[10];
+
+        for (int i = 0; i < playerHand.length; i++) {
+            playerHand[i] = 0;
+        }
+        return cardDeck;
+    }
+
+    // create & shuffle Cards
+     public static int[] shuffleCards(int[] cardDeck) {
+         for (int i = 0; i < cardDeck.length; i++) {
+             cardDeck[i] = i+1;
          }
+
+        for (int i = 0; i < cardDeck.length-1; i++) {
+             Random rand = new Random();
+             int index1 = rand.nextInt(52-1) + 1;
+            int index2 = rand.nextInt(52-1) + 1;
+            int temp = cardDeck[index1];
+            cardDeck[index1] = cardDeck[index2];
+            cardDeck[index2] = temp;
+         }
+
+        return cardDeck;
      }
 
 
@@ -49,7 +80,7 @@ public class initArray {
         Scanner playerHandAddition = new Scanner(System.in);
         String oneMoreCard =  playerHandAddition.next();
         boolean cardPlusOne;
-        if(oneMoreCard.equals("yes") || oneMoreCard.equals("y")) {
+        if(oneMoreCard.equals("yes") || oneMoreCard.equals("y") || oneMoreCard.equals("+")) {
             cardPlusOne = true;
         }else {
             cardPlusOne = false;
