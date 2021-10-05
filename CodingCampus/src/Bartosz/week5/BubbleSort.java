@@ -19,7 +19,6 @@ public class BubbleSort {
                     paramArray[j+1] = temp;
                 }
             }
-
         }
     }
 
