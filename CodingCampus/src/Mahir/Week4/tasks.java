@@ -9,8 +9,8 @@ public class tasks {
             calc += i;
             System.out.println(calc);
         }
-        int result = calc;
-        System.out.println(result);
+
+        System.out.println(calc);
 
     }
 }
