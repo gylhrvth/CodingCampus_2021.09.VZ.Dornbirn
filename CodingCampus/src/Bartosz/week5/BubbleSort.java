@@ -22,8 +22,8 @@ public class BubbleSort {
         }
     }
 
-
     // mit erklärung
+//______________________________________________________________________________________________________________
 //    public static void bubbleSortMethod(int[] paramArray){
 //        for (int h = 0; h < paramArray.length-1; h++) {     // Solange ausführen, bis Array so oft wie werte vorhanden sind überprüft wurde.
 //            for (int i = 0; i < paramArray.length-1; i++) {     // Solange auswechseln, bis ganzes Array überprüft ist
