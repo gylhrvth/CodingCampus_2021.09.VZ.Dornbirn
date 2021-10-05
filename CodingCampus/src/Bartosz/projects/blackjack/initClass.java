@@ -3,27 +3,8 @@ package Bartosz.projects.blackjack;
 import java.util.Scanner;
 import java.util.Random;
 
-public class initArray {
+public class initClass {
 
-
-    public static void main(String[] args) {
-        int[] cardDeck = new int[52];
-        int[] playHand = new int [10];
-        int[] dealerHand = new int [10];
-        int playerPoints= 0;
-        int dealerPoints;
-        shuffleCards(cardDeck);
-    }
-
-    // reset playerHand
-    public static int[] getPlayerHand(int[] cardDeck) {
-        int[] playerHand = new int[10];
-
-        for (int i = 0; i < playerHand.length; i++) {
-            playerHand[i] = 0;
-        }
-        return cardDeck;
-    }
 
     // create & shuffle Cards
      public static int[] shuffleCards(int[] cardDeck) {
@@ -43,6 +24,11 @@ public class initArray {
         return cardDeck;
      }
 
+
+     //playerhand befüllen
+    public static int[] playerHand(int[] playerHand) {
+         return playerHand;
+    }
 
     // checkt player's input ob spielbeginn
     public static boolean gameStart() {
