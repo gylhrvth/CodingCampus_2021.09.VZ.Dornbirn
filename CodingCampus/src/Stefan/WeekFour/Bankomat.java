@@ -2,7 +2,6 @@ package Stefan.WeekFour;
 
 
 import java.util.Scanner;
-import java.util.logging.SocketHandler;
 
 public class Bankomat {
 
