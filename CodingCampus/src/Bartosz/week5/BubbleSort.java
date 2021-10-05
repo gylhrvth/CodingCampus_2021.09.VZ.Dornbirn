@@ -8,21 +8,35 @@ public class BubbleSort {
         System.out.println(Arrays.toString(arrayToBeSorted));
         bubbleSortMethod(arrayToBeSorted);
         System.out.println(Arrays.toString(arrayToBeSorted));
+        reverseBubbleSort(arrayToBeSorted);
+        System.out.println(Arrays.toString(arrayToBeSorted));
     }
 
-        public static void bubbleSortMethod(int[] paramArray) {
+    public static void bubbleSortMethod(int[] paramArray) {
         for (int i = 0; i < paramArray.length; i++) {
             for (int j = 0; j < paramArray.length - i - 1; j++) {
-                if(paramArray[j] > paramArray[j+1])  {
+                if (paramArray[j] > paramArray[j + 1]) {
                     int temp = paramArray[j];
-                    paramArray[j] = paramArray[j+1];
-                    paramArray[j+1] = temp;
+                    paramArray[j] = paramArray[j + 1];
+                    paramArray[j + 1] = temp;
                 }
             }
         }
     }
 
-    // mit erklärung
+    public static void reverseBubbleSort(int[] paramArray) {
+        for (int h = 0; h < paramArray.length - 1; h++) {
+            for (int i = 0; i < paramArray.length - h - 1; i++) {
+                if (paramArray[i] < paramArray[i + 1]) {
+                    int temp = paramArray[i];
+                    paramArray[i] = paramArray[i+1];
+                    paramArray[i+1] = temp;
+                }
+            }
+        }
+
+
+        // mit erklärung
 //______________________________________________________________________________________________________________
 //    public static void bubbleSortMethod(int[] paramArray){
 //        for (int h = 0; h < paramArray.length-1; h++) {     // Solange ausführen, bis Array so oft wie werte vorhanden sind überprüft wurde.
@@ -35,4 +49,5 @@ public class BubbleSort {
 //            }
 //        }
 //    }
+    }
 }
