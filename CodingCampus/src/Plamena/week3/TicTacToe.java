@@ -2,22 +2,26 @@ package Plamena.week3;
 
 import java.util.Scanner;
 
-public class TikTakToe {
+public class TicTacToe {
     public static void main(String[] args) {
 
         printField();
 
-        int [] row = new int [2];
-        int [] column = new int [2];
+        int [] []board = new int [3] [3];
+
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Player 1, set height");
-        row [0] = sc.nextInt();
-        System.out.println("Player 1, set width");
+        System.out.println("Player 1, set row");
 
-        System.out.println("Player 2, set height");
-        System.out.println("Player 2, set width");
+        int row = sc.nextInt();
+        int column = sc.nextInt();
+     //   String [row] [column] board = new String [][];
+
+        System.out.println("Player 1, set column");
+
+        System.out.println("Player 2, set row");
+        System.out.println("Player 2, set column");
 
 
 
