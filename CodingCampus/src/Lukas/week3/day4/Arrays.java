@@ -1,5 +1,6 @@
 package Lukas.week3.day4;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class Arrays {
