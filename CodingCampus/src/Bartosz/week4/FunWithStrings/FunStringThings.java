@@ -1,4 +1,4 @@
-package Bartosz.week5.FunWithStrings;
+package Bartosz.week4.FunWithStrings;
 
 import java.util.Arrays;
 
