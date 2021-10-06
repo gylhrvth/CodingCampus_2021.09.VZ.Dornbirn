@@ -1,4 +1,4 @@
-package Plamena.week2;
+package Plamena;
 
 import Plamena.week1.Methods;
 
@@ -24,7 +24,7 @@ public class Trial {
         }*/
 
 
-        Methods.drawTreeWithLights(18);
+
 
     }
 }

@@ -6,28 +6,6 @@ public class Loops {
 
     public static void main(String[] args) {
 
-
-        //pi nicht gemacht
-
- /*     float a = 4;
-        float n = 1;
-        float pi;
-
-        for (int count = 0; count <= 499999; count++){
-            pi = a/n;
-            if (count%2 == 0){
-                n = n + 2;
-            } else{
-                n = -(n-2);
-            }
-            pi = pi+pi;
-        }
-        return pi;
-        System.out.println(pi);*/
-
-
-
-
         //CalculatorMethod
 
         Scanner scanner1 = new Scanner(System.in);

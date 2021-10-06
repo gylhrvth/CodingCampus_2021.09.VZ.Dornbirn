@@ -34,10 +34,37 @@ public class MyArrays {
         //TODO Print average of all values inside array
         System.out.println("Average of values: " + ((double) sum(array)) / array.length);
 
-        //TODO Print third greatest number of array
+        //TODO Print third greatest number from array
+        int maxNumber = 5;
+        System.out.println("The " + maxNumber + " greatest number is " + getAnyMax(array, maxNumber));;
 
 
 
+
+
+
+
+    }
+
+    public static int getAnyMax ( int [] array, int maxNumber){
+
+        int tmp =0;
+        int[] helpArray = new int[maxNumber];
+        Arrays.fill(helpArray, Integer.MIN_VALUE);
+
+        for (int k : array) {
+            if (k > helpArray[0]) {
+                helpArray[0] = k;
+            }
+            for (int j = 0; j < helpArray.length; j++) {
+                if (j > 0 && helpArray[j] < helpArray[j - 1]) {
+                    tmp = helpArray[j];
+                    helpArray[j] = helpArray[j - 1];
+                    helpArray[j - 1] = tmp;
+                }
+            }
+        }
+        return helpArray[0];
     }
 
     public static int[] printArray() {
@@ -60,12 +87,12 @@ public class MyArrays {
     public static void printEvenNumbers(int[] array) {
         System.out.print("[");
         boolean setComma = false;
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] % 2 == 0) {
+        for (int i : array) {
+            if (i % 2 == 0) {
                 if (setComma) {
                     System.out.print(", ");
                 }
-                System.out.print(array[i]);
+                System.out.print(i);
                 setComma = true;
             }
         }
@@ -75,13 +102,13 @@ public class MyArrays {
     public static void printPrimeNumbers(int[] array) {
         System.out.print("[");
         boolean setComma = false;
-        for (int i = 0; i < array.length; i++) {
+        for (int i : array) {
 
-            if (isAPrim(array[i])) {
+            if (isAPrim(i)) {
                 if (setComma) {
                     System.out.print(", ");
                 }
-                System.out.print(array[i]);
+                System.out.print(i);
                 setComma = true;
             }
         }
@@ -95,7 +122,7 @@ public class MyArrays {
                 minIdx = i;
             }
         }
-        System.out.println("Smallest value od this array is: " + array[minIdx] + " on position " + minIdx);
+        System.out.println("Smallest value of this array is: " + array[minIdx] + " on position " + minIdx);
         return array[minIdx];
     }
 
@@ -106,14 +133,14 @@ public class MyArrays {
                 maxIdx = i;
             }
         }
-        System.out.println("Greatest value in this array is: " + array[maxIdx] + " on position " + maxIdx);
+        System.out.println("Greatest value of this array is: " + array[maxIdx] + " on position " + maxIdx);
         return array[maxIdx];
     }
 
     public static int sum(int[] array) {
         int sum = 0;
-        for (int i = 0; i < array.length; i++) {
-            sum += array[i];
+        for (int i : array) {
+            sum += i;
         }
         return sum;
     }
@@ -126,5 +153,6 @@ public class MyArrays {
         }
         return true;
     }
+
 
 }

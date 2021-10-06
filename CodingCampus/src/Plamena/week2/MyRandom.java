@@ -31,7 +31,7 @@ public class MyRandom {
                     System.out.println("Try again! Random number is higher! You've got " + i + " tries left!");
                 }
                 if (number > rnm && i > 0) {
-                    System.out.println("Tray again! Random number is lower! You've got " + i + " tries left!");
+                    System.out.println("Try again! Random number is lower! You've got " + i + " tries left!");
                 }
                 if (number == rnm) {
                     System.out.println("Congratulations! You won! To start over enter YES");
