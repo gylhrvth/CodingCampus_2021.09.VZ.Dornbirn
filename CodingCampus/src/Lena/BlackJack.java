@@ -8,6 +8,13 @@ public class BlackJack {
 
     public static void main(String[] args) {
         int startCredit = 100;
+
+        System.out.println("\u2663");
+        System.out.println(setColorRed() + "\u2666" + resetColor());
+        System.out.println(setColorRed() + "\u2665" + resetColor());
+        System.out.println("\u2660");
+
+
         letsPlayBlackJack(startCredit);
     }
 
@@ -21,7 +28,16 @@ public class BlackJack {
         int[] playerHand = new int[12];
         int playerCredit = startCredit;
         boolean playerInTheGame = true;
+
+
+
         fillCardDeck(cardDeck);
+
+        for (int i = 0; i < cardDeck.length; i++) {
+            System.out.println(printCard(cardDeck[i]));
+
+        }
+
         shuffle(cardDeck);
         resetHand(dealerHand);
         resetHand(playerHand);
@@ -68,8 +84,7 @@ public class BlackJack {
             System.out.println();
             System.out.println("Dei Kontostand beträgt "+playerCredit+"€.");
             newRound(playerCredit);
-        }
-        if (!playerInTheGame) {
+        }else if (!playerInTheGame) {
             System.out.println();
             System.out.println(setColorYellow() + "--BANK GEWINNT--" + resetColor());
             playerCredit = playerLost(playerCredit, playersBet);
@@ -211,7 +226,7 @@ public class BlackJack {
         return false;
     }
 
-    //Preperation Methods
+    //Methods for Preperation
     public static int[] fillCardDeck(int[] cardDeck) {
         for (int i = 0; i < cardDeck.length; i++) {
             cardDeck[i] = i + 1;
@@ -223,8 +238,8 @@ public class BlackJack {
         Random random = new Random();
 
         for (int i = 0; i < 100; i++) {
-            int index1 = random.nextInt(52);
-            int index2 = random.nextInt(52);
+            int index1 = random.nextInt(51);
+            int index2 = random.nextInt(51);
             int helpVar = cardDeck[index1];
             cardDeck[index1] = cardDeck[index2];
             cardDeck[index2] = helpVar;
@@ -313,17 +328,16 @@ public class BlackJack {
     }
 
     public static int getCardValue(int card) {
-        if (card < 10) {
-            return card;
-        }
-        int value = 13 - card % 13;
-        if (value >= 10 && value < 13) {
-            return 10;
-        }
-        if (value == 13) {
+        int value=0;
+        value=card%13;
+
+        if(value==0){
             return 11;
         }
-        return value;
+        if(value>=9){
+            return 10;
+        }
+        return value+1;
     }
 
     public static String getCardName(int card) {
@@ -332,16 +346,16 @@ public class BlackJack {
             return "";
         }
         if (nameIndex > 0 && nameIndex <= 1.0) {
-            return setColorRed()+"Herz"+resetColor();
+            return getHeartSympol();
         }
         if (nameIndex > 1.0 && nameIndex <= 2.0) {
-            return "Pik";
+            return getPikSympol();
         }
         if (nameIndex > 2.0 && nameIndex <= 3.0) {
-            return "Kreuz";
+            return getKreuzSympol();
         }
         if (nameIndex > 3.0 && nameIndex <= 4.0) {
-            return setColorRed()+"Karo"+resetColor();
+            return getKaroSympol();
         }
         return "Kein passender Name gefunden";
     }
@@ -371,9 +385,7 @@ public class BlackJack {
         }
         System.out.println();
         System.out.println("Handwert: "+getHandValue(hand));
-
     }
-
 
     //Set Colores
     public static String setColorYellow() {
@@ -390,6 +402,19 @@ public class BlackJack {
 
     public static String setColorGreen() {
         return "\u001B[32m";
+    }
+
+    public static String getHeartSympol(){
+        return setColorRed()+"\u2665"+resetColor();
+    }
+    public static String getPikSympol(){
+        return "\u2660";
+    }
+    public static String getKaroSympol(){
+        return setColorRed()+"\u2666"+resetColor();
+    }
+    public static String getKreuzSympol(){
+        return "\u2663";
     }
 
 }
