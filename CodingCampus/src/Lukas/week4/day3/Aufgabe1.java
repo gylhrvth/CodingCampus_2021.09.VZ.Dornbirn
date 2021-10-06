@@ -4,6 +4,7 @@ package Lukas.week4.day3;
  * <h1>Strings und Arrays</h1>
  * <i>Verwende für folgende Aufgabe die Lukas.week4.day3.Strings.ALL_MEMBERS Variable.</i>
  * Zerlege den String in ein Array.
+ * <br>Mach für jede Aufgabe eine eigene Methode<br>
  * <ol>
  *     <li>Sortiere das Array alphabetisch aufsteigend und gib es aus<br><small>verwende compareTo</small></li>
  *     <li>Sortiere das Array alphabetisch absteigend und gib es aus<br><small>verwende compareTo</small></li>
