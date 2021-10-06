@@ -1,10 +1,8 @@
 package Sandro.Programme;
 
 import java.util.Scanner;
-import java.util.zip.DeflaterOutputStream;
 
 public class Calculator {
-
 
     public static void main(String[] args) {
 
@@ -37,12 +35,9 @@ public class Calculator {
 
             } else if (operator == '-') {
                 System.out.println("Ihr Ergebnis ist: " + (ersteZahl - zweiteZahl) + "\n");
-            } else {
-                System.out.println("Ungültiger Rechenoperator");
-
-            }
-
             }
         }
     }
+}
+
 
