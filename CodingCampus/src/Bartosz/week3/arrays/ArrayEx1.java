@@ -89,8 +89,6 @@ public class ArrayEx1 {
         return myArray;
     }
 
-
-
     public static void main(String[] args) {
         int[] myArray = init();
         printPrimeNumbers(myArray);
