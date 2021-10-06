@@ -1,4 +1,4 @@
-package Bartosz.week5.sorting;
+package Bartosz.week4.sorting;
 
 public class SelectionSort {
     public static void main(String[] args) {
