@@ -1,9 +1,8 @@
-package Sandro.week3.tag1;
+package Sandro.Programme;
 
-public class Arrays {
+public class ArraysAufgabenDCV {
     public static void main(String[] args) {
 
-/*
 
         // Übung 3 - sortArray
         int[] array = {1, 2, 3, 8, 8, 22};
@@ -30,42 +29,32 @@ public class Arrays {
         }
 
 
-
         //Übung 1 ReverseString
-        char katze = 'E';*/
+        char katze = 'E';
 
 
-
-
-/*
         //übung Array Eindimensional
         int[] arrray1 = {17, 31, 49, 13, 21};
 
-        for (int f = 0; f < arrray1.length; f++){
+        for (int f = 0; f < arrray1.length; f++) {
             System.out.println(arrray1[f]);
         }
 
         System.out.println();
-*/
 
-      /*  int[] arrray2 = {21, 13, 49, 31, 17};
+
+        int[] arrray2 = {21, 13, 49, 31, 17};
 
         for (int g = 0; g < arrray2.length; g++) {
             System.out.println(arrray2[g]);
-        }*/
+        }
 
 
-/*        for (int g =< 0; g < arrray1.length; g++){
-            System.out.println(arrray1[g]);
+    }
 
 
-
-        }*/
-
-
-
-        //übung Array Zweidimensional
-/*
+    //übung Array Zweidimensional
+    {
         int[][] arrray1 = {{0, 17}, {1, 31}, {2, 49}, {3, 13}, {4, 21}};
 
         for (int f = 0; f < arrray1.length; f++) {
@@ -76,11 +65,12 @@ public class Arrays {
 
         for (int f = 0; f < arrray1.length; f++) {
             System.out.println(arrray1[f][1] + "," + arrray1[f][0]);
-*/
+
 
         }
 
     }
+}
 
 
 

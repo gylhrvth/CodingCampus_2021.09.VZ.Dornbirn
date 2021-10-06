@@ -1,6 +1,6 @@
 package Sandro.MenuMethoden;
 
-public class ChristbaumHöhe {
+public class ChristbaumHoehe {
 
     public static void main(String[] args) {
 
