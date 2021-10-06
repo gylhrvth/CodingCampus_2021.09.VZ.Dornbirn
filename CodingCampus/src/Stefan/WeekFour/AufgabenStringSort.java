@@ -4,6 +4,7 @@ package Stefan.WeekFour;
 import Lukas.week4.day3.Strings;
 
 import java.util.Arrays;
+import java.util.Locale;
 
 
 public class AufgabenStringSort {
@@ -31,6 +32,11 @@ public class AufgabenStringSort {
         System.out.println("Wort mit den wenigsten Zeichen: ");
         smalestStrings(initArray);
         System.out.println(initArray[initArray.length-1]);
+        System.out.println();
+
+        mostSelfVoiced(initArray);
+
+
 
     }
 
@@ -96,6 +102,40 @@ public class AufgabenStringSort {
             }
         }
 
+    }
+
+    //Das Wort mit den meisten Selbstlauten
+    public static void mostSelfVoiced (String[] parameter) {
+
+        int countVoiced = 0;
+        String bestWord = " ";
+        for (int i = 0; i < parameter.length; i++) {
+            int counter = 0;
+            char[] vocals = parameter[i].toLowerCase(Locale.ROOT).toCharArray();
+            for (int j = 0; j < vocals.length; j++) {
+                if (vocals[j] == 'a') {
+                    counter++;
+                }
+                if (vocals[j] == 'e') {
+                    counter++;
+                }
+                if (vocals[j] == 'i') {
+                    counter++;
+                }
+                if (vocals[j] == 'o') {
+                    counter++;
+                }
+                if (vocals[j] == 'u') {
+                    counter++;
+                }
+            }
+            if (counter > countVoiced) {
+                countVoiced = counter;
+                bestWord = parameter[i];
+            }
+
+        }
+        System.out.println("Der Name " + bestWord + " hat " + countVoiced + " Selbstlaute, und somit Gewonnen!");
     }
 
 }
