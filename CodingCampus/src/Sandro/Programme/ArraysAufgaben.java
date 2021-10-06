@@ -1,9 +1,9 @@
-package Sandro.week3.tag2;
+package Sandro.Programme;
 
 import java.util.Random;
 import java.util.Arrays;
 
-public class arraystest {
+public class ArraysAufgaben {
 
     public static void main(String[] args) {
 
