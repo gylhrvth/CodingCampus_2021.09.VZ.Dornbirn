@@ -10,6 +10,7 @@ public class Day3StringTask {
         String[] splitText = allMembers.split(" ");
 
 
+        System.out.println("Die Teilnehmeer");
         System.out.println(Arrays.toString(splitText));
         System.out.println();
 
@@ -17,27 +18,7 @@ public class Day3StringTask {
         alphabetischAbsteigend(splitText);
         meistenZeichen(splitText);
         wenigsteZeichen(splitText);
-        System.out.println("meisten Selbstlaute");
-        String[] tmpString = new String[splitText.length];
-
-        int counter = 0;
-
-
-          /*  for (int j = 0; j < splitText.length ; j++) {
-                String tmp = splitText[j];
-                char[] ctp =  tmp.toCharArray();
-                if (ctp[j] == 'a'){
-                    counter++;
-                    splitText[j] += counter;
-                    counter = 0;
-
-                }
-
-
-            }
-       System.out.println(Arrays.toString(splitText));
-*/
-
+        selbstlaute(splitText);
 
     }
 
@@ -57,6 +38,7 @@ public class Day3StringTask {
             }
 
         }
+        System.out.println();
         System.out.println(Arrays.toString(arr));
         System.out.println();
     }
@@ -76,6 +58,7 @@ public class Day3StringTask {
             }
 
         }
+        System.out.println();
         System.out.println(Arrays.toString(arr));
         System.out.println();
     }
@@ -95,6 +78,7 @@ public class Day3StringTask {
             }
 
         }
+        System.out.println();
         System.out.println(arr[arr.length - 1]);
         System.out.println();
     }
@@ -114,8 +98,46 @@ public class Day3StringTask {
             }
 
         }
+        System.out.println();
         System.out.println(arr[arr.length - 1]);
         System.out.println();
+    }
+
+    public static void selbstlaute(String[] arr) {
+        System.out.println("Selbstlaute");
+        int count2 = 0;
+        String result = "";
+        for (int i = 0; i < arr.length; i++) {
+            int counter = 0;
+            char[] ctmp = arr[i].toCharArray();
+            for (int j = 0; j < ctmp.length; j++) {
+
+                if (ctmp[j] == 'a') {
+                    counter++;
+                }
+                if (ctmp[j] == 'e') {
+                    counter++;
+                }
+                if (ctmp[j] == 'i') {
+                    counter++;
+                }
+                if (ctmp[j] == 'o') {
+                    counter++;
+                }
+                if (ctmp[j] == 'u') {
+                    counter++;
+                }
+            }
+            if (counter > count2) {
+                count2 = counter;
+                result = arr[i];
+            }
+        }
+        System.out.println();
+        System.out.println(Arrays.toString(arr));
+        System.out.println(result + " hat mit " + count2 + "  Selbstlauten die meisten Selbstlaute");
+        System.out.println();
+
     }
 
 
