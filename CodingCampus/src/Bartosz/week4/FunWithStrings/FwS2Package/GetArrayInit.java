@@ -3,6 +3,7 @@ package Bartosz.week4.FunWithStrings.FwS2Package;
 import Lukas.week4.day3.Strings;
 
 import java.util.Arrays;
+import java.util.Locale;
 
 public class GetArrayInit {
 
@@ -51,8 +52,8 @@ public class GetArrayInit {
     // Aufgabe 3:
     public static void longestWord(String[] paramArray) {
         System.out.println("Der längste Name ist/ die längsten Namen sind: ");
-        for (int i = 0; i < paramArray.length-1; i++) {
-            for (int j = 0; j < paramArray.length-1; j++) {
+        for (int i = 0; i < paramArray.length - 1; i++) {
+            for (int j = 0; j < paramArray.length - 1; j++) {
                 if (paramArray[j + 1].length() < paramArray[j].length()) {
                     String tmp = paramArray[j];
                     paramArray[j] = paramArray[j + 1];
@@ -60,7 +61,7 @@ public class GetArrayInit {
                 }
             }
         }
-                System.out.println(paramArray[paramArray.length-1]);
+        System.out.println(paramArray[paramArray.length - 1]);
 
     }
 
@@ -78,7 +79,7 @@ public class GetArrayInit {
             }
         }
         for (int i = 0; i < paramArray[0].length(); i++) {
-            if (paramArray[i].length() <= paramArray[i+1].length()) {
+            if (paramArray[i].length() <= paramArray[i + 1].length()) {
                 System.out.println(paramArray[i]);
             }
         }
@@ -86,12 +87,26 @@ public class GetArrayInit {
 
     //Aufgabe 5:
     public static void mostVowels(String[] paramArray) {
-
-            for (int i = 0; i < paramArray.length-1; i++) {
-                int tmp = 0;
-                if (paramArray[i].contains("a") || paramArray[i].contains("e") || paramArray[i].contains("i") || paramArray[i].contains("o") || paramArray[i].contains("u")){
-                    tmp++;
+        int vowelsCounter = 0;
+        String mostVowelsName = "";
+        for (int i = 0; i < paramArray.length - 1; i++) {
+            int tmpCounter = 0;
+            char[] names = paramArray[i].toLowerCase(Locale.ROOT).toCharArray();
+            for (int j = 0; j < names.length; j++) {
+                if     (paramArray[i].contains("a") ||
+                        paramArray[i].contains("e") ||
+                        paramArray[i].contains("i") ||
+                        paramArray[i].contains("o") ||
+                        paramArray[i].contains("u")) {
+                    tmpCounter++;
                 }
             }
+
+            if (tmpCounter > vowelsCounter) {
+                vowelsCounter = tmpCounter;
+                mostVowelsName = paramArray[i];
+            }
+        }
+        System.out.println("Der Name mit den meisten Vokalen ist : " + mostVowelsName + " mit " + vowelsCounter + " Vokalen");
     }
 }
