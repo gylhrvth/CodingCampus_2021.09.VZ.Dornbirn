@@ -1,10 +1,14 @@
 package Bartosz.week4.FunWithStrings.FwS2Package;
 
 import Lukas.week4.day3.Strings;
+import Lukas.week4.day4.Aufgabe1;
 
 import java.util.Arrays;
+import java.util.Locale;
 
 public class GetArrayInit {
+
+    // Mittwochsaufgaben
 
     // Init Methode
     public static String[] getArrayForFun() {
@@ -51,8 +55,8 @@ public class GetArrayInit {
     // Aufgabe 3:
     public static void longestWord(String[] paramArray) {
         System.out.println("Der längste Name ist/ die längsten Namen sind: ");
-        for (int i = 0; i < paramArray.length-1; i++) {
-            for (int j = 0; j < paramArray.length-1; j++) {
+        for (int i = 0; i < paramArray.length - 1; i++) {
+            for (int j = 0; j < paramArray.length - 1; j++) {
                 if (paramArray[j + 1].length() < paramArray[j].length()) {
                     String tmp = paramArray[j];
                     paramArray[j] = paramArray[j + 1];
@@ -60,7 +64,7 @@ public class GetArrayInit {
                 }
             }
         }
-                System.out.println(paramArray[paramArray.length-1]);
+        System.out.println(paramArray[paramArray.length - 1]);
 
     }
 
@@ -78,7 +82,7 @@ public class GetArrayInit {
             }
         }
         for (int i = 0; i < paramArray[0].length(); i++) {
-            if (paramArray[i].length() <= paramArray[i+1].length()) {
+            if (paramArray[i].length() <= paramArray[i + 1].length()) {
                 System.out.println(paramArray[i]);
             }
         }
@@ -86,12 +90,36 @@ public class GetArrayInit {
 
     //Aufgabe 5:
     public static void mostVowels(String[] paramArray) {
+        int vowelsCounter = 0;
+        String mostVowelName = "";
+        for (int i = 0; i < paramArray.length; i++) {
 
-            for (int i = 0; i < paramArray.length-1; i++) {
-                int tmp = 0;
-                if (paramArray[i].contains("a") || paramArray[i].contains("e") || paramArray[i].contains("i") || paramArray[i].contains("o") || paramArray[i].contains("u")){
-                    tmp++;
+            int vowelsInsideName = 0;
+            char[] names = paramArray[i].toLowerCase(Locale.ROOT).toCharArray();
+
+            for (int j = 0; j < names.length; j++) {
+                if (names[j] == 'a') {
+                    vowelsInsideName++;
+                }
+                if (names[j] == 'e') {
+                    vowelsInsideName++;
+                }
+                if (names[j] == 'i') {
+                    vowelsInsideName++;
+                }
+                if (names[j] == 'o') {
+                    vowelsInsideName++;
+                }
+                if (names[j] == 'u') {
+                    vowelsInsideName++;
                 }
             }
+
+            if (vowelsInsideName > vowelsCounter) {
+                vowelsCounter = vowelsInsideName;
+                mostVowelName = paramArray[i];
+            }
+        }
+        System.out.println("Der Name: " + mostVowelName + " beinhaltet " + vowelsCounter + " Selbstlaute");
     }
 }
