@@ -41,7 +41,7 @@ public class StringExamplesLukas {
                 membersArray[index] = temp;
             }
         }
-        System.out.println(Arrays.toString(membersArray)
+        System.out.println(Arrays.toString(membersArray));
     }
 
     //    <li>Sortiere das Array alphabetisch absteigend und gib es aus<br><small>verwende compareTo</small></li>
