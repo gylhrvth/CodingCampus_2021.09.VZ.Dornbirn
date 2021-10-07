@@ -1,11 +1,14 @@
 package Bartosz.week4.FunWithStrings.FwS2Package;
 
 import Lukas.week4.day3.Strings;
+import Lukas.week4.day4.Aufgabe1;
 
 import java.util.Arrays;
 import java.util.Locale;
 
 public class GetArrayInit {
+
+    // Mittwochsaufgaben
 
     // Init Methode
     public static String[] getArrayForFun() {
@@ -88,25 +91,35 @@ public class GetArrayInit {
     //Aufgabe 5:
     public static void mostVowels(String[] paramArray) {
         int vowelsCounter = 0;
-        String mostVowelsName = "";
-        for (int i = 0; i < paramArray.length - 1; i++) {
-            int tmpCounter = 0;
+        String mostVowelName = "";
+        for (int i = 0; i < paramArray.length; i++) {
+
+            int vowelsInsideName = 0;
             char[] names = paramArray[i].toLowerCase(Locale.ROOT).toCharArray();
+
             for (int j = 0; j < names.length; j++) {
-                if     (paramArray[i].contains("a") ||
-                        paramArray[i].contains("e") ||
-                        paramArray[i].contains("i") ||
-                        paramArray[i].contains("o") ||
-                        paramArray[i].contains("u")) {
-                    tmpCounter++;
+                if (names[j] == 'a') {
+                    vowelsInsideName++;
+                }
+                if (names[j] == 'e') {
+                    vowelsInsideName++;
+                }
+                if (names[j] == 'i') {
+                    vowelsInsideName++;
+                }
+                if (names[j] == 'o') {
+                    vowelsInsideName++;
+                }
+                if (names[j] == 'u') {
+                    vowelsInsideName++;
                 }
             }
 
-            if (tmpCounter > vowelsCounter) {
-                vowelsCounter = tmpCounter;
-                mostVowelsName = paramArray[i];
+            if (vowelsInsideName > vowelsCounter) {
+                vowelsCounter = vowelsInsideName;
+                mostVowelName = paramArray[i];
             }
         }
-        System.out.println("Der Name mit den meisten Vokalen ist : " + mostVowelsName + " mit " + vowelsCounter + " Vokalen");
+        System.out.println("Der Name: " + mostVowelName + " beinhaltet " + vowelsCounter + " Selbstlaute");
     }
 }
