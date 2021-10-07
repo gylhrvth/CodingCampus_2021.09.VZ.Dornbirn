@@ -25,10 +25,8 @@ package Danny.Woche4;
  */
 public class AufgabeZurStringAnalyseUndManipulation {
     public static void main(String[] args) {
-char[]
-        for (int i = 0; i < ; i++) {
 
-        }
+
 
 
 
