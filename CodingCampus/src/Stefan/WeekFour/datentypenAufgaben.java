@@ -17,7 +17,6 @@ public class datentypenAufgaben {
 //        System.out.println(input + " Fahrenheit sind " + sum / 100 + " Grad Celsius!");
 
 
-
         //Umrechnung von Zoll in Meter
 //        System.out.println("Geben Sie einen Wert für Zoll ein: ");
 //        double input = scanner.nextDouble();
@@ -34,14 +33,42 @@ public class datentypenAufgaben {
 //        Geben Sie eine ganze Zahl zwischen 0 und 1000 ein: 565
 //        Erwartete Ausgabe :
 //        Die Summe aller Ziffern in 565 ist 16
-        System.out.println("Geben Sie eine ganze Zahl zwischen 0 und 1000 ein: ");
-
-        int summe = scanner.nextInt();
-        for (int i = 0; i < summe; i++) {
-            summe = summe +i;
-        }
-        System.out.println("Summe: " + summe);
 
 
+        //Quersumme einer Eingegebenen Zahl
+//        System.out.println("Geben Sie eine ganze Zahl zwischen 0 und 1000 ein: ");
+//        int summe = scanner.nextInt();
+//
+//        while (summe < 0 || summe > 1000) {
+//            System.out.println("Gib eine Zahl zwischen 1 - 1000 ein!!!");
+//            while (!scanner.hasNextInt()) {
+//                System.out.println("Sie müssen eine Zahl eingeben");
+//                scanner.nextLine();
+//            }
+//            summe = scanner.nextInt();
+//            scanner.nextLine();
+//        }
+//
+//        System.out.println("Quersumme = " + quersumme(summe));
+//
+//        }
+
+//        public static int quersumme(int zahl) {
+//            if (zahl <= 9) return zahl;
+//            return zahl%10 + quersumme(zahl/10);
+//
+//        }
+
+        //Ausgabe der eingegebenen Minuten in Jahren, Tagen und Stunden
+        System.out.println("Geben sie dei Minuten ein die Sie umrechenen wollen!");
+        int input = scanner.nextInt();
+
+                                                 //int sek = input;
+        int min = input;                         //sek/60%60;
+        int std = min/60%24;                     //sek/60/60%24;
+        int tag = min/60/24%365;                 //sek/60/60/24%365;
+        int jah = min/60/24/365;                 //sek/60/60/24/365;
+
+        System.out.println(min + " Minuten entsprechen: " + jah + " Jahren und " + tag + " Tagen " + std + " Stunden!");
     }
 }
