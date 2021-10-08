@@ -2,8 +2,8 @@ package Bartosz.week4.FunWithStrings;
 
 import Lukas.week4.day4.Aufgabe1;
 
-import java.sql.SQLOutput;
 import java.util.Arrays;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class FunWithStrings3 {
@@ -22,7 +22,6 @@ public class FunWithStrings3 {
 
         Scanner textinput = new Scanner(System.in);
         int choseText = textinput.nextInt();
-
         String initText1 = Aufgabe1.TEXT_TO_ANALYZE;
         String initText2 = Aufgabe1.TEXT_TO_ANALYSE_2;
         String initText3 = Aufgabe1.TEXT_TO_ANALYSE_3;
@@ -30,13 +29,67 @@ public class FunWithStrings3 {
         String chosenText = "";
 
         switch (choseText) {
-            case 1 -> {chosenText = initText1;}
-            case 2 -> {chosenText = initText2;}
-            case 3 -> {chosenText = initText3;}
-            case 4 -> {chosenText = initText4;}
-            default -> {System.out.println("Text nicht vorhanden");}
+            case 1 -> {
+                chosenText = initText1;
+            }
+            case 2 -> {
+                chosenText = initText2;
+            }
+            case 3 -> {
+                chosenText = initText3;
+            }
+            case 4 -> {
+                chosenText = initText4;
+            }
+            default -> {
+                System.out.println("Text nicht vorhanden");
+            }
         }
         return chosenText;
+    }
+
+    //Auswählen welche Aufgabe gemacht wird
+    private static void decisionEx(String initText) {
+        System.out.println("Aufgabenauswahl:");
+        System.out.println("1) Zähle alle Wörter und gib diese aus.");
+        System.out.println("2) Zähle alle Zeilen und gib diese aus");
+        System.out.println("3) Ersetze jedes Freisebad durch ___ und gib den Text aus // beliebiges Wort");
+        System.out.println("4) Ersetze jedes \"ist, und, oder\" durch ___ und gib den Text aus, verwende dazu einen Regulären Ausdruck");
+        System.out.println("5) Erstelle ein Programm welches vom Benutzer Worte einliest, die durch ein ___ ersetzt werden sollen und gib den Text aus.\n" + "Die Eingabe soll einzeilig erfolgen, z.b.: Haus,Maus,raus");
+        System.out.println("6) Zähle jedes Zeichen im Text und gib dessen Häufigkeit aus.");
+        System.out.println("7) Weiters gib die Häufigkeit in Prozent in relation zur Gesamtlänge des Textes aus.");
+        System.out.println("8) Siehe 6), beschränke dich aber nun auf das Alphabet");
+        Scanner exerciseScanner = new Scanner(System.in);
+        int exNr = exerciseScanner.nextInt();
+
+        switch (exNr) {
+            case 1 -> {
+                // Aufgabe 1:
+                int wordsCounter = countWords(initText);
+                System.out.println("Der Text enthält " + wordsCounter + " Wörter");
+            }
+
+            case 2 -> {
+                // Aufgabe 2:
+                int rowsCounter = counterRows(initText);
+                System.out.println("Der Text enthält " + rowsCounter + " Zeilen");
+            }
+            case 3 -> {
+                // Aufgabe 3:
+                printAndReplaceScanned(initText);
+            }
+            case 4 -> {
+                // Aufgabe 4:
+                System.out.println();
+                printReplacedRegular(initText);
+            }
+            case 5 -> {
+            }
+
+            default -> {
+                System.out.println("Diese Übung ist nicht vorhanden.");
+            }
+        }
     }
 
     // Wiederholungsmethode
@@ -46,7 +99,7 @@ public class FunWithStrings3 {
         String repeat = repeatProgram.next();
         boolean casusRepeat = true;
 
-        if(repeat.equals("yes") || repeat.equals("y")) {
+        if (repeat.equals("yes") || repeat.equals("y")) {
             casusRepeat = true;
         } else {
             casusRepeat = false;
@@ -56,12 +109,17 @@ public class FunWithStrings3 {
     }
 //----------------------------------------------------------------------------------------------------//
 
-//------------------------------------Aufgaben Methods--------------------------------------------------\\
+    //------------------------------------Aufgaben Methods--------------------------------------------------\\
     // Aufgabe 1:
     private static int countWords(String importedText) {
         int wordsCounter = 0;
-
+        importedText = importedText
+                .replaceAll("[\\(\\):]*", "")
+                .replaceAll("\n+"," ")
+                .replaceAll("\\, ", " ")
+                .replaceAll("\\. ", " ");
         String[] words = importedText.split(" ");
+        System.out.println(Arrays.toString(words));
         for (int counter = 0; counter < words.length - 1; counter++) {
             wordsCounter++;
         }
@@ -82,12 +140,41 @@ public class FunWithStrings3 {
     }
 
     // Aufgabe 3:   ein Wort im Text ersetzen durch "___"
-    private static void printAndReplaceScanned(String importedText){
+    private static void printAndReplaceScanned(String importedText) {
         System.out.println("Welches Wort möchten Sie ersetzen?");
         Scanner inputScanner = new Scanner(System.in);
         String userInput = inputScanner.next();
 
         System.out.println(importedText.replaceAll(userInput, "___"));
+    }
+
+    // Aufgabe 4: Ersetzen von "ist, und, oder" mit regulären Ausdrücken
+    private static void printReplacedRegular(String importedText) {
+        System.out.println("Gemäß aufgabenstellung werden die Worte \" ist, und, oder \" durch ___ ersetzt");
+        System.out.println(importedText.replaceAll("(I|i)st|(U|u)nd|(O|o)der", "___"));
+    }
+
+    // Aufgabe 5: Worte aus User input einlesen und ersetzen
+    private static void replaceUserWords(String importedText) {
+        System.out.println("Welches Wort möchten Sie ersetzen?");
+        Scanner inputScanner = new Scanner(System.in);
+        String userInputWord1 = inputScanner.next();
+        String userInputWord2 = inputScanner.next();
+        String userInputWord3 = inputScanner.next();
+
+        // .nextline()
+
+        System.out.println(importedText.
+                replaceAll(userInputWord1, "___").
+                replaceAll(userInputWord2, "___").
+                replaceAll(userInputWord3, "___").
+                replaceAll("[()]", ""));
+    }
+
+    // Aufgabe 6: Zeichen auszählen
+    private static void countChars(String importedText) {
+    char[] importedTextArray = importedText.toCharArray();
+
     }
 
 //----------------------------------------------------------------------------------------------------//
@@ -96,20 +183,14 @@ public class FunWithStrings3 {
         boolean run = true;
 
         while (run) {
+
             String initText = getInitText();
+            //decisionEx(initText);
 
-            // Aufgabe 1:
-            int wordsCounter = countWords(initText);
-            System.out.println("Der Text enthält " + wordsCounter + " Wörter");
+            replaceUserWords(initText);
 
-            // Aufgabe 2:
-            int rowsCounter = counterRows(initText);
-            System.out.println("Der Text enthält " + rowsCounter + " Zeilen");
 
-            // Aufgabe 3:
-            printAndReplaceScanned(initText);
-
-            // wiederholen?
+            // Wiederholungsmethode
             run = repeat();
         }
 

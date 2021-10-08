@@ -4,6 +4,9 @@ package Danny.Woche4;
 import Lukas.week4.day4.Aufgabe1;
 
 import java.util.Arrays;
+import java.util.Scanner;
+
+import static Danny.Woche4.TextPrintColor.*;
 
 /**
  * <h1>Textanalyse</h1>
@@ -32,19 +35,77 @@ import java.util.Arrays;
 
 public class AufgabeZurStringAnalyseUndManipulation {
 
-    public static String test = Aufgabe1.TEXT_TO_ANALYZE;
+    public static String textToAnalyze = Aufgabe1.TEXT_TO_ANALYZE;
+    public static Scanner scanner = new Scanner(System.in);
+
     public static void main(String[] args) {
         System.out.println();
 
 //        <li>Zähle alle Wörter und gib diese aus.</li>
+        //stringCompareAndCountAll(stringSplit((stringLowerCase(stringReplaceMarks(textToAnalyze, "[-,.:()\n’]", " "))), " +"));
 
-        stringCompareAndCountAll(stringSplit((stringLowerCase(stringReplaceMarks(test, "[-,.:()\n’]", " "))), " +"));
+//        <li>Zähle alle Zeilen und gib diese aus.</li>
+        //System.out.println(stringCompareAndCount(stringSplit((stringLowerCase(stringReplaceMarks(textToAnalyze, "[\n]", " §§§ "))), " +"),"§§§"));
+
+//        <li>Ersetze jedes Freisebad durch ___ und gib den Text aus</li>
+        //System.out.println(stringReplaceMarks(textToAnalyze, "Freisebad", "___"));
+
+//        <li>Ersetze jedes "ist, und, oder" durch ___ und gib den Text aus, verwende dazu einen Regulären Ausdruck</li>
+        // geht nicht!!!  System.out.println(stringReplaceMarks(textToAnalyze, "ist|und|oder"," ___ "));
+        // geht System.out.println((stringLowerCase(textToAnalyze)).replaceAll("ist|und|oder", " ___ "));
+
+//        <li>Erstelle ein Programm welches vom Benutzer Worte einliest, die durch ein ___ ersetzt werden sollen und gib den Text aus.
+       //manyWordsReplaceUserInput(textToAnalyze);
+
+//         Die Eingabe soll einzeilig erfolgen, z.b.: Haus,Maus,raus
+
+
+ //   <li>Zähle jedes Zeichen im Text und gib dessen Häufigkeit aus.
+//    <br>Weiters gib die Häufigkeit in Prozent in relation zur Gesamtlänge des Textes aus.
+//   <li>Siehe 6), beschränke dich aber nun auf das Alphabet</li>
+//    <li>Verwende Aufgaben 5) und 6) und analysiere ebenfalls TEXT_TO_ANALYSE_2,TEXT_TO_ANALYSE_3,TEXT_TO_ANALYSE_4
+//   <br>Gibt es einen Unterschied zwischen den deutschen und den englischen Texten?
+
+
 
 
         //Testfeld
-
-
     }
+
+
+
+
+
+
+    public static void manyWordsReplaceUserInput(String arr) {
+        wordReplaceUserInput(textToAnalyze);
+        boolean moreWords = true;
+        while (moreWords == true) {
+            textPrintColor("Möchtest du ein weiteres Wort ersetzen?", ANSI_YELLOW, "", true);
+            textPrintColor("1 = Ja ", ANSI_GREEN, " ", false);
+            textPrintColor(" 2 = Nein", ANSI_RED, "", true);
+            if (scanner.nextInt() == 1) {
+                wordReplaceUserInput(textToAnalyze);
+            } else {
+                moreWords = false;
+            }
+        }
+    }
+
+    public static void wordReplaceUserInput(String arr) {
+        System.out.println(textToAnalyze);
+        System.out.println();
+        System.out.println("----------");
+        textPrintColor("Welches Wort möchtest du ersetzen?", ANSI_YELLOW, "", true);
+        System.out.println("----------");
+        String searchWord = stringLowerCase(scanner.next());
+        System.out.println(stringReplaceMarks(arr, searchWord, "___"));
+        if (arr.contains(searchWord)) {
+        } else {
+            textPrintColor("Das Wort ist nicht vorhanden.", ANSI_RED, "", true);
+        }
+    }
+
 
     //Alle gleichen Strings im StringArray Zählen und Anzahl ausgeben
     public static void stringCompareAndCountAll(String[] arry) {
@@ -53,7 +114,7 @@ public class AufgabeZurStringAnalyseUndManipulation {
             if (Arrays.toString(sameWords).contains(arry[i])) {
             } else {
                 int stringCount = 0;
-                int totalCount = stringCompareAndCount(stringSplit((stringLowerCase(stringReplaceMarks(test, "[-,.:()\n’]", " "))), " +"), arry[i]);
+                int totalCount = stringCompareAndCount(stringSplit((stringLowerCase(stringReplaceMarks(textToAnalyze, "[-,.:()\n’]", " "))), " +"), arry[i]);
                 sameWords[i] = arry[i];
                 System.out.println(arry[i] + " " + totalCount);
             }
