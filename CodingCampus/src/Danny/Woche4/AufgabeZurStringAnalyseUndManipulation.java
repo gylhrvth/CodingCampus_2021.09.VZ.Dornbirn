@@ -55,24 +55,41 @@ public class AufgabeZurStringAnalyseUndManipulation {
         // geht System.out.println((stringLowerCase(textToAnalyze)).replaceAll("ist|und|oder", " ___ "));
 
 //        <li>Erstelle ein Programm welches vom Benutzer Worte einliest, die durch ein ___ ersetzt werden sollen und gib den Text aus.
-        manyWordsReplaceUserInput(textToAnalyze);
+       //manyWordsReplaceUserInput(textToAnalyze);
+
+//         Die Eingabe soll einzeilig erfolgen, z.b.: Haus,Maus,raus
+
+
+ //   <li>Zähle jedes Zeichen im Text und gib dessen Häufigkeit aus.
+//    <br>Weiters gib die Häufigkeit in Prozent in relation zur Gesamtlänge des Textes aus.
+//   <li>Siehe 6), beschränke dich aber nun auf das Alphabet</li>
+//    <li>Verwende Aufgaben 5) und 6) und analysiere ebenfalls TEXT_TO_ANALYSE_2,TEXT_TO_ANALYSE_3,TEXT_TO_ANALYSE_4
+//   <br>Gibt es einen Unterschied zwischen den deutschen und den englischen Texten?
+
+
+
 
         //Testfeld
     }
 
+
+
+
+
+
     public static void manyWordsReplaceUserInput(String arr) {
         wordReplaceUserInput(textToAnalyze);
-        textPrintColor("Möchtest du ein weiteres Wort ersetzen?", ANSI_YELLOW, "", true);
-        textPrintColor("1 = Ja ", ANSI_GREEN, " ", false);
-        textPrintColor(" 2 = Nein", ANSI_RED, "", true);
-
         boolean moreWords = true;
-        while (moreWords == true)
+        while (moreWords == true) {
+            textPrintColor("Möchtest du ein weiteres Wort ersetzen?", ANSI_YELLOW, "", true);
+            textPrintColor("1 = Ja ", ANSI_GREEN, " ", false);
+            textPrintColor(" 2 = Nein", ANSI_RED, "", true);
             if (scanner.nextInt() == 1) {
                 wordReplaceUserInput(textToAnalyze);
             } else {
                 moreWords = false;
             }
+        }
     }
 
     public static void wordReplaceUserInput(String arr) {
@@ -90,47 +107,47 @@ public class AufgabeZurStringAnalyseUndManipulation {
     }
 
 
-        //Alle gleichen Strings im StringArray Zählen und Anzahl ausgeben
-        public static void stringCompareAndCountAll (String[]arry){
-            String[] sameWords = new String[arry.length];
-            for (int i = 0; i < arry.length; i++) {
-                if (Arrays.toString(sameWords).contains(arry[i])) {
-                } else {
-                    int stringCount = 0;
-                    int totalCount = stringCompareAndCount(stringSplit((stringLowerCase(stringReplaceMarks(textToAnalyze, "[-,.:()\n’]", " "))), " +"), arry[i]);
-                    sameWords[i] = arry[i];
-                    System.out.println(arry[i] + " " + totalCount);
-                }
+    //Alle gleichen Strings im StringArray Zählen und Anzahl ausgeben
+    public static void stringCompareAndCountAll(String[] arry) {
+        String[] sameWords = new String[arry.length];
+        for (int i = 0; i < arry.length; i++) {
+            if (Arrays.toString(sameWords).contains(arry[i])) {
+            } else {
+                int stringCount = 0;
+                int totalCount = stringCompareAndCount(stringSplit((stringLowerCase(stringReplaceMarks(textToAnalyze, "[-,.:()\n’]", " "))), " +"), arry[i]);
+                sameWords[i] = arry[i];
+                System.out.println(arry[i] + " " + totalCount);
             }
-        }
-
-
-        //Einen gleichen String im StringArray Zählen und Anzahl ausgeben
-        public static int stringCompareAndCount (String[]arry, String countString){
-            int stringCount = 0;
-            for (int i = 0; i < arry.length; i++) {
-                if (arry[i].compareTo(countString) == 0) {
-                    stringCount++;
-                }
-            }
-            return stringCount;
-        }
-
-        //String in Kleinbuchstaben
-        public static String stringLowerCase (String upper){
-            return upper.toLowerCase();
-        }
-
-        //Sting in String[] spliten
-        public static String[] stringSplit (String stringToSplit, String split){
-            return stringToSplit.split(split);
-        }
-
-        //Satzzeichen aus dem String entfernen
-        public static String stringReplaceMarks (String arr, String regex, String replace){
-            return arr.replaceAll(regex, replace);
         }
     }
+
+
+    //Einen gleichen String im StringArray Zählen und Anzahl ausgeben
+    public static int stringCompareAndCount(String[] arry, String countString) {
+        int stringCount = 0;
+        for (int i = 0; i < arry.length; i++) {
+            if (arry[i].compareTo(countString) == 0) {
+                stringCount++;
+            }
+        }
+        return stringCount;
+    }
+
+    //String in Kleinbuchstaben
+    public static String stringLowerCase(String upper) {
+        return upper.toLowerCase();
+    }
+
+    //Sting in String[] spliten
+    public static String[] stringSplit(String stringToSplit, String split) {
+        return stringToSplit.split(split);
+    }
+
+    //Satzzeichen aus dem String entfernen
+    public static String stringReplaceMarks(String arr, String regex, String replace) {
+        return arr.replaceAll(regex, replace);
+    }
+}
 
 //    public static final String TEXT_TO_ANALYZE = "Das Freisebad ist eine ehemalige Badeanstalt an der Dr.-Kahlbaum-Allee in der Görlitzer Innenstadt in Sachsen.\n" +
 //            "\n" +
