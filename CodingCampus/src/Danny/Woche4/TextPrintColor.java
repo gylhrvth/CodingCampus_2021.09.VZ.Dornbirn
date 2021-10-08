@@ -15,12 +15,12 @@ public class TextPrintColor {
     public static void main(String[] args) {
 
 
-        textPrintColor("test", ANSI_RED, false);
-        textPrintColor("test", ANSI_RED, false);
+        textPrintColor("test", ANSI_RED," ", false);
+        textPrintColor("test", ANSI_RED," ", false);
 
     }
 
-    public static void textPrintColor(String word, String textColorANSI, boolean returnEndLine) {
+    public static void textPrintColor(String word, String textColorANSI,String punctuation, boolean returnEndLine) {
 
 
         switch (textColorANSI) {
@@ -29,7 +29,7 @@ public class TextPrintColor {
                     System.out.println(ANSI_RED + word + ANSI_RESET);
                     break;
                 } else {
-                    System.out.print(ANSI_RED + word + ", " + ANSI_RESET);
+                    System.out.print(ANSI_RED + word + punctuation + ANSI_RESET);
                     break;
                 }
             }
@@ -38,7 +38,7 @@ public class TextPrintColor {
                     System.out.println(ANSI_YELLOW + word + ANSI_RESET);
                     break;
                 } else {
-                    System.out.print(ANSI_YELLOW + word + ", " + ANSI_RESET);
+                    System.out.print(ANSI_YELLOW + word + punctuation + ANSI_RESET);
                     break;
                 }
             }
@@ -47,7 +47,7 @@ public class TextPrintColor {
                     System.out.println(ANSI_BLUE + word + ANSI_RESET);
                     break;
                 } else {
-                    System.out.print(ANSI_BLUE + word + ", " + ANSI_RESET);
+                    System.out.print(ANSI_BLUE + word + punctuation + ANSI_RESET);
                     break;
                 }
             }
@@ -56,7 +56,7 @@ public class TextPrintColor {
                     System.out.println(ANSI_GREEN + word + ANSI_RESET);
                     break;
                 } else {
-                    System.out.print(ANSI_GREEN + word + ", " + ANSI_RESET);
+                    System.out.print(ANSI_GREEN + word + punctuation + ANSI_RESET);
                     break;
                 }
             }
