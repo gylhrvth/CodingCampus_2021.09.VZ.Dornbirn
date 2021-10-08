@@ -1,6 +1,10 @@
 package Stefan.WeekFour;
 
-import java.util.Arrays;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileReader;
+import java.util.*;
 
 public class AufgabenTextSort {
     public static void main(String[] args) {
@@ -22,40 +26,56 @@ public class AufgabenTextSort {
                 "\n" +
                 "Es gab Pläne, das Bad und die ehemalige II. medizinische Klinik als Kompetenzzentrum für die Betreuung von Demenzpatienten (Kahlbaum-Projekt) zu reaktivieren und das Bad auch den Bürgern wieder zugänglich zu machen. Die Pläne lagen jedoch 2011 auf Eis.";
 
-        String[] words = text.split(" ");
+        String[] words = text.split("[ \\n]");
+        String tmp3 = Arrays.toString(words);
 
-
-        //Ersetze jedes Freisebad durch ___ und gib den Text aus
-        System.out.println();
-        String fixedInput = text.replaceAll("Freisebad", "_________");
-        System.out.println(fixedInput);
-
-        //Ersetze jedes ist, und oder durch ___ und gib den Text aus
-        System.out.println();
-        String fixedInput1 = text.replaceAll("ist|und|oder", "_____");
-        System.out.println(fixedInput1);
-        System.out.println();
-
-
+//        //Ersetze jedes Freisebad durch ___ und gib den Text aus
+//        System.out.println();
+//        String fixedInput = text.replaceAll("Freisebad", "_________");
+//        System.out.println(fixedInput);
+//        System.out.println();
+//
+//        //Ersetze jedes ist, und oder durch ___ und gib den Text aus
+//        System.out.println();
+//        String fixedInput1 = text.replaceAll("ist|und|oder", "_____");
+//        System.out.println(fixedInput1);
+//        System.out.println();
+//
+//
         //Zählt alle Buchstaben und gibt deren Menge aus
-        String neuer = text.toLowerCase();
-        char[] character = neuer.toCharArray();
-        int[] counter = new int[26];
-        System.out.println("Gezählte Buchstaben im Array: ");
-        for (int i = 0; i < character.length; i++) {
-            char myChar = character[i];
-            int indexOfCounter = myChar - 97;
-            if (indexOfCounter >= 0 && indexOfCounter < counter.length) {
-                counter[indexOfCounter]++;
+        Map<Character, Integer> charMap = new HashMap<Character, Integer>();
+        System.out.println("Gezählte Zeichen: ");
+        for (int i = 0; i < tmp3.length(); i++) {
+            Character key = tmp3.toLowerCase().charAt(i);
+            if (charMap.containsKey(key)) {
+                charMap.put(key, charMap.get(key) + 1);
+            } else {
+                charMap.put(key, 1);
             }
         }
-        for (int i = 0; i < counter.length; i++) {
-            if (counter[i] != 0) {
-                System.out.print(("[" + (char) (i + 97)) + "]" + " = " + counter[i] + ", ");
-            }
+
+        Set<Character> keySet = charMap.keySet();
+        for (Character character : keySet) {
+            System.out.print("[" + character + "] = " + charMap.get(character) + ", ");
         }
+        System.out.println();
+        System.out.println();
+
+
+        //Benutzereingabe und Ausgabe mit Zeichaustausch
+//        Scanner stringArrayWork = new Scanner(System.in);
+//        String textEingabe;
+//
+//        System.out.println("Gib einen einzeiligen Text ein");
+//        textEingabe = stringArrayWork.nextLine();
+//
+//        System.out.println();
+//        String fixedInput1 = textEingabe.replaceAll("[a-zA-Z0-9]", "_");
+//        System.out.println();
+//
+//        System.out.println("Du hast: " + fixedInput1 + " eingegeben");
+//        System.out.println();
+
     }
-
-
-
 }
+
