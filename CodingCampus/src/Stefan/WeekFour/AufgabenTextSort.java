@@ -9,9 +9,14 @@ public class AufgabenTextSort {
     public static void main(String[] args) {
 
         String text = Aufgabe1.TEXT_TO_ANALYZE;
+        String text1 = Aufgabe1.TEXT_TO_ANALYSE_2;
+        String text2 = Aufgabe1.TEXT_TO_ANALYSE_3;
+        String text3 = Aufgabe1.TEXT_TO_ANALYSE_4;
 //
         String[] words = text.split("[ \\n]");
         String tmp3 = Arrays.toString(words);
+
+        KeyMap(tmp3);
 
 
 //        //Ersetze jedes Freisebad durch ___ und gib den Text aus
@@ -43,24 +48,25 @@ public class AufgabenTextSort {
 //        System.out.println();
 
 
-        //Zählt alle Zeichen im Text und gibt deren Menge aus
-        Map<Character, Integer> charMap = new HashMap<Character, Integer>();
-        System.out.println("Gezählte Zeichen: ");
-        for (int i = 0; i < tmp3.length(); i++) {
-            Character key = tmp3.toLowerCase().charAt(i);
-            if (charMap.containsKey(key)) {
-                charMap.put(key, charMap.get(key) + 1);
-            } else {
-                charMap.put(key, 1);
-            }
-        }
+        //Zählt alle Zeichen im Text und gibt deren Menge aus TEXT_TO_ANALYZE
 
-        Set<Character> keySet = charMap.keySet();
-        for (Character character : keySet) {
-            System.out.print("[" + character + "] = " + charMap.get(character) + ", ");
-        }
-        System.out.println();
-        System.out.println();
+//        Map<Character, Integer> charMap = new HashMap<Character, Integer>();
+//        System.out.println("Gezählte Zeichen: ");
+//        for (int i = 0; i < tmp3.length(); i++) {
+//            Character key = tmp3.toLowerCase().charAt(i);
+//            if (charMap.containsKey(key)) {
+//                charMap.put(key, charMap.get(key) + 1);
+//            } else {
+//                charMap.put(key, 1);
+//            }
+//        }
+//
+//        Set<Character> keySet = charMap.keySet();
+//        for (Character character : keySet) {
+//            System.out.print("[" + character + "] = " + charMap.get(character) + ", ");
+//        }
+//        System.out.println();
+//        System.out.println();
 
 //        //Zählt alle Buchstaben und gibt deren Menge aus
 //        String neuer = text.toLowerCase();
@@ -82,5 +88,26 @@ public class AufgabenTextSort {
 
 
     }
+
+    private static void KeyMap(String param) {
+        Map<Character, Integer> charMap = new HashMap<Character, Integer>();
+        System.out.println("Gezählte Zeichen: ");
+        for (int i = 0; i < param.length(); i++) {
+            Character key = param.toLowerCase().charAt(i);
+            if (charMap.containsKey(key)) {
+                charMap.put(key, charMap.get(key) + 1);
+            } else {
+                charMap.put(key, 1);
+            }
+        }
+
+        Set<Character> keySet = charMap.keySet();
+        for (Character character : keySet) {
+            System.out.print("[" + character + "] = " + charMap.get(character) + ", ");
+        }
+        System.out.println();
+        System.out.println();
+    }
+
 }
 
