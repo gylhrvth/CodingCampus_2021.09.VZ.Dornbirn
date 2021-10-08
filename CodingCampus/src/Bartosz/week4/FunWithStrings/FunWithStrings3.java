@@ -11,7 +11,7 @@ public class FunWithStrings3 {
     // Aufgabenstellung:
     //Lukas.week4.day4.Aufgabe1
 
-//------------------------------------------------Menu Methods---------------------------------------\\
+    //------------------------------------------------Menu Methods---------------------------------------\\
     // Auswählen welchen Text importieren, importierten Text weiterreichen
     private static String getInitText() {
         System.out.println("Welchen Text willst du analysieren?");
@@ -115,7 +115,7 @@ public class FunWithStrings3 {
         int wordsCounter = 0;
         importedText = importedText
                 .replaceAll("[\\(\\):]*", "")
-                .replaceAll("\n+"," ")
+                .replaceAll("\n+", " ")
                 .replaceAll("\\, ", " ")
                 .replaceAll("\\. ", " ");
         String[] words = importedText.split(" ");
@@ -165,17 +165,47 @@ public class FunWithStrings3 {
         // .nextline()
 
         System.out.println(importedText.
-                replaceAll(userInputWord1, "___").
-                replaceAll(userInputWord2, "___").
-                replaceAll(userInputWord3, "___").
-                replaceAll("[()]", ""));
+                replaceAll(userInputWord1, "___")
+                .replaceAll(userInputWord2, "___")
+                .replaceAll(userInputWord3, "___")
+                .replaceAll("[/\\n]", "")
+                .replaceAll("[\\(\\):]*", "")
+                .replaceAll("\n+", " ")
+                .replaceAll("\\, ", " ")
+                .replaceAll("\\. ", " "));
     }
 
     // Aufgabe 6: Zeichen auszählen
     private static void countChars(String importedText) {
-    char[] importedTextArray = importedText.toCharArray();
+        for (int i = 0; i < importedText.length(); i++) {
+            char importedTextArray = (char) importedText.indexOf(i);
+        }
 
     }
+
+//    public static void main(String args[]) {
+//        String str;
+//        int i, length, counter[] = new int[256];
+//
+//        Scanner scanner = new Scanner(System.in);
+//        System.out.println("Enter a String");
+//        str = scanner.nextLine();
+//
+//        length = str.length();
+//
+//        // Count frequency of every character and store
+//        // it in counter array
+//        for (i = 0; i < length; i++) {
+//            counter[(int) str.charAt(i)]++;
+//        }
+//        // Print Frequency of characters
+//        for (i = 0; i < 256; i++) {
+//            if (counter[i] != 0) {
+//                System.out.println((char) i + " --> " + counter[i]);
+//            }
+//        }
+//    }
+
 
 //----------------------------------------------------------------------------------------------------//
 
