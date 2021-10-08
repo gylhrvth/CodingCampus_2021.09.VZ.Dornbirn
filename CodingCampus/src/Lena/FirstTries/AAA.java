@@ -1,4 +1,4 @@
-package Lena;
+package Lena.FirstTries;
 
 import Saadaq.weekOne.ChristBaum;
 
