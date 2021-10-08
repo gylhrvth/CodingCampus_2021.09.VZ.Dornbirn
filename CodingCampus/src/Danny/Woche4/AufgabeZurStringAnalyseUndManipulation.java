@@ -6,8 +6,7 @@ import Lukas.week4.day4.Aufgabe1;
 import java.util.Arrays;
 import java.util.Scanner;
 
-import static Danny.Woche4.TextPrintColor.ANSI_YELLOW;
-import static Danny.Woche4.TextPrintColor.textPrintColor;
+import static Danny.Woche4.TextPrintColor.*;
 
 /**
  * <h1>Textanalyse</h1>
@@ -63,8 +62,9 @@ public class AufgabeZurStringAnalyseUndManipulation {
 
     public static void manyWordsReplaceUserInput(String arr) {
         wordReplaceUserInput(textToAnalyze);
-        textPrintColor("Möchtest du ein weiteres Wort ersetzen?", ANSI_YELLOW,true);
-        textPrintColor("1 = Ja | 2 = Nein", ANSI_YELLOW,false);
+        textPrintColor("Möchtest du ein weiteres Wort ersetzen?", ANSI_YELLOW, "", true);
+        textPrintColor("1 = Ja ", ANSI_GREEN, " ", false);
+        textPrintColor(" 2 = Nein", ANSI_RED, "", true);
 
         boolean moreWords = true;
         while (moreWords == true)
@@ -79,55 +79,58 @@ public class AufgabeZurStringAnalyseUndManipulation {
         System.out.println(textToAnalyze);
         System.out.println();
         System.out.println("----------");
-        textPrintColor("Welches Wort möchtest du ersetzen?", ANSI_YELLOW,true);
+        textPrintColor("Welches Wort möchtest du ersetzen?", ANSI_YELLOW, "", true);
         System.out.println("----------");
-        System.out.println(stringReplaceMarks(arr, stringLowerCase(scanner.next()), "___"));
-
-
-    }
-
-
-    //Alle gleichen Strings im StringArray Zählen und Anzahl ausgeben
-    public static void stringCompareAndCountAll(String[] arry) {
-        String[] sameWords = new String[arry.length];
-        for (int i = 0; i < arry.length; i++) {
-            if (Arrays.toString(sameWords).contains(arry[i])) {
-            } else {
-                int stringCount = 0;
-                int totalCount = stringCompareAndCount(stringSplit((stringLowerCase(stringReplaceMarks(textToAnalyze, "[-,.:()\n’]", " "))), " +"), arry[i]);
-                sameWords[i] = arry[i];
-                System.out.println(arry[i] + " " + totalCount);
-            }
+        String searchWord = stringLowerCase(scanner.next());
+        System.out.println(stringReplaceMarks(arr, searchWord, "___"));
+        if (arr.contains(searchWord)) {
+        } else {
+            textPrintColor("Das Wort ist nicht vorhanden.", ANSI_RED, "", true);
         }
     }
 
 
-    //Einen gleichen String im StringArray Zählen und Anzahl ausgeben
-    public static int stringCompareAndCount(String[] arry, String countString) {
-        int stringCount = 0;
-        for (int i = 0; i < arry.length; i++) {
-            if (arry[i].compareTo(countString) == 0) {
-                stringCount++;
+        //Alle gleichen Strings im StringArray Zählen und Anzahl ausgeben
+        public static void stringCompareAndCountAll (String[]arry){
+            String[] sameWords = new String[arry.length];
+            for (int i = 0; i < arry.length; i++) {
+                if (Arrays.toString(sameWords).contains(arry[i])) {
+                } else {
+                    int stringCount = 0;
+                    int totalCount = stringCompareAndCount(stringSplit((stringLowerCase(stringReplaceMarks(textToAnalyze, "[-,.:()\n’]", " "))), " +"), arry[i]);
+                    sameWords[i] = arry[i];
+                    System.out.println(arry[i] + " " + totalCount);
+                }
             }
         }
-        return stringCount;
-    }
 
-    //String in Kleinbuchstaben
-    public static String stringLowerCase(String upper) {
-        return upper.toLowerCase();
-    }
 
-    //Sting in String[] spliten
-    public static String[] stringSplit(String stringToSplit, String split) {
-        return stringToSplit.split(split);
-    }
+        //Einen gleichen String im StringArray Zählen und Anzahl ausgeben
+        public static int stringCompareAndCount (String[]arry, String countString){
+            int stringCount = 0;
+            for (int i = 0; i < arry.length; i++) {
+                if (arry[i].compareTo(countString) == 0) {
+                    stringCount++;
+                }
+            }
+            return stringCount;
+        }
 
-    //Satzzeichen aus dem String entfernen
-    public static String stringReplaceMarks(String arr, String regex, String replace) {
-        return arr.replaceAll(regex, replace);
+        //String in Kleinbuchstaben
+        public static String stringLowerCase (String upper){
+            return upper.toLowerCase();
+        }
+
+        //Sting in String[] spliten
+        public static String[] stringSplit (String stringToSplit, String split){
+            return stringToSplit.split(split);
+        }
+
+        //Satzzeichen aus dem String entfernen
+        public static String stringReplaceMarks (String arr, String regex, String replace){
+            return arr.replaceAll(regex, replace);
+        }
     }
-}
 
 //    public static final String TEXT_TO_ANALYZE = "Das Freisebad ist eine ehemalige Badeanstalt an der Dr.-Kahlbaum-Allee in der Görlitzer Innenstadt in Sachsen.\n" +
 //            "\n" +
