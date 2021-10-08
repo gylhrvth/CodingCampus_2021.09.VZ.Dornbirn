@@ -17,46 +17,45 @@ public class TextAnalysis {
         // System.out.println("Number of rows in text: " + rowCount(input));
         // System.out.println("Text with replaced word: \n" + outputWithReplacedWord(input, "Freisebad", "\t"));
         // System.out.println("Text with replaces words: \n" + textWithReplacedWords(input, " ([uU]nd|[oO]der|[iI]st) ", " ___ "));
-        System.out.println(replaceWithUserInput(input));
+        // System.out.println(replaceWithUserInput(input));
         // printAllCharInfo(input);
-        // printAlphInfo(input);
+         printAlphInfo(input);
 
 
     }
 
     public static void printAlphInfo(String input) {
         char[] inputCharacters = input.toLowerCase().toCharArray();
-        int[] letters = new int[26];
+        int[] letters = new int[255];
 
         for (char character : inputCharacters) {
-            int letterIdx = character - 97;
+            int letterIdx = character - 'a';
             if (letterIdx >= 0 && letterIdx < letters.length) {
                 letters[letterIdx]++;
             }
         }
         int lettersCount = 0;
-        for (int i : letters) {
+        for (int i = 0; i < letters.length; i++) {
             lettersCount = lettersCount + letters[i];
         }
-        System.out.println("There are " + lettersCount + " letters in this text.");
-        System.out.println(Arrays.toString(letters));
 
+        System.out.println("There are " + lettersCount + " letters in this text.");
 
         for (int i = 0; i < letters.length; i++) {
             double percentage = ((double) letters[i] / lettersCount) * 100;
             if (letters[i] != 0)
-                System.out.println("There are " + letters[i] + " " + "'" + ((char) (i + 97)) + "'" + " in this text. That's " + Math.round(percentage * 100.0) / 100.0 + "% of all letters.");
+                System.out.println("There are " + letters[i] + " " + "'" + ((char) (i + 'a')) + "'" + " in this text. That's " + Math.round(percentage * 100.0) / 100.0 + "% of all letters.");
         }
     }
 
     public static void printAllCharInfo(String input) {
         char[] inputCharacters = input.toLowerCase().toCharArray();
-        int[] letters = new int[90];
+        int[] letters = new int['ü' - ' ' + 1];
         System.out.println("There are " + inputCharacters.length + " characters in this text.");
 
 
         for (char character : inputCharacters) {
-            int letterIdx = character - 32;
+            int letterIdx = character - ' ';
             if (letterIdx >= 0 && letterIdx < letters.length) {
                 letters[letterIdx]++;
             }
@@ -65,7 +64,7 @@ public class TextAnalysis {
         for (int i = 0; i < letters.length; i++) {
             double percentage = (double) letters[i] / inputCharacters.length * 100;
             if (letters[i] != 0)
-                System.out.println("There are " + letters[i] + " " + "'" + ((char) (i + 32)) + "'" + " in this text. That's " + Math.round(percentage * 100.0) / 100.0 + "% of all characters.");
+                System.out.println("There are " + letters[i] + " " + "'" + ((char) (i + ' ')) + "'" + " in this text. That's " + Math.round(percentage * 100.0) / 100.0 + "% of all characters.");
         }
     }
 
