@@ -3,7 +3,72 @@ package Lukas.week3.day4;
 import java.util.List;
 import java.util.Scanner;
 
-public class Arrays {
+public class
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Arrays {
     //Leichte Aufgabe zum Aufwärmen
     //Eine Zeile aus der Kommandozeile einlesen
     //Zeile ausgeben
