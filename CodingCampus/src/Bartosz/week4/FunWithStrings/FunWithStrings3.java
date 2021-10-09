@@ -3,8 +3,11 @@ package Bartosz.week4.FunWithStrings;
 import Lukas.week4.day4.Aufgabe1;
 
 import java.util.Arrays;
+import java.util.Map;
+import java.util.TreeMap;
 import java.util.Locale;
 import java.util.Scanner;
+import java.util.TreeMap;
 
 public class FunWithStrings3 {
 
@@ -177,10 +180,20 @@ public class FunWithStrings3 {
 
     // Aufgabe 6: Zeichen auszählen
     private static void countChars(String importedText) {
-        for (int i = 0; i < importedText.length(); i++) {
-            char importedTextArray = (char) importedText.indexOf(i);
-        }
+        char[] importedToCharArray = importedText.toCharArray();
+        int counter = 0;
+        Map <Character,Integer>map= new TreeMap<>();
+        for (int i = 0; i < importedToCharArray.length; i++) {
 
+            counter = 0;
+            for (char letter : importedToCharArray) {
+                if (importedToCharArray[i] == letter) {
+                    counter++;
+                }
+            }
+            map.put(importedToCharArray[i] , counter);
+        }
+        System.out.println(map);
     }
 
 //    public static void main(String args[]) {
@@ -217,7 +230,7 @@ public class FunWithStrings3 {
             String initText = getInitText();
             //decisionEx(initText);
 
-            replaceUserWords(initText);
+            countChars(initText);
 
 
             // Wiederholungsmethode
