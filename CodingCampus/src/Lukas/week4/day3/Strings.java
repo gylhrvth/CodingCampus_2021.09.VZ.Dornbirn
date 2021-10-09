@@ -24,6 +24,8 @@ public class Strings {
         String a = "A";
         String b = "B";
         String c = "C";
+
+
         System.out.println("A compareTo B: " + a.compareTo(b));
         System.out.println("B compareTo A: " + b.compareTo(a));
         System.out.println("C compareTo A: " + c.compareTo(a));
