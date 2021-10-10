@@ -1,6 +1,7 @@
 package Plamena;
 
 import Plamena.week1.Methods;
+import Plamena.week4.StringExercise;
 
 import java.lang.invoke.MethodHandle;
 import java.util.GregorianCalendar;
@@ -24,7 +25,9 @@ public class Trial {
         }*/
 
 
+String [] test = {"Sand", "Sonne", "Strand", "Meer", "Coctail", "Strandtuch", "Bar", "Sonnenbrille"};
 
+        StringExercise.printVowelsSingleCount(test);
 
     }
 }
