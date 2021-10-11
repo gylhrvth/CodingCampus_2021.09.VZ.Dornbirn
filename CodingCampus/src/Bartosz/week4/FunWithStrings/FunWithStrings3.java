@@ -121,7 +121,7 @@ public class FunWithStrings3 {
                 .replaceAll("\n+", " ")
                 .replaceAll("\\, ", " ")
                 .replaceAll("\\. ", " ");
-        String[] words = importedText.split(" ");
+        String[] words = importedText.split("\\s");
         System.out.println(Arrays.toString(words));
         for (int counter = 0; counter < words.length - 1; counter++) {
             wordsCounter++;
@@ -200,9 +200,23 @@ public class FunWithStrings3 {
     }
 
     // Aufgabe 7: Buchstaben auszählen
-    private static void countLetter(String iT) {
+    private static void countLetter(String importedText) {
+        String tmpText = importedText.toLowerCase();
+        tmpText = importedText.replaceAll("[^A-Za-z0-9]", "");
+        char[] checkLettersArray = tmpText.toCharArray();
 
+        for (int i = 0; i < tmpText.length()-1; i++) {
+            int counter = 0;
+            for (char letter : checkLettersArray) {
+                if (checkLettersArray[i] == letter) {
+                    counter++;
+                }
+                System.out.println(letter + counter + " ,");
+            }
+        }
     }
+
+
 
 //    public static void main(String args[]) {
 //        String str;
@@ -238,7 +252,7 @@ public class FunWithStrings3 {
             String initText = getInitText();
             //decisionEx(initText);
 
-            countChars(initText);
+            countLetter(initText);
 
 
             // Wiederholungsmethode
