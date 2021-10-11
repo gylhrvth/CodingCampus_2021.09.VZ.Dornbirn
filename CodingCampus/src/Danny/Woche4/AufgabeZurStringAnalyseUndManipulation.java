@@ -55,33 +55,72 @@ public class AufgabeZurStringAnalyseUndManipulation {
         // geht System.out.println((stringLowerCase(textToAnalyze)).replaceAll("ist|und|oder", " ___ "));
 
 //        <li>Erstelle ein Programm welches vom Benutzer Worte einliest, die durch ein ___ ersetzt werden sollen und gib den Text aus.
-       //manyWordsReplaceUserInput(textToAnalyze);
+//        wordReplaceUserInput(textToAnalyze);
+//        manyWordsReplaceUserInput("Möchtest Du ein weiters Wort ersetzten?");
 
 //         Die Eingabe soll einzeilig erfolgen, z.b.: Haus,Maus,raus
+        //wordReplaceUserInputSideBYSide(textToAnalyze);
 
 
- //   <li>Zähle jedes Zeichen im Text und gib dessen Häufigkeit aus.
+        //   <li>Zähle jedes Zeichen im Text und gib dessen Häufigkeit aus.
+//        char[] text = textToAnalyze.toCharArray();
+//        System.out.println(text.length);
+
 //    <br>Weiters gib die Häufigkeit in Prozent in relation zur Gesamtlänge des Textes aus.
+        stringCompareAndCountAllChar(textToAnalyze);
+
 //   <li>Siehe 6), beschränke dich aber nun auf das Alphabet</li>
 //    <li>Verwende Aufgaben 5) und 6) und analysiere ebenfalls TEXT_TO_ANALYSE_2,TEXT_TO_ANALYSE_3,TEXT_TO_ANALYSE_4
 //   <br>Gibt es einen Unterschied zwischen den deutschen und den englischen Texten?
-
-
 
 
         //Testfeld
     }
 
 
+    //Alle gleichen Chars zählen und Anzahl in Prozent zur Gesammtlänge ausgeben
+    public static void stringCompareAndCountAllChar(String arry) {
+        arry = arry.toLowerCase();
+        char[] text = arry.toCharArray();
+        char[] sameWords = new char[256];
+        for (int j = 0; j < text.length; j++) {
+
+            if (sameWords.equals(text[j]) == false) {
+                int charCount = 0;
+                for (int i = 0; i < text.length; i++) {
+                    if (text[i] == text[j]) {
+                        charCount++;
+                        sameWords[j] = text[j];
+                    } else {
+
+                    }
+                }
+                System.out.println(">" + text[j] + "<" + " " + charCount);
+            }
+        }
+    }
 
 
+    //Mehere Wörter finden und ersetzten; Eingabe nebeneinander - Find and replace multiple words; input side by side
+    public static void wordReplaceUserInputSideBYSide(String arr) {
+        System.out.println(textToAnalyze);
+        System.out.println();
+        System.out.println("----------");
+        textPrintColor("Welche Wörter möchtest du ersetzen? !!Trenne die Wörter mit einem Komma!!", ANSI_YELLOW, "", true);
+        System.out.println("----------");
+        String searchWord = stringLowerCase(scanner.next());
+        searchWord = searchWord.replace(",", "|");
+        System.out.println(stringReplaceMarks(arr, searchWord, "___"));
+    }
 
 
-    public static void manyWordsReplaceUserInput(String arr) {
-        wordReplaceUserInput(textToAnalyze);
+    //Frage mit JA NEiN Auswahl - Question with YES NO Selection
+    public static void manyWordsReplaceUserInput(String question) {
+
         boolean moreWords = true;
         while (moreWords == true) {
-            textPrintColor("Möchtest du ein weiteres Wort ersetzen?", ANSI_YELLOW, "", true);
+            textPrintColor(question, ANSI_YELLOW, "", true);
+
             textPrintColor("1 = Ja ", ANSI_GREEN, " ", false);
             textPrintColor(" 2 = Nein", ANSI_RED, "", true);
             if (scanner.nextInt() == 1) {
@@ -89,9 +128,12 @@ public class AufgabeZurStringAnalyseUndManipulation {
             } else {
                 moreWords = false;
             }
+
+
         }
     }
 
+    //Wort finden und ersetzten
     public static void wordReplaceUserInput(String arr) {
         System.out.println(textToAnalyze);
         System.out.println();
@@ -145,6 +187,7 @@ public class AufgabeZurStringAnalyseUndManipulation {
 
     //Satzzeichen aus dem String entfernen
     public static String stringReplaceMarks(String arr, String regex, String replace) {
+        arr = arr.toLowerCase();
         return arr.replaceAll(regex, replace);
     }
 }
