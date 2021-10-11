@@ -53,11 +53,28 @@ public class Day4StringManipulation {
         countLetters(toAnalyze3);
         System.out.println();
         countLetters(toAnalyze4);
+        System.out.println();
+
     }
 
-    private static void countallChars(String text) {
+    private static void countAllCharsMethod2(String text) {
+        int[] counter = new int[127];
+        char[] arr = text.toCharArray();
+        for (int i = 0; i < arr.length; i++) {
+            int asciiPositionOfChar = arr[i];
+            if (asciiPositionOfChar <= 127) {
+                counter[asciiPositionOfChar]++;
+            }
+        }
+        for (int i = 0; i < counter.length; i++) {
+            System.out.println((char) i + ": " + counter[i]);
+        }
+
+    }
+
+    public static void countallChars(String text) {
         System.out.println("\u001B[36m" + "set of chars in the text" + "\u001B[0m");
-        char[] letters = text.toLowerCase(Locale.ROOT).toCharArray();
+        char[] letters = text.toCharArray();
         for (int i = 0; i <= 127; i++) {
             int counter = 0;
             for (int j = 0; j < letters.length; j++) {

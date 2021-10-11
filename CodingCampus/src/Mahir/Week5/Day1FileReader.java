@@ -1,5 +1,7 @@
 package Mahir.Week5;
 
+import Mahir.Week4.Day4StringManipulation;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -12,6 +14,7 @@ public class Day1FileReader {
 
         String result = FileReader.readFile(path);
         System.out.println(result);
+        Day4StringManipulation.countallChars(result);
 
 
 
