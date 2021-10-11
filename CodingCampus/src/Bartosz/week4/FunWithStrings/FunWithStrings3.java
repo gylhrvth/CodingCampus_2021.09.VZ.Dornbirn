@@ -180,7 +180,10 @@ public class FunWithStrings3 {
 
     // Aufgabe 6: Zeichen auszählen
     private static void countChars(String importedText) {
-        char[] importedToCharArray = importedText.toCharArray();
+        String updatedText = importedText.toLowerCase();
+        updatedText = importedText.replaceAll("\n", "°")
+                .replaceAll(" ", "^");
+        char[] importedToCharArray = updatedText.toCharArray();
         int counter = 0;
         Map <Character,Integer>map= new TreeMap<>();
         for (int i = 0; i < importedToCharArray.length; i++) {
@@ -194,6 +197,11 @@ public class FunWithStrings3 {
             map.put(importedToCharArray[i] , counter);
         }
         System.out.println(map);
+    }
+
+    // Aufgabe 7: Buchstaben auszählen
+    private static void countLetter(String iT) {
+
     }
 
 //    public static void main(String args[]) {
