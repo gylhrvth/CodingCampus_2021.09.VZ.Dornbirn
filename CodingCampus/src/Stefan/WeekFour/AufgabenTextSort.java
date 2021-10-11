@@ -14,10 +14,10 @@ public class AufgabenTextSort {
 
 
         //Zählt alle Wörter und gibt diese aus
-        System.out.println(wordCounter(text));
+        System.out.println("Der Text enthält " + wordCounter(text) + " Wörter!");
 
         //Zählt alle zeilen und gibt diese aus
-        System.out.println(rowCounter(text));
+        System.out.println("Der Text besteht aus " + rowCounter(text) + " zeilen!");
 
         //Ersetze jedes Freisebad durch ___ und gib den Text aus
 //        ZeichenTausch(text);
@@ -25,15 +25,8 @@ public class AufgabenTextSort {
         //Ersetze jedes ist, und oder durch ___ und gib den Text aus
 //        ZeichenTausch2(text);
 
-        //Zählt alle Buchstaben des Alphabet und gibt deren Menge aus
-//        alphabet(text);
-
         //Benutzereingabe und Ausgabe mit Zeichenaustausch
 //        textErsetzen(text);
-
-
-
-
 
         //Zähle jedes Zeichen im Text und gib dessen Häufigkeit aus. Alle Texte
 //        System.out.println("TEXT_TO_ANALYZE Ergebnis");
@@ -61,6 +54,8 @@ public class AufgabenTextSort {
 //        System.out.println();
 
 
+        //Zählt alle Buchstaben des Alphabet und gibt deren Menge aus
+//        alphabet(text);
 
     }
 
