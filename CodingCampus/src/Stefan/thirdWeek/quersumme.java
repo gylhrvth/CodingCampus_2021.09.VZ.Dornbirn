@@ -1,9 +1,13 @@
 package Stefan.thirdWeek;
 
+import java.util.Scanner;
+
 public class quersumme {
     public static void main(String[] args) {
 
-        int zahl = 321;
+        Scanner input = new Scanner(System.in);
+        System.out.println("Geben Sie eine Ganzhal ein: ");
+        int zahl = input.nextInt();
 
 
         System.out.println("Quersumme = " + quersumme(zahl));
