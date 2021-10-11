@@ -86,7 +86,7 @@ public class AufgabeZurStringAnalyseUndManipulation {
                 double charPercent = ((ASCIIcharCounterHighToLow[i][1] * 100.0) / text.length);
                 double charPercentRoundOff = Math.round(charPercent * 100.0) / 100.0;
                 PrintColorAsString.textPrintColor(String.valueOf((char) ASCIIcharCounterHighToLow[i][0]),ANSI_YELLOW,"  ",false);
-                textPrintColor(String.valueOf((int) ASCIIcharCounterHighToLow[i][1]),ANSI_CYAN,"  ",false);
+                textPrintColor(String.valueOf(ASCIIcharCounterHighToLow[i][1]),ANSI_CYAN,"  ",false);
                 textPrintColor(String.valueOf(charPercentRoundOff),ANSI_GREEN,"%",true);
             }
         }
