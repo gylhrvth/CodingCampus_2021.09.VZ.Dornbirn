@@ -3,15 +3,18 @@ package Bartosz.week4.FunWithStrings;
 import Lukas.week4.day4.Aufgabe1;
 
 import java.util.Arrays;
+import java.util.Map;
+import java.util.TreeMap;
 import java.util.Locale;
 import java.util.Scanner;
+import java.util.TreeMap;
 
 public class FunWithStrings3 {
 
     // Aufgabenstellung:
     //Lukas.week4.day4.Aufgabe1
 
-//------------------------------------------------Menu Methods---------------------------------------\\
+    //------------------------------------------------Menu Methods---------------------------------------\\
     // Auswählen welchen Text importieren, importierten Text weiterreichen
     private static String getInitText() {
         System.out.println("Welchen Text willst du analysieren?");
@@ -115,7 +118,7 @@ public class FunWithStrings3 {
         int wordsCounter = 0;
         importedText = importedText
                 .replaceAll("[\\(\\):]*", "")
-                .replaceAll("\n+"," ")
+                .replaceAll("\n+", " ")
                 .replaceAll("\\, ", " ")
                 .replaceAll("\\. ", " ");
         String[] words = importedText.split(" ");
@@ -165,17 +168,57 @@ public class FunWithStrings3 {
         // .nextline()
 
         System.out.println(importedText.
-                replaceAll(userInputWord1, "___").
-                replaceAll(userInputWord2, "___").
-                replaceAll(userInputWord3, "___").
-                replaceAll("[()]", ""));
+                replaceAll(userInputWord1, "___")
+                .replaceAll(userInputWord2, "___")
+                .replaceAll(userInputWord3, "___")
+                .replaceAll("[/\\n]", "")
+                .replaceAll("[\\(\\):]*", "")
+                .replaceAll("\n+", " ")
+                .replaceAll("\\, ", " ")
+                .replaceAll("\\. ", " "));
     }
 
     // Aufgabe 6: Zeichen auszählen
     private static void countChars(String importedText) {
-    char[] importedTextArray = importedText.toCharArray();
+        char[] importedToCharArray = importedText.toCharArray();
+        int counter = 0;
+        Map <Character,Integer>map= new TreeMap<>();
+        for (int i = 0; i < importedToCharArray.length; i++) {
 
+            counter = 0;
+            for (char letter : importedToCharArray) {
+                if (importedToCharArray[i] == letter) {
+                    counter++;
+                }
+            }
+            map.put(importedToCharArray[i] , counter);
+        }
+        System.out.println(map);
     }
+
+//    public static void main(String args[]) {
+//        String str;
+//        int i, length, counter[] = new int[256];
+//
+//        Scanner scanner = new Scanner(System.in);
+//        System.out.println("Enter a String");
+//        str = scanner.nextLine();
+//
+//        length = str.length();
+//
+//        // Count frequency of every character and store
+//        // it in counter array
+//        for (i = 0; i < length; i++) {
+//            counter[(int) str.charAt(i)]++;
+//        }
+//        // Print Frequency of characters
+//        for (i = 0; i < 256; i++) {
+//            if (counter[i] != 0) {
+//                System.out.println((char) i + " --> " + counter[i]);
+//            }
+//        }
+//    }
+
 
 //----------------------------------------------------------------------------------------------------//
 
@@ -187,7 +230,7 @@ public class FunWithStrings3 {
             String initText = getInitText();
             //decisionEx(initText);
 
-            replaceUserWords(initText);
+            countChars(initText);
 
 
             // Wiederholungsmethode

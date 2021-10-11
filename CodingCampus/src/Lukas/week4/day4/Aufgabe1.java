@@ -6,7 +6,7 @@ package Lukas.week4.day4;
  * <br>Verwende dazu die Konstante TEXT_TO_ANALYSE dieser Klasse als Ausgangspunkt.
  * <br><strong>Arbeite wo du es als sinnvoll erachtest mit "lower case"</strong>
  * <br><strong>Verwende für alles nötige und sinnvolle eigene Methoden! Mindestens für jede Aufgabe eine eigene.</strong>
- * <br><strong>Mach die Methoden nun private, nichtmehr public.</strong>
+ * <br><strong>Mach die Methoden nun private, nicht mehr public.</strong>
  * <ol>
  *    <li>Zähle alle Wörter und gib diese aus.</li>
  *    <li>Zähle alle Zeilen und gib diese aus.</li>
