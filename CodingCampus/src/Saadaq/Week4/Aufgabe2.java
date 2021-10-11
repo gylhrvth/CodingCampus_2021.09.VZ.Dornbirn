@@ -9,7 +9,9 @@ public class Aufgabe2 {
     public static void main(String[] args) {
 
 
-        //  (2)
+
+
+       /* //  (2)
 
 
         Scanner sc = new Scanner(System.in);
@@ -31,7 +33,7 @@ public class Aufgabe2 {
         //Buchstaben case insensitive Zählen (A zählt für a)
 
         char[] ch = new char[lineReader.length()];
-
+*/
 
 
 
