@@ -78,7 +78,7 @@ public class TextAnalyse {
     private static void replaceCostumConsolInput(String text) {
         Scanner input = new Scanner(System.in);
         System.out.println("bitte geben sie welches wort, was du ersetzen will");
-        String userConsolInput = scanner.nextLine();
+        String userConsolInput = input.nextLine();
         System.out.println("bitte geben sie welches wort oder zeichnen, was du ersetzen will");
         String userConsolCharecter = input.nextLine();
 
