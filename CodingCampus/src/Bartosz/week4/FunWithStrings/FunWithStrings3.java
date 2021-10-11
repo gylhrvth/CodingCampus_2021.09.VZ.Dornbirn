@@ -185,6 +185,7 @@ public class FunWithStrings3 {
                 .replaceAll(" ", "^");
         char[] importedToCharArray = updatedText.toCharArray();
         int counter = 0;
+
         Map <Character,Integer>map= new TreeMap<>();
         for (int i = 0; i < importedToCharArray.length; i++) {
 
@@ -199,11 +200,17 @@ public class FunWithStrings3 {
         System.out.println(map);
     }
 
-    // Aufgabe 7: Buchstaben auszählen
+    // Aufgabe 7: Prozent Angabe
+    private static void prozent(String importedText){
+        int absoluteLength = importedText.length();
+
+    }
+
+    // Aufgabe 8: Buchstaben auszählen
     private static void countLetter(String importedText) {
-        String tmpText = importedText.toLowerCase();
-        tmpText = importedText.replaceAll("[^A-Za-z0-9]", "");
-        char[] checkLettersArray = tmpText.toCharArray();
+        String tmpText = importedText.toLowerCase().replaceAll("[^A-Za-z]", "");
+        char[] checkLettersArray = tmpText.toLowerCase().toCharArray();
+        Map <Character,Integer>map= new TreeMap<>();
 
         for (int i = 0; i < tmpText.length()-1; i++) {
             int counter = 0;
@@ -211,9 +218,10 @@ public class FunWithStrings3 {
                 if (checkLettersArray[i] == letter) {
                     counter++;
                 }
-                System.out.println(letter + counter + " ,");
             }
+            map.put(checkLettersArray[i] , counter);
         }
+        System.out.println(map);
     }
 
 
