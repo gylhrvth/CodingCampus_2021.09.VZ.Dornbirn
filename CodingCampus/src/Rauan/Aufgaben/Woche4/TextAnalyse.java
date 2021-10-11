@@ -76,11 +76,11 @@ public class TextAnalyse {
     }
 
     private static void replaceCostumConsolInput(String text) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
         System.out.println("bitte geben sie welches wort, was du ersetzen will");
         String userConsolInput = scanner.nextLine();
         System.out.println("bitte geben sie welches wort oder zeichnen, was du ersetzen will");
-        String userConsolCharecter = scanner.nextLine();
+        String userConsolCharecter = input.nextLine();
 
         String replaceUserCostum = text.toLowerCase(Locale.ROOT).replaceAll(userConsolInput, userConsolCharecter);
         System.out.println(replaceUserCostum);
