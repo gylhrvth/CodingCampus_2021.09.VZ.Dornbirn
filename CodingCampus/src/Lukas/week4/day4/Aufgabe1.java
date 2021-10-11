@@ -6,7 +6,7 @@ package Lukas.week4.day4;
  * <br>Verwende dazu die Konstante TEXT_TO_ANALYSE dieser Klasse als Ausgangspunkt.
  * <br><strong>Arbeite wo du es als sinnvoll erachtest mit "lower case"</strong>
  * <br><strong>Verwende für alles nötige und sinnvolle eigene Methoden! Mindestens für jede Aufgabe eine eigene.</strong>
- * <br><strong>Mach die Methoden nun private, nichtmehr public.</strong>
+ * <br><strong>Mach die Methoden nun private, nicht mehr public.</strong>
  * <ol>
  *    <li>Zähle alle Wörter und gib diese aus.</li>
  *    <li>Zähle alle Zeilen und gib diese aus.</li>
@@ -38,7 +38,7 @@ public class Aufgabe1 {
             "\n" +
             "Die Stadt ließ 2009 den Großschornstein auf der Rückseite sichern und das Dach sowie die Dachentwässerung notdürftig erneuern, jedoch bedürfte das Dach nach Angaben der Stadt einer Kompletterneuerung und das Bad einer Grundsanierung, die die Stadt jedoch finanziell nicht leisten kann.\n" +
             "\n" +
-            "Im Juni 2009 sollte im Freisebad unter dem Motto unerhörte Orte der 14. Jazztage Görlitz ein Konzert der Band Funk de Nite stattfinden, dies wurde jedoch in die alte Maschinenfabrik des Waggonbaus verlegt. Im gleichen Jahr öffnete das Bad jedoch zum Tag des offenen Denkmals seine Türen. Für den Film Grand Budapest Hotel diente es als Drehort.\n" +
+            "Im Juni 2009 sollte im Freisebad unter dem Motto unerhörte Orte der 14. Jazztage Görlit<z ein Konzert der Band Funk de Nite stattfinden, dies wurde jedoch in die alte Maschinenfabrik des Waggonbaus verlegt. Im gleichen Jahr öffnete das Bad jedoch zum Tag des offenen Denkmals seine Türen. Für den Film Grand Budapest Hotel diente es als Drehort.\n" +
             "\n" +
             "Es gab Pläne, das Bad und die ehemalige II. medizinische Klinik als Kompetenzzentrum für die Betreuung von Demenzpatienten (Kahlbaum-Projekt) zu reaktivieren und das Bad auch den Bürgern wieder zugänglich zu machen. Die Pläne lagen jedoch 2011 auf Eis.";
 

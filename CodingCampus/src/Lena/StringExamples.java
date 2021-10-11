@@ -101,7 +101,7 @@ public class StringExamples {
 
         int acutalMostVowels = 0;
         String wordWithMostVowels = "";
-        int countOtherWords=0;
+        int countOtherWords = 0;
         for (int i = 0; i < arr.length; i++) {
             int counter = 0;
             if (arr[i].toLowerCase(Locale.ROOT).contains("a")) {
@@ -121,7 +121,7 @@ public class StringExamples {
             }
 
 
-            if(counter==acutalMostVowels){
+            if (counter == acutalMostVowels) {
                 countOtherWords++;
             }
             if (counter > acutalMostVowels) {
@@ -131,8 +131,8 @@ public class StringExamples {
 
         }
         System.out.println("Das Wort mit den meisten Selbstlauten ist: " + wordWithMostVowels + ". Es hat " + acutalMostVowels + " Selbstlaute.");
-        if(countOtherWords>0){
-            System.out.println("Es gibt noch "+countOtherWords+" mit "+acutalMostVowels+" Selbstlauten.");
+        if (countOtherWords > 0) {
+            System.out.println("Es gibt noch " + countOtherWords + " mit " + acutalMostVowels + " Selbstlauten.");
         }
     }
 
@@ -140,33 +140,33 @@ public class StringExamples {
 
         int countVowels = 0;
         String wordWithMostVowels = "";
-        int countOtherWords=0;
+        int countOtherWords = 0;
 
         for (int i = 0; i < arr.length; i++) {
             int counter = 0;
-            char[]word = arr[i].toLowerCase(Locale.ROOT).toCharArray();
+            char[] word = arr[i].toLowerCase(Locale.ROOT).toCharArray();
 
             for (int j = 0; j < word.length; j++) {
-                if(word[j]=='a'){
+                if (word[j] == 'a') {
                     counter++;
                 }
-                if(word[j]=='e'){
+                if (word[j] == 'e') {
                     counter++;
                 }
-                if(word[j]=='i'){
+                if (word[j] == 'i') {
                     counter++;
                 }
-                if(word[j]=='o'){
+                if (word[j] == 'o') {
                     counter++;
                 }
-                if(word[j]=='u'){
+                if (word[j] == 'u') {
                     counter++;
                 }
 
 
             }
 
-            if(counter==countVowels){
+            if (counter == countVowels) {
                 countOtherWords++;
             }
             if (counter > countVowels) {
@@ -176,8 +176,8 @@ public class StringExamples {
 
         }
         System.out.println("Das richtige Wort mit den meisten Selbstlauten ist: " + wordWithMostVowels + ". Es hat " + countVowels + " Selbstlaute.");
-        if(countOtherWords>0){
-            System.out.println("Es gibt noch "+countOtherWords+" Wörter mit "+countVowels+" Selbstlauten.");
+        if (countOtherWords > 0) {
+            System.out.println("Es gibt noch " + countOtherWords + " Wörter mit " + countVowels + " Selbstlauten.");
         }
     }
 
