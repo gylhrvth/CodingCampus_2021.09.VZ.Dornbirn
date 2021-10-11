@@ -55,6 +55,23 @@ public class Day4StringManipulation {
         countLetters(toAnalyze4);
     }
 
+    private static void countallChars(String text) {
+        System.out.println("\u001B[36m" + "set of chars in the text" + "\u001B[0m");
+        char[] letters = text.toLowerCase(Locale.ROOT).toCharArray();
+        for (int i = 0; i <= 127; i++) {
+            int counter = 0;
+            for (int j = 0; j < letters.length; j++) {
+                if (i == letters[j]) {
+                    counter++;
+                }
+
+            }
+            System.out.println(" The char '" + (char) i + "' is " + counter + " times in the text " +
+                    "it makes " + String.format("%.2f", calculatePercent(counter, text.length())) + "% of the total text");
+        }
+
+    }
+
     private static void countLetters(String text) {
         System.out.println("\u001B[36m" + "set of letters in the text" + "\u001B[0m");
         char[] letters = text.toLowerCase(Locale.ROOT).toCharArray();
@@ -66,7 +83,8 @@ public class Day4StringManipulation {
                 }
 
             }
-            System.out.println(" The letter '" + (char) i + "' is " + counter + " times in the text ");
+            System.out.println(" The letter '" + (char) i + "' is " + counter + " times in the text " +
+                    "it makes " + String.format("%.2f", calculatePercent(counter, text.length())) + "% of the total text");
         }
 
     }
@@ -96,10 +114,10 @@ public class Day4StringManipulation {
 
         }
         int allSpclChars = counter + counter2 + counter3;
-
         System.out.println("The text has " + allSpclChars + " specialchars");
         System.out.println("The text has " + counter + " times \".\" " + counter2 + " times \"-\" " + counter3 + " times \",\" ");
-        System.out.println("The special chars are " + calculatePercent(allSpclChars, text.length()) + " % from the text");
+        System.out.println("The special chars are " + String.format("%.2f", calculatePercent(allSpclChars, text.length())) +
+                "% from the text");
     }
 
     private static void replaceWithScanner(String text) {
