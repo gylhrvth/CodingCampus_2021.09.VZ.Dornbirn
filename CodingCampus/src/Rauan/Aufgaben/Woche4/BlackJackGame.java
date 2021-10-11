@@ -1,4 +1,4 @@
-package Rauan;
+package Rauan.Aufgaben.Woche4;
 
 import java.util.*;
 import java.util.Scanner;

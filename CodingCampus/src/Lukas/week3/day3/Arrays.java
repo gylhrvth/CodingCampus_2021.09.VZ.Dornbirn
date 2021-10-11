@@ -137,10 +137,6 @@ public class  Arrays {
 
 
     //2)
-
-
-
-
     //Buchstaben case insensitive Zählen (A zählt für a)
 
 
