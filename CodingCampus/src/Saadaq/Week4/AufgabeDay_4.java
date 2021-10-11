@@ -8,6 +8,9 @@ public class AufgabeDay_4 {
     public static void main(String[] args) {
 
 
+
+
+
         // String[] Das Freisebad ist eine ehemalige Badeanstalt an der Dr.-Kahlbaum-Allee in der Görlitzer Innenstadt in Sachsen.
 
 

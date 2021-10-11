@@ -9,7 +9,7 @@ import java.util.Arrays;
 public class StringManupulation_1 {
 
 
-
+/*
 
 
 
@@ -113,14 +113,14 @@ public class StringManupulation_1 {
             System.out.println("___________________-");
 
 
-            /*iban("ATrtr122060200001904055454528");*/
+            *//*iban("ATrtr122060200001904055454528");*//*
             iban("ATAT8454155481185151551");
 
             System.out.println("____________");
 
-       /* String randomIBANEnding = "[a-zA-Z]+]+([0-9]+)+";
+       *//* String randomIBANEnding = "[a-zA-Z]+]+([0-9]+)+";
 
-        System.out.println("AT1220602000001904022".matches(randomIBANEnding));*/
+        System.out.println("AT1220602000001904022".matches(randomIBANEnding));*//*
 
         }
 
@@ -153,6 +153,6 @@ public class StringManupulation_1 {
 
 
 
-    }
+    }*/
 
 }
