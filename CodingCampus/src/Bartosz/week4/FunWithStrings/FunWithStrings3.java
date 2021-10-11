@@ -121,7 +121,7 @@ public class FunWithStrings3 {
                 .replaceAll("\n+", " ")
                 .replaceAll("\\, ", " ")
                 .replaceAll("\\. ", " ");
-        String[] words = importedText.split(" ");
+        String[] words = importedText.split("\\s");
         System.out.println(Arrays.toString(words));
         for (int counter = 0; counter < words.length - 1; counter++) {
             wordsCounter++;
@@ -180,8 +180,12 @@ public class FunWithStrings3 {
 
     // Aufgabe 6: Zeichen auszählen
     private static void countChars(String importedText) {
-        char[] importedToCharArray = importedText.toCharArray();
+        String updatedText = importedText.toLowerCase();
+        updatedText = importedText.replaceAll("\n", "°")
+                .replaceAll(" ", "^");
+        char[] importedToCharArray = updatedText.toCharArray();
         int counter = 0;
+
         Map <Character,Integer>map= new TreeMap<>();
         for (int i = 0; i < importedToCharArray.length; i++) {
 
@@ -195,6 +199,32 @@ public class FunWithStrings3 {
         }
         System.out.println(map);
     }
+
+    // Aufgabe 7: Prozent Angabe
+    private static void prozent(String importedText){
+        int absoluteLength = importedText.length();
+
+    }
+
+    // Aufgabe 8: Buchstaben auszählen
+    private static void countLetter(String importedText) {
+        String tmpText = importedText.toLowerCase().replaceAll("[^A-Za-z]", "");
+        char[] checkLettersArray = tmpText.toLowerCase().toCharArray();
+        Map <Character,Integer>map= new TreeMap<>();
+
+        for (int i = 0; i < tmpText.length()-1; i++) {
+            int counter = 0;
+            for (char letter : checkLettersArray) {
+                if (checkLettersArray[i] == letter) {
+                    counter++;
+                }
+            }
+            map.put(checkLettersArray[i] , counter);
+        }
+        System.out.println(map);
+    }
+
+
 
 //    public static void main(String args[]) {
 //        String str;
@@ -230,7 +260,7 @@ public class FunWithStrings3 {
             String initText = getInitText();
             //decisionEx(initText);
 
-            countChars(initText);
+            countLetter(initText);
 
 
             // Wiederholungsmethode
