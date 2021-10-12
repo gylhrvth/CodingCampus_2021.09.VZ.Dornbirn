@@ -22,7 +22,7 @@ public class Strings {
     public static void main(String[] args) {
 
         String[] allMembersArray = Lukas.week4.day3.Strings.ALL_MEMBERS.split(" ");
-
+        System.out.println(Arrays.toString(allMembersArray));
         printedSortedArrayAscending(allMembersArray);
         printedSortedArraysDescending(allMembersArray);
         printWordWithMostLetters(allMembersArray);
