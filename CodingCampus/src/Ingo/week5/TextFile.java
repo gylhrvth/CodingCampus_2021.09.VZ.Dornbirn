@@ -14,13 +14,15 @@ public class TextFile {
             File file = new File(path);
             Scanner myScan = new Scanner(file);
 
-            while (myScan.hasNextLine());
+            while (myScan.hasNextLine()){
+                String line = myScan.nextLine();
+                System.out.println(line);
+            }
+
 
         } catch (FileNotFoundException fnfe){
             fnfe.toString();
         }
-        System.out.println();
-
 
 
         String[] countLines = path.split("\\s");
