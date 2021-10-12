@@ -10,26 +10,52 @@ public class TextFile {
 
         String path = "C:\\Users\\terra\\Desktop\\CodingCampus_2021.09.VZ.Dornbirn\\CodingCampus\\src\\Niklas\\filereadwrite\\1342-0.txt";
 
-        try{
+        flipLines(path);
+
+    }
+
+    private static void flipLines(String path) {
+
+        String[] flippedLines = new String[countLines(path)];
+
+
+        try {
             File file = new File(path);
             Scanner myScan = new Scanner(file);
 
-            while (myScan.hasNextLine()){
-                String line = myScan.nextLine();
-                System.out.println(line);
+            int i = 0;
+            while (myScan.hasNextLine()) {
+                flippedLines[i] = myScan.nextLine();
+                i++;
             }
 
-
-        } catch (FileNotFoundException fnfe){
+        } catch (FileNotFoundException fnfe) {
             fnfe.toString();
         }
 
+        for (int i = flippedLines.length - 1; i >= 0; i--) {
 
-        String[] countLines = path.split("\\s");
-        System.out.println(countLines.length);
+            System.out.println(flippedLines[i]);
+        }
 
+    }
 
+    private static int countLines(String path) {
+        int countLines = 0;
 
+        try {
+            File file = new File(path);
+            Scanner myScan = new Scanner(file);
+
+            while (myScan.hasNextLine()) {
+                String line = myScan.nextLine();
+                countLines++;
+            }
+
+        } catch (FileNotFoundException fnfe) {
+            fnfe.toString();
+        }
+        return countLines;
     }
 
 }

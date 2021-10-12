@@ -30,6 +30,14 @@ public class StringToStringArrays {
         System.out.println(newChar);
         System.out.println(newChar.length); // .length - mit Index länge   !!!
 
+        String news = "abcdefghijklmnop";
+        char[] char1 = news.toCharArray();
+        System.out.println("Das ist ein: " + news.charAt(2));
+        for (int i = 0; i < news.length(); i++) {
+            System.out.print("," + news.charAt(i));
+        }
+
+
 
 
     }

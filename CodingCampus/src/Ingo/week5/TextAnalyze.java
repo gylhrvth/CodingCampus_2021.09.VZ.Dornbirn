@@ -12,6 +12,17 @@ public class TextAnalyze {
         // alle Wörter im Text auslesen !!!
         String[] countWords = text.split("\\s+");
         System.out.println(text.length());
+        System.out.println("-----------------------------------");
+        // ganze Zeilen auslesen und zählen !!!
+        int countLines = 1;
+        for (int i = 0; i < text.length(); i++) {
+            if (text.charAt(i) == '\n') {
+                countLines++;
+            }
+        }
+        System.out.println(countLines);
+        System.out.println("------------------------");
+
 
 
 
