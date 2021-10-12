@@ -16,15 +16,14 @@ public class fileReader {
             File file = new File(path);
             Scanner myReader = new Scanner(file);
 
-            StringBuilder stringBuilder = new StringBuilder();
-
             while (myReader.hasNextLine()) {
                 String data = myReader.nextLine();
-                stringBuilder.append(data);
+
+                System.out.println(data);
             }
 
             myReader.close();
-            return stringBuilder.toString();
+
         } catch (FileNotFoundException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();
