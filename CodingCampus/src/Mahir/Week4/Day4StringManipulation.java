@@ -12,6 +12,7 @@ public class Day4StringManipulation {
         String toAnalyze4 = Aufgabe1.TEXT_TO_ANALYSE_4;
 
 
+
         //zähle alle Wörter
         countWords(toAnalyze);
         System.out.println();
