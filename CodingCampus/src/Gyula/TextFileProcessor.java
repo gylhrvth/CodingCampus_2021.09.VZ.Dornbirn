@@ -14,7 +14,9 @@ public class TextFileProcessor {
 
             while (sc.hasNextLine()){
                 String line = sc.nextLine();
-                // Process Line of text file
+                for (int i = line.length(); i > 0; i--) {
+
+                }
 
                 System.out.println(line);
 
@@ -22,6 +24,7 @@ public class TextFileProcessor {
             sc.close();
         } catch (FileNotFoundException fnfe) {
             fnfe.printStackTrace();
+
         }
     }
 

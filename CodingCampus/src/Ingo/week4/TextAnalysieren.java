@@ -1,11 +1,11 @@
-package Eray.week4;
+package Ingo.week4;
 
+import Lukas.week4.day4.Aufgabe1;
 
-import java.util.Arrays;
 import java.util.Locale;
 import java.util.Scanner;
 
-public class TextAnalysis {
+public class TextAnalysieren {
     public static void main(String[] args) {
         //clear Method to call all String Tasks
         allStringTasks();
@@ -14,7 +14,7 @@ public class TextAnalysis {
     }
 
     private static void allStringTasks() {
-        String text = "C:\\Users\\terra\\Desktop\\CodingCampus_2021.09.VZ.Dornbirn\\CodingCampus\\src\\Mahir\\Week5\\test.txt";
+        String text = "";
 
         //Count Words in String text 1 first Task
         System.out.println(startColor() + "Count Words in String text:" + endColor());
