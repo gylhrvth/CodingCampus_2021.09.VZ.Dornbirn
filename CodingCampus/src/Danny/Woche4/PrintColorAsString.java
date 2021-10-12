@@ -1,6 +1,6 @@
 package Danny.Woche4;
 
-public class TextPrintColor {
+public class PrintColorAsString {
     public static final String ANSI_RESET = "\u001B[0m";
     public static final String ANSI_BLACK = "\u001B[30m";
     public static final String ANSI_RED = "\u001B[31m";
@@ -26,7 +26,7 @@ public class TextPrintColor {
         switch (textColorANSI) {
             case ANSI_RED: {
                 if (returnEndLine == true) {
-                    System.out.println(ANSI_RED + word + ANSI_RESET);
+                    System.out.println(ANSI_RED + word + punctuation + ANSI_RESET);
                     break;
                 } else {
                     System.out.print(ANSI_RED + word + punctuation + ANSI_RESET);
@@ -35,7 +35,7 @@ public class TextPrintColor {
             }
             case ANSI_YELLOW: {
                 if (returnEndLine == true) {
-                    System.out.println(ANSI_YELLOW + word + ANSI_RESET);
+                    System.out.println(ANSI_YELLOW + word + punctuation + ANSI_RESET);
                     break;
                 } else {
                     System.out.print(ANSI_YELLOW + word + punctuation + ANSI_RESET);
@@ -44,7 +44,7 @@ public class TextPrintColor {
             }
             case ANSI_BLUE: {
                 if (returnEndLine == true) {
-                    System.out.println(ANSI_BLUE + word + ANSI_RESET);
+                    System.out.println(ANSI_BLUE + word + punctuation + ANSI_RESET);
                     break;
                 } else {
                     System.out.print(ANSI_BLUE + word + punctuation + ANSI_RESET);
@@ -53,7 +53,7 @@ public class TextPrintColor {
             }
             case ANSI_GREEN: {
                 if (returnEndLine == true) {
-                    System.out.println(ANSI_GREEN + word + ANSI_RESET);
+                    System.out.println(ANSI_GREEN + word + punctuation + ANSI_RESET);
                     break;
                 } else {
                     System.out.print(ANSI_GREEN + word + punctuation + ANSI_RESET);
@@ -62,19 +62,19 @@ public class TextPrintColor {
             }
             case ANSI_PURPLE: {
                 if (returnEndLine == true) {
-                    System.out.println(ANSI_PURPLE + word + ANSI_RESET);
+                    System.out.println(ANSI_PURPLE + word + punctuation + ANSI_RESET);
                     break;
                 } else {
-                    System.out.print(ANSI_PURPLE + word + ", " + ANSI_RESET);
+                    System.out.print(ANSI_PURPLE + word + punctuation + ANSI_RESET);
                     break;
                 }
             }
             case ANSI_CYAN: {
                 if (returnEndLine == true) {
-                    System.out.println(ANSI_CYAN + word + ANSI_RESET);
+                    System.out.println(ANSI_CYAN + word + punctuation + ANSI_RESET);
                     break;
                 } else {
-                    System.out.print(ANSI_CYAN + word + ", " + ANSI_RESET);
+                    System.out.print(ANSI_CYAN + word + punctuation + ANSI_RESET);
                     break;
                 }
 
