@@ -85,7 +85,6 @@ Arrays {
         System.out.println("Ihre Eingabe war: " + line);
 
         char[] letters = line.toCharArray();
-        System.out.println(letters);
 
         //Variante a)
         System.out.println("Variante a)");
@@ -113,10 +112,10 @@ Arrays {
 
     }
 
-    //n i k l a s length: 6
-    //6 5 4 3 2 1
+    //T o n i    < length: 4
+    //0 1 2 3
     public static void printReverse(char[] letters) {
-        for (int i = letters.length - 1; i >= 0; i--) {
+        for (int i = 0; i < letters.length; i++) {
             System.out.print(letters[i]);
         }
         System.out.println();
@@ -142,6 +141,7 @@ Arrays {
     public static String reverseStringInPlace(char[] letters) {
         char tmp;
         for (int i = 0; i < letters.length; i++) {
+
         }
         return new String(letters);
     }

@@ -32,21 +32,11 @@ public class FunWithStrings3 {
         String chosenText = "";
 
         switch (choseText) {
-            case 1 -> {
-                chosenText = initText1;
-            }
-            case 2 -> {
-                chosenText = initText2;
-            }
-            case 3 -> {
-                chosenText = initText3;
-            }
-            case 4 -> {
-                chosenText = initText4;
-            }
-            default -> {
-                System.out.println("Text nicht vorhanden");
-            }
+            case 1 -> chosenText = initText1;
+            case 2 -> chosenText = initText2;
+            case 3 -> chosenText = initText3;
+            case 4 -> chosenText = initText4;
+            default -> System.out.println("Text nicht vorhanden");
         }
         return chosenText;
     }
@@ -77,21 +67,18 @@ public class FunWithStrings3 {
                 int rowsCounter = counterRows(initText);
                 System.out.println("Der Text enthält " + rowsCounter + " Zeilen");
             }
-            case 3 -> {
-                // Aufgabe 3:
-                printAndReplaceScanned(initText);
-            }
+            case 3 -> printAndReplaceScanned(initText);
+
             case 4 -> {
-                // Aufgabe 4:
                 System.out.println();
                 printReplacedRegular(initText);
             }
-            case 5 -> {
-            }
+            case 5 -> replaceUserWords(initText);
+            case 6 -> countChars(initText);
+            case 7 -> prozent(initText);
+            case 8 -> countLetter(initText);
+            default -> System.out.println("Diese Übung ist nicht vorhanden.");
 
-            default -> {
-                System.out.println("Diese Übung ist nicht vorhanden.");
-            }
         }
     }
 
@@ -121,7 +108,7 @@ public class FunWithStrings3 {
                 .replaceAll("\n+", " ")
                 .replaceAll("\\, ", " ")
                 .replaceAll("\\. ", " ");
-        String[] words = importedText.split(" ");
+        String[] words = importedText.split("\\s");
         System.out.println(Arrays.toString(words));
         for (int counter = 0; counter < words.length - 1; counter++) {
             wordsCounter++;
@@ -180,8 +167,12 @@ public class FunWithStrings3 {
 
     // Aufgabe 6: Zeichen auszählen
     private static void countChars(String importedText) {
-        char[] importedToCharArray = importedText.toCharArray();
+        String updatedText = importedText.toLowerCase();
+        updatedText = importedText.replaceAll("\n", "°")
+                .replaceAll(" ", "^");
+        char[] importedToCharArray = updatedText.toCharArray();
         int counter = 0;
+
         Map <Character,Integer>map= new TreeMap<>();
         for (int i = 0; i < importedToCharArray.length; i++) {
 
@@ -196,29 +187,48 @@ public class FunWithStrings3 {
         System.out.println(map);
     }
 
-//    public static void main(String args[]) {
-//        String str;
-//        int i, length, counter[] = new int[256];
-//
-//        Scanner scanner = new Scanner(System.in);
-//        System.out.println("Enter a String");
-//        str = scanner.nextLine();
-//
-//        length = str.length();
-//
-//        // Count frequency of every character and store
-//        // it in counter array
-//        for (i = 0; i < length; i++) {
-//            counter[(int) str.charAt(i)]++;
-//        }
-//        // Print Frequency of characters
-//        for (i = 0; i < 256; i++) {
-//            if (counter[i] != 0) {
-//                System.out.println((char) i + " --> " + counter[i]);
-//            }
-//        }
-//    }
+    // Aufgabe 7: Prozent Angabe
+    private static void prozent(String importedText){
+        importedText = importedText.toLowerCase().replaceAll("\\n", "");
+        int absoluteLength = importedText.length();
 
+        int[] counter = new int[255];
+        char[] characters = importedText.toCharArray();
+        for (int i = 0; i < characters.length; i++) {
+            System.out.println((int) characters[i]);
+            int positionOfCharacterInAscii = characters[i];
+            if (positionOfCharacterInAscii <= 255) {
+                counter[positionOfCharacterInAscii]++;
+            }
+        }
+
+        for (int i = 0; i < counter.length; i++) {
+            if (counter[i] > 0) {
+                System.out.println((char) i + ": " + counter[i] + " - Das entspricht : " + (counter[i]/(float)absoluteLength * 100) + "% des gesamt Textes.");
+            }
+        }
+
+        System.out.println("Der Text ist " + absoluteLength + " Zeichen lang.");
+        System.out.println("Daraus folgt, dass " + (float)absoluteLength/100 + " 1% ist.");
+    }
+
+    // Aufgabe 8: Buchstaben auszählen
+    private static void countLetter(String importedText) {
+        String tmpText = importedText.toLowerCase().replaceAll("[^A-Za-z]", "");
+        char[] checkLettersArray = tmpText.toLowerCase().toCharArray();
+        Map <Character,Integer>map= new TreeMap<>();
+
+        for (int i = 0; i < tmpText.length()-1; i++) {
+            int counter = 0;
+            for (char letter : checkLettersArray) {
+                if (checkLettersArray[i] == letter) {
+                    counter++;
+                }
+            }
+            map.put(checkLettersArray[i] , counter);
+        }
+        System.out.println(map);
+    }
 
 //----------------------------------------------------------------------------------------------------//
 
@@ -226,14 +236,13 @@ public class FunWithStrings3 {
         boolean run = true;
 
         while (run) {
-
+            // get Text;
             String initText = getInitText();
-            //decisionEx(initText);
 
-            countChars(initText);
+            // Methods run;
+            decisionEx(initText);
 
-
-            // Wiederholungsmethode
+            // repeat until User -> no.
             run = repeat();
         }
 

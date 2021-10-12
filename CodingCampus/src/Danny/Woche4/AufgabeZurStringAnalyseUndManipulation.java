@@ -6,7 +6,7 @@ import Lukas.week4.day4.Aufgabe1;
 import java.util.Arrays;
 import java.util.Scanner;
 
-import static Danny.Woche4.TextPrintColor.*;
+import static Danny.Woche4.PrintColorAsString.*;
 
 /**
  * <h1>Textanalyse</h1>
@@ -55,33 +55,113 @@ public class AufgabeZurStringAnalyseUndManipulation {
         // geht System.out.println((stringLowerCase(textToAnalyze)).replaceAll("ist|und|oder", " ___ "));
 
 //        <li>Erstelle ein Programm welches vom Benutzer Worte einliest, die durch ein ___ ersetzt werden sollen und gib den Text aus.
-       //manyWordsReplaceUserInput(textToAnalyze);
+//        wordReplaceUserInput(textToAnalyze);
+//        manyWordsReplaceUserInput("Möchtest Du ein weiters Wort ersetzten?");
 
 //         Die Eingabe soll einzeilig erfolgen, z.b.: Haus,Maus,raus
+        //wordReplaceUserInputSideBYSide(textToAnalyze);
 
 
- //   <li>Zähle jedes Zeichen im Text und gib dessen Häufigkeit aus.
+        //   <li>Zähle jedes Zeichen im Text und gib dessen Häufigkeit aus.
+        //printCharCounter(charCountWithASCIISortByHighest(AllSameCharsCountInString(textToAnalyze)));
+
 //    <br>Weiters gib die Häufigkeit in Prozent in relation zur Gesamtlänge des Textes aus.
+        printCharCounterWithPercentToCharLength(charCountWithASCIISortByHighest(AllSameCharsCountInString(textToAnalyze)), textToAnalyze);
+
 //   <li>Siehe 6), beschränke dich aber nun auf das Alphabet</li>
+
 //    <li>Verwende Aufgaben 5) und 6) und analysiere ebenfalls TEXT_TO_ANALYSE_2,TEXT_TO_ANALYSE_3,TEXT_TO_ANALYSE_4
 //   <br>Gibt es einen Unterschied zwischen den deutschen und den englischen Texten?
-
-
 
 
         //Testfeld
     }
 
+    //Gleiche Chars im String mit Häufigkeit ausgeben
+    public static void printCharCounterWithPercentToCharLength(int[][] ASCIIcharCounterHighToLow, String stringText) {
+        char[] text = stringText.toCharArray();
+
+        for (int i = 0; i < ASCIIcharCounterHighToLow.length; i++) {
+            if (ASCIIcharCounterHighToLow[i][1] > 0) {
+                double charPercent = ((ASCIIcharCounterHighToLow[i][1] * 100.0) / text.length);
+                double charPercentRoundOff = Math.round(charPercent * 100.0) / 100.0;
+                PrintColorAsString.textPrintColor(String.valueOf((char) ASCIIcharCounterHighToLow[i][0]),ANSI_YELLOW,"  ",false);
+                textPrintColor(String.valueOf(ASCIIcharCounterHighToLow[i][1]),ANSI_CYAN,"  ",false);
+                textPrintColor(String.valueOf(charPercentRoundOff),ANSI_GREEN,"%",true);
+            }
+        }
+    }
+
+    //CharArray mit Anzahl der Chars und mit Bezug zur ASCII Position nach Größe sortieren
+    public static int[][] charCountWithASCIISortByHighest(int[] ASCIIcharCounter) {
+        int[][] ASCIIcharCounterHighToLow = new int[127][2];
+        for (int i = 0; i < ASCIIcharCounter.length; i++) {
+            ASCIIcharCounterHighToLow[i][0] = i;
+            ASCIIcharCounterHighToLow[i][1] = ASCIIcharCounter[i];
+        }
+        for (int j = 0; j < ASCIIcharCounterHighToLow.length; j++) {
+            int index = j;
+            int ASCIIpositionHighestCount = ASCIIcharCounterHighToLow[j][1];
+            for (int i = j; i < ASCIIcharCounterHighToLow.length; i++) {
+                if (ASCIIcharCounterHighToLow[i][1] > ASCIIpositionHighestCount) {
+                    index = i;
+                    ASCIIpositionHighestCount = ASCIIcharCounterHighToLow[i][1];
+                }
+            }
+            if (ASCIIcharCounterHighToLow[j][1] != ASCIIcharCounterHighToLow[index][1]) {
+                int temp0 = ASCIIcharCounterHighToLow[j][0];
+                int temp1 = ASCIIcharCounterHighToLow[j][1];
+                ASCIIcharCounterHighToLow[j][0] = ASCIIcharCounterHighToLow[index][0];
+                ASCIIcharCounterHighToLow[j][1] = ASCIIcharCounterHighToLow[index][1];
+                ASCIIcharCounterHighToLow[index][0] = temp0;
+                ASCIIcharCounterHighToLow[index][1] = temp1;
+            }
+        }
+        return ASCIIcharCounterHighToLow;
+    }
 
 
+    //Gleiche Chars im String mit Häufigkeit ausgeben
+    public static void printCharCounter(int[][] ASCIIcharCounterHighToLow) {
+
+        for (int i = 0; i < ASCIIcharCounterHighToLow.length; i++) {
+            if (ASCIIcharCounterHighToLow[i][1] > 0) {
+                System.out.println(">" + (char) ASCIIcharCounterHighToLow[i][0] + "<" + " " + ASCIIcharCounterHighToLow[i][1]);
+            }
+        }
+    }
+
+    //Alle gleichen Chars im String zählen
+    public static int[] AllSameCharsCountInString(String stringText) {
+        char[] text = stringText.toCharArray();
+        int[] ASCIIcharCounter = new int[127];
+        for (int i = 0; i < text.length; i++) {
+            int textPositionASCIINumber = text[i];
+            if (textPositionASCIINumber < ASCIIcharCounter.length) {
+                ASCIIcharCounter[textPositionASCIINumber]++;
+            }
+        }
+        return ASCIIcharCounter;
+    }
+
+    //Mehere Wörter finden und ersetzten; Eingabe nebeneinander - Find and replace multiple words; input side by side
+    public static void wordReplaceUserInputSideBYSide(String arr) {
+        System.out.println(textToAnalyze);
+        System.out.println();
+        System.out.println("----------");
+        textPrintColor("Welche Wörter möchtest du ersetzen? !!Trenne die Wörter mit einem Komma!!", ANSI_YELLOW, "", true);
+        System.out.println("----------");
+        String searchWord = stringLowerCase(scanner.next());
+        searchWord = searchWord.replace(",", "|");
+        System.out.println(stringReplaceMarks(arr, searchWord, "___"));
+    }
 
 
-
-    public static void manyWordsReplaceUserInput(String arr) {
-        wordReplaceUserInput(textToAnalyze);
+    //Frage mit JA NEiN Auswahl - Question with YES NO Selection
+    public static void manyWordsReplaceUserInput(String question) {
         boolean moreWords = true;
         while (moreWords == true) {
-            textPrintColor("Möchtest du ein weiteres Wort ersetzen?", ANSI_YELLOW, "", true);
+            textPrintColor(question, ANSI_YELLOW, "", true);
             textPrintColor("1 = Ja ", ANSI_GREEN, " ", false);
             textPrintColor(" 2 = Nein", ANSI_RED, "", true);
             if (scanner.nextInt() == 1) {
@@ -92,6 +172,7 @@ public class AufgabeZurStringAnalyseUndManipulation {
         }
     }
 
+    //Wort finden und ersetzten
     public static void wordReplaceUserInput(String arr) {
         System.out.println(textToAnalyze);
         System.out.println();
@@ -145,6 +226,7 @@ public class AufgabeZurStringAnalyseUndManipulation {
 
     //Satzzeichen aus dem String entfernen
     public static String stringReplaceMarks(String arr, String regex, String replace) {
+        arr = arr.toLowerCase();
         return arr.replaceAll(regex, replace);
     }
 }
