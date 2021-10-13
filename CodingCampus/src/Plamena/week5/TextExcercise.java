@@ -2,6 +2,7 @@ package Plamena.week5;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class TextExcercise {
@@ -11,6 +12,7 @@ public class TextExcercise {
         System.out.println("Number of words in text: " + wordCount(path));
         System.out.println("Number of signs in text: " + signCount(path));
         signFrequency(path);
+        sortWords(path);
 
 
     }
@@ -28,7 +30,7 @@ public class TextExcercise {
             sc.close();
             String text = sb.toString();
             //    words = Plamena.week4.TextAnalysis.wordsCount(text);
-            text = text.replaceAll("[\\(\\):,]|\\.[ \n]", " ")
+            text = text.replaceAll("[·'£–„“†():;,.\\[\\]| \n\\-]", " ")
                     .replaceAll("\n+", " ")
                     .replaceAll("\s+", " ");
             String[] wordCounter = text.split("\s");
@@ -77,8 +79,8 @@ public class TextExcercise {
                 }
             }
 
-            for (int i = 0; i < tmp.length; i++) {
-                float percentage = (float)(tmp[i]/ charArr.length)*100;
+          for (int i = 0; i < tmp.length; i++) {
+                float percentage = ((float) tmp[i] / charArr.length) * 100;
                 if (tmp[i] != 0) {
                     System.out.print("There are " + tmp[i] + " '" + (char) (i + ' ') + "' in this text. That's ");
                     System.out.printf("%.2f ", percentage);
@@ -91,7 +93,41 @@ public class TextExcercise {
     }
 
     private static void sortWords(String path) {
-        
+
+        try{
+            File f = new File(path);
+            Scanner sc = new Scanner(f);
+            StringBuilder sb = new StringBuilder();
+
+            while (sc.hasNextLine()){
+                sb.append(sc.nextLine());
+            }
+            String text = sb.toString();
+            text = text.replaceAll("[·'£–„“†():;,.\\[\\]| \n\\-]", " ")
+                    .replaceAll("\n+", " ")
+                    .replaceAll("\s+", " ");
+            String[] words = text.split("\s");
+
+            for (int i = 0; i < words.length-1; i++) {
+                for (int j = 0; j < words.length-1; j++) {
+                    if(words[j+1].compareTo(words[j]) < 0){
+                        String tmp = words[j];
+                        words[j] = words[j+1];
+                        words[j+1] = tmp;
+                    }
+                    if(words [j+1].compareTo(words[j]) == 0){
+                        words[j+1] ="";
+                    }
+                }
+            }
+            for (int i = 0; i < words.length; i++) {
+                if(words[i].compareTo("") != 0 )
+                System.out.println(words[i]);
+            }
+
+        } catch(FileNotFoundException fnfe){
+            fnfe.printStackTrace();
+        }
 
     }
 
