@@ -3,7 +3,10 @@ package Oemer.Week4;
 
 import Lukas.week4.day3.Strings;
 
+import java.text.Collator;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Locale;
 
 public class StringMember {
     public static void main(String[] args) {
@@ -29,11 +32,11 @@ public class StringMember {
 
 
     }
-
     private static void alphabetischAufsteigend(String[] aufsteigend) {
+        Collator germanCollator = Collator.getInstance(Locale.GERMANY);
         for (int i = 0; i < aufsteigend.length; i++) {
             for (int j = 0; j < aufsteigend.length - 1; j++) {
-                int i1 = aufsteigend[j].compareTo(aufsteigend[j + 1]);
+                int i1 = germanCollator.compare(aufsteigend[j], aufsteigend[j + 1]);
                 if (i1 > 0) {
                     String tmp = aufsteigend[j + 1];
                     aufsteigend[j + 1] = aufsteigend[j];

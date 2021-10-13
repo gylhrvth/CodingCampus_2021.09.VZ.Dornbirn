@@ -32,22 +32,6 @@ public class textManipulation {
 //            fnfe.printStackTrace();
 //        }
 
-
-        //Zählt die wieviel Zeilen im Text File sind
-//        long l = System.currentTimeMillis(); // Systemzeit merken => Dauer berechnen!
-//        try {
-//            BufferedReader in = new BufferedReader(new FileReader(path));
-//            int count = 0;
-//            while ( in.readLine() != null ) {
-//                count++;
-//            }
-//            System.out.println("Anzahl: " + count);
-//            System.out.println("Dauer: " + (System.currentTimeMillis()-l)); // Dauer ausgeben.
-//        }
-//        catch (Exception ex) {
-//            ex.printStackTrace();
-//        }
-
     }
 
     //Zählt die wieviel Zeilen im Text File sind und speichert sie in counLines
