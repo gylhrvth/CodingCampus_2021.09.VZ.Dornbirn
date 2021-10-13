@@ -74,7 +74,7 @@ public class AufgabeZurStringAnalyseUndManipulation {
 //    <li>Verwende Aufgaben 5) und 6) und analysiere ebenfalls TEXT_TO_ANALYSE_2,TEXT_TO_ANALYSE_3,TEXT_TO_ANALYSE_4
 
 //        charCountWithASCIISortByHighest(AllSameCharsCountInString(Aufgabe1.TEXT_TO_ANALYZE));
-        compareStringAndprintCharCounterWithPercentToCharLength(Aufgabe1.TEXT_TO_ANALYZE, 0,127,0,127);
+        //compareStringAndprintCharCounterWithPercentToCharLength(Aufgabe1.TEXT_TO_ANALYZE, 0,127,0,127);
 //        charCountWithASCIISortByHighest(AllSameCharsCountInString(Aufgabe1.TEXT_TO_ANALYSE_2));
 //        charCountWithASCIISortByHighest(AllSameCharsCountInString(Aufgabe1.TEXT_TO_ANALYSE_3));
 //        charCountWithASCIISortByHighest(AllSameCharsCountInString(Aufgabe1.TEXT_TO_ANALYSE_4));
