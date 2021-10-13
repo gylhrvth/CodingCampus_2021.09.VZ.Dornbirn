@@ -10,38 +10,34 @@ public class textManipulation1 {
 
         String path = "C:\\Users\\DCV\\CodingCampus_2021.09.VZ.Dornbirn\\CodingCampus\\src\\Stefan\\WeekFive\\file.txt";
 
-
         System.out.println(wordCounter(path));
-
 
     }
 
 
     private static int wordCounter(String path) {
+
+        int countWords = 0;
         try {
             File f = new File(path);
             Scanner sc = new Scanner(f);
 
-            String[] words = path.split(" ");
+            String counter = "";
             while (sc.hasNextLine()) {
-//                String line = sc.nextLine();
-
-                int counter = 0;
-                for (int counter1 = 0; counter1 < words.length + 1; counter1++) {
-                    counter++;
-
-                }
-                return counter;
+                counter += sc.nextLine();
             }
             sc.close();
+            counter = counter.replaceAll("[\\(\\):,]|\\.[ \n]", " ")
+                    .replaceAll("\n+", " ")
+                    .replaceAll("\s+", " ");
 
+            String[] words = counter.split(" ");
+            countWords = words.length;
         } catch (FileNotFoundException fnfe) {
             fnfe.printStackTrace();
         }
-
-        return 0;
+        return countWords;
     }
-
 
 }
 
