@@ -57,8 +57,6 @@ public class textManipulation1 {
     }
 
 
-
-
 //    private static int wordCounter(String path) {
 //
 //        int countWords = 0;
