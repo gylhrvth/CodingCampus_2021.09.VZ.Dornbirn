@@ -5,7 +5,7 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class FileScanner {
-    protected static void fileReader() {
+    public static void fileReader() {
         File filePath = new File("C:\\Users\\DCV\\IdeaProjects\\CodingCampus_2021.09.VZ.Dornbirn\\CodingCampus\\src\\Bartosz\\week5\\day3Aufagaben\\Assets\\text-file.txt");
 
         if (filePath.isDirectory()) {
@@ -13,6 +13,7 @@ public class FileScanner {
         } else {
 
             try {
+                System.out.println("try wird ausgeführt");
                 Scanner scan = new Scanner(filePath);
                 StringBuilder esmeralda = new StringBuilder();
 
