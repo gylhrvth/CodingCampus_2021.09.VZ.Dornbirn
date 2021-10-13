@@ -66,7 +66,7 @@ public class AufgabeZurStringAnalyseUndManipulation {
         //printCharCounter(charCountWithASCIISortByHighest(AllSameCharsCountInString(textToAnalyze)));
 
 //    <br>Weiters gib die Häufigkeit in Prozent in relation zur Gesamtlänge des Textes aus.
-        //printCharCounterWithPercentToCharLength(charCountWithASCIISortByHighest(AllSameCharsCountInString(textToAnalyze)), textToAnalyze,0,127,0,127);
+        printCharCounterWithPercentToCharLength(charCountWithASCIISortByHighest(AllSameCharsCountInString(textToAnalyze)), textToAnalyze,0,127,0,127);
 
 //   <li>Siehe 6), beschränke dich aber nun auf das Alphabet</li>
         //printCharCounterWithPercentToCharLength(charCountWithASCIISortByHighest(AllSameCharsCountInString(textToAnalyze)), textToAnalyze,65,90,97,122);

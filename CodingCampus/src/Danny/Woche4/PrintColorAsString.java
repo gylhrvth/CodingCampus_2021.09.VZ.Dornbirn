@@ -20,8 +20,18 @@ public class PrintColorAsString {
 
     }
 
-    public static void textPrintColor(String word, String textColorANSI,String punctuation, boolean returnEndLine) {
-
+    /**
+     *
+     * @param word
+     * @param textColorANSI Can be one of {@link PrintColorAsString}{@link #ANSI_BLACK}
+     * @param punctuation
+     * @param returnEndLine
+     */
+    public static void textPrintColor(final String word, final String textColorANSI,String punctuation, boolean returnEndLine) {
+        String newlineRemovedWord = word;
+        if(newlineRemovedWord.equals("\n")) {
+            newlineRemovedWord = "\\n";
+        }
 
         switch (textColorANSI) {
             case ANSI_RED: {

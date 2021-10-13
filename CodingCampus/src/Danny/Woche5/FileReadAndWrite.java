@@ -47,9 +47,7 @@ public class FileReadAndWrite {
 //    }
 
 
-
-
-    public static void scanTextAndOutputCharsInLineBackwardsAndTextLinesBackward (String path){
+    public static void scanTextAndOutputCharsInLineBackwardsAndTextLinesBackward(String path) {
         try {
             File file = new File(path);
             Scanner myReader = new Scanner(file);
@@ -62,20 +60,19 @@ public class FileReadAndWrite {
             File file1 = new File(path);
             Scanner myReader1 = new Scanner(file1);
             while (myReader1.hasNextLine()) {
-                for (int i = 0; i < textArray.length ; i++) {
+                for (int i = 0; i < textArray.length; i++) {
                     String data = myReader1.nextLine();
                     textArray[i] = data;
                 }
             }
             for (int i = textArray.length - 1; i >= 0; i--) {
                 char[] textCharArray = textArray[i].toCharArray();
-                for (int j = textCharArray.length - 1; j >= 0 ; j--) {
+                for (int j = textCharArray.length - 1; j >= 0; j--) {
                     System.out.print(textCharArray[j]);
                 }
                 System.out.println();
             }
-        } catch (
-                FileNotFoundException fnfe) {
+        } catch (FileNotFoundException fnfe) {
             System.out.println("An error occurred.");
             fnfe.printStackTrace();
         }
@@ -94,7 +91,7 @@ public class FileReadAndWrite {
             File file1 = new File(path);
             Scanner myReader1 = new Scanner(file1);
             while (myReader1.hasNextLine()) {
-                for (int i = 0; i < textArray.length ; i++) {
+                for (int i = 0; i < textArray.length; i++) {
                     String data = myReader1.nextLine();
                     textArray[i] = data;
                 }
@@ -102,37 +99,35 @@ public class FileReadAndWrite {
             for (int i = textArray.length - 1; i >= 0; i--) {
                 System.out.println(textArray[i]);
             }
-        } catch (
-                FileNotFoundException fnfe) {
+        } catch (FileNotFoundException fnfe) {
             System.out.println("An error occurred.");
             fnfe.printStackTrace();
         }
     }
 
 
+    public static void scanTextAndOutputCharsInLineBackwards(String path) {
+        try {
+            File file = new File(path);
+            Scanner myReader = new Scanner(file);
 
-        public static void scanTextAndOutputCharsInLineBackwards (String path){
-            try {
-                File file = new File(path);
-                Scanner myReader = new Scanner(file);
 
+            while (myReader.hasNextLine()) {
+                String data = myReader.nextLine();
+                char[] dataChar = data.toCharArray();
 
-                while (myReader.hasNextLine()) {
-                    String data = myReader.nextLine();
-                    char[] dataChar = data.toCharArray();
-
-                    for (int i = dataChar.length -1; i >= 0; i--) {
-                        System.out.print(String.valueOf(dataChar[i]));
-                    }
-                    System.out.println();
+                for (int i = dataChar.length - 1; i >= 0; i--) {
+                    System.out.print(String.valueOf(dataChar[i]));
                 }
-
-            } catch (FileNotFoundException fnfe) {
-                System.out.println("An error occurred.");
-                fnfe.printStackTrace();
-
+                System.out.println();
             }
+
+        } catch (FileNotFoundException fnfe) {
+            System.out.println("An error occurred.");
+            fnfe.printStackTrace();
+
         }
     }
+}
 
 
