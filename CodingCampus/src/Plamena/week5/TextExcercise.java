@@ -9,10 +9,10 @@ public class TextExcercise {
     public static void main(String[] args) {
 
         String path = "assets/file.txt";
-        System.out.println("Number of words in text: " + wordCount(path));
-        System.out.println("Number of signs in text: " + signCount(path));
-        signFrequency(path);
-        sortWords(path);
+       // System.out.println("Number of words in text: " + wordCount(path));
+        //System.out.println("Number of signs in text: " + signCount(path));
+        //signFrequency(path);
+        sortWordsLength(path);
 
 
     }
@@ -92,7 +92,7 @@ public class TextExcercise {
         }
     }
 
-    private static void sortWords(String path) {
+    private static void sortWordsAlph (String path) {
 
         try{
             File f = new File(path);
@@ -129,6 +129,43 @@ public class TextExcercise {
             fnfe.printStackTrace();
         }
 
+    }
+
+    private static void sortWordsLength(String path){
+        try{
+            File f = new File(path);
+            Scanner sc = new Scanner(f);
+            StringBuilder sb = new StringBuilder();
+
+            while (sc.hasNextLine()){
+                sb.append(sc.nextLine());
+            }
+            String text = sb.toString();
+            text = text.replaceAll("[·'£–„“†():;,.\\[\\]| \n\\-]", " ")
+                    .replaceAll("\n+", " ")
+                    .replaceAll("\s+", " ");
+            String[] words = text.split("\s");
+
+            for (int i = 0; i < words.length-1; i++) {
+                for (int j = 0; j < words.length-1; j++) {
+                    if(words[j+1].length() > words[j].length()){
+                        String temp = words[j];
+                        words[j] = words[j+1];
+                        words[j+1] = temp;
+                    }
+                    if(words [j+1].compareTo(words[j]) == 0){
+                        words[j+1] ="";
+                    }
+                }
+            }
+            for (int i = 0; i < words.length; i++) {
+                if(words[i].compareTo("") != 0 )
+                    System.out.println(words[i]);
+            }
+
+        } catch(FileNotFoundException fnfe){
+            fnfe.printStackTrace();
+        }
     }
 
 }
