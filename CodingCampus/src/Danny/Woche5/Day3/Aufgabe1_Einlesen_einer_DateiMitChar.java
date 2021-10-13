@@ -13,79 +13,47 @@ import java.util.Scanner;
  * <ol>
  *     <li>Wieviele Wörter enthält der Text</li>
  *     <li>Zähle die Zeichen und gib deren Häufigkeit in Bezug auf die Gesamtanzahl der Zeichen aus</li>
- *
  *     <li>Sortiere die Wörter des Texts und gib dannach den Text aus (sei kreativ) [Mit Bubblesort]</li>
  *     <li>Sortiere die Wörter der Länge nach [Mit Bubblesort]</li>
  * </ol>
  */
-public class Aufgabe1_Einlesen_einer_Datei {
+public class Aufgabe1_Einlesen_einer_DateiMitChar {
     public static void main(String[] args) {
 //        h1>Einlesen und einer Datei und verarbeiten der Daten</h1>
 // * Verwende dazu die Datei assets/file.txt (new File("assets/file.txt")). Kopiere Sie an einen Ort deiner Wahl.
         File file = new File("C:\\Users\\dan\\IdeaProjects\\CodingCampus_2021.09.VZ.Dornbirn\\assets\\file.txt");
         // String test = "[Kes 56 i oki n&";
-        //System.out.println();
+        System.out.println();
         //System.out.println(createFile(file));
-        //countWords(createFile(file));
-        countChars(file);
+        countWords(createFile(file));
+
     }
-
-    // Chars Anzahl im String mit Bezug zur Gesammtanzahl
-    public static void countChars(File file) {
-        StringBuilder stringBuilder2 = new StringBuilder();
-        try {
-            Scanner myScanner = new Scanner(file);
-            while (myScanner.hasNextLine()) {
-                String data = myScanner.nextLine();
-                stringBuilder2.append(data)
-                        .append(System.lineSeparator());
-            }
-            myScanner.close();
-        } catch (FileNotFoundException fn) {
-            System.out.println("Error");
-            fn.printStackTrace();
-        }
-        String sB = stringBuilder2.toString().toLowerCase();
-        char[] sBChar = sB.toCharArray();
-
-        int[] asccII = new int[255];
-        int unknownCharacters = 0;
-
-        for (char myASCIIChar : sBChar) {
-            if (myASCIIChar < asccII.length) {
-                asccII[myASCIIChar]++;
-            } else {
-                unknownCharacters++;
-                System.out.println("Unkown chars: " + myASCIIChar);
-            }
-        }
-
-        double overallPercent = 0;
-
-        for (int j = 0; j < asccII.length; j++) {
-            int occurrences = asccII[j];
-            if (occurrences > 0) {
-                double percent = 100.0 / (sBChar.length - unknownCharacters) * occurrences;
-                overallPercent += percent;
-                System.out.printf("Char " + ((char) j) + " %.2f%s\n", percent, "%");
-            }
-        }
-        System.out.println("Gesamtprozent: " + overallPercent);
-        System.out.println("Unbekannte Buchstaben: " + unknownCharacters);
-    }
-
 
     //    <li>Wieviele Wörter enthält der Text</li>
+
     public static void countWords(String text) {
         //System.out.println(text);
+
+       String textLower = text.toLowerCase();
+        char[] textChar = textLower.toCharArray();
+        char[] onlyLetters = new char[textChar.length];
+        for (int i = 0; i < textChar.length;i++) {
+            if(textChar[i] >= 97 && textChar[i] <= 122 || textChar[i] == 32) {
+                onlyLetters[i] = textChar[i];
+            }
+        }
+        
+        System.out.println(onlyLetters.toString());
         int counter = 0;
-        String textRep = text.replaceAll(",|\\.|\\[|\t|/|-|„|“|®|\u00AD|:" + "\n", " ").toLowerCase();
+        String textRep = onlyLetters.toString();
         String[] countWords = textRep.split(" +");
         for (String name : countWords) {
             if (name.matches("[a-z]+")) {
                 counter++;
             }
         }
+
+
         System.out.print(Arrays.toString(countWords));
         System.out.println();
         System.out.println(counter);
