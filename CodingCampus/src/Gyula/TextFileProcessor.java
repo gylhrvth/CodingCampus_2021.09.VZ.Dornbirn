@@ -28,7 +28,6 @@ public class TextFileProcessor {
         }
     }
 
-
     // TODO: 1. Textfile lesen und jede Zeile in sich umdrehen
 
     // TODO: 2. Textfile lesen und die Reinfolge der Zeilen umdrehen
