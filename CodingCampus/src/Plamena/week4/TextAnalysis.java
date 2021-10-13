@@ -64,7 +64,7 @@ public class TextAnalysis {
         for (int i = 0; i < letters.length; i++) {
             double percentage = (double) letters[i] / inputCharacters.length * 100;
             if (letters[i] != 0)
-                System.out.println("There are " + letters[i] + " " + "'" + ((char) (i + ' ')) + "'" + " in this text. That's " + Math.round(percentage * 100.0) / 100.0 + "% of all characters.");
+                System.out.println("There are " + letters[i] + " '" + ((char) (i + ' ')) + "' in this text. That's " + Math.round(percentage * 100.0) / 100.0 + "% of all characters.");
         }
     }
 
