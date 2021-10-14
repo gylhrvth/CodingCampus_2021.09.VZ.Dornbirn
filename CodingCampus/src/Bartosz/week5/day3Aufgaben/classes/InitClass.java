@@ -11,10 +11,10 @@ public class InitClass {
         System.out.println("Es sind " + GetScannedFile.countWords(text) + " Worte im Text.");
         GetScannedFile.countChars(text);
 
-//        System.out.println("Sortiert nach Alphabet:");
-//        GetScannedFile.bubbleSortWords(text);
+        System.out.println("Sortiert nach Alphabet:");
+        GetScannedFile.bubbleSortWords(text);
 
-//        System.out.println("Sortiert nach Wortlänge");
-//        GetScannedFile.bubbleSotLength(text);
+        System.out.println("Sortiert nach Wortlänge");
+        GetScannedFile.bubbleSotLength(text);
     }
 }
