@@ -66,23 +66,52 @@ public class AufgabeZurStringAnalyseUndManipulation {
         //printCharCounter(charCountWithASCIISortByHighest(AllSameCharsCountInString(textToAnalyze)));
 
 //    <br>Weiters gib die Häufigkeit in Prozent in relation zur Gesamtlänge des Textes aus.
-        printCharCounterWithPercentToCharLength(charCountWithASCIISortByHighest(AllSameCharsCountInString(textToAnalyze)), textToAnalyze);
+        printCharCounterWithPercentToCharLength(charCountWithASCIISortByHighest(AllSameCharsCountInString(textToAnalyze)), textToAnalyze,0,127,0,127);
 
 //   <li>Siehe 6), beschränke dich aber nun auf das Alphabet</li>
+        //printCharCounterWithPercentToCharLength(charCountWithASCIISortByHighest(AllSameCharsCountInString(textToAnalyze)), textToAnalyze,65,90,97,122);
 
 //    <li>Verwende Aufgaben 5) und 6) und analysiere ebenfalls TEXT_TO_ANALYSE_2,TEXT_TO_ANALYSE_3,TEXT_TO_ANALYSE_4
+
+//        charCountWithASCIISortByHighest(AllSameCharsCountInString(Aufgabe1.TEXT_TO_ANALYZE));
+        //compareStringAndprintCharCounterWithPercentToCharLength(Aufgabe1.TEXT_TO_ANALYZE, 0,127,0,127);
+//        charCountWithASCIISortByHighest(AllSameCharsCountInString(Aufgabe1.TEXT_TO_ANALYSE_2));
+//        charCountWithASCIISortByHighest(AllSameCharsCountInString(Aufgabe1.TEXT_TO_ANALYSE_3));
+//        charCountWithASCIISortByHighest(AllSameCharsCountInString(Aufgabe1.TEXT_TO_ANALYSE_4));
+
+
 //   <br>Gibt es einen Unterschied zwischen den deutschen und den englischen Texten?
 
 
         //Testfeld
     }
+    //Meherre Texte Vergleichen und dabei gleiche Chars im String mit Häufigkeit und Prozent bezogen auf die Länge ausgeben
+    public static void compareStringAndprintCharCounterWithPercentToCharLength(String stringText1, String stringText2, String stringText3, String stringText4,int ASCIInumberStart1,int ASCIInumberStop1, int ASCIInumberStart2,int ASCIInumberStop2) {
 
-    //Gleiche Chars im String mit Häufigkeit ausgeben
-    public static void printCharCounterWithPercentToCharLength(int[][] ASCIIcharCounterHighToLow, String stringText) {
+        char[] text = stringText1.toCharArray();
+        int[][] ASCIIcharCounterHighToLow = charCountWithASCIISortByHighest(AllSameCharsCountInString(stringText1));
+        for (int i = 0; i < ASCIIcharCounterHighToLow.length; i++) {
+            if (ASCIIcharCounterHighToLow[i][1] > 0 && ((ASCIIcharCounterHighToLow[i][0] >= ASCIInumberStart1 && ASCIIcharCounterHighToLow[i][0] <= ASCIInumberStop1) || (ASCIIcharCounterHighToLow[i][0] >= ASCIInumberStart2 && ASCIIcharCounterHighToLow[i][0] <= ASCIInumberStop2))) {
+                double charPercent = ((ASCIIcharCounterHighToLow[i][1] * 100.0) / text.length);
+                double charPercentRoundOff = Math.round(charPercent * 100.0) / 100.0;
+                PrintColorAsString.textPrintColor(String.valueOf((char) ASCIIcharCounterHighToLow[i][0]),ANSI_YELLOW,"  ",false);
+                textPrintColor(String.valueOf(ASCIIcharCounterHighToLow[i][1]),ANSI_CYAN,"  ",false);
+                textPrintColor(String.valueOf(charPercentRoundOff),ANSI_GREEN,"%   |  ",false);
+            }
+
+        }
+    }
+
+
+
+
+
+    //Gleiche Chars im String mit Häufigkeit und Prozent bezogen auf die Länge ausgeben
+    public static void printCharCounterWithPercentToCharLength(int[][] ASCIIcharCounterHighToLow, String stringText, int ASCIInumberStart1,int ASCIInumberStop1, int ASCIInumberStart2,int ASCIInumberStop2) {
         char[] text = stringText.toCharArray();
 
         for (int i = 0; i < ASCIIcharCounterHighToLow.length; i++) {
-            if (ASCIIcharCounterHighToLow[i][1] > 0) {
+            if (ASCIIcharCounterHighToLow[i][1] > 0 && ((ASCIIcharCounterHighToLow[i][0] >= ASCIInumberStart1 && ASCIIcharCounterHighToLow[i][0] <= ASCIInumberStop1) || (ASCIIcharCounterHighToLow[i][0] >= ASCIInumberStart2 && ASCIIcharCounterHighToLow[i][0] <= ASCIInumberStop2))) {
                 double charPercent = ((ASCIIcharCounterHighToLow[i][1] * 100.0) / text.length);
                 double charPercentRoundOff = Math.round(charPercent * 100.0) / 100.0;
                 PrintColorAsString.textPrintColor(String.valueOf((char) ASCIIcharCounterHighToLow[i][0]),ANSI_YELLOW,"  ",false);
