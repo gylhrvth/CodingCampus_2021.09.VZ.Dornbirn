@@ -1,7 +1,6 @@
 package Lukas.week4.day4;
 
 import java.util.Arrays;
-import java.util.regex.Pattern;
 
 public class StringManipulation {
     public static void main(String[] args) {
