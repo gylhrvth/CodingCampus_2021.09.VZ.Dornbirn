@@ -10,9 +10,12 @@ public class textManipulation1 {
 
         String path = "C:\\Users\\DCV\\CodingCampus_2021.09.VZ.Dornbirn\\CodingCampus\\src\\Stefan\\WeekFive\\file.txt";
 
-//        System.out.println(letterCounter(path));
+        //Gibt die gesamten vorhandenen Zeichen aus ind ihre Menge
         String text = readFileToString(path);
         letterCounter(text);
+
+        //Gibt die Gesamte Anzahl der vorhandenen Wörter aus
+//        System.out.println(wordCounter(path));
 
 
     }
@@ -39,7 +42,7 @@ public class textManipulation1 {
 
         String neuer = param.toLowerCase();
         char[] character = neuer.toCharArray();
-        int[] counter = new int[255];
+        int[] counter = new int[159];
         System.out.println("Gezählte Buchstaben im Array: ");
         for (int i = 0; i < character.length; i++) {
             char myChar = character[i];
@@ -50,14 +53,18 @@ public class textManipulation1 {
         }
 
         for (int i = 0; i < counter.length; i++) {
+            double prozent = (double) counter[i] / character.length * 100;
             if (counter[i] != 0) {
-                System.out.println(("[" + (char) (i + 97)) + "]" + " = " + counter[i] + ", ");
+                System.out.printf(("[" + (char) (i + 97)) + "]" + " = " + counter[i] + ",  %.2f%s\n", prozent, " %");
             }
         }
         return neuer;
     }
 
 
+
+
+    //Zählt aller Wörter im String und gibt sie aus
 //    private static int wordCounter(String path) {
 //
 //        int countWords = 0;
