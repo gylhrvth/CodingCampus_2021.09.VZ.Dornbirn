@@ -39,7 +39,7 @@ public class textManipulation1 {
 
         String neuer = param.toLowerCase();
         char[] character = neuer.toCharArray();
-        int[] counter = new int[26];
+        int[] counter = new int[255];
         System.out.println("Gezählte Buchstaben im Array: ");
         for (int i = 0; i < character.length; i++) {
             char myChar = character[i];
@@ -48,9 +48,10 @@ public class textManipulation1 {
                 counter[indexOfCounter]++;
             }
         }
+
         for (int i = 0; i < counter.length; i++) {
             if (counter[i] != 0) {
-                System.out.print(("[" + (char) (i + 97)) + "]" + " = " + counter[i] + ", ");
+                System.out.println(("[" + (char) (i + 97)) + "]" + " = " + counter[i] + ", ");
             }
         }
         return neuer;
