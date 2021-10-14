@@ -1,7 +1,6 @@
 package Lukas.week4.day4;
 
 import java.util.Arrays;
-import java.util.regex.Pattern;
 
 public class StringManipulation {
     public static void main(String[] args) {
@@ -83,15 +82,49 @@ public class StringManipulation {
 
 
 
-        String randomMailEnding = "[a-zA-Z0-9]+(\\.[a-zA-Z0-9]+)*@([a-zA-Z0-9]+\\.)+[a-zA-Z0-9]+";
-        System.out.println("eray.lokfuehrer@hotmail.".matches(randomMailEnding));
-        System.out.println("eray.array.lokfuehrer@gmail.com".matches(randomMailEnding));
-        System.out.println("eray@wegwerfmail.at123".matches(randomMailEnding));
-        System.out.println(".@hotmail.comZxW".matches(randomMailEnding));
-        System.out.println("eray.array.lokfuehrer@hiLukas.gmail.com".matches(randomMailEnding));
+        testMyEmail("eray.lokfuehrer@hotmail.");
+        testMyEmail("eray.array.lokfuehrer@gmail.com");
+        testMyEmail("eray@wegwerfmail.at123");
+        testMyEmail(".@hotmail.comZxW");
+        testMyEmail("eray.array.lokfuehrer@hiLukas.gmail.com");
+        testMyEmail("marie-antonette@gmail.com");
+        testMyEmail("gyula.horvath@software-projektmanagement.at");
+        System.out.println("___________________-");
+        iban("AT122060200001904055454528");
+
+        System.out.println("____________");
+
+       /* String randomIBANEnding = "[a-zA-Z]+]+([0-9]+)+";
+
+        System.out.println("AT1220602000001904022".matches(randomIBANEnding));*/
+
     }
 
     private static int add(int a, int b) {
         return a + b;
     }
+
+    public static void testMyEmail(String textToTest){
+        String randomMailEnding = "[a-zA-Z0-9\\-]+(\\.[a-zA-Z0-9\\-]+)*@[a-zA-Z0-9\\-]+(\\.[a-zA-Z0-9\\-]+)+";
+        System.out.println(textToTest + " " + textToTest.matches(randomMailEnding));
+
+
+
+
+
+
+
+
+
+
+
+    }
+
+    public static void iban(String ibanToTest){
+        String  randomIBANEnding  =  "[a-zA-Z]+]*([0-9]+)+";
+        System.out.println(ibanToTest+" "+ibanToTest.matches(randomIBANEnding));
+
+
+    }
+
 }

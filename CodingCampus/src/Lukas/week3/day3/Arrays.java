@@ -125,6 +125,8 @@ public class  Arrays {
 
     //1)
     //Leichte Aufgabe zum Aufwärmen
+
+
     //Eine Zeile aus der Kommandozeile einlesen
     //Zeile ausgeben
     //Zeile in Character Array verwandeln
@@ -135,11 +137,11 @@ public class  Arrays {
 
 
     //2)
-
-
-
-
     //Buchstaben case insensitive Zählen (A zählt für a)
+
+
+
+
     //und ausgeben wie oft jeder Buchstabe vorkommt
     //TIP aus einem Character kann man eine Zahl gewinnen, bzw. man kann diesen als Zahl annehmen
 

@@ -65,7 +65,6 @@ public class ArrayEx2 {
         System.out.println(initArray);
     }   // Variante D
 
-
     public static String programInit() {
         System.out.println("Geben Sie etwas ein!");
         Scanner initScanner = new Scanner(System.in);

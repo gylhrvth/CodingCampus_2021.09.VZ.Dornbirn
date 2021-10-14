@@ -23,14 +23,14 @@ public class myWorkStringArray {
         System.out.print("Vom Char ausgegeben: ");
         System.out.println(myCharArray);
         System.out.println();
-
-
-        //Eingabe umgekehrt ausgeben Variante 1
-        StringBuffer umgedreht = new StringBuffer(textEingabe1);
-        umgedreht.reverse();
-        String text = umgedreht.toString();
-        System.out.println("Ausgabe umgekehrt mit reverse: " + text);
-        System.out.println();
+//
+//
+//        //Eingabe umgekehrt ausgeben Variante 1
+//        StringBuffer umgedreht = new StringBuffer(textEingabe1);
+//        umgedreht.reverse();
+//        String text = umgedreht.toString();
+//        System.out.println("Ausgabe umgekehrt mit reverse: " + text);
+//        System.out.println();
 
 
         //Eingabe umgekehrt ausgeben Variante 2

@@ -20,7 +20,7 @@ public class SortExample {
             for (int j = 0; j < param.length - i - 1; j++) {
                 if (param[j] > param[j + 1]){
                     int temp = param[j];
-                    param[j] = param[j + 1];
+                    param[j] = param[j] + 1;
                     param[j + 1] = temp;
                 }
             }
