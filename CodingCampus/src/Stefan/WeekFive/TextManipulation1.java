@@ -11,10 +11,10 @@ public class TextManipulation1 {
 
         //Gibt die gesamten vorhandenen Zeichen aus ind ihre Menge
         String text = readFileToString(path);
-        letterCounter(text);
+//        letterCounter(text);
 
         //Gibt die Gesamte Anzahl der vorhandenen Wörter aus
-//        System.out.println(wordCounter(path));
+        System.out.println(wordCounter(text));
 
         //Lies alle wörter
 //        String[] splittText = text.split(" ");
@@ -22,6 +22,37 @@ public class TextManipulation1 {
 
         //Sortiere
         //sortWithBubble(path);
+    }
+
+
+    //Liest den Text in einen String ein
+    public static String readFileToString(String path) {
+        try {
+            File file = new File(path);
+            Scanner scanner = new Scanner(file);
+            String text = "";
+            while (scanner.hasNextLine()) {
+                text += scanner.nextLine();
+                text += System.lineSeparator();
+            }
+            return text;
+        } catch (FileNotFoundException exc) {
+            exc.printStackTrace();
+        }
+        return "";
+    }
+
+
+    //Zählt aller Wörter im String und gibt sie aus
+    public static int wordCounter(String path) {
+        int counter = 0;
+
+        String[] words = path.split(" ");
+        for (int counter1 = 0; counter1 < words.length; counter1++) {
+            counter++;
+        }
+
+        return counter;
     }
 
     //Zählt alle Zeichen und gibt deren Menge und Prozent an
@@ -47,22 +78,8 @@ public class TextManipulation1 {
         return neuer;
     }
 
-    public static String readFileToString(String path) {
-        try {
-            File file = new File(path);
-            Scanner scanner = new Scanner(file);
-            String text = "";
-            while (scanner.hasNextLine()) {
-                text += scanner.nextLine();
-                text += System.lineSeparator();
-            }
-            return text;
-        } catch (FileNotFoundException exc) {
-            exc.printStackTrace();
-        }
-        return "";
-    }
 
+    //Sortiert alle Wörter nach dem Alphabet
     public static String sortWithBubble(String[] words) {
         for (int i = 0; i < words.length; i++) {
             for (int j = i + 1; j < words.length; j++) {
@@ -76,5 +93,9 @@ public class TextManipulation1 {
         }
         return "";
     }
+
 }
+
+
+
 
