@@ -191,7 +191,7 @@ public class Aufgabe1 {
             if (csc[i] == ','){
 
             }
-                counter2++;
+                counter3++;
 
 
        }
