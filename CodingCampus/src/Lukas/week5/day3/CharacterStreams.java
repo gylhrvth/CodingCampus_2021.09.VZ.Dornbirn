@@ -81,8 +81,34 @@ public class CharacterStreams {
 
         long durationStringBuilder = System.currentTimeMillis() - start;
 
+        start = System.currentTimeMillis();
+
+        /*
+         * Wir lesen den gesamten Text in verwenden aber nicht mehr String Konkatenation sondern einen StringBuilder.
+         * Mit der Instanzmethode .toString() der StringBuilder Instanz erhalten wir einen String.
+         * Zusätzlich machen wir noch einen Regbert kniff!!!
+         */
+        try {
+            File file = new File("assets/file.txt");
+            Scanner scanner = new Scanner(file);
+            StringBuffer buffer = new StringBuffer();
+            while (scanner.hasNextLine()) {
+                buffer
+                        .append(scanner.nextLine())
+                        .append(System.lineSeparator());
+            }
+            scanner.close();
+            String text = buffer.toString().replaceAll("Wikipedia", "CodingCampus");
+            System.out.println(text);
+        } catch (FileNotFoundException exc) {
+            exc.printStackTrace();
+        }
+
+        long durationStringBuffer = System.currentTimeMillis() - start;
+
         System.out.printf("Duration direct Output [%dms]\n", durationDirectOutput);
         System.out.printf("Duration String concatenation [%dms]\n", durationStringConcatenation);
         System.out.printf("Duration String builder [%dms]\n", durationStringBuilder);
+        System.out.printf("Duration String buffer [%dms]\n", durationStringBuffer);
     }
 }

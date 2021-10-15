@@ -4,70 +4,73 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Arrays;
 import java.util.Scanner;
-
+import Plamena.week5.TextExcercise;
 public class TextReadWrite {
     public static void main(String[] args) {
         String path = "C:\\Users\\DCV\\Desktop\\test.txt";
         flipLinesAndChars(path);
 
+
     }
 
-    private static void flipLinesAndChars (String path){
+    private static void flipLinesAndChars(String path) {
 
-        try{
+        try {
             File f = new File(path);
             Scanner sc = new Scanner(f);
-            String [] lines = new String [lineCount(path)];
-
+            String[] lines = new String[lineCount(path)];
 
             int idx = 0;
-            while(sc.hasNextLine()){
-                lines[idx]= sc.nextLine();
+            while (sc.hasNextLine()) {
+                lines[idx] = sc.nextLine();
                 ++idx;
             }
+
             for (int i = 0; i < lines.length; i++) {
-                char[] tmp = lines[lines.length-i-1].toCharArray();
+                char[] tmp = lines[lines.length - i - 1].toCharArray();
                 for (int j = 0; j < tmp.length; j++) {
                     System.out.print(tmp[tmp.length - j - 1]);
                 }
                 System.out.println();
             }
-        } catch (FileNotFoundException fnfe){
-           fnfe.printStackTrace();
+
+        } catch (FileNotFoundException fnfe) {
+            fnfe.printStackTrace();
         }
     }
+
     private static void flipRows(String path) {
 
-        String [] text = new String [lineCount(path)];
+        String[] text = new String[lineCount(path)];
 
-        try{
+        try {
             File f = new File(path);
             Scanner sc = new Scanner(f);
 
-            while (sc.hasNextLine()){
+            while (sc.hasNextLine()) {
                 for (int i = 0; i < text.length; i++) {
                     text[i] = sc.nextLine();
                 }
             }
 
             for (int i = 0; i < text.length; i++) {
-                System.out.println(text[text.length-i-1]);
+                System.out.println(text[text.length - i - 1]);
             }
             sc.close();
 
-        } catch (FileNotFoundException fnfe){
+        } catch (FileNotFoundException fnfe) {
             fnfe.printStackTrace();
         }
     }
 
-    private static int lineCount(String path){
+    private static int lineCount(String path) {
 
         int lineCount = 0;
         try {
             File f = new File(path);
             Scanner sc = new Scanner(f);
 
-            while(sc.hasNextLine()) {
+            while (sc.hasNextLine()) {
                 String tmp = sc.nextLine();
                 lineCount++;
             }
@@ -124,7 +127,6 @@ public class TextReadWrite {
     }
 
 
-
     private static void printBackwards(String path) {
 
         try {
@@ -135,7 +137,7 @@ public class TextReadWrite {
                 String row = sc.nextLine();
                 char[] rowToChar = row.toCharArray();
                 for (int i = 0; i < rowToChar.length; i++) {
-                    System.out.print(rowToChar[rowToChar.length-i-1]);
+                    System.out.print(rowToChar[rowToChar.length - i - 1]);
                 }
                 System.out.println();
             }
@@ -143,8 +145,6 @@ public class TextReadWrite {
             fnfe.printStackTrace();
         }
     }
-
-
 
 
     private static void flipWords(String path) {

@@ -55,5 +55,18 @@ public class FilesTryCatch {
     private static double percentageCalc(double toCalc,double value){
         return toCalc * 100 / value;
     }
+    private static void countAllCharacter(String text){
+        char[] charArr = text.toCharArray();
+        for (int i = 0; i < 255; i++) {
+            int counter = 0;
+            for (int j = 0; j < charArr.length; j++) {
+                if (charArr[j] == i){
+                    counter++;
+                }
+            }
+            System.out.println("char " + (char)i + "...... " + counter);
+        }
+    }
+
 
 }
