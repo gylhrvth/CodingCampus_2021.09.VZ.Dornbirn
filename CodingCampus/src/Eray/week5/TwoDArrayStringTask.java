@@ -19,7 +19,7 @@ public class TwoDArrayStringTask {
 
             String path = "C:\\Users\\DCV\\IdeaProjects\\CodingCampus_2021.09.VZ.Dornbirn\\assets\\population-figures-by-country-csv_csv.csv";
             String text = readFile(path);
-            splitFile(text);
+            splitFileLukas(text);
 
         } catch (IOException e) {
             System.out.println("Bitte gebe ein File Pfad!");
@@ -27,6 +27,36 @@ public class TwoDArrayStringTask {
     }
 
     private static void splitFile(String text) {
+        String[] texLines = text.split("\\n");
+        String[][] twoDArray = new String[texLines.length][];
+
+        for (int i = 0; i < texLines.length; i++) {
+            String[] columns = texLines[i].split(",");
+            twoDArray[i] = columns;
+        }
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Bitte gebe ein welches Jahr du ausgeben möchtest: ");
+        String year = scanner.nextLine();
+
+        System.out.println("Bitte gebe ein welches Land du haben möchtest: ");
+        String country = scanner.nextLine();
+
+
+        for (int i = 0; i < twoDArray.length; i++) {
+            for (int j = 0; j < twoDArray[i].length; j++) {
+                if (twoDArray[i][j].contains(year)) {
+                    if (twoDArray[i][j].contains(country)) {
+                        System.out.printf("%50s", twoDArray[i][j]);
+                    }
+                }
+
+            }
+        }
+    }
+
+    private static void splitFileLukas(String text) {
         String[] texLines = text.split("\\n");
         String[][] twoDArray = new String[texLines.length][];
 
