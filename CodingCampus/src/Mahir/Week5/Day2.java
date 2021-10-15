@@ -1,54 +1,34 @@
 package Mahir.Week5;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Arrays;
+import java.util.Scanner;
+
 public class Day2 {
     public static void main(String[] args) {
 
         String path = "C:\\Users\\DCV\\IdeaProjects\\CodingCampus_2021.09.VZ.Dornbirn\\CodingCampus\\src\\Niklas\\filereadwrite\\1342-0.txt";
-
-        String result = Day1FileReader.FileReader.readFile(path);
-        System.out.println(result);
 /*
-        System.out.println("reverse text");
-        reverseText(result);
-        System.out.println();
+        try {
+            File file = new File(path);
+            Scanner scanner = new Scanner(file);
+            while (scanner.hasNextLine()) {
+                String line = scanner.nextLine();
+                System.out.println("Aufgabe 1 ");
+                reverseText(line);
 
-        System.out.println("reverse words");
-        reverseWords(result);
-        System.out.println();
+                //reverseWords(line);
 
-        System.out.println("reverse all words and text");
-        reverseWordsAndText(result);
-        System.out.println();
-*/
-        System.out.println("reverse lines");
-        reverseLines(result);
-
-
-    }
-
-    private static void reverseLines(String txt) {
-        String[] splitText = txt.split("\\n");
-        String tmp = "";
-        for (int i = splitText.length - 1; i <= 0; i++) {
-            tmp += splitText[i];
-
-        }
-        System.out.println(tmp);
-    }
-
-    private static void reverseWords(String txt) {
-        String[] splitTxt = txt.split(" ");
-        String tmp = "";
-        for (int i = 0; i < splitTxt.length; i++) {
-            char[] reverse = splitTxt[i].toCharArray();
-            for (int j = reverse.length - 1; j >= 0; j--) {
-                tmp += reverse[j];
             }
-            tmp += " ";
+            scanner.close();
+        } catch (FileNotFoundException fnfe) {
+            fnfe.printStackTrace();
         }
-        System.out.println(tmp);
-
+*/
+        task2ReverseLineOrder(path);
     }
+
 
     private static void reverseText(String txt) {
         String[] text = txt.split(" ");
@@ -59,19 +39,49 @@ public class Day2 {
         }
         System.out.println(tmp);
 
-
     }
 
-    private static void reverseWordsAndText(String txt) {
+    private static void task2ReverseLineOrder(String path) {
+        // Initialize
+        String[] fileContent = new String[getLineCount(path)];
 
-        String temp = "";
-        char[] reverseText = txt.toCharArray();
-        for (int i = reverseText.length - 1; i > 0; i--) {
-            temp += reverseText[i];
+        // Fill the array
+        try {
+            File file = new File(path);
+            Scanner myReader = new Scanner(file);
 
+            int idx = 0;
+            while (myReader.hasNextLine()) {
+                fileContent[idx] = myReader.nextLine();
+                ++idx;
+            }
+            myReader.close();
+        } catch (FileNotFoundException fnfe) {
+            fnfe.printStackTrace();
         }
-        System.out.println(temp);
 
+        // Logic
+        for (int i = fileContent.length - 1; i >= 0; i--) {
+            System.out.println(fileContent[i]);
+        }
+    }
+
+    private static int getLineCount(String path) {
+        int lineCount = 0;
+
+        try {
+            File file = new File(path);
+            Scanner myReader = new Scanner(file);
+
+            while (myReader.hasNextLine()) {
+                myReader.nextLine();
+                ++lineCount;
+            }
+            myReader.close();
+        } catch (FileNotFoundException fnfe) {
+            fnfe.printStackTrace();
+        }
+        return lineCount;
     }
 
 }

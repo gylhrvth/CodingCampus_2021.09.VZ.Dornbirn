@@ -31,6 +31,7 @@ public class Day1FileReader {
                 while (myReader.hasNextLine()) {
                     String data = myReader.nextLine();
                     stringBuilder.append(data);
+
                 }
 
                 myReader.close();
