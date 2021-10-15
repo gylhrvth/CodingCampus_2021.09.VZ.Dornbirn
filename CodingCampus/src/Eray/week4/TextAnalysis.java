@@ -91,27 +91,23 @@ public class TextAnalysis {
 
     private static void countHowOftenACharRepeatHisSelf(String text) {
 
-        char[] charRepeatCounter = text.toLowerCase(Locale.ROOT).toCharArray();
-        int[] characterPieces = new int[255];
+        char[] characters = text.toLowerCase(Locale.ROOT).toCharArray();
+        int[] characterTable = new int[255];
 
-        for (char character : charRepeatCounter) {
-            int letterAscii = character - 'a';
-            if (letterAscii >= 0 && letterAscii < characterPieces.length) {
-                characterPieces[letterAscii]++;
+        for (int i = 0; i < characters.length; i++) {
+            char myASCII = characters[i];
+            if (myASCII < characterTable.length) {
+                characterTable[myASCII]++;
             }
         }
 
-        int characterCount = 0;
-        for (int i = 0; i < characterPieces.length; i++) {
-            characterCount = characterCount + characterPieces[i];
-        }
 
-        System.out.println("Es sind " + characterCount + " einzelne Buchstaben im Text");
+        for (int i = 0; i < characterTable.length; i++) {
+            int occurrences = characterTable[i];
 
-        for (int i = 0; i < characterPieces.length; i++) {
-            double percentage = ((double) characterPieces[i] / characterCount) * 100;
-            if (characterPieces[i] != 0) {
-                System.out.println("Es sind " + characterPieces[i] + " " + "'" + ((char) (i + 'a')) + "'" + " in diesem Text. Das sind " + Math.round(percentage * 100.00) / 100.00 + "% von allen Buchstaben.");
+            if (occurrences > 0) {
+                double percentage = 100.0 / characters.length * occurrences;
+                System.out.printf("Der Buchstabe " + ((char) i) + " kommt " + characterTable[i] + " mal vor. Das sind %.2f Prozent \n", percentage);
             }
         }
     }
