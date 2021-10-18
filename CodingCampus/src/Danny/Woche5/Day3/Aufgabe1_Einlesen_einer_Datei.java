@@ -18,17 +18,41 @@ import java.util.Scanner;
  *     <li>Sortiere die Wörter der Länge nach [Mit Bubblesort]</li>
  * </ol>
  */
+
 public class Aufgabe1_Einlesen_einer_Datei {
+
     public static void main(String[] args) {
 //        h1>Einlesen und einer Datei und verarbeiten der Daten</h1>
 // * Verwende dazu die Datei assets/file.txt (new File("assets/file.txt")). Kopiere Sie an einen Ort deiner Wahl.
         File file = new File("C:\\Users\\dan\\IdeaProjects\\CodingCampus_2021.09.VZ.Dornbirn\\assets\\file.txt");
         // String test = "[Kes 56 i oki n&";
-        //System.out.println();
+        System.out.println();
         //System.out.println(createFile(file));
         //countWords(createFile(file));
-        countChars(file);
+        //countChars(file);
+        //sortWordsAtoZ(file);
+        sortWordsByLength(file);
     }
+
+
+    //<li>Sortiere die Wörter des Texts und gib dannach den Text aus (sei kreativ) [Mit Bubblesort]</li>
+    public static void sortWordsByLength(File file) {
+        String[] textRep = createFile(file).replaceAll("[^a-z^A-Z]+", " ").toLowerCase().split(" ");
+        int biggestWord = 0;
+        for (int j = 0; j < textRep.length;j++) {
+            for (int i = 0; i < textRep.length - 1; i++) {
+                if (textRep[i].length() < textRep[i+1].length()) {
+                    String temp = textRep[i];
+                    textRep[i] = textRep[i + 1];
+                    textRep[i + 1] = temp;
+                    biggestWord = i;
+                }
+            }
+        }
+        System.out.println(Arrays.toString(textRep));
+        //System.out.println(textRep[2] + " " + textRep.length());
+    }
+
 
     // Chars Anzahl im String mit Bezug zur Gesammtanzahl
     public static void countChars(File file) {
@@ -67,7 +91,9 @@ public class Aufgabe1_Einlesen_einer_Datei {
             if (occurrences > 0) {
                 double percent = 100.0 / (sBChar.length - unknownCharacters) * occurrences;
                 overallPercent += percent;
-                System.out.printf("Char " + ((char) j) + " %.2f%s\n", percent, "%");
+                char myChar = (char) j;
+                String a = String.format("Char %c %.2f%s\n", myChar, percent, "%");
+                System.out.printf("Char %c %.2f%s\n", myChar, percent, "%");
             }
         }
         System.out.println("Gesamtprozent: " + overallPercent);
@@ -79,7 +105,9 @@ public class Aufgabe1_Einlesen_einer_Datei {
     public static void countWords(String text) {
         //System.out.println(text);
         int counter = 0;
-        String textRep = text.replaceAll(",|\\.|\\[|\t|/|-|„|“|®|\u00AD|:" + "\n", " ").toLowerCase();
+        //String textRep = text.replaceAll(",|\\.|\\[|\t|/|-|„|“|®|\u00AD|]|;|:" + "\n", " ").toLowerCase();
+        String textRep = text.replaceAll("[^a-z^A-Z]+", " ").toLowerCase();
+        System.out.println(textRep);
         String[] countWords = textRep.split(" +");
         for (String name : countWords) {
             if (name.matches("[a-z]+")) {
