@@ -14,11 +14,11 @@ public class TextManipulation1 {
 //        letterCounter(text);
 
         //Gibt die Gesamte Anzahl der vorhandenen Wörter aus
-        System.out.println(wordCounter(text));
+//        System.out.println(wordCounter(text));
 
         //Lies alle wörter
-//        String[] splittText = text.split(" ");
-//        System.out.println(sortWithBubble(splittText));
+        String[] splittText = text.split(" ");
+        System.out.println(sortWithBubble(splittText));
 
         //Sortiere
         //sortWithBubble(path);
