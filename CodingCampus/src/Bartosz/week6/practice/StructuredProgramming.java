@@ -2,7 +2,7 @@ package Bartosz.week6.practice;
 
 import java.util.Scanner;
 
-public class StructeredProgramming {
+public class StructuredProgramming {
     public static void main(String[] args) {
         loops2();
 
@@ -93,6 +93,27 @@ public class StructeredProgramming {
         }
     }
 
+    private static void printSquare(int number, char borderChar){
+        for (int j = 0; j <= number-1; j++) {
+            if(j == 0 || j == number-1) {
+                for (int i = 0; i < number; i++) {
+                    System.out.print(borderChar);
+                }
+                System.out.println();
+            } else {
+                for (int i = 0; i <= number-1; i++) {
+                    if(i == 0 || i == number-1){
+                        System.out.print(borderChar);
+                    }else {
+                        System.out.print(".");
+                    }
+                }
+                System.out.println();
+            }
+        }
+
+    }
+
     private static void loops2() {
         System.out.println("----------------------Ex 5 a)----------------------");
 
@@ -104,7 +125,6 @@ public class StructeredProgramming {
 
         printBox(height, width);
 
-
         System.out.println("----------------------Ex 5 b)----------------------");
         System.out.println("Geben Sie die Höhe & Breite ein");
         int number = intScanner();
@@ -112,6 +132,8 @@ public class StructeredProgramming {
         Scanner sc = new Scanner(System.in);
         String borderCharString = sc.next();
         char borderChar = borderCharString.charAt(0);
+
+        printSquare(number, borderChar);
     }
 
 }
