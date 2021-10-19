@@ -20,9 +20,9 @@ public class CsvAufgaben {
     public static void main(String[] args) {
         try {
             String text = readFile("assets/population-figures-by-country-csv_csv.csv");
-//            String[][] textMatrix = splitFile(text);
-//            System.out.println(textMatrix[1][1]);
-            sorter(text);
+            String[][] textMatrix = splitFile(text);
+            System.out.println(textMatrix[1][1]);
+//            sorter(text);
         } catch (IOException e) {
             System.out.println("Kein richtiges File");
         }
