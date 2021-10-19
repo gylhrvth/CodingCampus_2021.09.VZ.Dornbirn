@@ -1,4 +1,4 @@
-package d.Woche5.day5;
+package Danny.Woche5.day5;
 
 import java.text.DecimalFormat;
 
