@@ -21,26 +21,44 @@ public class TestTasks {
         //calculator();
         //randomNumbArray(15);
         //randomNumbArrayCrazyRange(15);
-        randomArrayMinMaxAvg(100);
+        //randomArrayMinMaxAvg(100);
+        int i = 5;  // i = 5
+        int j = 9;
+        int k = 4;
+        i+= j; // i = i +j ( 5+ 9
+
+        i+=k; // 18
+        System.out.println(i);
 
 
     }
-    private static void bubbleSortInt(int[] arr){
+
+    private static void bubbleSortInt(int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr.length; j++) {
+                if (arr[j] < arr[j + 1]) {
+                    int tmp = arr[j + 1];
+                    arr[j + 1] = arr[j];
+                    arr[j] = tmp;
+                }
+            }
+        }
 
 
     }
-    private static void avarageOfValue (int[] arr){
+
+    private static void avarageOfValue(int[] arr) {
         int tmp = 0;
         for (int i = 0; i < arr.length; i++) {
             tmp += arr[i];
         }
-        System.out.println("The avrage of the array is " + tmp/arr.length);
+        System.out.println("The avrage of the array is " + tmp / arr.length);
     }
 
-    private static void maxValueOfArray(int[] arr){
+    private static void maxValueOfArray(int[] arr) {
         int tmp = Integer.MIN_VALUE;
         for (int i = 0; i < arr.length; i++) {
-            if (arr[i] >= tmp){
+            if (arr[i] >= tmp) {
                 tmp = arr[i];
             }
         }
@@ -50,17 +68,18 @@ public class TestTasks {
     }
 
 
-    private static void minValueOfArray (int[] arr){
-        int tmp =Integer.MAX_VALUE;
+    private static void minValueOfArray(int[] arr) {
+        int tmp = Integer.MAX_VALUE;
         for (int i = 0; i < arr.length; i++) {
-            if (arr[i] <= tmp ){
+            if (arr[i] <= tmp) {
                 tmp = arr[i];
             }
         }
         System.out.println("The lowest number in the array is " + tmp);
         System.out.println();
     }
-    private static void randomArrayMinMaxAvg(int arrayLength){
+
+    private static void randomArrayMinMaxAvg(int arrayLength) {
         Random rnd = new Random();
         int[] rndArray = new int[arrayLength];
 
@@ -81,7 +100,7 @@ public class TestTasks {
         for (int i = 0; i < rndArrayCrazyRange.length; i++) {
             rndArrayCrazyRange[i] = rnd.nextInt(100) - 50;
         }
-        for (int i : rndArrayCrazyRange){
+        for (int i : rndArrayCrazyRange) {
             System.out.println(i);
 
         }
