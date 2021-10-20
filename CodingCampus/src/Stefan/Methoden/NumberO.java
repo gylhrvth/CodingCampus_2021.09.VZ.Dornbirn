@@ -37,7 +37,7 @@ public class NumberO {
 
     public static void main(String[] args) {
 
-        int width = 10;
+        int width = 20;
         int bodyHight = width / 5;
         int bodySpaces = width - (2 * bodyHight);
         int bodyWidth = bodySpaces;
