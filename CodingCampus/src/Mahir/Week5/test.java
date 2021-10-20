@@ -18,11 +18,23 @@ public class test {
             }
             System.out.println();
         }
+        System.out.println();
         for (int i = 0; i < size; i++) {
             System.out.print(chars);
-
         }
-
-
+        System.out.println();
+        for (int i = 0; i < size - 2; i++) {
+            for (int j = 0; j < size; j++) {
+                if (j > 0 && j < size-1 ) {
+                    System.out.print(" ");
+                } else {
+                    System.out.print(chars);
+                }
+            }
+            System.out.println();
+        }
+        for (int i = 0; i < size; i++) {
+            System.out.print(chars);
+        }
     }
 }

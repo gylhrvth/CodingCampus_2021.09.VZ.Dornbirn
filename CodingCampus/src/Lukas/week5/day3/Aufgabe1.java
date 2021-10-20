@@ -1,5 +1,7 @@
 package Lukas.week5.day3;
 
+import java.io.*;
+
 /**
  * <h1>Einlesen und einer Datei und verarbeiten der Daten</h1>
  * Verwende dazu die Datei assets/file.txt (new File("assets/file.txt")). Kopiere Sie an einen Ort deiner Wahl.
@@ -17,5 +19,13 @@ public class Aufgabe1 {
 
 
 
-    }
-}
+
+
+
+
+
+
+
+    }//End of Main
+
+}// End of Class
