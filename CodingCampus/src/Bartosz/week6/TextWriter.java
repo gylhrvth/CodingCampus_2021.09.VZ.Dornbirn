@@ -1,5 +1,7 @@
 package Bartosz.week6;
 
+import Lukas.week2.day4.UserInput;
+
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -22,14 +24,29 @@ public class TextWriter {
         String userInput = sc.nextLine();
         StringBuilder sb = new StringBuilder();
         try {
-            if (userInput.compareToIgnoreCase(regbert) >= 0) {
-                sb.append(userInput).append(System.lineSeparator());
-                while(userInput.compareToIgnoreCase(regbert) > 0) {
-                    userInput = sc.nextLine();
+            // der alte (hässliche) code
+//            if (userInput.compareToIgnoreCase(regbert) >= 0) {
+//                sb.append(userInput).append(System.lineSeparator());
+//                while(userInput.compareToIgnoreCase(regbert) > 0) {
+//                    userInput = sc.nextLine();
+//                    sb.append(userInput).append(System.lineSeparator());
+//                }
+//                ghost.write(sb.toString());
+//
+//            }
+            // der neue (schönere) Code
+
+            sb.append(userInput).append(System.lineSeparator());
+            while(true) {
+                userInput = sc.nextLine();
+                if (userInput.compareToIgnoreCase(regbert) > 0) {
                     sb.append(userInput).append(System.lineSeparator());
+                }else {
+                    break;
                 }
-                ghost.write(sb.toString());
             }
+            ghost.write(sb.toString());
+
         } finally {
             try {
                 ghost.close();
