@@ -2,7 +2,7 @@ package Ingo.week6.day3;
 
 import java.io.*;
 
-public class writeFile {
+public class WriteFile {
     public static void main(String[] args) throws IOException {
         try {
             String input = readFile("assets/file.txt");
