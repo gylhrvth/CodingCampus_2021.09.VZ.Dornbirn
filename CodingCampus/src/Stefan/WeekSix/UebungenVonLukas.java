@@ -1,5 +1,6 @@
 package Stefan.WeekSix;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class UebungenVonLukas {
@@ -88,22 +89,35 @@ public class UebungenVonLukas {
 
         //Scanner Eingabe mit Ausgabe:
         //Frag solange nach einer Zahl bis auch eine eingegeben wurde, das Programm darf bei Fehleingabe nicht abstürzen.
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Gib eine Zahl ein: ");
-        int input = scanner.nextInt();
+        //???????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????
+//        Scanner scanner = new Scanner(System.in);
+//        System.out.println("Gib eine Zahl ein: ");
+//        int input = scanner.nextInt();
+//        System.out.println("Sie haben: " + input);
 
-            System.out.println("Sie haben: " + input);
 
+        //Arreys
+        //Erstelle ein int[] und befülle es mit Zufallszahlen von 0 bis 100.
 
 
     }
 
+    /**
+     * Arrays Methoden
+     */
 
 
 
 
 
 
+
+
+    /**
+     * Methoden & Schleifen
+     * @param param
+     * @param zeichen
+     */
     //Methode 1:
     public static void printChars(int param, String zeichen) {
 
@@ -197,7 +211,7 @@ public class UebungenVonLukas {
     }
 
     //Methode 6:
-    public static void printX (int hight, String zeichen) {
+    public static void printX(int hight, String zeichen) {
         String spaces = " ";
         int stars = hight;
         for (int i = hight; i > 0; i--) {

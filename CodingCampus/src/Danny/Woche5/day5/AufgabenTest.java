@@ -41,8 +41,158 @@ public class AufgabenTest {
 //        String text = "Heute wird ein guter Tag! Heute wird der beste Tag überhaupt! Heute wird ein spitzen super Tag!";
 //        stringBuilder(text);
         //Aufgabe:Datenströme
-        String path = "C:\\Users\\DanGO\\IdeaProjects\\CodingCampus_2021.09.VZ.Dornbirn\\assets\\file.txt";
-        fileRead(path);
+//        String path = "C:\\Users\\DanGO\\IdeaProjects\\CodingCampus_2021.09.VZ.Dornbirn\\assets\\file.txt";
+//        fileRead(path);
+
+//       // Aufgabe Zählen2
+//        for (int i = 0; i <= 10; i++) {
+//            System.out.println(i);
+//        }
+
+        // Aufgabe Zählen mit Trick
+//        for (int i = 2; i <= 10; i+=2) {
+//                System.out.println(i);
+//        }
+
+        // Aufgabe Rewind
+//        for (int i = 10; i >= -10 ; i--) {
+//            System.out.println(i);
+//        }
+        // Aufgabe Print Square
+//        printSquare(3, "A");
+
+        // Aufgabe Print Slash
+//        printSlash("x", 3, false);
+
+        // Aufgabe Print Triangle
+        //printTriangle(10, "x");
+
+        // Aufgabe
+        printRhombus("x", 25);
+
+    }
+
+    public static void printRhombus(String chra, int hight ) {
+        if (hight % 2 == 0) {
+            hight--;
+        }
+        int middleInt = hight / 2 + 1;
+        boolean uppermiddle = true;
+        int countSpaceMittle = 1;
+
+        printLine(" ", hight / 2);
+        System.out.println(chra);
+        printRows(hight, chra, countSpaceMittle, uppermiddle);
+        System.out.print(chra);
+        printLine(" ", hight - 2);
+        System.out.println(chra);
+        uppermiddle = false;
+        countSpaceMittle = hight -4;
+        printRows(hight, chra, countSpaceMittle, uppermiddle);
+        printLine(" ", hight / 2);
+        System.out.println(chra);
+
+
+    }
+
+    public static void printRows(int hight, String chra, int countSpaceMittle, boolean uppermiddle) {
+        int c = 0;
+        for (int i = c; i < (hight - 3) / 2; i++) {
+            int a = 0;
+            if (uppermiddle == true) {
+                a = hight / 2 - 1 - i;
+            } else {
+                a = i+1;
+            }
+            printLine(" ", a);
+            System.out.print(chra);
+            printLine(" ", countSpaceMittle);
+            System.out.print(chra);
+            if (uppermiddle == true) {
+                countSpaceMittle += 2;
+            } else {
+                countSpaceMittle -= 2;
+            }
+            System.out.println();
+        }
+
+    }
+
+    public static void printLine(String chra, int count) {
+        for (int i = 0; i < count; i++) {
+            System.out.print(chra);
+        }
+
+    }
+
+    public static void printTriangle(int hight, String chara) {
+
+        for (int j = 0; j < hight - 1; j++) {
+            System.out.print(" ");
+        }
+        System.out.println(chara);
+        int sp = 1;
+        for (int i = 2; i < hight; i++) {
+            for (int j = 0; j < hight - i; j++) {
+                System.out.print(" ");
+            }
+            System.out.print(chara);
+            for (int j = 0; j < sp; j++) {
+                System.out.print(" ");
+            }
+            sp += 2;
+            System.out.println(chara);
+        }
+        for (int j = 0; j < hight * 2 - 1; j++) {
+            System.out.print(chara);
+        }
+
+    }
+
+
+    public static void printSlash(String chara, int hight, boolean uppDown) {
+        if (uppDown == true) {
+            for (int i = 0; i < hight; i++) {
+                if (i == 0) {
+                    System.out.println(chara);
+                } else {
+                    for (int j = 0; j < i; j++) {
+                        System.out.print(" ");
+                    }
+                    System.out.println(chara);
+                }
+
+            }
+        } else {
+            for (int i = hight; i > 0; i--) {
+                if (i == 0) {
+                    System.out.println(chara);
+                } else {
+                    for (int j = i; j < hight; j++) {
+                        System.out.print(" ");
+                    }
+                    System.out.println(chara);
+                }
+            }
+        }
+    }
+
+    public static void printSquare(int hight, String chara) {
+
+        for (int i = 0; i < hight; i++) {
+            if (i == 0 || i == hight - 1) {
+                for (int j = 0; j < hight; j++) {
+                    System.out.print(chara);
+                }
+                System.out.println();
+            } else {
+                System.out.print(chara);
+                for (int j = 0; j < hight - 2; j++) {
+                    System.out.print(" ");
+                }
+                System.out.println(chara);
+            }
+        }
     }
 
 
