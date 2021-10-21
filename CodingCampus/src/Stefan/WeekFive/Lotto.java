@@ -18,5 +18,7 @@ public class Lotto {
             }
         }
         System.out.println(Arrays.toString(numbers.toArray()));
+
+
     }
 }
