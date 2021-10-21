@@ -1,11 +1,11 @@
 package Stefan.WeekSix;
 
 
-
 import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class WriteFile {
@@ -15,31 +15,66 @@ public class WriteFile {
         //Der Pfad soll lauten assets/tmp/output.txt.
 
         String input = "";
-        System.out.println("Geben Sie einen Text ein: ");
+        System.out.println("Geben Sie Ihren Text ein: ");
 
         try {
-            writeFile("assets/tmp/outputStefan.txt", input);
+            writeNewFile("assets/tmp/outputStefan.txt", input);
         } catch (FileNotFoundException exc) {
             exc.printStackTrace();
         }
 
 
-//        System.out.println(writeFile(input));
     }
 
-    private static void writeFile(String path, String input) throws IOException {
 
+    /**
+     * Methode Eingabe vom Benutzer bis eine leere Zeile eingegeben wird
+     */
+    private static void writeNewFile(String path, String input) throws IOException {
         BufferedWriter writer = new BufferedWriter(new FileWriter(String.valueOf(path)));
         Scanner scanner = new Scanner(System.in);
-        input = scanner.nextLine();
+
         try {
-            writer.write(input);
+            while (true){
+                String input1 = scanner.nextLine();
+                if (input1.isEmpty()) {
+                    break;
+                }
+                writer.write(input1 + System.lineSeparator());
+            }
+
         } finally {
             try {
                 writer.close();
-            }catch (IOException exc) {
+            } catch (IOException exc) {
 
             }
         }
     }
+
+    /**
+     * Methode mit Angabe der Menge von Zeilen die geschrieben werden sollen
+     */
+//    private static void writeFile(String path, String input) throws IOException {
+//
+//        BufferedWriter writer = new BufferedWriter(new FileWriter(String.valueOf(path)));
+//        Scanner scanner = new Scanner(System.in);
+//        String[] input1 = new String[scanner.nextInt()];
+//        scanner.nextLine();
+//        try {
+//            for (int i = 0; i < input1.length; i++) {
+//                input1[i] = scanner.nextLine();
+//            }
+//
+//            for (String data : input1) {
+//                writer.write(data + System.lineSeparator());
+//            }
+//        } finally {
+//            try {
+//                writer.close();
+//            } catch (IOException exc) {
+//
+//            }
+//        }
+//    }
 }

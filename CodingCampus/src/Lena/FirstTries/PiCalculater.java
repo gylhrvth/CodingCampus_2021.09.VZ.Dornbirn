@@ -1,4 +1,4 @@
-package Lena;
+package Lena.FirstTries;
 
 public class PiCalculater {
     public static void main(String[] args) {
