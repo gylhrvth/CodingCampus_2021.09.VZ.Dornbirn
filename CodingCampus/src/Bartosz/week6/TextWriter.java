@@ -37,6 +37,7 @@ public class TextWriter {
             // der neue (schönere) Code
 
             sb.append(userInput).append(System.lineSeparator());
+
             while(true) {
                 userInput = sc.nextLine();
                 if (userInput.compareToIgnoreCase(regbert) > 0) {
