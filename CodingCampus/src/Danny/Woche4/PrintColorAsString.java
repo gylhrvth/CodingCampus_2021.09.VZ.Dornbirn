@@ -90,7 +90,17 @@ public class PrintColorAsString {
 
 
             }
+            case ANSI_WHITE: {
+                if (returnEndLine == true) {
+                    System.out.println(ANSI_WHITE + word + punctuation + ANSI_RESET);
+                    break;
+                } else {
+                    System.out.print(ANSI_WHITE + word + punctuation + ANSI_RESET);
+                    break;
+                }
 
+
+            }
 
         }
     }
