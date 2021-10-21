@@ -1,7 +1,7 @@
 package Stefan.WeekSix;
 
+import java.util.Arrays;
 import java.util.Random;
-import java.util.Scanner;
 
 public class UebungenVonLukas {
 
@@ -98,25 +98,243 @@ public class UebungenVonLukas {
 
         //Arreys
         //Erstelle ein int[] und befülle es mit Zufallszahlen von 0 bis 100.
+        //Gibt das ganze Array aus
+//        randomNumbers();
+
+        //Gibt den 2, 5, und 10 Wert aus
+//        randomNumbers1();
+
+        //Gibt jeden 2ten Index aus
+//        randomNumbers2();
+
+
+        //Erstelle ein int[] und befülle es mit Zufallszahlen von -50 bis 50 und gib es mit Hilfe einer foreach-Schleife aus.
+//        randomNumbersCrazyRange();
+
+        //Erstelle ein int[] und befülle es mit Zufallszahlen von 0 bis 1000.
+        //Erstelle jeweils eine Methode für das Minimum, das Maximum und den Durchschnitt.
+        //Die Methoden sollen jeweils den Wert zurückgeben (nicht Ausgeben).
+        //In der main Methode Rufe die Methoden mit den Zufallszahlen auf und gib diese aus.
+//        randomNumbersThMin();
+//        randomNumbersThMax();
+//        randomDurchschnitt();
+//        randomBubbleSortAufsteigen();
+//        randomBubbleSortAbsteigend();
+
+        //Verwende das gegebene String[] und sortiere es mit einem selbsterstellten Bubblesort Algorithmus und gib es dann aus.
+        //Der Bubblesort Algorithmus soll in einer eigenen Methode implementiert werden.
+        // Der Aufruf und die Ausgabe erfolgt in der main Methode.
+
+        String[] names = new String[]{"Plamena", "Sadaaq", "Gyula", "Eray", "Gerri", "Stefan", "Lena", "Danny", "Ömer", "Stjepan", "Sandro", "Bartosz", "Ingo", "Rauan", "Mahir", "Lukas", "Niklas"};
+//        bubbleSortStringAufsteigen(names);
+//        bubbleSortStringAbsteigend(names);
 
 
     }
+
 
     /**
      * Arrays Methoden
      */
 
 
+    //String Names Aufsteigend Sortiert
+    public static void bubbleSortStringAufsteigen(String[] names) {
+        for (int i = 0; i < names.length; i++) {
+            for (int j = i + 1; j < names.length; j++) {
+                if (names[j].compareTo(names[i]) < 0) {
+                    String word = names[i];
+                    names[i] = names[j];
+                    names[j] = word;
+                }
+            }
+            System.out.println(names[i]);
+        }
+    }
+
+    //String Names Absteigend Sortiert
+    public static void bubbleSortStringAbsteigend(String[] names) {
+        for (int i = 0; i < names.length; i++) {
+            for (int j = i + 1; j < names.length; j++) {
+                if (names[j].compareTo(names[i]) > 0) {
+                    String word = names[i];
+                    names[i] = names[j];
+                    names[j] = word;
+                }
+            }
+            System.out.println(names[i]);
+        }
+    }
 
 
+    //Erstelle ein int[] und befülle es mit Zufallszahlen von 0 bis 1000 und gib den durchschnittswert aus.
+    public static void randomDurchschnitt() {
+        int[] zahlen = new int[10];
+        int obergrenze = 1000;
+        int summe = 0;
+        double durchschnitt = 0;
+        for (int i = 0; i < zahlen.length; i++) {
+            zahlen[i] = new Random().nextInt(obergrenze);
+        }
+        for (int i = 0; i < zahlen.length; i++) {
+            summe += zahlen[i];
+        }
+        durchschnitt = summe / (double) zahlen.length;
+
+        System.out.println(Arrays.toString(zahlen));
+        System.out.println("Der durchschnittswert der Zahlen ist " + durchschnitt);
+    }
+
+    //Erstelle ein int[] und befülle es mit Zufallszahlen von 0 bis 1000 und gib den kleinsten Wert aus.
+    public static void randomNumbersThMin() {
+        int[] zahlen = new int[10];
+        int obergrenze = 1000;
+        int pos = 0;
+        for (int i = 0; i < zahlen.length; i++) {
+            zahlen[i] = new Random().nextInt(obergrenze);
+        }
+        int min = zahlen[0];
+        for (int i = 0; i < zahlen.length; i++) {
+            if (zahlen[i] < min) {
+                min = zahlen[i];
+                pos = i;
+            }
+        }
+        System.out.println(Arrays.toString(zahlen));
+        System.out.println(Arrays.toString(new String[]{"Kleinste Zahl: " + min + " auf Position: " + pos}));
+    }
 
 
+    //Erstelle ein int[] und befülle es mit Zufallszahlen von 0 bis 1000 und gib den grössten Wert aus.
+    public static void randomNumbersThMax() {
+        int[] zahlen = new int[10];
+        int obergrenze = 1000;
+        int pos = 0;
+        for (int i = 0; i < zahlen.length; i++) {
+            zahlen[i] = new Random().nextInt(obergrenze);
+        }
+        int max = zahlen[0];
+        for (int i = 0; i < zahlen.length; i++) {
+            if (zahlen[i] > max) {
+                max = zahlen[i];
+                pos = i;
+            }
+        }
+        System.out.println(Arrays.toString(zahlen));
+        System.out.println(Arrays.toString(new String[]{"Grösste Zahl: " + max + " auf Position: " + pos}));
+    }
+
+
+    //Gibt den ganzen Array aus
+    public static void randomNumbers() {
+        int[] zahlen = new int[10];
+        int obergrenze = 100;
+
+        for (int i = 0; i < zahlen.length; i++) {
+            zahlen[i] = new Random().nextInt(obergrenze);
+        }
+
+        System.out.println(Arrays.toString(zahlen));
+
+    }
+
+    //Gibt den 2, 5, 10 Wert des Arrays aus
+    public static void randomNumbers1() {
+        int[] zahlen = new int[10];
+        int obergrenze = 100;
+
+        for (int i = 0; i < zahlen.length; i++) {
+            zahlen[i] = new Random().nextInt(obergrenze);
+        }
+        //Gibt bestimmte Positionen des  Array aus
+        System.out.print(zahlen[1] + ", ");
+        System.out.print(zahlen[6] + ", ");
+        System.out.print(zahlen[9]);
+    }
+
+    //Gibt jeden zweiten Index des Arrays aus
+    public static void randomNumbers2() {
+        int[] zahlen = new int[10];
+        int obergrenze = 100;
+        System.out.println("Gibt jeden zweiten Index aus: ");
+        for (int i = 0; i < zahlen.length; i++) {
+            zahlen[i] = new Random().nextInt(obergrenze);
+            if (i % 2 == 1) {
+                System.out.print(zahlen[i] + ", ");
+            }
+        }
+        System.out.println();
+        System.out.println("Zum vergleichen das ganze Array: \n" + Arrays.toString(zahlen));
+    }
+
+
+    //Erstelle ein int[] und befülle es mit Zufallszahlen von -50 bis 50 und gib es mit Hilfe einer foreach-Schleife aus.
+    public static void randomNumbersCrazyRange() {
+        int[] zahlen = new int[10];
+        int obergrenze = 100;
+
+        for (int i = 0; i < zahlen.length; i++) {
+            zahlen[i] = new Random().nextInt(obergrenze) - 50;
+        }
+        System.out.println(Arrays.toString(zahlen));
+    }
+
+    //Erstelle ein int[] und befülle es mit Zufallszahlen von 0 bis 1000.
+    public static void randomNumbersTh() {
+        int[] zahlen = new int[10];
+        int obergrenze = 1000;
+
+        for (int i = 0; i < zahlen.length; i++) {
+            zahlen[i] = new Random().nextInt(obergrenze);
+        }
+        System.out.println(Arrays.toString(zahlen));
+    }
+
+    //Erstelle ein int[] und befülle es mit Zufallszahlen von 0 bis 1000 BubbleSort aufsteigend.
+    public static void randomBubbleSortAufsteigen() {
+        int[] zahlen = new int[10];
+        int obergrenze = 1000;
+
+        for (int i = 0; i < zahlen.length; i++) {
+            zahlen[i] = new Random().nextInt(obergrenze);
+        }
+        int n = zahlen.length;
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                if (zahlen[j] > zahlen[j + 1]) {
+                    int temp = zahlen[j];
+                    zahlen[j] = zahlen[j + 1];
+                    zahlen[j + 1] = temp;
+                }
+            }
+        }
+        System.out.println(Arrays.toString(zahlen));
+    }
+
+    //Erstelle ein int[] und befülle es mit Zufallszahlen von 0 bis 1000 BubbleSort absteigend.
+    public static void randomBubbleSortAbsteigend() {
+        int[] zahlen = new int[10];
+        int obergrenze = 1000;
+
+        for (int i = 0; i < zahlen.length; i++) {
+            zahlen[i] = new Random().nextInt(obergrenze);
+        }
+        int n = zahlen.length;
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                if (zahlen[j] < zahlen[j + 1]) {
+                    int temp = zahlen[j];
+                    zahlen[j] = zahlen[j + 1];
+                    zahlen[j + 1] = temp;
+                }
+            }
+        }
+        System.out.println(Arrays.toString(zahlen));
+    }
 
 
     /**
      * Methoden & Schleifen
-     * @param param
-     * @param zeichen
      */
     //Methode 1:
     public static void printChars(int param, String zeichen) {
@@ -239,4 +457,6 @@ public class UebungenVonLukas {
             }
         }
     }
+
+
 }
