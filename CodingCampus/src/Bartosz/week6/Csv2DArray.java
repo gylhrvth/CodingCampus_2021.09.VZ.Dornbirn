@@ -5,7 +5,7 @@ import java.io.*;
 public class Csv2DArray {
     public static void main(String[] args) {
         String path = "C:\\Users\\DCV\\IdeaProjects\\CodingCampus_2021.09.VZ.Dornbirn\\assets\\population-figures-by-country-csv_csv.csv";
-
+        splitFile(path);
 
 
     }
