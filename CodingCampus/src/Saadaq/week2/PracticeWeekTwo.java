@@ -1,7 +1,4 @@
-package Saadaq.weekTwo;
-
-import javax.swing.*;
-import java.util.Scanner;
+package Saadaq.week2;
 
 public class PracticeWeekTwo {
 

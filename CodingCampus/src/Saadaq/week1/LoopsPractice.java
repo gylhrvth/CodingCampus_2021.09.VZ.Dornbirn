@@ -1,4 +1,4 @@
-package Saadaq.weekOne;
+package Saadaq.week1;
 
 public class LoopsPractice {
 

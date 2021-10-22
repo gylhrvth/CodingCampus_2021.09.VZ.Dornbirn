@@ -1,4 +1,4 @@
-package Saadaq.weekTwo;
+package Saadaq.week2;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;

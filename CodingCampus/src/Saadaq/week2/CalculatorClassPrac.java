@@ -1,6 +1,4 @@
-package Saadaq.weekTwo;
-
-import java.util.Scanner;
+package Saadaq.week2;
 
 public class CalculatorClassPrac {
 

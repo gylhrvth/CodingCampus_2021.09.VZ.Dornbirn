@@ -1,7 +1,5 @@
-package Saadaq.weekTwo;
+package Saadaq.week2;
 
-
-import Danny.Woche1.Calculator;
 
 import java.util.Scanner;
 
