@@ -9,14 +9,17 @@ import java.util.GregorianCalendar;
 public class UebungenVonLukasCalendar {
     public static void main(String[] args) {
 
-//        Calendar calendar = new GregorianCalendar();
-//        int date = calendar.get(Calendar.DATE);
-//        int month = calendar.get(Calendar.MONTH);
-//        int year = calendar.get(Calendar.YEAR);
-//        int sonntag = calendar.get(Calendar.SUNDAY);
-//        System.out.println(date + "." + month + "." + year + ". " + sonntag);
+
+        Calendar calendar = new GregorianCalendar();
 
 
+        //Tage im aktuellen Monat
+        int days = calendar.getActualMaximum(Calendar.DAY_OF_MONTH);
+        System.out.println(days);
+
+
+
+        //Ausgabe des Datums vom nächsten Sonntags
         nextSunday();
 
     }
@@ -28,5 +31,9 @@ public class UebungenVonLukasCalendar {
         LocalDate nextSunday = today.with(TemporalAdjusters.next(DayOfWeek.SUNDAY));
         System.out.printf("Heute ist der %s. Der nächste Sonntag ist am %s", today, nextSunday);
         System.out.println();
+    }
+
+    public static void getSundays (int year, int month) {
+
     }
 }
