@@ -7,7 +7,7 @@ public class GameOfLife {
     private static final int lR = 20;
     private static int[][] matrix = new int[lR][lR];
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         // Wartezeit bis Code weiterläuft
 //        try {
 //            System.out.println("Evolving");
