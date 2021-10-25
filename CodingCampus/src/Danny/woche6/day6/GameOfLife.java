@@ -6,7 +6,7 @@ public class GameOfLife {
     private static final int lR = 20;
     private static int[][] matrix = new int[lR][lR];
 
-    public static void main(String[] args) {
+    public static void GameOfLife(String[] args) {
         // Wartezeit bis Code weiterläuft
 //        try {
 //            System.out.println("Evolving");
@@ -37,12 +37,17 @@ public class GameOfLife {
 
 
 
-        while (true) {
-            printArry();
-            readArryAndWriteNewArry();
-
-            System.out.println();
-        }
+//        while (true) {
+//            try {
+//                printArry();
+//                readArryAndWriteNewArry();
+//                Thread.sleep(500);
+//            } catch (InterruptedException exc) {
+//                //noop
+//            }
+//            System.out.print("\033[H\033[2J");
+//            System.out.flush();
+//        }
     }
 
     public static void printArry() {
@@ -51,7 +56,7 @@ public class GameOfLife {
         }
     }
 
-    public static int[][] readArryAndWriteNewArry() {
+    public static void readArryAndWriteNewArry() {
         int[][] newMatrix = new int[lR][lR];
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
@@ -59,7 +64,6 @@ public class GameOfLife {
             }
         }
         matrix = newMatrix;
-        return matrix;
     }
 
 
@@ -95,7 +99,7 @@ public class GameOfLife {
         if (matrix[row][column] == aliveCell && (aliveNeighbors == 2 || aliveNeighbors == 3)) {
             cellStatus = aliveCell;
         }
-        if (matrix[row][column] == aliveCell && aliveNeighbors >= 3) {
+        if (matrix[row][column] == aliveCell && aliveNeighbors > 3) {
             cellStatus = deadCell;
         }
         return cellStatus;
