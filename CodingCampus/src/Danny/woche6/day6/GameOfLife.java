@@ -1,12 +1,13 @@
 package Danny.woche6.day6;
 
+import java.io.IOException;
 import java.util.Arrays;
 
 public class GameOfLife {
     private static final int lR = 20;
     private static int[][] matrix = new int[lR][lR];
 
-    public static void GameOfLife(String[] args) {
+    public static void main(String[] args) throws IOException {
         // Wartezeit bis Code weiterläuft
 //        try {
 //            System.out.println("Evolving");
@@ -37,17 +38,17 @@ public class GameOfLife {
 
 
 
-//        while (true) {
-//            try {
-//                printArry();
-//                readArryAndWriteNewArry();
-//                Thread.sleep(500);
-//            } catch (InterruptedException exc) {
-//                //noop
-//            }
-//            System.out.print("\033[H\033[2J");
-//            System.out.flush();
-//        }
+        while (true) {
+            try {
+                printArry();
+                readArryAndWriteNewArry();
+                Thread.sleep(500);
+            } catch (InterruptedException exc) {
+                //noop
+            }
+            System.out.print("\033[H\033[2J");
+            System.out.flush();
+        }
     }
 
     public static void printArry() {
