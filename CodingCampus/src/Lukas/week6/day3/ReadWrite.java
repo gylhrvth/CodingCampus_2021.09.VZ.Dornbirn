@@ -12,6 +12,7 @@ public class ReadWrite {
         }
     }
 
+
     private static void writeFile(String path, String data) throws IOException {
         BufferedWriter writer = new BufferedWriter(new FileWriter(path));
         try {
@@ -20,7 +21,6 @@ public class ReadWrite {
             try {
                 writer.close();
             } catch(IOException exc) {
-                //noop
             }
         }
     }
@@ -37,11 +37,10 @@ public class ReadWrite {
             }
             return sb.toString();
         } finally {
-            //Tu das immer
+
             try {
                 reader.close();
             } catch (IOException exc) {
-                //Falls exception beim schließen auftritt
             }
         }
     }
