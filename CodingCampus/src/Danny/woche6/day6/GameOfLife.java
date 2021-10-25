@@ -1,8 +1,10 @@
 package Danny.woche6.day6;
 
+import java.util.Arrays;
+
 public class GameOfLife {
-    private static final int DEAD_CELL = 0;
-    private static final int ALIVE_CELL = 1;
+    private static final int lR = 20;
+    private static int[][] matrix = new int[lR][lR];
 
     public static void main(String[] args) {
         // Wartezeit bis Code weiterläuft
@@ -17,32 +19,10 @@ public class GameOfLife {
         // System.out.print("\033[H\033[2J");
         // System.out.flush();
 
-//        int[] row0  = {0,1,0,0,0};
-//        int[] row1  = {0,1,0,0,0};
-//        int[] row2  = {0,1,0,0,0};
-//        int[] row3  = {0,1,0,0,0};
-//
+//Length and High Matrix
 
-        int[] row0 = {0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-        int[] row1 = {0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-        int[] row2 = {1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-        int[] row3 = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-        int[] row4 = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-        int[] row5 = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-        int[] row6 = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-        int[] row7 = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-        int[] row8 = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-        int[] row9 = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-        int[] row10 = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-        int[] row11 = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-        int[] row12 = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-        int[] row13 = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 
-//        String[] row = {"row1","row2","row3","row4","row5","row6","row7","row8","row9","row10","row11,row12,row13,row14"};
 
-        int lR = 20;
-        int[][] matrix = new int[lR][(lR / 4) * 3];
-        int[][] matrixprint = new int[lR][(lR / 4) * 3];
 
         // Animationsobjekt einfügen
         matrix[0][1] = 1;
@@ -51,32 +31,73 @@ public class GameOfLife {
         matrix[2][1] = 1;
         matrix[2][2] = 1;
 
+        int cellLive = 1;
+        int deadCell = 0;
+
+
+
+
+        while (true) {
+            printArry();
+            readArryAndWriteNewArry();
+
+            System.out.println();
+        }
+    }
+
+    public static void printArry() {
+        for (int i = 0; i < matrix.length; i++) {
+            System.out.println(Arrays.toString(matrix[i]));
+        }
+    }
+
+    public static int[][] readArryAndWriteNewArry() {
+        int[][] newMatrix = new int[lR][lR];
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+              newMatrix[i][j] = rules(neighborsCounter(i, j), i, j);
+            }
+        }
+        matrix = newMatrix;
+        return matrix;
+    }
+
+
+    public static int neighborsCounter(int row, int column) {
         int aliveNeighbors = 0;
 
+        for (int positionNeighbourOverAktuell = 0; positionNeighbourOverAktuell < 3; positionNeighbourOverAktuell++) {
+            aliveNeighbors += matrix[(matrix.length * 2 - 1 + row) % matrix.length][(matrix[row].length * 2 - 1 + column + positionNeighbourOverAktuell) % matrix[row].length];
+        }
+        for (int positionNeighbourMiddleAktuell = 0; positionNeighbourMiddleAktuell < 3; positionNeighbourMiddleAktuell++) {
+            if (positionNeighbourMiddleAktuell != 1) {
+                aliveNeighbors += matrix[(row)][(matrix[row].length * 2 - 1 + column + positionNeighbourMiddleAktuell) % matrix[row].length];
+            }
+        }
+        for (int positionNeighbourOverAktuell = 0; positionNeighbourOverAktuell < 3; positionNeighbourOverAktuell++) {
+            aliveNeighbors += matrix[(matrix.length * 2 + 1 + row) % matrix.length][(matrix[row].length * 2 - 1 + column + positionNeighbourOverAktuell) % matrix[row].length];
+        }
+        return aliveNeighbors;
     }
 
 
-    public static void neighborsCounter (int[][] matrix, int aliveNeighbors, int x, int y) {
-        for (int i = 0; i < 9; i++) {
+    public static int rules(int aliveNeighbors, int row, int column) {
+        int cellStatus = 0;
+        int deadCell = 0;
+        int aliveCell = 1;
 
+        if (matrix[row][column] == deadCell && aliveNeighbors == 3) {
+            cellStatus = aliveCell;
         }
-
-    }
-
-
-    public static void rules(int[][] matrix, int cellLive, int deadCell, int aliveNeighbors, int x, int y, int[][] matrixprint) {
-
-        if (matrix[x][y] == deadCell && aliveNeighbors == 3) {
-            matrixprint[x][y] = cellLive;
+        if (matrix[row][column] == aliveCell && aliveNeighbors < 2) {
+            cellStatus = deadCell;
         }
-        if (matrix[x][y] == cellLive && aliveNeighbors < 2) {
-            matrixprint[x][y] = deadCell;
+        if (matrix[row][column] == aliveCell && (aliveNeighbors == 2 || aliveNeighbors == 3)) {
+            cellStatus = aliveCell;
         }
-        if (matrix[x][y] == cellLive && (aliveNeighbors == 2 || aliveNeighbors == 3)) {
-            matrixprint[x][y] = cellLive;
+        if (matrix[row][column] == aliveCell && aliveNeighbors >= 3) {
+            cellStatus = deadCell;
         }
-        if (matrix[x][y] == cellLive && aliveNeighbors >= 3) {
-            matrixprint[x][y] = deadCell;
-        }
+        return cellStatus;
     }
 }
