@@ -39,6 +39,7 @@ public class Day3ReadWrite {
     private static void writeFile(String path, String data) throws IOException {
         BufferedWriter writer = new BufferedWriter(new FileWriter(path));
         try {
+
             writer.write(data);
 
         } finally {
