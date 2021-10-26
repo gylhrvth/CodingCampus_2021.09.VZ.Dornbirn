@@ -1,52 +1,82 @@
 package Danny.woche7.day2;
 
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 
 public class TIcTacToe {
 
-    public static String[][] matrix = new String[4][4];
-    public static final String player1 = "X";
-    public static final String player2 = "O";
+    public static final String[][] matrix = new String[4][4];
+    public static final String player1 = "|X";
+    public static final String player2 = "|O";
 
     public static void main(String[] args) {
 
 
-//        createMatrix();
-//        askPlayers1();
+        createMatrix();
+        askPlayer(1);
 //        askPlayers2();
 //        printMatrix();
-        System.out.println(inputCheck());
+
 
     }
+    public static boolean checkWin () {
 
-    public static int inputCheck() {
-        Scanner scan = new Scanner(System.in);
-        int scanNumber = 0;
-        while (!scan.hasNextInt()){
-            if (scan.hasNextInt()) {
-                scanNumber = scan.nextInt();
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                if (matrix[i][j] == player1) {
+
+                }
             }
-            scan.close();
-
-
 
         }
+    }
+
+
+
+
+
+    public static boolean checkCoordinate(int row, int column) {
+        boolean occupied = false;
+        if (matrix[row][column] == "|X" || matrix[row][column] == "|O") {
+            System.out.println("Dieses Feld ist bereits belegt!");
+            occupied = true;
+        }
+        return occupied;
+    }
+
+    public static int scanNumber() {
+        Scanner scan = new Scanner(System.in);
+        int scanNumber = 0;
+        while (!scan.hasNextInt()) {
+            System.out.println("Bitte Zahl eingeben");
+            scan.nextLine();
+        }
+        scanNumber = scan.nextInt();
         return scanNumber;
     }
 
 
-    public static void askPlayers1() {
+    public static void askPlayer(int player) {
+        System.out.println();
+        System.out.println("Player " + player + " gib eine Koordinate ein.");
+        System.out.println("Wert 1: Für die Zeile gib eine Zahl von 1 bis " + matrix.length + " ein.");
+        int row = scanNumber();
+        System.out.println("Wert 2: Für die Spalte gib eine Zahl von 1 bis " + matrix.length + " ein.");
+        int column = scanNumber();
 
-        //Player 1
-        System.out.println("Player 1 gib eine Koordinate ein.");
-        System.out.println("1.Eingabe für die Zeile dann ENTER");
-
-        System.out.println("2.Eingabe für die Spalte dann ENTER");
-
-
-//        if ((matrix[scan.nextInt()-1][scan.nextInt()-1]).compareTo("|_"))
-//        matrix[scan.nextInt()-1][scan.nextInt()-1] = "|" + player1;
+        while (checkCoordinate(row, column)) {
+            System.out.println("Player " + player + " gib eine Koordinate ein.");
+            System.out.println("1. Gib für die Zeile eine Zahl von 1 bis " + matrix.length + "ein.");
+            row = scanNumber();
+            System.out.println("2. Gib für die Spalte eine Zahl von 1 bis " + matrix.length + "ein.");
+            column = scanNumber();
+        }
+        if (player == 1) {
+            matrix[row][column] = player1;
+        } else {
+            matrix[row][column] = player2;
+        }
     }
 
     public static void askPlayers2() {
