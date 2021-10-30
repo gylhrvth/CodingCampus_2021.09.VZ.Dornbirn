@@ -1,12 +1,17 @@
 package Bartosz.week6.gameOfLifeCA;
 
+import java.io.IOException;
+
 public class Init {
-    public static void main(String[] args) {
-        printArray(gameWorld);
-        System.out.println();
-        printGame(gameWorld);
-        System.out.println();
-        printArray(gameWorld);
+    public static void main(String[] args) throws InterruptedException {
+
+        for (int i = 0; i < 10; i++) {
+                printArray(gameWorld);  //print old array
+            Thread.sleep(100);
+            System.out.print("\033[H\033[2J");
+            System.out.flush();
+            printGame(gameWorld);       // print new array
+        }
     }
 
     public static int[][] gameWorld = new int[][]{
@@ -75,7 +80,7 @@ public class Init {
 //                }
 
                 aliveCounter -= D2array[i][j];
-                System.out.print(aliveCounter);
+//                System.out.print(aliveCounter);       //check neighbours
 
                 // Befüll Bedingungen newArray
                 if (D2array[i][j] == 1) {
@@ -93,26 +98,11 @@ public class Init {
                 }
 
             }
-            System.out.println();
-
         }
 
         System.arraycopy(newArray, 0, D2array, 0, D2array.length);      // Überschreiben der Alten Rows
 
     }
 
-//    protected static void createWorld() {
-//        int[][] gameworld = new int[][]{
-//                {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-//                {0, 0, 1, 0, 0, 0, 0, 0, 0, 0},
-//                {0, 0, 1, 0, 0, 0, 0, 0, 0, 0},
-//                {0, 0, 0, 0, 0, 0, 1, 1, 0, 0},
-//                {0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
-//                {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-//                {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-//                {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-//                {0, 0, 0, 0, 0, 1, 1, 0, 0, 1},
-//                {0, 0, 0, 0, 0, 1, 1, 0, 1, 0},
-//        };
-//    }
+
 }
