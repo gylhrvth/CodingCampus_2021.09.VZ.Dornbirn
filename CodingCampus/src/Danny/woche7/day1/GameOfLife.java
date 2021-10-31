@@ -1,4 +1,4 @@
-package Danny.woche6.day6;
+package Danny.woche7.day1;
 
 import java.io.IOException;
 import java.util.Arrays;
