@@ -30,17 +30,17 @@ public class GameOfLife {
         int cellLive = 1;
         int deadCell = 0;
 
-//        while (true) {
-//            try {
+        while (true) {
+            try {
                 printArry();
-//                readArryAndWriteNewArry();
-//                Thread.sleep(500);
-//            } catch (InterruptedException exc) {
-//                //noop
-//            }
-//            System.out.print("\033[H\033[2J");
-//            System.out.flush();
-//        }
+                readArryAndWriteNewArry();
+                Thread.sleep(500);
+            } catch (InterruptedException exc) {
+                //noop
+            }
+            System.out.print("\033[H\033[2J");
+            System.out.flush();
+        }
     }
 
     public static void printArry() {
