@@ -108,7 +108,7 @@ public class TextAnalysis {
         input = input
                 .replaceAll("[\\(\\):,]|\\.[ \n]", " ")
                 .replaceAll("\n+", " ")
-                .replaceAll("\s+", " ");
+                .replaceAll("\\s+", " ");
 
         String[] wordsArray = input.split("[ ]");
 

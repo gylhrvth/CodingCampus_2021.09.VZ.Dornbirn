@@ -106,7 +106,7 @@ public class GyulaTest {
     private static void printLineStipple(String chars, int length) {
         //System.out.println("Methoden Aufgabe 1");
         for (int i = 0; i <= length; i++) {
-            System.out.print(chars + "\s");
+            System.out.print(chars + "\\s");
 
         }
         System.out.println();

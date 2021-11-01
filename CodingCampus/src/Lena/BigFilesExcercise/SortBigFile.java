@@ -102,7 +102,7 @@ public class SortBigFile {
                 .replaceAll("\n+", " ")
                 .replaceAll("\r+", " ")
                 .replaceAll("\t+", " ")
-                .replaceAll("\s+", " ");
+                .replaceAll("\\s+", " ");
 
         return cleardString;
     }

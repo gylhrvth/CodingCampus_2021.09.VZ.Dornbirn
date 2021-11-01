@@ -32,7 +32,7 @@ public class ReadFile {
                 .replaceAll("\"[·'£–„“†():;,.\\[\\]| \\n\\-]\"", " ")
                 .replaceAll("\n+", " ")
                 .replaceAll("\r+", " ")
-                .replaceAll("\s+", " ");
+                .replaceAll("\\s+", " ");
 
         return cleardString;
     }
