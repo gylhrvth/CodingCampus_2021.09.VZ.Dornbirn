@@ -21,7 +21,7 @@ public class Aufgabe2 {
                 .replaceAll("\"[·'£–„“†():;,.\\[\\]| \\n\\-]\"", " ")
                 .replaceAll("\n+", " ")
                 .replaceAll("\r+", " ")
-                .replaceAll("\s+", " ");
+                .replaceAll("\\s+", " ");
 
         return cleardString;
     }
