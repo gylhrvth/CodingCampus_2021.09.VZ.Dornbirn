@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class WriteFile {
     public static void main(String[] args) throws IOException {
         try {
-          //  String path = "assets/file.txt";
+            //  String path = "assets/file.txt";
             writeFile("assets/tmp/output.txt", readUserInput());
         } catch (FileNotFoundException exc) {
             exc.printStackTrace();
@@ -61,3 +61,7 @@ public class WriteFile {
         }
     }
 }
+
+
+
+

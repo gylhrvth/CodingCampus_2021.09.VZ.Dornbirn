@@ -1,4 +1,4 @@
-package Rauan.Aufgaben;
+package Rauan.woche7;
 
 public class PrintCharacter {
     public static void main(String[] args) {

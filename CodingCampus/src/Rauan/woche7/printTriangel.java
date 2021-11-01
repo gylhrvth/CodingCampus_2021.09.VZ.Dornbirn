@@ -1,7 +1,8 @@
-package Rauan.Aufgaben;
+package Rauan.woche7;
 
-public class PrintTriangle {
+public class printTriangel {
     public static void main(String[] args) {
+
         // printTriangle("X",3);
         printTriangleWithSpaces(4, 'X');
     }
@@ -53,3 +54,4 @@ public class PrintTriangle {
     }
 
 }
+

@@ -1,4 +1,4 @@
-package Rauan.Aufgaben;
+package Rauan.woche7;
 
 import Eray.week6.uebungsBeispiele.BackSlash;
 
