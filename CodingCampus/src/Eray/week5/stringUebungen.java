@@ -55,7 +55,7 @@ public class stringUebungen {
         text = text
                 .replaceAll("[\\(\\):,]|\\.[ \n]", " ")
                 .replaceAll("\n+", " ")
-                .replaceAll("\s+", " ");
+                .replaceAll("\\s+", " ");
 
         String[] myOverallText = text.split(" ");
 
@@ -80,7 +80,7 @@ public class stringUebungen {
         text = text
                 .replaceAll("[\\(\\):,]|\\.[ \n]", " ")
                 .replaceAll("\n+", " ")
-                .replaceAll("\s+", " ");
+                .replaceAll("\\s+", " ");
 
         String[] myOverallText = text.split(" ");
 
@@ -150,9 +150,9 @@ public class stringUebungen {
         text = text
                 .replaceAll("[\\(\\):,]|\\.[ \n]", " ")
                 .replaceAll("\n+", " ")
-                .replaceAll("\s+", " ");
+                .replaceAll("\\s+", " ");
 
-        String[] allWordsInText = text.split("\s");
+        String[] allWordsInText = text.split("\\s");
         return allWordsInText.length;
     }
 

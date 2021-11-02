@@ -41,8 +41,8 @@ public class TextExcercise {
         //    words = Plamena.week4.TextAnalysis.wordsCount(text);
         text = text.replaceAll("[·'£–„“†():;,.\\[\\]| \n\\-]", " ")
                 .replaceAll("\n+", " ")
-                .replaceAll("\s+", " ");
-        String[] wordCounter = text.split("\s");
+                .replaceAll("\\s+", " ");
+        String[] wordCounter = text.split("\\s");
         words = wordCounter.length;
         return words;
     }
@@ -78,8 +78,8 @@ public class TextExcercise {
 
         text = text.replaceAll("[·'£–„“†():;,./\\t\\[\\]| \n\\-]", " ")
                 .replaceAll("\n+", " ")
-                .replaceAll("\s+", " ");
-        String[] words = text.split("\s");
+                .replaceAll("\\s+", " ");
+        String[] words = text.split("\\s");
 
         for (int i = 0; i < words.length - 1; i++) {
             for (int j = 0; j < words.length - 1 - j; j++) {
@@ -100,8 +100,8 @@ public class TextExcercise {
     private static void sortWordsLength(String text) {
         text = text.replaceAll("[·'£–„“†():;,.\\t\\[\\]| \n\\-]", " ")
                 .replaceAll("\n+", " ")
-                .replaceAll("\s+", " ");
-        String[] words = text.split("\s");
+                .replaceAll("\\s+", " ");
+        String[] words = text.split("\\s");
         for (int i = 0; i < words.length - 1; i++) {
             for (int k = 0; k < words.length - 1 - i; k++) {
                 boolean swap = false;
