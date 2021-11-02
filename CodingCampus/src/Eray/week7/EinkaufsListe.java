@@ -22,7 +22,7 @@ public class EinkaufsListe {
             int userInput = 0;
             try {
                 userInput = Integer.parseInt(userInputAsText);
-            } catch (NumberFormatException nfe){
+            } catch (NumberFormatException nfe) {
                 // Do nothing
             }
 
@@ -33,7 +33,7 @@ public class EinkaufsListe {
                 System.out.println("Sie haben in Ihrer Liste aufgeschrieben: ");
                 System.out.println();
                 for (int i = 0; i < shoppingList.length; i++) {
-                    System.out.println(shoppingList[i]);
+                    System.out.println(i + ": " + shoppingList[i]);
                 }
 
                 System.out.println();
@@ -62,7 +62,7 @@ public class EinkaufsListe {
         int lengthOfShoppingList = 0;
         try {
             lengthOfShoppingList = Integer.parseInt(lengthAsText);
-        } catch (NumberFormatException nfe){
+        } catch (NumberFormatException nfe) {
             // Do nothing
         }
 
