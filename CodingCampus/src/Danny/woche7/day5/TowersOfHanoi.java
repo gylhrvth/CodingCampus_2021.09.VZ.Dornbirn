@@ -17,12 +17,11 @@ public class TowersOfHanoi {
         fillTower1WithDiscs();
         creatEmtyTowers();
         printTower();
-
         while (true) {
             try {
                 moveDisk(quantityDiscs, tower1, tower2, tower3);
                 printTower();
-                Thread.sleep(500);
+                Thread.sleep(5000);
             } catch (InterruptedException exc) {
                 // noop
             }
