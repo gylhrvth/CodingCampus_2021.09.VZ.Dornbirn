@@ -3,7 +3,7 @@ package Plamena.week2;
 import java.util.Random;
 import java.util.Scanner;
 
-public class MyRandom {
+public class RandomGame {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
