@@ -2,48 +2,32 @@ package Lena.tuermeVonHanoi;
 
 import java.util.Scanner;
 
-public class TuermeVonHanoi {
-
-    private static final int[][] STARTAUFSTELLUNG = {
-            {1, 3, 5},
-            {0, 0, 0},
-            {0, 0, 0}
-
-    };
-
+public class TuermeVonHanoiGame {
     private static final Scanner sc = new Scanner(System.in);
+    private static final int SLEEP_IN_MS = 100;
 
 
     public static void main(String[] args) {
+        System.out.println("Mit wie vielen Scheiben möchtest du speielen?");
 
-         playGame(STARTAUFSTELLUNG);
-        //moveRecursive(STARTAUFSTELLUNG.length, STARTAUFSTELLUNG[0], STARTAUFSTELLUNG[2], STARTAUFSTELLUNG[1]);
+        int disks = sc.nextInt();
 
+        int[][] startaufstellung = fillStart(disks);
+
+        playGame(startaufstellung);
     }
 
-    private static void moveRecursive(int n, int []source, int[]target, int[]auxiliary){
-        if(n>0){
-            moveRecursive(n-1, source, auxiliary, target);
 
-            int disc =0;
-            for (int i = 0; i < source.length; i++) {
-                if(source[i]!=0){
-                    disc=source[i];
-                    source[i]=0;
-                    break;
-                }
-            }
-            for (int i = target.length-1; i >= 0; i--) {
-                if(target[i]==0){
-                    target[i]=disc;
-                    break;
-                }
-            }
 
-            printGame(new int[][]{source, auxiliary, target});
-
-            moveRecursive(n-1, auxiliary,target,source);
+    private static int[][] fillStart(int disks) {
+        int[][] startaufstellung = new int[3][disks];
+        int count = 1;
+        for (int i = 0; i < disks; i++) {
+            startaufstellung[0][i] = count;
+            count += 2;
         }
+
+        return startaufstellung;
     }
 
     private static void playGame(int[][] actualGame) {
@@ -58,6 +42,7 @@ public class TuermeVonHanoi {
     private static void moveDisk(int towerToTake, int towerToPut, int[][] actualGame) {
         int disk = 0;
         int indexToTake = 0;
+
 
         for (int i = 0; i < actualGame[(towerToTake - 1)].length; i++) {
             if (actualGame[towerToTake - 1][i] != 0) {
@@ -80,6 +65,8 @@ public class TuermeVonHanoi {
 
             }
         }
+
+
     }
 
     private static boolean towerHasDisks(int[][] actualGame, int tower) {
@@ -93,12 +80,20 @@ public class TuermeVonHanoi {
 
     private static void printGame(int[][] actualGame) {
 
+        try {
+            System.out.println("Evolving");
+            Thread.sleep(SLEEP_IN_MS);
+        } catch (InterruptedException exc) {
+            //noop
+        }
+        clearScreen();
         int largestDisk = getLargestDisk(actualGame);
         int middleOfTowers = largestDisk / 2;
 
         System.out.println();
         for (int j = 0; j < actualGame[0].length; j++) {
-            for (int[] ints : actualGame) {
+            for (int i = 0, actualGameLength = actualGame.length; i < actualGameLength; i++) {
+                int[] ints = actualGame[i];
 
                 int offset = (largestDisk - ints[j]) / 2;
                 for (int l = 0; l < (offset); l++) {
@@ -106,7 +101,7 @@ public class TuermeVonHanoi {
                 }
                 if (ints[j] != 0) {
                     for (int m = 0; m < ints[j]; m++) {
-                        System.out.print("=");
+                        System.out.print(getColor(actualGame[i][j]) + "=" + resetColor());
                     }
                 } else {
                     System.out.print("|");
@@ -128,6 +123,21 @@ public class TuermeVonHanoi {
 
         }
         System.out.println();
+    }
+
+    private static String getColor(int disk) {
+
+        if (disk > 5) {
+            disk = disk % 6;
+        }
+        int n = 30 + (disk);
+
+
+        return "\u001B[" + n + "m";
+    }
+
+    private static String resetColor() {
+        return "\u001B[0m";
     }
 
     private static int getLargestDisk(int[][] actualGame) {
@@ -199,6 +209,9 @@ public class TuermeVonHanoi {
         }
 
     }
-
+    public static void clearScreen() {
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
+    }
 
 }
