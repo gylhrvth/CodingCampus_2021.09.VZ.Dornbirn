@@ -3,8 +3,6 @@ package Stefan.WeekSix;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class UebungenDatenströme {
     public static void main(String[] args) {
@@ -23,9 +21,12 @@ public class UebungenDatenströme {
 
         //Methode 3
         //Gibt die Anzahl des zuvor abgefragten Wortes aus
-        wordCounterInput(text);
 
+//        wordCounterInput(text);
 
+        //Methode 4
+        //Tauscht ein eingegebenes Wort mit einem anderem eingegebenen Wort
+        wordChangeInput(text);
 
     }
 
@@ -58,10 +59,33 @@ public class UebungenDatenströme {
     }
 
     //Methode 3 = Gibt die Anzahl des zuvor abgefragten Wortes aus
-    public static void wordCounterInput (String path) {
+    public static void wordCounterInput (String text) {
         System.out.println("Gebens Sie ein Wort aus dessen häufigkeit Sie wissen wollen: ");
         Scanner scanner = new Scanner(System.in);
-        String test = scanner.next();
-        System.out.println(test);
+        String word = scanner.next();
+
+        int counter = 0;
+        String[] words = text.split(" ");
+
+        for (String s : words) {
+            if (Objects.equals(s, word)) {
+                counter++;
+            }
+        }
+        System.out.println("Das Wort " + word + " kommt " + counter + " im Text vor!");
+    }
+
+    //Methode 4 = Tauscht ein Wort mit einem anderen
+    public static void wordChangeInput (String text) {
+        System.out.println("Gebens Sie ein Wort ein das sie tauschen wollen: ");
+        Scanner scanner = new Scanner(System.in);
+        String word = scanner.next();
+        System.out.println("Geben sie das ersetzende Wort ein");
+        String word1 = scanner.next();
+
+
+        String words = text.replaceAll(word, word1);
+        System.out.println(words);
+
     }
 }
