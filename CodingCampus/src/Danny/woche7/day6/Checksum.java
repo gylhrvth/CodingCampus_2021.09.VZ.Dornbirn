@@ -2,28 +2,43 @@ package Danny.woche7.day6;
 
 import java.io.*;
 import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 
 public class Checksum {
     // Algo MD5 or SHA256
     public static String algo = "SHA256";
 
-    public static byte[] createChecksum(String filename) throws Exception {
-        InputStream fis = new FileInputStream(filename);
+    public static byte[] createChecksum(String filename) {
 
         byte[] buffer = new byte[1024];
-        MessageDigest complete = MessageDigest.getInstance(algo);
+        MessageDigest complete = null;
+        try {
+            complete = MessageDigest.getInstance(algo);
+        } catch (NoSuchAlgorithmException nsae){
+            // Programming Error
+            System.out.println("Algorithm is not avaiable");
+            return null;
+        }
         int numRead;
 
-        do {
-            numRead = fis.read(buffer);
-            if (numRead > 0) {
-                complete.update(buffer,0,numRead);
-                
-            }
-        } while (numRead != -1);
+        try {
+            InputStream fis = new FileInputStream(filename);
+            do {
+                numRead = fis.read(buffer);
+                if (numRead > 0) {
+                    complete.update(buffer, 0, numRead);
 
-        fis.close();
+                }
+            } while (numRead != -1);
+
+            fis.close();
+        } catch (FileNotFoundException fnfe){
+            System.out.println("Error at reading of File, checksum may be invalid.");
+        } catch (IOException ioe){
+            // File is not readable
+            System.out.println("Error at reading of File, checksum may be invalid.");
+        }
         return complete.digest();
     }
 

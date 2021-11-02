@@ -12,8 +12,8 @@ public class FindBestMove {
     }
 
 
-    static String player = player1;
-  //  static String opponent = playerKI;
+    static String human = player1;
+    static String pc = playerKI;
 
     // This function returns true if there are moves
 // remaining on the board. It returns false if
@@ -32,9 +32,9 @@ public class FindBestMove {
         // Checking for Rows for X or O victory.
         for (int row = 0; row < 3; row++) {
             if (b[row][0] == b[row][1] && b[row][1] == b[row][2]) {
-                if (b[row][0] == player)
+                if (b[row][0] == pc)
                     return +10;
-            //    else if (b[row][0] == opponent)
+                else if (b[row][0] == human)
                     return -10;
             }
         }
@@ -42,25 +42,25 @@ public class FindBestMove {
         // Checking for Columns for X or O victory.
         for (int col = 0; col < 3; col++) {
             if (b[0][col] == b[1][col] && b[1][col] == b[2][col]) {
-                if (b[0][col] == player)
+                if (b[0][col] == pc)
                     return +10;
-              //  else if (b[0][col] == opponent)
+                else if (b[0][col] == human)
                     return -10;
             }
         }
 
         // Checking for Diagonals for X or O victory.
         if (b[0][0] == b[1][1] && b[1][1] == b[2][2]) {
-            if (b[0][0] == player)
+            if (b[0][0] == pc)
                 return +10;
-          //  else if (b[0][0] == opponent)
+            else if (b[0][0] == human)
                 return -10;
         }
 
         if (b[0][2] == b[1][1] && b[1][1] == b[2][0]) {
-            if (b[0][2] == player)
+            if (b[0][2] == pc)
                 return +10;
-          //  else if (b[0][2] == opponent)
+            else if (b[0][2] == human)
                 return -10;
         }
 
@@ -99,7 +99,7 @@ public class FindBestMove {
                     // Check if cell is empty
                     if (board[i][j] == "|_") {
                         // Make the move
-                        board[i][j] = player;
+                        board[i][j] = pc;
 
                         // Call minimax recursively and choose
                         // the maximum value
@@ -123,7 +123,7 @@ public class FindBestMove {
                     // Check if cell is empty
                     if (board[i][j] == "|_") {
                         // Make the move
-                      //  board[i][j] = opponent;
+                        board[i][j] = human;
 
                         // Call minimax recursively and choose
                         // the minimum value
@@ -154,11 +154,11 @@ public class FindBestMove {
                 // Check if cell is empty
                 if (board[i][j] == "|_") {
                     // Make the move
-                    board[i][j] = player;
+                    board[i][j] = pc;
 
                     // compute evaluation function for this
                     // move.
-                    int moveVal = minimax(board,0, true);
+                    int moveVal = minimax(board,0, false);
 
                     // Undo the move
                     board[i][j] = "|_";
