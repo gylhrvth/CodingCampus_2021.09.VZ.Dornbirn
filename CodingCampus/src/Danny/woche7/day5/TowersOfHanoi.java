@@ -21,7 +21,7 @@ public class TowersOfHanoi {
             try {
                 moveDisk(quantityDiscs, tower1, tower2, tower3);
                 printTower();
-                Thread.sleep(5000);
+                Thread.sleep(500);
             } catch (InterruptedException exc) {
                 // noop
             }

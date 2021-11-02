@@ -1,6 +1,7 @@
 package Danny.woche7.day7;
 
 import java.io.*;
+import java.util.Arrays;
 
 public class CäsarDecrypt {
 
@@ -23,6 +24,16 @@ public class CäsarDecrypt {
 
             }
         }
+    }
+
+    public static String encyptString2(String data, int cryptValur, char startChar, char endChar) {
+        char[] stringChar = data.toCharArray();
+        for (int i = 0; i < stringChar.length; i++) {
+            if (stringChar[i] >= startChar && stringChar[i] <= endChar) {
+                stringChar[i] = (char) (startChar + ((stringChar[i] - startChar + cryptValur) % (endChar - startChar + 1)));
+            }
+        }
+        return new String(stringChar);
     }
 
     public static char[] encyptString(String data, int cryptValur) {
@@ -65,9 +76,15 @@ public class CäsarDecrypt {
 
 
     public static void main(String[] args) throws Exception {
+        String encText = readFile("CodingCampus/src/Danny/woche7/day7/encryptText");
+        encText = encyptString2(encText, 3, 'a', 'z');
+        encText = encyptString2(encText, 3, 'A', 'Z');
+
+        System.out.println(encText);
+
         try {
-            writeString("C:\\Users\\DanGO\\IdeaProjects\\CodingCampus_2021.09.VZ.Dornbirn\\CodingCampus\\src\\Danny\\woche7\\day7\\encryptText",
-                    encyptString(readFile("C:\\Users\\DanGO\\IdeaProjects\\CodingCampus_2021.09.VZ.Dornbirn\\CodingCampus\\src\\Danny\\woche7\\day7\\decryptText"),3));
+            writeString("CodingCampus/src/Danny/woche7/day7/decryptText",
+                    encyptString(readFile("CodingCampus/src/Danny/woche7/day7/encryptText"),3));
         } catch (FileNotFoundException exc) {
             exc.printStackTrace();
             System.out.println("File nicht gefunden");
