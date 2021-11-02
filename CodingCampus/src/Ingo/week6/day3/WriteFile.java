@@ -3,7 +3,7 @@ package Ingo.week6.day3;
 import java.io.*;
 
 public class WriteFile {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException  {
         try {
             String input = readFile("assets/file.txt");
             writeFile("assets/tmp/output.txt", input);
@@ -15,7 +15,10 @@ public class WriteFile {
     }
 
     public static void writeFile(String path, String data) throws IOException {
-        BufferedWriter writer = new BufferedWriter(new FileWriter(path));
+     //   FileWriter file = new FileWriter(path);  normale Deklaration !!
+     //   BufferedWriter writer = new BufferedWriter(file);  normale Deklaration  !!
+
+        BufferedWriter writer = new BufferedWriter(new FileWriter(path));  // FileWriter mitgenommen, abgekürzte Version!
         try {
             writer.write(data);
         } finally {
