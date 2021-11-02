@@ -59,7 +59,6 @@ public class wetter {
         int day1 = 0;
         int day2 = 0;
 
-
         for (int i = 0; i < temperatures.length - 1; i++) {
             if (temperatures[i] < temperatures[i + 1]) {
                 int tmp = temperatures[i];
@@ -73,7 +72,6 @@ public class wetter {
                     day1 = days[j];
                     day2 = days[j + 1];
                     break;
-
                 }
             }
         }
