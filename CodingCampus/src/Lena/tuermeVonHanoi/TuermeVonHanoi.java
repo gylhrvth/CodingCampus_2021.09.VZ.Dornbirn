@@ -1,0 +1,204 @@
+package Lena.tuermeVonHanoi;
+
+import java.util.Scanner;
+
+public class TuermeVonHanoi {
+
+    private static final int[][] STARTAUFSTELLUNG = {
+            {1, 3, 5},
+            {0, 0, 0},
+            {0, 0, 0}
+
+    };
+
+    private static final Scanner sc = new Scanner(System.in);
+
+
+    public static void main(String[] args) {
+
+         playGame(STARTAUFSTELLUNG);
+        //moveRecursive(STARTAUFSTELLUNG.length, STARTAUFSTELLUNG[0], STARTAUFSTELLUNG[2], STARTAUFSTELLUNG[1]);
+
+    }
+
+    private static void moveRecursive(int n, int []source, int[]target, int[]auxiliary){
+        if(n>0){
+            moveRecursive(n-1, source, auxiliary, target);
+
+            int disc =0;
+            for (int i = 0; i < source.length; i++) {
+                if(source[i]!=0){
+                    disc=source[i];
+                    source[i]=0;
+                    break;
+                }
+            }
+            for (int i = target.length-1; i >= 0; i--) {
+                if(target[i]==0){
+                    target[i]=disc;
+                    break;
+                }
+            }
+
+            printGame(new int[][]{source, auxiliary, target});
+
+            moveRecursive(n-1, auxiliary,target,source);
+        }
+    }
+
+    private static void playGame(int[][] actualGame) {
+        while (true) {
+            printGame(actualGame);
+            int towerToTake = askUserTowerToTake(actualGame);
+            int towerToPut = askUserTowerToPut(actualGame.length);
+            moveDisk(towerToTake, towerToPut, actualGame);
+        }
+    }
+
+    private static void moveDisk(int towerToTake, int towerToPut, int[][] actualGame) {
+        int disk = 0;
+        int indexToTake = 0;
+
+        for (int i = 0; i < actualGame[(towerToTake - 1)].length; i++) {
+            if (actualGame[towerToTake - 1][i] != 0) {
+                disk = actualGame[towerToTake - 1][i];
+                indexToTake = i;
+                break;
+            }
+        }
+
+        for (int i = actualGame[towerToPut - 1].length - 1; i >= 0; i--) {
+            if (actualGame[towerToPut - 1][i] == 0) {
+                if (i + 1 < actualGame[towerToPut - 1].length && actualGame[towerToPut - 1][i + 1] < disk) {
+                    System.out.println("Es darf keine größere Scheibe auf eine kleinere gelegt werden");
+                    return;
+                } else {
+                    actualGame[towerToTake - 1][indexToTake] = 0;
+                    actualGame[towerToPut - 1][i] = disk;
+                    break;
+                }
+
+            }
+        }
+    }
+
+    private static boolean towerHasDisks(int[][] actualGame, int tower) {
+        for (int i = 0; i < actualGame[0].length; i++) {
+            if (actualGame[tower - 1][i] != 0) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private static void printGame(int[][] actualGame) {
+
+        int largestDisk = getLargestDisk(actualGame);
+        int middleOfTowers = largestDisk / 2;
+
+        System.out.println();
+        for (int j = 0; j < actualGame[0].length; j++) {
+            for (int[] ints : actualGame) {
+
+                int offset = (largestDisk - ints[j]) / 2;
+                for (int l = 0; l < (offset); l++) {
+                    System.out.print(" ");
+                }
+                if (ints[j] != 0) {
+                    for (int m = 0; m < ints[j]; m++) {
+                        System.out.print("=");
+                    }
+                } else {
+                    System.out.print("|");
+                }
+                for (int n = 0; n <= (offset); n++) {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println(" ");
+        }
+
+
+        for (int i = 0; i < actualGame.length; i++) {
+            for (int j = 0; j <= largestDisk; j++) {
+                if (j == middleOfTowers) {
+                    System.out.print(i + 1);
+                } else System.out.print(" ");
+            }
+
+        }
+        System.out.println();
+    }
+
+    private static int getLargestDisk(int[][] actualGame) {
+        int largest = Integer.MIN_VALUE;
+
+        for (int[] ints : actualGame) {
+            for (int anInt : ints) {
+                if (anInt > largest) {
+                    largest = anInt;
+                }
+            }
+        }
+        return largest;
+    }
+
+    private static int askUserTowerToTake(int[][] actualGame) {
+        System.out.println();
+        System.out.println("Von welchem Turm möchtest du eine Scheibe nehmen?");
+
+        int tower;
+
+        while (true) {
+
+            while (!sc.hasNextInt()) {
+                System.out.println("Das war keine Zahl");
+                System.out.println("Von welchem Turm möchtest du eine Scheibe nehmen?");
+                sc.nextLine();
+            }
+            tower = sc.nextInt();
+            if (tower > 0 && tower <= actualGame.length) {
+                if (towerHasDisks(actualGame, tower)) {
+                    return tower;
+                } else {
+                    System.out.println("Dieser Turm ist leer");
+                    System.out.println("Gib einen anderen Turm an.");
+                }
+            } else {
+                System.out.println("Diesen Turm gibt es nicht!");
+                System.out.println("Gib einen anderen Turm an.");
+            }
+
+        }
+
+    }
+
+    private static int askUserTowerToPut(int towers) {
+        System.out.println();
+        System.out.println("Auf welchen Turm möchtest du die Scheibe legen?");
+
+
+        int tower;
+
+        while (true) {
+
+            while (!sc.hasNextInt()) {
+                System.out.println("Das war keine Zahl");
+                System.out.println("Von welchem Turm möchtest du eine Scheibe nehmen?");
+                sc.nextLine();
+            }
+
+            tower = sc.nextInt();
+            if (tower > 0 && tower <= towers) {
+                return tower;
+            } else {
+                System.out.println("Diesen Turm gibt es nicht!");
+                System.out.println("Gib einen anderen Turm an.");
+            }
+
+        }
+
+    }
+
+
+}

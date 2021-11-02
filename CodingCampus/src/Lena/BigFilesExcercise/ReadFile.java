@@ -1,4 +1,4 @@
-package Lena.FilesExcercise;
+package Lena.BigFilesExcercise;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -32,7 +32,7 @@ public class ReadFile {
                 .replaceAll("\"[·'£–„“†():;,.\\[\\]| \\n\\-]\"", " ")
                 .replaceAll("\n+", " ")
                 .replaceAll("\r+", " ")
-                .replaceAll("\s+", " ");
+                .replaceAll("\\s+", " ");
 
         return cleardString;
     }

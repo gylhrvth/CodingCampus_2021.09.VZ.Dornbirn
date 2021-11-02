@@ -1,4 +1,4 @@
-package Lena.FilesExcercise;
+package Lena.BigFilesExcercise;
 
 import java.io.*;
 import java.util.Random;
@@ -17,6 +17,8 @@ public class WriteFile {
         File f = new File("C:\\Users\\Lena Natter\\IdeaProjects\\CodingCampus_2021.09.VZ.Dornbirn\\CodingCampus\\src\\Lena\\FilesExcercise\\newFileFromIntelliJ.txt");
         FileOutputStream fos = new FileOutputStream(f);
         PrintStream ps = new PrintStream(fos);
+
+
 
         while (f.length() < 1024L*1024*sizeInMB){
             int countWords = rnd.nextInt(20);
