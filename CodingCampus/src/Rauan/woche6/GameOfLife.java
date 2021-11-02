@@ -84,7 +84,7 @@ public class GameOfLife {
                         newBoard[x][y] = 0;
                     }
                 } else {
-                    if (aliveNeighbours == 3) {
+                    if (aliveNeighbours == 3 || aliveNeighbours == 2) {
                         newBoard[x][y] = 1;
                     }
                 }
@@ -95,7 +95,7 @@ public class GameOfLife {
     }
 
     public static void main(String[] args) {
-        GameOfLife gameOfLife = new GameOfLife(8, 5);
+        GameOfLife gameOfLife = new GameOfLife(18, 10);
 
         gameOfLife.setAlive(2, 2);
         gameOfLife.setAlive(3, 2);
@@ -104,12 +104,12 @@ public class GameOfLife {
         gameOfLife.printBoard();
 
         // System.out.println(gameOfLife.countAliveNeighbours(3, 2));
-        while(true) {
+        while (true) {
             gameOfLife.step();
             gameOfLife.printBoard();
             try {
-                Thread.sleep(5000);
-            } catch(Exception exc) {
+                Thread.sleep(500);
+            } catch (Exception exc) {
                 //noop
             }
             System.out.print("\033[H\033[2J");

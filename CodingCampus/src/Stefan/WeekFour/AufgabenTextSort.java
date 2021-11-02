@@ -55,7 +55,7 @@ public class AufgabenTextSort {
 
 
         //Zählt alle Buchstaben des Alphabet und gibt deren Menge aus
-//        alphabet(text);
+        alphabet(text);
 
     }
 
