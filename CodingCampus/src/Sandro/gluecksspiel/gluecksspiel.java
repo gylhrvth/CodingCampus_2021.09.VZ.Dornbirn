@@ -8,11 +8,8 @@ public class gluecksspiel {
     public static void main(String[] args) {
 
         /**
-         *
          * https://wiki.freitagsrunde.org/Javakurs/%C3%9Cbungsaufgaben/Gl%C3%BCcksspiel
          * Aufgabe
-         *
-         *
          */
 
         personen p1 = new personen(18, "Peter", true);
