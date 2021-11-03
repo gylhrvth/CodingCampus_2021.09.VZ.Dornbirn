@@ -14,6 +14,7 @@ public class ReadAndDisplaySortiert {
 
         printCsv(printCsvFormatet(text));
 
+
     }
 
     //Methode 2: File formatieren
@@ -29,7 +30,7 @@ public class ReadAndDisplaySortiert {
         return aufgeteilt;
     }
 
-    private static void printCsv(String[][] aufgeteilt) {
+    private static String[][] printCsv(String[][] aufgeteilt) {
         for (int i = 0; i < aufgeteilt.length; i++) {
             for (int j = 0; j < aufgeteilt[i].length; j++) {
                 if (j == 0) {
@@ -40,12 +41,13 @@ public class ReadAndDisplaySortiert {
             }
             System.out.println();
         }
+        return aufgeteilt;
     }
 
     //Methode 3: Sortieren mit Abfrage
     public static void sortList (String[][] aufgeteilt) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Nach welcher Spalte wollen Sie sortieren: ");
+        System.out.println("Nach welcher Spalte wollen Sie sortieren: [Region] [Country] [Item Type] ");
         String sort = scanner.next();
 
     }
