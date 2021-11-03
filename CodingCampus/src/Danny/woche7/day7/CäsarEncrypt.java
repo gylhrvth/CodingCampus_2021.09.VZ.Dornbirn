@@ -71,8 +71,8 @@ public class CäsarEncrypt {
         try {
 
 
-            writeString("C:\\Users\\DanGO\\IdeaProjects\\CodingCampus_2021.09.VZ.Dornbirn\\CodingCampus\\src\\Danny\\woche7\\day7\\decryptText",
-                    encyptString(readFile("C:\\Users\\DanGO\\IdeaProjects\\CodingCampus_2021.09.VZ.Dornbirn\\CodingCampus\\src\\Danny\\woche7\\day7\\encryptText"),3));
+            writeString("CodingCampus/src/Danny/woche7/day7/decryptText",
+                    encyptString(readFile("CodingCampus/src/Danny/woche7/day7/encryptText"),3));
         } catch (FileNotFoundException exc) {
             exc.printStackTrace();
             System.out.println("File nicht gefunden");
