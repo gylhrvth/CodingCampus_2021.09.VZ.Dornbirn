@@ -1,22 +1,30 @@
 package Lena.GameOfLife;
 
-import java.io.IOException;
 import java.util.Random;
 
 public class GameOfLife {
 
-
     public static final int[][] GLEITER = {
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-            {0, 0, 1, 0, 0, 0, 0, 0, 0, 0},
-            {0, 0, 0, 1, 0, 0, 0, 0, 0, 0},
-            {0, 1, 1, 1, 0, 0, 0, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            {1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+
     };
 
     public static final int[][] SEGLER = {
@@ -30,6 +38,12 @@ public class GameOfLife {
             {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
             {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
             {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+
     };
 
 
@@ -55,9 +69,9 @@ public class GameOfLife {
     };
     private static final int SLEEP_IN_MS = 100;
 
-    private static int[][] randomStart(){
+    private static int[][] randomStart() {
         Random random = new Random();
-        int [][]randomStart = new int[200][200];
+        int[][] randomStart = new int[200][200];
 
         for (int i = 0; i < randomStart.length; i++) {
             for (int j = 0; j < randomStart[i].length; j++) {
@@ -68,10 +82,7 @@ public class GameOfLife {
     }
 
     public static void main(String[] args) {
-
-        System.out.println((-8%6));
-
-        playGameOfLife(START_U);
+        playGameOfLife(SEGLER);
     }
 
     private static void playGameOfLife(int[][] actualGeneration) {
@@ -87,7 +98,6 @@ public class GameOfLife {
                 //noop
             }
         }
-
     }
 
     public static void clearScreen() {
@@ -100,7 +110,7 @@ public class GameOfLife {
 
         for (int i = 0; i < actualGeneration.length; i++) {
             for (int j = 0; j < actualGeneration[i].length; j++) {
-                if (deadOrAlive(i, j, actualGeneration)) {
+                if (deadOrAliveInNextGeneration(i, j, actualGeneration)) {
                     nextGeneration[i][j] = 1;
                 } else {
                     nextGeneration[i][j] = 0;
@@ -112,7 +122,7 @@ public class GameOfLife {
         return nextGeneration;
     }
 
-    public static boolean deadOrAlive(int i, int j, int[][] actualGeneration) {
+    public static boolean deadOrAliveInNextGeneration(int i, int j, int[][] actualGeneration) {
         //returns true if cell is alive in next Generation
         int countNeighbourAlive = 0;
 
@@ -124,7 +134,6 @@ public class GameOfLife {
                     }
                 }
             }
-
         }
 
         if (countNeighbourAlive == 3 && actualGeneration[i][j] == 0) {
@@ -145,17 +154,15 @@ public class GameOfLife {
     }
 
     public static int getNeighbour(int i, int j, int k, int l, int[][] actualGeneration) {
-      int neighbourIndexi = ((i+k) % actualGeneration.length);
-      int neighbourIndexj = ((j+l) % actualGeneration[i].length);
+        int neighbourIndexi = ((i + k) % actualGeneration.length);
+        int neighbourIndexj = ((j + l) % actualGeneration[i].length);
 
-
-
-           if(neighbourIndexi<0){
-               neighbourIndexi=neighbourIndexi+actualGeneration.length;
-           }
-           if(neighbourIndexj<0){
-               neighbourIndexj=neighbourIndexj+actualGeneration[i].length;
-           }
+        if (neighbourIndexi < 0) {
+            neighbourIndexi = neighbourIndexi + actualGeneration.length;
+        }
+        if (neighbourIndexj < 0) {
+            neighbourIndexj = neighbourIndexj + actualGeneration[i].length;
+        }
 
         return actualGeneration[neighbourIndexi][neighbourIndexj];
     }

@@ -9,7 +9,9 @@ public class StringExercise {
     public static void main(String[] args) {
 
 
-        System.out.println(caeserDecryption("Hallo", 1));
+        System.out.println(caeserDecryption("Dies ist ein Beispieltext der mit einem Klick verschlüsselt werden kann. Hier kann auch\n" +
+                "ein eigenen Text herein geschrieben, oder ein Geheimcode zum Entschlüsseln herein" +
+                "kopiert werden.", 2));
 
     }
 
