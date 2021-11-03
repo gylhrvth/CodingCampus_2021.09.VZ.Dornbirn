@@ -7,7 +7,7 @@ import Lukas.week4.day3.Sort;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class TIcTacToe {
+public class TIcTacToePC {
 
     public static final String[][] matrix = new String[3][3];
     public static final String player1 = "|X";
@@ -28,7 +28,7 @@ public class TIcTacToe {
                 break;
             }
             System.out.println();
-            System.out.println("Computer hat spielt");
+            System.out.println("Computer hat gespielt");
             FindBestMove.main();
             printMatrix();
             checkWin();

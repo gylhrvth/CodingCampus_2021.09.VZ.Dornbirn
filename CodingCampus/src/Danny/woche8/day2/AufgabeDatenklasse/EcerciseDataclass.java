@@ -10,16 +10,27 @@ public class EcerciseDataclass {
             numbersArray[i] = random.nextInt(100) - 50;
         }
 
-
+        MinMaxAverage minMaxAverage = getMinMaxAverage(numbersArray);
+        System.out.println(minMaxAverage);
 
     }
 
-//    private static MinMaxAverrage getMinMaxAverage(int[] numbers) {
-//        int minValue = numbers[0];
-//        int maxValue = numbers[0];
-//        double sum = 0;
-////        for(int number :)
-//
-//    }
+    private static MinMaxAverage getMinMaxAverage(int[] numbers) {
+        int minValue = numbers[0];
+        int maxValue = numbers[0];
+        double sum = 0;
+        for (int number : numbers) {
+            if (number < minValue) {
+                minValue = number;
+            }
+            if (number > maxValue) {
+                maxValue = number;
+            }
+            sum += number;
+        }
+        double average = sum / numbers.length;
+
+        return new MinMaxAverage(minValue, maxValue, average);
+    }
 
 }

@@ -4,7 +4,7 @@ package Danny.woche7.day3;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class TIcTacToeKI {
+public class TIcTacToe {
 
     public static final String[][] matrix = new String[3][3];
     public static final String player1 = "|X";
@@ -33,14 +33,14 @@ public class TIcTacToeKI {
     }
 
     public static void winPlayer1(int countPlayer1) {
-        if (countPlayer1 == 4) {
+        if (countPlayer1 == 3) {
             System.out.println("Player 1 hat gewonnen");
             winner = true;
         }
     }
 
     public static void winPlayer2(int countPlayer2) {
-        if (countPlayer2 == 4) {
+        if (countPlayer2 == 3) {
             System.out.println("Player 2 hat gewonnen");
             winner = true;
         }
