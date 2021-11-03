@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class TIcTacToeKI {
 
-    public static final String[][] matrix = new String[4][4];
+    public static final String[][] matrix = new String[3][3];
     public static final String player1 = "|X";
     public static final String player2 = "|O";
     public static final String emty = "|_";
