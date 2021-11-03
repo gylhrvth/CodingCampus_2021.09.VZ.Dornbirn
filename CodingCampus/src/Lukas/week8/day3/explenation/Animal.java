@@ -1,4 +1,4 @@
-package Lukas.week8.day3;
+package Lukas.week8.day3.explenation;
 
 public class Animal extends java.lang.Object {
     private String name;

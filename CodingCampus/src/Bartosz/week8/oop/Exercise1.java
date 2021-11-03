@@ -3,7 +3,7 @@ package Bartosz.week8.oop;
 import java.util.Arrays;
 import java.util.Random;
 
-public class exercise1 {
+public class Exercise1 {
     public static void main(String[] args) {
         int[] numbersArray = getArray();
         System.out.println(Arrays.toString(numbersArray));

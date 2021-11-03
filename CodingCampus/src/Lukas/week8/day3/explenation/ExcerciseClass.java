@@ -1,4 +1,6 @@
-package Lukas.week8.day3;
+package Lukas.week8.day3.explenation;
+
+import Lukas.week8.day3.explenation.Animal;
 
 import java.util.ArrayList;
 import java.util.List;
