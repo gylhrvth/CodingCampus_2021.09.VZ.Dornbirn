@@ -30,7 +30,7 @@ public class GetScannedFile {
 
     public static int countWords(String scannedText) {
 
-        String[] tmp = scannedText.split("[\s\n]");
+        String[] tmp = scannedText.split("[\\s\n]");
         int wordsCounter = 0;
         for (int i = 0; i < tmp.length - 1; i++) {
             wordsCounter++;
@@ -63,7 +63,7 @@ public class GetScannedFile {
     }
 
     public static void words(String scannedText) {
-        String[] tmp = scannedText.split("[\s\n]");
+        String[] tmp = scannedText.split("[\\s\n]");
 
 
     }

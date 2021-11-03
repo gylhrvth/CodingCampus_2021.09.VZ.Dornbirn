@@ -20,7 +20,7 @@ public class Day1FileReader {
 
     }
 
-    public class FileReader {
+    public static class FileReader {
         public static String readFile(String path) {
             try {
                 File file = new File(path);

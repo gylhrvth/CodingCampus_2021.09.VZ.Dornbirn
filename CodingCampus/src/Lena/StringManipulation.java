@@ -68,7 +68,7 @@ public class StringManipulation {
         String cleardString = string
                 .replaceAll("[\\(\\):,]|\\.[ \n]", " ")
                 .replaceAll("\n+", " ")
-                .replaceAll("\s+", " ");
+                .replaceAll("\\s+", " ");
 
         return cleardString;
     }

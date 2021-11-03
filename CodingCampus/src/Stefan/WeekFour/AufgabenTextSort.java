@@ -55,7 +55,7 @@ public class AufgabenTextSort {
 
 
         //Zählt alle Buchstaben des Alphabet und gibt deren Menge aus
-//        alphabet(text);
+        alphabet(text);
 
     }
 
@@ -143,24 +143,24 @@ public class AufgabenTextSort {
 
 
     //Zählt alle Buchstaben des Alphabet und gibt deren Menge aus
-//    private static void alphabet(String param) {
-//        String neuer = param.toLowerCase();
-//        char[] character = neuer.toCharArray();
-//        int[] counter = new int[26];
-//        System.out.println("Gezählte Buchstaben im Array: ");
-//        for (int i = 0; i < character.length; i++) {
-//            char myChar = character[i];
-//            int indexOfCounter = myChar - 97;
-//            if (indexOfCounter >= 0 && indexOfCounter < counter.length) {
-//                counter[indexOfCounter]++;
-//            }
-//        }
-//        for (int i = 0; i < counter.length; i++) {
-//            if (counter[i] != 0) {
-//                System.out.print(("[" + (char) (i + 97)) + "]" + " = " + counter[i] + ", ");
-//            }
-//        }
-//    }
+    private static void alphabet(String param) {
+        String neuer = param.toLowerCase();
+        char[] character = neuer.toCharArray();
+        int[] counter = new int[26];
+        System.out.println("Gezählte Buchstaben im Array: ");
+        for (int i = 0; i < character.length; i++) {
+            char myChar = character[i];
+            int indexOfCounter = myChar - 97;
+            if (indexOfCounter >= 0 && indexOfCounter < counter.length) {
+                counter[indexOfCounter]++;
+            }
+        }
+        for (int i = 0; i < counter.length; i++) {
+            if (counter[i] != 0) {
+                System.out.print(("[" + (char) (i + 97)) + "]" + " = " + counter[i] + ", ");
+            }
+        }
+    }
 
 }
 
