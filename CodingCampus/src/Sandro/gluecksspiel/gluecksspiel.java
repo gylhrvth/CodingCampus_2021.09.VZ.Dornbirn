@@ -12,7 +12,7 @@ public class gluecksspiel {
          * Aufgabe
          */
 
-        personen p1 = new personen(18, "Peter", true);
+        personen p1 = new personen(15#, "Peter", true);
         personen p2 = new personen(18, "Lisa", false);
         personen[] personenListe = new personen[2];
         personenListe[0] = p1;
