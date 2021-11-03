@@ -6,7 +6,7 @@ import java.util.*;
 
 public class UebungenDatenströme {
     public static void main(String[] args) {
-        String path = "assets/file.txt";
+        String path = "assets/test.txt";
 
         String text = fileReader(path);
 
