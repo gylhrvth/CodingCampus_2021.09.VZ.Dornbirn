@@ -1,4 +1,4 @@
-package Bartosz.week8.oop;
+package Bartosz.week8.exercise1;
 
 public class MinMaxAverage {
     private final int min;
