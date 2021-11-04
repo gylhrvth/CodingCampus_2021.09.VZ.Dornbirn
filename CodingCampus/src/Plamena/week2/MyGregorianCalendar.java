@@ -3,18 +3,18 @@ package Plamena.week2;
 import java.text.SimpleDateFormat;
 import java.util.GregorianCalendar;
 
-public class GregorianCalender {
+public class MyGregorianCalendar {
     public static void main(String[] args) {
-        GregorianCalendar gc = new GregorianCalendar();
+        java.util.GregorianCalendar gc = new java.util.GregorianCalendar();
 
-        GregorianCalendar firstDayOfMonth = new GregorianCalendar(
-                gc.get(GregorianCalendar.YEAR),
-                gc.get(GregorianCalendar.MONTH),
+        java.util.GregorianCalendar firstDayOfMonth = new java.util.GregorianCalendar(
+                gc.get(java.util.GregorianCalendar.YEAR),
+                gc.get(java.util.GregorianCalendar.MONTH),
                 1
         );
 
-        int daysInMonth = gc.getActualMaximum(GregorianCalendar.DAY_OF_MONTH);
-        int currentDay = gc.get(GregorianCalendar.DAY_OF_MONTH);
+        int daysInMonth = gc.getActualMaximum(java.util.GregorianCalendar.DAY_OF_MONTH);
+        int currentDay = gc.get(java.util.GregorianCalendar.DAY_OF_MONTH);
         int offset = firstDayOfMonth.get(java.util.Calendar.DAY_OF_WEEK) - 2;
 
         if (offset < 0) {
@@ -59,9 +59,9 @@ public class GregorianCalender {
 
 
         for (int month = 0; month <= 11; month++) {
-            GregorianCalendar firstDayOfYear = new GregorianCalendar(year, month, 1);
+            java.util.GregorianCalendar firstDayOfYear = new java.util.GregorianCalendar(year, month, 1);
 
-            int daysInMonth = firstDayOfYear.getActualMaximum(GregorianCalendar.DAY_OF_MONTH);
+            int daysInMonth = firstDayOfYear.getActualMaximum(java.util.GregorianCalendar.DAY_OF_MONTH);
          //   int currentDay = firstDayOfYear.get(GregorianCalendar.DAY_OF_MONTH);
             int offset = firstDayOfYear.get(java.util.Calendar.DAY_OF_WEEK) - 2;
 
@@ -106,16 +106,16 @@ public class GregorianCalender {
 
 
     public static void printGregorianCalenderWithWE(int year, int month, int day) {
-        GregorianCalendar gc = new GregorianCalendar();
+        java.util.GregorianCalendar gc = new java.util.GregorianCalendar();
 
-        GregorianCalendar firstDayOfMonth = new GregorianCalendar(
-                gc.get(GregorianCalendar.YEAR),
-                gc.get(GregorianCalendar.MONTH),
+        java.util.GregorianCalendar firstDayOfMonth = new java.util.GregorianCalendar(
+                gc.get(java.util.GregorianCalendar.YEAR),
+                gc.get(java.util.GregorianCalendar.MONTH),
                 1
         );
 
-        int daysInMonth = gc.getActualMaximum(GregorianCalendar.DAY_OF_MONTH);
-        int currentDay = gc.get(GregorianCalendar.DAY_OF_MONTH);
+        int daysInMonth = gc.getActualMaximum(java.util.GregorianCalendar.DAY_OF_MONTH);
+        int currentDay = gc.get(java.util.GregorianCalendar.DAY_OF_MONTH);
         int offset = firstDayOfMonth.get(java.util.Calendar.DAY_OF_WEEK) - 2;
 
         if (offset < 0) {
@@ -158,16 +158,16 @@ public class GregorianCalender {
 
 
     public static void printGregorianCalender(int year, int month, int day) {
-        GregorianCalendar gc = new GregorianCalendar();
+        java.util.GregorianCalendar gc = new java.util.GregorianCalendar();
 
-        GregorianCalendar firstDayOfMonth = new GregorianCalendar(
-                gc.get(GregorianCalendar.YEAR),
-                gc.get(GregorianCalendar.MONTH),
+        java.util.GregorianCalendar firstDayOfMonth = new java.util.GregorianCalendar(
+                gc.get(java.util.GregorianCalendar.YEAR),
+                gc.get(java.util.GregorianCalendar.MONTH),
                 1
         );
 
-        int daysInMonth = gc.getActualMaximum(GregorianCalendar.DAY_OF_MONTH);
-        int currentDay = gc.get(GregorianCalendar.DAY_OF_MONTH);
+        int daysInMonth = gc.getActualMaximum(java.util.GregorianCalendar.DAY_OF_MONTH);
+        int currentDay = gc.get(java.util.GregorianCalendar.DAY_OF_MONTH);
         int offset = firstDayOfMonth.get(java.util.Calendar.DAY_OF_WEEK) - 2;
 
         if (offset < 0) {

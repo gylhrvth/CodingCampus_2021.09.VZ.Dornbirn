@@ -11,12 +11,26 @@ public class CaserVerschluesselung {
 
     public static void printAll() {
 
-        String text = "Hey wie gehts dir?";
-        String encryptedText = encrypt(text, 2);
-        String decryptedText = decrypt(encryptedText, 2);
+        String text = "VikfivxwVypi~6465";
+        String text2 = "Zmojmz|{";
 
-        System.out.println(encryptedText);
-        System.out.println(decryptedText);
+        //String encryptedText = encrypt(text, 4);
+        for (int i = 0; i <200 ; i++) {
+
+
+            String decryptedText = decrypt(text, i);
+            String decryptedText2 = decrypt(text2, i);
+
+            // System.out.println(encryptedText);
+
+            System.out.println("Login: " + decryptedText2);
+            System.out.println("Passwort: " + decryptedText);
+            System.out.println();
+        }
+
+        //Login:     Regberts
+        //Passwort:  RegbertsRulez2021
+
     }
 
     private static String decrypt(String text, int offset) {
