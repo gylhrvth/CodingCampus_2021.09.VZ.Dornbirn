@@ -63,7 +63,7 @@ public class GameOfLife {
 
             try {
                 System.out.println("Evolving");
-                Thread.sleep(SLEEP_IN_MS);
+                Thread.sleep(500);
             } catch (InterruptedException exc) {
                 //noop
             }
