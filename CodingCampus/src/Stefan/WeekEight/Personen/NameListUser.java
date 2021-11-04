@@ -1,6 +1,8 @@
 package Stefan.WeekEight.Personen;
 
 
+import Lukas.week8.day3.explenation.MinMaxDurch;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,21 +20,7 @@ public class NameListUser {
             persons.add(names[i]);
         }
 
-//        printUserList(List.of(names));
-
-//        Collections.sort(persons, new Comparator<Persons>() {
-//            @Override
-//            public int compare(Persons o1, Persons o2) {
-//                return o1.getAge() - o2.getAge();
-//            }
-//        });
-
-
-//        persons = persons.stream().sorted(Comparator.comparing(Persons::getName)).collect(Collectors.toList());
-
-
-
-
+        System.out.println(durchschnittsAlter(persons));
     }
 
 
@@ -45,39 +33,48 @@ public class NameListUser {
 
 
     //Durchschnittsalter
-    private void durchschnittsAlter(List<Persons> user) {
+    public static MinMaxDurch durchschnittsAlter(List<Persons> user) {
 
-    }
+        double maxAge = Double.MAX_VALUE;
+        double minAge = Double.MIN_VALUE;
+        double maxHight = Integer.MAX_VALUE;
+        double minHight = Integer.MIN_VALUE;
+        double maxWeight = Integer.MAX_VALUE;
+        double minWeight = Integer.MIN_VALUE;
 
+        double sumHight = 0;
+        double sumWeight = 0;
+        double sumAge = 0;
 
-
-
-
-
-
-
-
-
-
-
-
-    //Sortieren
-    public static void personSorter(String test) {
-
-    }
-
-    public static int listSorter(int[] persons) {
-        int temp = 0;
-        for (int i = 0; i < persons.length; i++) {
-            for (int j = 0; j < persons.length - i; j++) {
-                if (persons[j] > persons[j + 1]) {
-                    temp = persons[j];
-                    persons[j] = persons[j + 1];
-                    persons[j + 1] = temp;
-                }
+        for (Persons n : user) {
+            if (n.getAge() > minAge) {
+                minAge = n.getAge();
             }
+            if (n.getAge() < maxAge) {
+                maxAge = n.getAge();
+            }
+            if (n.getHeight() > minHight) {
+                minHight = n.getHeight();
+            }
+            if (n.getHeight() < maxHight) {
+                maxHight = n.getHeight();
+            }
+            if (n.getWeight() > minWeight) {
+                minWeight = n.getWeight();
+            }
+            if (n.getWeight() < maxWeight) {
+                maxWeight = n.getWeight();
+            }
+            sumHight += n.getHeight();
+            sumWeight += n.getWeight();
+            sumAge += n.getAge();
         }
-        return temp;
+
+        double durchAge = sumAge / user.size();
+        double durchWeight = sumWeight / user.size();
+        double durchHight = sumHight / user.size();
+
+        return new MinMaxDurch(minAge, maxAge, minHight, maxHight, minWeight, maxWeight, durchAge, durchWeight, durchHight);
     }
 
 
