@@ -2,13 +2,6 @@ package Danny.woche8.day2.AufgabePerson;
 
 public class MinMaxAverage2 {
 
-    private int minAge;
-    private int maxAge;
-    private int minSize;
-    private int maxSize;
-    private int minWeight;
-    private int maxWeight;
-
     private final double avgAge;
     private final double avgSize;
     private final double avgWeight;

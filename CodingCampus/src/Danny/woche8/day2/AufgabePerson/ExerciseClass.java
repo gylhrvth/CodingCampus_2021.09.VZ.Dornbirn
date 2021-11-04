@@ -25,8 +25,10 @@ public class ExerciseClass {
 
         printPersons(personList);
         System.out.println();
+        System.out.println(getMinMaxAverageAge(persons));
 
-        getMinMaxAverageAge(persons);
+
+
     }
 
     private static void printPersons(Person[] persons) {
@@ -41,7 +43,7 @@ public class ExerciseClass {
         }
     }
 
-    private static void getMinMaxAverageAge(Person[] persons) {
+    private static MinMaxAverage2 getMinMaxAverageAge(Person[] persons) {
         Person minAgePerson = persons[0];
         Person maxAgePerson = persons[0];
         double sumAge = 0;
@@ -83,17 +85,10 @@ public class ExerciseClass {
             sumWeight += person.getWeight();
         }
         double averageWeight = sumWeight / persons.length;
-        System.out.println(new MinMaxAverage2(minAgePerson, maxAgePerson, averageAge
+        return new MinMaxAverage2(minAgePerson, maxAgePerson, averageAge
                 , minSizePerson, maxSizePerson, averageSize
                 , minWeightPerson, maxWeightPerson, averageWeight
-                ));
+        );
 
     }
-
-
-//        AttributeChoice choice = ;
-//        if(choice == AttributeChoice.SIZE) {
-//
-//        }
-
 }
