@@ -19,7 +19,6 @@ public class MinMaxAverage2 {
             , Person minSizePerson, Person maxSizePerson, double avgSize
             , Person minWeightPerson, Person maxWeightPerson, double avgWeight) {
 
-
         this.avgAge = avgAge;
         this.avgSize = avgSize;
         this.avgWeight = avgWeight;
