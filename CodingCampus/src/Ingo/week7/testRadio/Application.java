@@ -1,11 +1,14 @@
 package Ingo.week7.testRadio;
 
-import java.time.Month;
+import java.time.LocalDateTime;
 
 public class Application {
 
+    private static Object LocalDateTime;
+
     public static void main(String[] args) {
         Radio r1 = new Radio();
+        r1.setClock();
         r1.setFrequency(90);
         r1.setOn(true);
         r1.setName("Hallo Omis altes Radio");
@@ -29,5 +32,19 @@ public class Application {
         System.out.println();
 
 
+    //    LocalDateTime time = time.LocalDateTime();
+    //    System.out.println(time);
+        System.out.println(LocalDateTime);
+
+
+
+    }
+
+    public static void setLocalDateTime(Object localDateTime) {
+        LocalDateTime = localDateTime;
+    }
+
+    public static Object getLocalDateTime() {
+        return LocalDateTime;
     }
 }
