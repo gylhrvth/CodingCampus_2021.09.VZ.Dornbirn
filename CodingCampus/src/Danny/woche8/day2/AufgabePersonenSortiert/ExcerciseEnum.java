@@ -15,6 +15,7 @@ public class ExcerciseEnum {
     private static void printMessage(List<Person> persons, AttributeChoice attributeChoice) {
 
 
+
         if (attributeChoice == AttributeChoice.NAME) {
             for (int i = 0; i < persons.size(); i++) {
                 Person p = persons.get(i);
