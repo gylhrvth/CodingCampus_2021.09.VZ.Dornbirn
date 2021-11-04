@@ -20,7 +20,7 @@ public class ReadWrite {
             try {
                 writer.close();
             } catch(IOException exc) {
-                //noop
+                exc.printStackTrace();
             }
         }
     }

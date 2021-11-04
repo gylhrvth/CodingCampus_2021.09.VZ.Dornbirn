@@ -5,21 +5,44 @@ public class hanoi {
 
 
     public static void main(String[] args) {
-        String[][] tower = {
-                {"  -  ", "", ""},
-                {" ___ ", "", ""},
-                {"_____", "", ""}
-        };
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                if (j == 0) {
-                    System.out.print("| ");
-                }
-                System.out.print(tower[i][j] + " | ");
-            }
-            System.out.println();
 
+
+
+        int sizeOfTower = 5;
+        int[][] towers = new int[3][sizeOfTower];
+        for (int i = 0; i < sizeOfTower; i++) {
+            towers[0][i] = sizeOfTower - i;
+            towers[1][i] = 0;
+            towers[2][i] = 0;
         }
+        /*
+        5 4 3 2 1
+        0 0 0 0 0
+        0 0 0 0 0
+
+        5 4 3 0 0
+        2 1 0 0 0
+        0 0 0 0 0
+
+        */
+
+
+
+//        String[][] tower = {
+//                {"1", "", ""},
+//                {"2", "", ""},
+//                {"3", "", ""}
+//        };
+//        for (int i = 0; i < 3; i++) {
+//            for (int j = 0; j < 3; j++) {
+//                if (j == 0) {
+//                    System.out.print("| ");
+//                }
+//                System.out.print(tower[i][j] + " | ");
+//            }
+//            System.out.println();
+//
+//        }
 
 
         move(3, "A", "B", "C");
