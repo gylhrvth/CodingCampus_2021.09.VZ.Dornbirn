@@ -1,24 +1,32 @@
 package Danny.woche8.day2.AufgabePersonenSortiert;
 
-import Danny.woche8.day2.AufgabePerson.ExerciseClass;
 import Danny.woche8.day2.AufgabePerson.Person;
 
 import java.util.List;
 
 import static Danny.woche8.day2.AufgabePerson.ExerciseClass.*;
 
-public class ExcerciseEnum {
-
+public class
+ExcerciseEnum {
 
     static List<Person> sortList = personList(persons);
 
-
     public static void main(String[] args) {
-
-
+        System.out.println();
+        System.out.println("Unsort List");
         printPersons(personList(persons));
         System.out.println();
-        sortListWithEnum(sortList,AttributeChoice.NAME);
+        System.out.println("Sort by Name");
+        sortListWithEnum(sortList, AttributeChoice.NAME);
+        System.out.println();
+        System.out.println("Sort by Age");
+        sortListWithEnum(sortList, AttributeChoice.AGE);
+        System.out.println();
+        System.out.println("Sort by Size");
+        sortListWithEnum(sortList, AttributeChoice.SIZE);
+        System.out.println();
+        System.out.println("Sort by Weight");
+        sortListWithEnum(sortList, AttributeChoice.WEIGHT);
 
     }
 
@@ -37,12 +45,49 @@ public class ExcerciseEnum {
                 }
             }
             printPersons(sortList);
+
         } else if (attributeChoice == AttributeChoice.AGE) {
+            for (int j = 0; j < persons.size() - 1; j++) {
+                for (int i = 0; i < persons.size() - 1; i++) {
+                    Person person1 = persons.get(i);
+                    Person person2 = persons.get(i + 1);
+                    if (isBigger(person1, person2, AttributeChoice.AGE)) {
+                        Person tmp = persons.get(i);
+                        persons.set(i, person2);
+                        persons.set(i + 1, tmp);
+                    }
+                }
+            }
+            printPersons(sortList);
 
         } else if (attributeChoice == AttributeChoice.SIZE) {
+            for (int j = 0; j < persons.size() - 1; j++) {
+                for (int i = 0; i < persons.size() - 1; i++) {
+                    Person person1 = persons.get(i);
+                    Person person2 = persons.get(i + 1);
+                    if (isBigger(person1, person2, AttributeChoice.SIZE)) {
+                        Person tmp = persons.get(i);
+                        persons.set(i, person2);
+                        persons.set(i + 1, tmp);
+                    }
+                }
+            }
+            printPersons(sortList);
 
+        } else if (attributeChoice == AttributeChoice.WEIGHT) {
+            for (int j = 0; j < persons.size() - 1; j++) {
+                for (int i = 0; i < persons.size() - 1; i++) {
+                    Person person1 = persons.get(i);
+                    Person person2 = persons.get(i + 1);
+                    if (isBigger(person1, person2, AttributeChoice.WEIGHT)) {
+                        Person tmp = persons.get(i);
+                        persons.set(i, person2);
+                        persons.set(i + 1, tmp);
+                    }
+                }
+            }
+            printPersons(sortList);
         }
-
     }
 
     private static boolean isBigger(Person person1, Person person2, AttributeChoice choice) {
