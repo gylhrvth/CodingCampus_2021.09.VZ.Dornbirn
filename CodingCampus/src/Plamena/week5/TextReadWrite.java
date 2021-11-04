@@ -71,7 +71,6 @@ public class TextReadWrite {
             Scanner sc = new Scanner(f);
 
             while (sc.hasNextLine()) {
-                String tmp = sc.nextLine();
                 lineCount++;
             }
             sc.close();

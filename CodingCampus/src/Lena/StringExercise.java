@@ -8,10 +8,14 @@ public class StringExercise {
 
     public static void main(String[] args) {
 
+        for (int i = 1; i<=26;i++){
+            System.out.println(caeserDecryption("Zmojmz|{", i));
+        }
 
-        System.out.println(caeserDecryption("Dies ist ein Beispieltext der mit einem Klick verschlüsselt werden kann. Hier kann auch\n" +
-                "ein eigenen Text herein geschrieben, oder ein Geheimcode zum Entschlüsseln herein" +
-                "kopiert werden.", 2));
+
+        System.out.println(caeserDecryption("VikfivxwVypi~6465", 4));
+
+
 
     }
 
@@ -124,7 +128,7 @@ public class StringExercise {
         char[]charArray = string.toUpperCase().toCharArray();
 
        for (int i = 0; i < charArray.length; i++) {
-           charArray[i]=(char)(charArray[i]+key);
+           charArray[i]=(char)(charArray[i]-key);
        }
 
        for (int i = 0; i < charArray.length; i++) {
