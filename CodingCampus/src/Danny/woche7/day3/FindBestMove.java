@@ -1,6 +1,6 @@
 package Danny.woche7.day3;
 
-import static Danny.woche7.day2.TIcTacToe.*;
+import static Danny.woche7.day2.TIcTacToePC.*;
 
 public class FindBestMove {
 
