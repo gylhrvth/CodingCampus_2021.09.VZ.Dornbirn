@@ -64,6 +64,7 @@ public class NameListUser {
             }
             if (n.getWeight() < maxWeight) {
                 maxWeight = n.getWeight();
+
             }
             sumHight += n.getHeight();
             sumWeight += n.getWeight();

@@ -12,6 +12,7 @@ public class MinMaxDurch {
     private double durchWeight;
     private double durchHight;
 
+
     public MinMaxDurch(double maxAge, double minAge, double maxHight, double minHight, double maxWeight, double minWeight, double durchAge, double durchWeight, double durchHight) {
         this.maxAge = maxAge;
         this.minAge = minAge;
