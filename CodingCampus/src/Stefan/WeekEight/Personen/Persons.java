@@ -2,12 +2,14 @@ package Stefan.WeekEight.Personen;
 
 public class Persons {
     private String name;
+    private String gender;
     private int age;
     private int height;
     private int weight;
 
-    public Persons(String name, int age, int height, int weight) {
+    public Persons(String name,String gender, int age, int height, int weight) {
         this.name = name;
+        this.gender = gender;
         this.age = age;
         this.height = height;
         this.weight = weight;
@@ -17,6 +19,8 @@ public class Persons {
     public void setName(String name) {
         this.name = name;
     }
+
+    public void setGender(String gender) { this.gender = gender; }
 
     public void setAge(int age) {
         this.age = age;
@@ -32,6 +36,6 @@ public class Persons {
 
     @Override
     public String toString() {
-        return String.format("Name:%10s\nALter:%5s\nGröße:%6s\nGewicht:%3s\n", this.name, this.age, this.height, this.weight);
+        return String.format("Name:%10s\nGender:%3s\nALter:%5s\nGröße:%6s\nGewicht:%3s\n", this.name, this.gender, this.age, this.height, this.weight);
     }
 }
