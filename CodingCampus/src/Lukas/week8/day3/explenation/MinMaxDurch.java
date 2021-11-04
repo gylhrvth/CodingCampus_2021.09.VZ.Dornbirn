@@ -2,62 +2,69 @@ package Lukas.week8.day3.explenation;
 
 public class MinMaxDurch {
 
-    private int maxAge;
-    private int minAge;
-    private int maxHight;
-    private int minHight;
-    private int maxWeight;
-    private int minWeight;
-    private int smallest;
-    private int biggest;
-    private double durch;
+    private double maxAge;
+    private double minAge;
+    private double maxHight;
+    private double minHight;
+    private double maxWeight;
+    private double minWeight;
+    private double durchAge;
+    private double durchWeight;
+    private double durchHight;
 
-    public MinMaxDurch(int maxAge, int minAge, int maxHight, int minHight, int maxWeight, int minWeight, int smallest, int biggest, double durch) {
+
+    public MinMaxDurch(double maxAge, double minAge, double maxHight, double minHight, double maxWeight, double minWeight, double durchAge, double durchWeight, double durchHight) {
         this.maxAge = maxAge;
         this.minAge = minAge;
         this.maxHight = maxHight;
         this.minHight = minHight;
         this.maxWeight = maxWeight;
         this.minWeight = minWeight;
-        this.smallest = smallest;
-        this.biggest = biggest;
-        this.durch = durch;
+        this.durchAge = durchAge;
+        this.durchWeight = durchWeight;
+        this.durchHight = durchHight;
     }
 
-    public int getMaxAge() {
+    public double getMaxAge() {
         return maxAge;
     }
 
-    public int getMinAge() {
+    public double getMinAge() {
         return minAge;
     }
 
-    public int getMaxHight() {
+    public double getMaxHight() {
         return maxHight;
     }
 
-    public int getMinHight() {
+    public double getMinHight() {
         return minHight;
     }
 
-    public int getMaxWeight() {
+    public double getMaxWeight() {
         return maxWeight;
     }
 
-    public int getMinWeight() {
+    public double getMinWeight() {
         return minWeight;
     }
 
-    public int getSmallest() {
-        return smallest;
+    public double getDurchAge() {
+        return durchAge;
     }
 
-    public int getBiggest() {
-        return biggest;
+    public double getDurchWeight() {
+        return durchWeight;
     }
 
-    public double getDurch() {
-        return durch;
+    public double getDurchHight() {
+        return durchHight;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Max age: %13s\nMin age: %13s\nMax height: %10s\nMin height: %10s\nMax weight: %10s\nMin weight: %10s\nSchnitt age: %9s\nSchnitt weight: %7s\nSchnitt hight: %8s",
+                this.maxAge, this.minAge, this.maxHight, this.minHight, this.maxWeight, this.minWeight, this.durchAge, this.durchWeight, this.durchHight);
     }
 
 }
