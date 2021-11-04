@@ -32,13 +32,6 @@ public class Persons {
 
     @Override
     public String toString() {
-        return String.format("%10s %5d %5s %5s", this.name, this.age, this.height, this.weight);
+        return String.format("Name:%10s\nALter:%5s\nGröße:%6s\nGewicht:%3s\n", this.name, this.age, this.height, this.weight);
     }
-
-
-
-
-
-
-
 }
