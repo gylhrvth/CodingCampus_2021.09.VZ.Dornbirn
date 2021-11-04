@@ -17,6 +17,11 @@ public class ExcerciseClass {
 
         Animal animal4 = null;
 
+        int a = 0;
+
+
+        System.out.println(a);
+
         try {
             animal4 = new Animal("Schleichi", -22, "Schlange");
         } catch (IllegalArgumentException exc) {
