@@ -6,24 +6,24 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ExerciseClass {
+
+    static Person person1 = new Person("Danny", 41, 186, 73);
+
+    static Person person2 = new Person("Bernd", 18, 173, 80);
+
+    static Person person3 = new Person("Maria", 40, 167, 48);
+
+    static Person person4 = new Person("Frank", 30, 181, 93);
+
+    public static Person[] persons = new Person[]{person1, person2, person3, person4};
+
+
+
     public static void main(String[] args) {
 
-        Person person1 = new Person("Danny", 41, 186, 73);
 
-        Person person2 = new Person("Bernd", 18, 173, 80);
 
-        Person person3 = new Person("Maria", 40, 167, 48);
-
-        Person person4 = new Person("Frank", 30, 181, 93);
-
-        Person[] persons = new Person[]{person1, person2, person3, person4};
-
-        List<Person> personList = new ArrayList<>();
-        for (int i = 0; i < persons.length; i++) {
-            personList.add(persons[i]);
-        }
-
-        printPersons(personList);
+        printPersons(personList(persons));
         System.out.println();
         System.out.println(getMinMaxAverageAge(persons));
 
@@ -31,13 +31,21 @@ public class ExerciseClass {
 
     }
 
-    private static void printPersons(Person[] persons) {
+    public static List personList (Person[] persons) {
+        List<Person> personList = new ArrayList<>();
+        for (int i = 0; i < persons.length; i++) {
+            personList.add(persons[i]);
+        }
+        return personList;
+    }
+
+    public static void printPersons(Person[] persons) {
         for (Person person : persons) {
             System.out.println(person);
         }
     }
 
-    private static void printPersons(List<Person> personList) {
+    public static void printPersons(List<Person> personList) {
         for (Person person : personList) {
             System.out.println(person);
         }
