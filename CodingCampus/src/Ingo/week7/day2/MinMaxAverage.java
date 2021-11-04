@@ -16,6 +16,7 @@ public class MinMaxAverage {
         return min;
     }
 
+
     public int getMax() {
         return max;
     }

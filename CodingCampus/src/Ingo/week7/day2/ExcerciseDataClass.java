@@ -10,7 +10,7 @@ public class ExcerciseDataClass {
         Random random = new Random();
         int[] randomArray = new int[24];
         for (int i = 0; i < randomArray.length; i++) {
-            randomArray[i] = random.nextInt(100)-50;
+            randomArray[i] = random.nextInt(88)-50;
 
         }System.out.println(Arrays.toString(randomArray));
 

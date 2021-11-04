@@ -13,6 +13,7 @@ public class ExcerciseClass {
 
         Animal animal2 = new Animal("Kiki", 10, "Katze");
 
+
         Animal animal3 = new Animal("Rambina", 15, "Katze");
 
         Animal animal4 = null;
