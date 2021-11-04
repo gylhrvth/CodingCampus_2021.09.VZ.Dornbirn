@@ -1,10 +1,12 @@
-package Sandro.Programme;
+package Sandro.konstruktor;
+
+import Sandro.konstruktor.Hund;
 
 public class Konstruktor {
 
     public static void main(String[] args) {
 
-        Hund laprador = new Hund(4, "Laprador", "schwarz", true);
+        Hund laprador = new Hund (3,"laprador","hellbraun",true);
         Hund dackerl = new Hund(9, "Dackel", "braun", false);
         Hund mops = new Hund(3, "Mops", "weiß", true);
         Hund schaeferhund = new Hund(4, "Schäferhund", "dunkelbraun", true, true);

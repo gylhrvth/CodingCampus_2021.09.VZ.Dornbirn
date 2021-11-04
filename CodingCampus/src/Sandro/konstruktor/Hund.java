@@ -1,4 +1,4 @@
-package Sandro.Programme;
+package Sandro.konstruktor;
 
 public class Hund {
 
@@ -23,12 +23,6 @@ public class Hund {
         this.fellfarbe = fellfarbe;
         this.kannPfotegeben = kannPfotegeben;
         this.kannbellen = kannBellen;
-    }
-
-    public void Ente() {
-    }
-
-    public void Frosch() {
     }
 }
 

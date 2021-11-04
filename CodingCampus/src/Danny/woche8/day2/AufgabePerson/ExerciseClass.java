@@ -1,72 +1,102 @@
 package Danny.woche8.day2.AufgabePerson;
 
+import Danny.woche8.day2.AufgabePersonenSortiert.AttributeChoice;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class ExerciseClass {
+
+    static Person person1 = new Person("Danny", 41, 186, 73);
+
+    static Person person2 = new Person("Bernd", 18, 173, 80);
+
+    static Person person3 = new Person("Maria", 40, 167, 48);
+
+    static Person person4 = new Person("Frank", 30, 181, 93);
+
+    public static Person[] persons = new Person[]{person1, person2, person3, person4};
+
+
+
     public static void main(String[] args) {
 
 
-        Person person1 = new Person("Danny", 41, 186, 73);
 
-        Person person2 = new Person("Bernd", 18, 173, 80);
+        printPersons(personList(persons));
+        System.out.println();
+        System.out.println(getMinMaxAverageAge(persons));
 
-        Person person3 = new Person("Lissi", 40, 167, 48);
 
-        Person person4 = new Person("Frank", 30, 181, 93);
 
-        Person[] persons = new Person[]{person1, person2, person3, person4};
+    }
 
-        int[] ageNumbersArray = new int[]{person1.getAge(), person2.getAge(), person3.getAge(), person4.getAge()};
-        int[] sizeNumbersArray = new int[]{person1.getSize(), person2.getSize(), person3.getSize(), person4.getSize()};
-        int[] weightNumbersArray = new int[]{person1.getWeight(), person2.getWeight(), person3.getWeight(), person4.getWeight()};
-
+    public static List personList (Person[] persons) {
         List<Person> personList = new ArrayList<>();
         for (int i = 0; i < persons.length; i++) {
             personList.add(persons[i]);
         }
-
-        printPersons(personList);
-        System.out.println();
-
-        MinMaxAverage2 age = getMinMaxAverage2(ageNumbersArray);
-        System.out.println("Age: " + age);
-        MinMaxAverage2 size = getMinMaxAverage2(sizeNumbersArray);
-        System.out.println("Size: " + size);
-        MinMaxAverage2 weight = getMinMaxAverage2(weightNumbersArray);
-        System.out.println("Weight: " + weight);
-
+        return personList;
     }
 
-    private static void printPersons(Person[] persons) {
+    public static void printPersons(Person[] persons) {
         for (Person person : persons) {
             System.out.println(person);
         }
     }
 
-    private static void printPersons(List<Person> personList) {
+    public static void printPersons(List<Person> personList) {
         for (Person person : personList) {
             System.out.println(person);
         }
     }
 
-    private static MinMaxAverage2 getMinMaxAverage2(int[] numbers) {
-        int minValue = numbers[0];
-        int maxValue = numbers[0];
-        double sum = 0;
-        for (int number : numbers) {
-            if (number < minValue) {
-                minValue = number;
+    private static MinMaxAverage2 getMinMaxAverageAge(Person[] persons) {
+        Person minAgePerson = persons[0];
+        Person maxAgePerson = persons[0];
+        double sumAge = 0;
+        for (Person person : persons) {
+            if (person.getAge() < minAgePerson.getAge()) {
+                minAgePerson = person;
             }
-            if (number > maxValue) {
-                maxValue = number;
+            if (person.getAge() > maxAgePerson.getAge()) {
+                maxAgePerson = person;
             }
-            sum += number;
+            sumAge += person.getAge();
         }
-        double average = sum / numbers.length;
+        double averageAge = sumAge / persons.length;
 
-        return new MinMaxAverage2(minValue, maxValue, average);
+        Person minSizePerson = persons[0];
+        Person maxSizePerson = persons[0];
+        double sumSize = 0;
+        for (Person person : persons) {
+            if (person.getSize() < minSizePerson.getSize()) {
+                minSizePerson = person;
+            }
+            if (person.getSize() > maxSizePerson.getSize()) {
+                maxSizePerson = person;
+            }
+            sumSize += person.getSize();
+        }
+        double averageSize = sumSize / persons.length;
+
+        Person minWeightPerson = persons[0];
+        Person maxWeightPerson = persons[0];
+        double sumWeight = 0;
+        for (Person person : persons) {
+            if (person.getWeight() < minWeightPerson.getWeight()) {
+                minWeightPerson = person;
+            }
+            if (person.getWeight() > maxWeightPerson.getWeight()) {
+                maxWeightPerson = person;
+            }
+            sumWeight += person.getWeight();
+        }
+        double averageWeight = sumWeight / persons.length;
+        return new MinMaxAverage2(minAgePerson, maxAgePerson, averageAge
+                , minSizePerson, maxSizePerson, averageSize
+                , minWeightPerson, maxWeightPerson, averageWeight
+        );
+
     }
-
-
 }
