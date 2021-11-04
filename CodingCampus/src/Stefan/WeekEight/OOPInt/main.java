@@ -1,7 +1,6 @@
 package Stefan.WeekEight.OOPInt;
 
 
-import java.util.Arrays;
 import java.util.Random;
 
 public class main {
@@ -23,8 +22,8 @@ public class main {
         int min = zahlen[0];
         double summe = 0;
         for (int i = 0; i < zahlen.length; i++) {
-            if (zahlen[i]< min) min = zahlen[i];
-            if (zahlen[i]> max) max = zahlen[i];
+            if (zahlen[i] < min) min = zahlen[i];
+            if (zahlen[i] > max) max = zahlen[i];
             summe += zahlen[i];
         }
         double durchschnitt = summe / zahlen.length;
