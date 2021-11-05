@@ -10,7 +10,7 @@ public class TakePhoto {
                 "XY150","Nikon",18.5);
 
 
-        canon.takeFoto()
+       // canon.takeFoto();
 
         takePhoto(nikon);
         System.out.println();
