@@ -1,4 +1,4 @@
-package Danny.woche8.day2.AufgabePerson;
+package Danny.woche8.klassen.aufgabePerson;
 
 import java.util.ArrayList;
 import java.util.List;

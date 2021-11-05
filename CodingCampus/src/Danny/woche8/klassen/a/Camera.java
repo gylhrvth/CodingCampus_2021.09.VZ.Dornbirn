@@ -1,4 +1,4 @@
-package Danny.woche8.day3.AufgabeFotoapparat;
+package Danny.woche8.klassen.a;
 
 public class Camera extends java.lang.Object {
 

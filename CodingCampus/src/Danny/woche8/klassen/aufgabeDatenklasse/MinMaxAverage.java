@@ -1,4 +1,4 @@
-package Danny.woche8.day2.AufgabeDatenklasse;
+package Danny.woche8.klassen.aufgabeDatenklasse;
 
 public class MinMaxAverage extends java.lang.Object {
     private final int min;

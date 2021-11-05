@@ -1,4 +1,4 @@
-package Danny.woche8.day3.AufgabeFotoapparat;
+package Danny.woche8.klassen.a;
 
 public class TakePhoto {
     public static void main(String[] args) {
@@ -10,6 +10,7 @@ public class TakePhoto {
                 "XY150","Nikon",18.5);
 
 
+        canon.takeFoto()
 
         takePhoto(nikon);
         System.out.println();
