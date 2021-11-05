@@ -1,6 +1,4 @@
-package Danny.woche8.day2.AufgabePerson;
-
-import Danny.woche8.day2.AufgabePersonenSortiert.AttributeChoice;
+package Danny.woche8.klassen.aufgabePerson;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,13 +19,9 @@ public class ExerciseClass {
 
     public static void main(String[] args) {
 
-
-
         printPersons(personList(persons));
         System.out.println();
         System.out.println(getMinMaxAverageAge(persons));
-
-
 
     }
 

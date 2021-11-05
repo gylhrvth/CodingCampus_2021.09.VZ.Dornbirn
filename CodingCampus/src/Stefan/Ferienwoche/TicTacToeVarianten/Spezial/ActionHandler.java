@@ -23,7 +23,7 @@ public class ActionHandler implements ActionListener {
                 if (Gui.state[1] == 0 && Gui.player == 0) {
                     Gui.state[1] = 1;
                     Gui.player = 1;
-                } else if (Gui.state[0] == 0 && Gui.player == 1) {
+                } else if (Gui.state[1] == 0 && Gui.player == 1) {
                     Gui.state[1] = 2;
                     Gui.player = 0;
                 }
@@ -32,7 +32,7 @@ public class ActionHandler implements ActionListener {
                 if (Gui.state[2] == 0 && Gui.player == 0) {
                     Gui.state[2] = 1;
                     Gui.player = 1;
-                } else if (Gui.state[0] == 0 && Gui.player == 1) {
+                } else if (Gui.state[2] == 0 && Gui.player == 1) {
                     Gui.state[2] = 2;
                     Gui.player = 0;
                 }
@@ -43,7 +43,7 @@ public class ActionHandler implements ActionListener {
                 if (Gui.state[3] == 0 && Gui.player == 0) {
                     Gui.state[3] = 1;
                     Gui.player = 1;
-                } else if (Gui.state[0] == 0 && Gui.player == 1) {
+                } else if (Gui.state[3] == 0 && Gui.player == 1) {
                     Gui.state[3] = 2;
                     Gui.player = 0;
                 }
@@ -52,7 +52,7 @@ public class ActionHandler implements ActionListener {
                 if (Gui.state[4] == 0 && Gui.player == 0) {
                     Gui.state[4] = 1;
                     Gui.player = 1;
-                } else if (Gui.state[0] == 0 && Gui.player == 1) {
+                } else if (Gui.state[4] == 0 && Gui.player == 1) {
                     Gui.state[4] = 2;
                     Gui.player = 0;
                 }
@@ -61,7 +61,7 @@ public class ActionHandler implements ActionListener {
                 if (Gui.state[5] == 0 && Gui.player == 0) {
                     Gui.state[5] = 1;
                     Gui.player = 1;
-                } else if (Gui.state[0] == 0 && Gui.player == 1) {
+                } else if (Gui.state[5] == 0 && Gui.player == 1) {
                     Gui.state[5] = 2;
                     Gui.player = 0;
                 }
@@ -71,7 +71,7 @@ public class ActionHandler implements ActionListener {
                 if (Gui.state[6] == 0 && Gui.player == 0) {
                     Gui.state[6] = 1;
                     Gui.player = 1;
-                } else if (Gui.state[0] == 0 && Gui.player == 1) {
+                } else if (Gui.state[6] == 0 && Gui.player == 1) {
                     Gui.state[6] = 2;
                     Gui.player = 0;
                 }
@@ -80,7 +80,7 @@ public class ActionHandler implements ActionListener {
                 if (Gui.state[7] == 0 && Gui.player == 0) {
                     Gui.state[7] = 1;
                     Gui.player = 1;
-                } else if (Gui.state[0] == 0 && Gui.player == 1) {
+                } else if (Gui.state[7] == 0 && Gui.player == 1) {
                     Gui.state[7] = 2;
                     Gui.player = 0;
                 }
@@ -89,7 +89,7 @@ public class ActionHandler implements ActionListener {
                 if (Gui.state[8] == 0 && Gui.player == 0) {
                     Gui.state[8] = 1;
                     Gui.player = 1;
-                } else if (Gui.state[0] == 0 && Gui.player == 1) {
+                } else if (Gui.state[8] == 0 && Gui.player == 1) {
                     Gui.state[8] = 2;
                     Gui.player = 0;
                 }
