@@ -1,6 +1,7 @@
 package Lukas.week8.day4;
 
 public class ExcerciseEnum {
+
     public static void main(String[] args) {
         System.out.println("---If---");
         for (MessageType messageType : MessageType.values()) {

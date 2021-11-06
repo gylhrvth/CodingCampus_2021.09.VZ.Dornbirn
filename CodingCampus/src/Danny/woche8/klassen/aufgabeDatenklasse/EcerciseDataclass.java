@@ -1,4 +1,4 @@
-package Danny.woche8.day2.AufgabeDatenklasse;
+package Danny.woche8.klassen.aufgabeDatenklasse;
 
 import java.util.Random;
 
@@ -32,5 +32,4 @@ public class EcerciseDataclass {
 
         return new MinMaxAverage(minValue, maxValue, average);
     }
-
 }

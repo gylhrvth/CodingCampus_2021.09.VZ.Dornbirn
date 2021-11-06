@@ -1,4 +1,4 @@
-package Danny.woche8.day2.AufgabePerson;
+package Danny.woche8.klassen.aufgabePerson;
 
 public class Person extends java.lang.Object {
     private String name;

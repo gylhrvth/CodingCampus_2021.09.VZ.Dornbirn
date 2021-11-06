@@ -1,13 +1,6 @@
-package Danny.woche8.day2.AufgabePerson;
+package Danny.woche8.klassen.aufgabePerson;
 
 public class MinMaxAverage2 {
-
-    private int minAge;
-    private int maxAge;
-    private int minSize;
-    private int maxSize;
-    private int minWeight;
-    private int maxWeight;
 
     private final double avgAge;
     private final double avgSize;
@@ -25,7 +18,6 @@ public class MinMaxAverage2 {
     public MinMaxAverage2(Person minAgePerson, Person maxAgePerson, double avgAge
             , Person minSizePerson, Person maxSizePerson, double avgSize
             , Person minWeightPerson, Person maxWeightPerson, double avgWeight) {
-
 
         this.avgAge = avgAge;
         this.avgSize = avgSize;
