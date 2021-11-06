@@ -1,5 +1,6 @@
 package Lukas.week8.day3.excerciseDataclass;
 
+import java.util.Arrays;
 import java.util.Random;
 
 public class ExcerciseDataclass {
@@ -9,10 +10,10 @@ public class ExcerciseDataclass {
         for (int i = 0; i < numbersArray.length; i++) {
             numbersArray[i] = random.nextInt(101) - 50;
         }
-        //System.out.println(Arrays.toString(numbersArray));
+        System.out.println(Arrays.toString(numbersArray));
 
-        MinMaxAverage minMaxAverage = getMinMaxAverage(numbersArray);
-        System.out.println(minMaxAverage);
+       // MinMaxAverage minMaxAverage = getMinMaxAverage(numbersArray);
+       // System.out.println(minMaxAverage);
     }
 
     private static MinMaxAverage getMinMaxAverage(int[] numbers) {
