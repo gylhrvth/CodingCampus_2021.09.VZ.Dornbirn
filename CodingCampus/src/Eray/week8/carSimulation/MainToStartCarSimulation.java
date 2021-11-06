@@ -8,7 +8,7 @@ public class MainToStartCarSimulation {
     }
 
     static Scanner scanner = new Scanner(System.in);
-    private static CarDatas car = new CarDatas("Mercedes", "C63 AMG", "Benziner", 1725, 70.00, 375);
+    private static final CarDatas car = new CarDatas("Mercedes", "C63 AMG", "Benziner", 1725, 70.00, 375);
 
     public static void printAll() {
 
@@ -17,7 +17,7 @@ public class MainToStartCarSimulation {
         double tankVerbrauch = car.getTankInhalt() / 14.00;
         double streckeDieDerTankAushaltet = tankVerbrauch * 100;
 
-        //Programm funktioniert aber die exakte tankberechnung für den kilometer stimmt noch nicht gantz genau
+
         System.out.println(car);
         System.out.println();
 
@@ -45,10 +45,8 @@ public class MainToStartCarSimulation {
                     String userInput = scanner.next();
                     switch (userInput) {
                         case "+" -> fillTank(fehlendeRestKilometer);
-                        case "-" -> {
-                            System.out.println("Da du nicht Tanken willst bleibt das Auto stehen du hast erfolgreich" + streckeDieDerTankAushaltet + " KM gefahren");
+                        case "-" -> System.out.println("Da du nicht Tanken willst bleibt das Auto stehen du hast erfolgreich" + streckeDieDerTankAushaltet + " KM gefahren");
 
-                        }
                     }
 
                 }
@@ -70,13 +68,21 @@ public class MainToStartCarSimulation {
         double benzinPreis = 1.47;
         double maxTank = car.getTankInhalt() * benzinPreis;
 
-        // 5 liter verbrauch pro 10 km
-        double fehlenderTankInhaltInLiter = ((fehlendeRestKilometer / 5) * benzinPreis);
+        // 70 liter gesamt Tank pro 100 km brauche ich 14 Liter Tank
+        // Insgesamt sind das 500 km die ich mit dem Auto zurücklegen kann
+        // 14 / 100 = 0,14;
+        // 0,14 liter verbrauch pro 1km
+        // 0,14 liter * 100 = 14 Liter mit 14 Liter kann ich 100 km Fahren
+        // Wie oft passt 14 Liter in ein 70Liter Tank = 5 mal
+        // Das heißt wenn ich pro 14 Liter 100 km zurücklegen kann und 14 Liter 5 mal in ein Volltank passt lege ich insgesamt
+        // 500 Kilometer zurück
+
+        double fehlenderTankInhaltInLiter = ((fehlendeRestKilometer * 0.14) * benzinPreis);
 
         System.out.println("Der aktuelle Benzin Spritpreis liegt bei 1.47€");
         System.out.printf("Ein erneuter Volltank kostet insgesamt %.2f € Um dies zu machen drücke [1]", maxTank);
         System.out.println();
-        System.out.println("Ein tank der genau für die restliche Strecke reicht kostet " + fehlenderTankInhaltInLiter + " € Um dies zu machen drücke [2]");
+        System.out.printf("Ein tank der genau für die restliche Strecke reicht kostet %.2f € Um dies zu machen drücke [2]", fehlenderTankInhaltInLiter);
         int userInputNumber = scanner.nextInt();
         if (userInputNumber == 1) {
             car.setTankInhalt(70.00);
