@@ -1,4 +1,4 @@
-package danny.classes.TaskPersonSort;
+package danny.enumTask.TaskPersonSort;
 import danny.classes.TaskPerson.Person;
 
 import java.util.List;

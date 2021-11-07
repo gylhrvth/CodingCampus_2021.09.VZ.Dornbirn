@@ -26,4 +26,3 @@ public class datenKlasse {
     public String toString (){return String.format("MinValue %d MaxValue %d Average %.2f", min,max,avg);}
 }
 
-
