@@ -1,5 +1,4 @@
 package danny.classes.TaskPersonSort;
-
 import danny.classes.TaskPerson.Person;
 
 import java.util.List;

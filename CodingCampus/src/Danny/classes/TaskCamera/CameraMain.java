@@ -1,6 +1,6 @@
 package danny.classes.TaskCamera;
 
-public class CameraProgram {
+public class CameraMain {
     public static void main(String[] args) {
 
         CameraClass nikon = new CameraClass(18,105,

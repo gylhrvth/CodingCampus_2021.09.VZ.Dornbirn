@@ -1,5 +1,4 @@
 package danny.classes.TaskPerson;
-
 public class MinMaxAverage2 {
 
     private final double avgAge;

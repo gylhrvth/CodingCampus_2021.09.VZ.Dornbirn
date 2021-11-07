@@ -1,5 +1,4 @@
 package danny.classes.TaskDataclass;
-
 import java.util.Random;
 
 public class EcerciseDataclass {
@@ -32,5 +31,4 @@ public class EcerciseDataclass {
 
         return new MinMaxAverage(minValue, maxValue, average);
     }
-
 }
