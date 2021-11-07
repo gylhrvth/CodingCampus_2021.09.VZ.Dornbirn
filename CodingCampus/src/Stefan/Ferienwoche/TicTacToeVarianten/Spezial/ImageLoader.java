@@ -11,8 +11,8 @@ public class ImageLoader {
 
     public ImageLoader() {
         try {
-            imgX = ImageIO.read(new File("assets/res/x.png"));
-            imgO = ImageIO.read(new File("assets/res/o.png"));
+            imgX = ImageIO.read(new File("C:\\Users\\DCV\\CodingCampus_2021.09.VZ.Dornbirn\\CodingCampus\\src\\Stefan\\Ferienwoche\\TicTacToeVarianten\\Spezial\\res\\x.png"));
+            imgO = ImageIO.read(new File("C:\\Users\\DCV\\CodingCampus_2021.09.VZ.Dornbirn\\CodingCampus\\src\\Stefan\\Ferienwoche\\TicTacToeVarianten\\Spezial\\res\\o.png"));
         } catch (IOException e) {
             e.printStackTrace();
         }

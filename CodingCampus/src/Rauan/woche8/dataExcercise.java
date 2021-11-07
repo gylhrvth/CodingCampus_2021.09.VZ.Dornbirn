@@ -1,9 +1,12 @@
-package Lukas.week8.day3.excerciseDataclass;
+package Rauan.woche8;
+
+import Lukas.week8.day3.excerciseDataclass.MinMaxAverage;
 
 import java.util.Random;
 
-public class ExcerciseDataclass {
+public class dataExcercise {
     public static void main(String[] args) {
+
         Random random = new Random();
         int[] numbersArray = new int[10];
         for (int i = 0; i < numbersArray.length; i++) {

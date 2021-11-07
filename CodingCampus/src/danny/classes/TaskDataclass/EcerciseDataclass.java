@@ -1,29 +1,28 @@
-package Lukas.week8.day3.excerciseDataclass;
-
+package danny.classes.TaskDataclass;
 import java.util.Random;
 
-public class ExcerciseDataclass {
+public class EcerciseDataclass {
     public static void main(String[] args) {
         Random random = new Random();
         int[] numbersArray = new int[10];
         for (int i = 0; i < numbersArray.length; i++) {
-            numbersArray[i] = random.nextInt(101) - 50;
+            numbersArray[i] = random.nextInt(100) - 50;
         }
-        //System.out.println(Arrays.toString(numbersArray));
 
         MinMaxAverage minMaxAverage = getMinMaxAverage(numbersArray);
         System.out.println(minMaxAverage);
+
     }
 
     private static MinMaxAverage getMinMaxAverage(int[] numbers) {
         int minValue = numbers[0];
         int maxValue = numbers[0];
         double sum = 0;
-        for(int number : numbers) {
-            if(number < minValue) {
+        for (int number : numbers) {
+            if (number < minValue) {
                 minValue = number;
             }
-            if(number > maxValue) {
+            if (number > maxValue) {
                 maxValue = number;
             }
             sum += number;
