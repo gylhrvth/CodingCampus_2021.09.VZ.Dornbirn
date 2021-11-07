@@ -3,7 +3,7 @@ package Ingo.week5;
 public class CountLetters {
 
     public static void main(String[] args) {
-        String[] arr = new String[]{"Stjepan", "Ömer", "Danny", "Bartosz", "Sadaaq", "Gerhard", "Stefan", "Plamena", "Eray", "Sandro", "Lena", "Ingo", "Mahir", "Rauan", "Lukas"};
+        String[] arr = new String[]{"Stjepan", "Ömer", "danny", "Bartosz", "Sadaaq", "Gerhard", "Stefan", "Plamena", "Eray", "Sandro", "Lena", "Ingo", "Mahir", "Rauan", "Lukas"};
         int count2 = 0;
         String result = "";
         for (int i = 0; i < arr.length; i++) {

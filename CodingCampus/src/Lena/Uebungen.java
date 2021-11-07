@@ -1,7 +1,6 @@
 package Lena;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
@@ -26,7 +25,7 @@ public class Uebungen {
         // printSlash(4, "X", false);
         // printX(5, "X");
 
-        String[] names = new String[]{"Plamena", "Sadaaq", "Gyula", "Eray", "Gerri", "Stefan", "Lena", "Danny", "Ömer", "Stjepan", "Sandro", "Bartosz", "Ingo", "Rauan", "Mahir", "Lukas", "Niklas"};
+        String[] names = new String[]{"Plamena", "Sadaaq", "Gyula", "Eray", "Gerri", "Stefan", "Lena", "danny", "Ömer", "Stjepan", "Sandro", "Bartosz", "Ingo", "Rauan", "Mahir", "Lukas", "Niklas"};
         //  System.out.println(Arrays.toString(sortByCharIndex(names, 20)));
         String path = "assets/file.txt";
         //   countChars(readFile(path), new char[]{'x'});
