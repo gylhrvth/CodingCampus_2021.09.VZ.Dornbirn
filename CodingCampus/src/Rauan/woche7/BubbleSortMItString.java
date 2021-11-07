@@ -3,7 +3,7 @@ package Rauan.woche7;
 public class BubbleSortMItString {
     public static void main(String[] args) {
 
-        String[] names = new String[]{"Plamena", "Sadaaq", "Gyula", "Eray", "Gerri", "Stefan", "Lena", "danny", "" +
+        String[] names = new String[]{"Plamena", "Sadaaq", "Gyula", "Eray", "Gerri", "Stefan", "Lena", "Danny", "" +
                 "Ömer", "Stjepan", "Sandro", "Bartosz", "Ingo", "Rauan", "Mahir", "Lukas", "Niklas"};
 
 

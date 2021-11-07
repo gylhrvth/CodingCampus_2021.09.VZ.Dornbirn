@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class day1 {
     public static void main(String[] args) {
 
-        String[] namesCourse = new String[]{"Stjepan", "Ömer", "danny", "Bartosz", "Sadaaq", "Gerhard", "Stefan", "Plamena", "Eray", "Sandro", "Lena", "Ingo", "Mahir", "Rauan", "Lukas"};
+        String[] namesCourse = new String[]{"Stjepan", "Ömer", "Danny", "Bartosz", "Sadaaq", "Gerhard", "Stefan", "Plamena", "Eray", "Sandro", "Lena", "Ingo", "Mahir", "Rauan", "Lukas"};
 
         for (int i = 0; i < namesCourse.length; i++) {
             System.out.println(namesCourse[i]);

@@ -168,7 +168,7 @@ public class arrays {
         System.out.println("\nVerwende das gegebene String[] und sortiere es mit einem selbsterstellten Bubblesort Algorithmus und gib es dann aus. " +
                 "Der Bubblesort Algorithmus soll in einer eigenen Methode implementiert werden. Der Aufruf und die Ausgabe erfolgt in der main Methode.");
 
-        String[] names = new String[]{"Plamena", "Sadaaq", "Gyula", "Eray", "Gerri", "Stefan", "Lena", "danny", "Oemer", "Stjepan", "Sandro", "Bartosz", "Ingo", "Rauan", "Mahir", "Lukas", "Niklas"};
+        String[] names = new String[]{"Plamena", "Sadaaq", "Gyula", "Eray", "Gerri", "Stefan", "Lena", "Danny", "Oemer", "Stjepan", "Sandro", "Bartosz", "Ingo", "Rauan", "Mahir", "Lukas", "Niklas"};
         for (int j = 0; j < names.length; j++) {
             for (int i = j + 1; i < names.length - 1; i++) {
                 if (names[i].compareTo(names[j]) < 0) {
@@ -185,7 +185,7 @@ public class arrays {
         System.out.println("\nVerwende das gegebene String[] und sortiere es mit einem selbsterstellten Bubblesort Algorithmus und gib es dann aus. " +
                 "Der Bubblesort Algorithmus soll in einer eigenen Methode implementiert werden. Der Aufruf und die Ausgabe erfolgt in der main Methode");
 
-        String[] names = new String[]{"Plamena", "Sadaaq", "Gyula", "Eray", "Gerri", "Stefan", "Lena", "danny", "Oemer", "Stjepan", "Sandro", "Bartosz", "Ingo", "Rauan", "Mahir", "Lukas", "Niklas"};
+        String[] names = new String[]{"Plamena", "Sadaaq", "Gyula", "Eray", "Gerri", "Stefan", "Lena", "Danny", "Oemer", "Stjepan", "Sandro", "Bartosz", "Ingo", "Rauan", "Mahir", "Lukas", "Niklas"};
         for (int j = 0; j < names.length; j++) {
             for (int i = j + 1; i < names.length - 1; i++) {
                 if (names[i].compareTo(names[j]) > 0) {

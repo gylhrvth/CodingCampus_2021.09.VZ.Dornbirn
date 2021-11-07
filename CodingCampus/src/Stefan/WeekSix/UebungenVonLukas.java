@@ -125,7 +125,7 @@ public class UebungenVonLukas {
         //Der Bubblesort Algorithmus soll in einer eigenen Methode implementiert werden.
         // Der Aufruf und die Ausgabe erfolgt in der main Methode.
 
-        String[] names = new String[]{"Plamena", "Sadaaq", "Gyula", "Eray", "Gerri", "Stefan", "Lena", "danny", "Ömer", "Stjepan", "Sandro", "Bartosz", "Ingo", "Rauan", "Mahir", "Lukas", "Niklas"};
+        String[] names = new String[]{"Plamena", "Sadaaq", "Gyula", "Eray", "Gerri", "Stefan", "Lena", "Danny", "Ömer", "Stjepan", "Sandro", "Bartosz", "Ingo", "Rauan", "Mahir", "Lukas", "Niklas"};
 //        bubbleSortStringAufsteigen(names);
 //        bubbleSortStringAbsteigend(names);
 

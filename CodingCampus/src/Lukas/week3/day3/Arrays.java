@@ -34,7 +34,7 @@ public class  Arrays {
         //Variablen deklaration
         String[] namesOfCourse;
         //Initialisierung
-        namesOfCourse = new String[]{"Stjepan", "Ömer", "danny", "Bartosz", "Sadaaq", "Gerhard", "Stefan", "Plamena", "Eray", "Sandro", "Lena", "Ingo", "Mahir", "Rauan", "Lukas"};
+        namesOfCourse = new String[]{"Stjepan", "Ömer", "Danny", "Bartosz", "Sadaaq", "Gerhard", "Stefan", "Plamena", "Eray", "Sandro", "Lena", "Ingo", "Mahir", "Rauan", "Lukas"};
 
         for (int i = 0; i < namesOfCourse.length; i++) {
             System.out.println(namesOfCourse[i]);

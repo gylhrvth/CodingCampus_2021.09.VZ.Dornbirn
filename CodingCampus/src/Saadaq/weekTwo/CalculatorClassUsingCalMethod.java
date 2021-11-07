@@ -1,6 +1,5 @@
 package Saadaq.weekTwo;
 
-
 import java.util.Scanner;
 
 public class CalculatorClassUsingCalMethod {
