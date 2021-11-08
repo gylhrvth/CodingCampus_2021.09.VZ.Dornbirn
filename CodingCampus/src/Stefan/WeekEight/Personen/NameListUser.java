@@ -2,8 +2,6 @@ package Stefan.WeekEight.Personen;
 
 
 import Lukas.week8.day3.explenation.MinMaxDurch;
-import Plamena.week8.personList.Person;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,7 +11,7 @@ public class NameListUser {
         Persons name2 = new Persons("Harald", "m", 40, 165, 65);
         Persons name3 = new Persons("Angela", "w", 35, 160, 50);
         Persons name4 = new Persons("Anabel", "w", 20, 170, 48);
-        Persons name5 = new Persons("Elvira","w",13,140,35);
+        Persons name5 = new Persons("Elvira", "w", 13, 140, 35);
 
         Persons[] names = new Persons[]{name1, name2, name3, name4, name5};
 
@@ -22,9 +20,14 @@ public class NameListUser {
             persons.add(names[i]);
         }
 
-        printUserList(persons);
+        //        printUserList(persons);
 
-        System.out.println(durchschnittsAlter(persons));
+//        System.out.println(durchschnittsAlter(persons));
+
+
+        System.out.println(persons);
+
+
     }
 
 
@@ -34,6 +37,19 @@ public class NameListUser {
             System.out.println(names);
         }
     }
+
+      //Sortier nach Grösse, ALter, Gewicht, Name
+////    public static void sortBy(List<Persons> persons, Sort sort) {
+////        for (int i = 0; i < persons.size(); i++) {
+////            for (int j = 0; j < persons.size() - 1 - i; j++) {
+////                    if (persons.get(j).getAge() > persons.get(j + 1).getAge()) {
+////                        Persons temp = persons.get(j);
+////                        persons.get(j) = persons.get(j + 1);
+////                        persons.get(j + 1) = temp;
+////                    }
+////                }
+////            }
+//        }
 
 
     //Durchschnittsalter
