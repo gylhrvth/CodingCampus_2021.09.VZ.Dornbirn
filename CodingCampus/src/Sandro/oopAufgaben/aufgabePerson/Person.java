@@ -1,5 +1,7 @@
 package Sandro.oopAufgaben.aufgabePerson;
 
+import java.util.LinkedList;
+
 class Person {
 
     // Variablen für erste Methode (String name, int age, int heightCm, int weight)
@@ -10,12 +12,11 @@ class Person {
 
     // Variablen für zweite (überladene) Methode (double avg, int smallest, int tallest, int ageYoungest, int ageOldest, int lowestWeight, int highestWeight)
     private double avg;
-    private int smallest;
-    private int tallest;
-    private int ageYoungest;
-    private int ageOldest;
-    private int lowestWeight;
-    private int highestWeight;
+    private int min;
+    private int max;
+    private String angabe;
+    private String bezeichnung;
+
 
     public Person(String name, int age, int heightCm, int weight) {
         this.name = name;
@@ -24,16 +25,15 @@ class Person {
         this.weight = weight;
     }
 
-    public Person(double avg, int smallest, int tallest, int ageYoungest, int ageOldest, int lowestWeight, int highestWeight) {
-
+    public Person(double avg, int min, int max, String angabe, String bezeichnung) {
         this.avg = avg;
-        this.smallest = smallest;
-        this.tallest = tallest;
-        this.ageYoungest = ageYoungest;
-        this.ageOldest = ageOldest;
-        this.lowestWeight = lowestWeight;
-        this.highestWeight = highestWeight;
+        this.min = min;
+        this.max = max;
+        this.angabe = angabe;
+        this.bezeichnung = bezeichnung;
     }
+
+
 
      /*    public String toString() {
            return String.format("Name: %s Alter: %d Größe: %d Gewicht: %d \n", this.name, this.age, this.heightCm, this.weight);
@@ -41,8 +41,9 @@ class Person {
       */
 
     public String toString() {
-        return String.format("\n Durchschnittsalter aller Personen: %.2f Jahre\n Kleinste: %d cm\n Größte: %d cm\n Jüngste: %d Jahre\n Älteste: %d Jahre\n Leichteste: %d kg\n Schwerste: %d kg\n",
-                this.avg, this.smallest, this.tallest, this.ageYoungest, this.ageOldest, this.lowestWeight, this.highestWeight);
+        System.out.println("\n" + angabe);
+        return String.format("\n Durchschnitt: %.2f " + bezeichnung + "\n Minimum aller Personen: %d " + bezeichnung + "\n Maximum aller Personen: %d " + bezeichnung,
+                this.avg, this.min, this.max);
     }
 
     public String getName() {
@@ -85,20 +86,20 @@ class Person {
         this.avg = avg;
     }
 
-    public int getAgeYoungest() {
-        return ageYoungest;
+    public int getMin() {
+        return min;
     }
 
-    public void setAgeYoungest(int ageYoungest) {
-        this.ageYoungest = ageYoungest;
+    public void setMin(int min) {
+        this.min = min;
     }
 
-    public int getAgeOldest() {
-        return ageOldest;
+    public int getMax() {
+        return max;
     }
 
-    public void setAgeOldest(int ageOldest) {
-        this.ageOldest = ageOldest;
+    public void setMax(int max) {
+        this.max = max;
     }
 }
 

@@ -1,6 +1,6 @@
 package Sandro.oopAufgaben.aufgabePerson;
 
-public enum Types {
+enum Category {
 
-    HEIGHT,AGE,WEIGHT,AVERAGE
+    HEIGHT, AGE, WEIGHT, AVERAGE
 }
