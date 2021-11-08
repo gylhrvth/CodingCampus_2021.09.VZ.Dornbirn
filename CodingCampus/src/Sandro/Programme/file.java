@@ -48,7 +48,7 @@ public class file {
 //      längere Version (muss so deklariert werden, wenn der FileWriter in der Methode öfters gebraucht wird
 
         BufferedWriter writer = new BufferedWriter(new FileWriter(path));
-;
+        ;
         try {
             writer.write(data);
         } finally {

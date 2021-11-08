@@ -74,9 +74,8 @@ public class CSVExcercise {
 
         System.out.println("Nach welchem Jahr von 1960 bis 2016 möchten Sie sortieren?");
         int column = sc.nextInt();
-        // int column = 0;
 
-       /* for (int i = 0; i < matrix[0].length; i++) {
+/*        for (int i = 0; i < matrix[0].length; i++) {
             if (matrix[0][i].equals("Year_" + year)) {
                 column = i;
             }

@@ -1,6 +1,5 @@
 package Plamena.week4;
 
-import Lukas.week4.day3.Aufgabe1;
 import Lukas.week4.day3.Strings;
 
 import java.util.Arrays;
@@ -64,8 +63,7 @@ public class StringExercise {
         int vowels = 0;
         int wordIdx = 0;
         int countMax = 0;
-
-        String biggestVowelNames = "";
+        StringBuilder sb = new StringBuilder();
 
         for (int i = 0; i < dataArray.length; i++) {
             int counter = 0;
