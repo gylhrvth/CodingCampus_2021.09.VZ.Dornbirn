@@ -34,11 +34,11 @@ public class PersonMain {
             personList.add(personArr[i]);
             System.out.println(personArr[i]);
         }
-
+        // Methode in Person Class to.String und to.String1  !!!
         System.out.println(person1.toString1());
 
-
     }
+
 
 
 
