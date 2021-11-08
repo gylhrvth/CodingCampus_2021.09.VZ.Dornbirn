@@ -130,6 +130,8 @@ public class Car {
     public int getWeight() {
         return weight;
     }
+    @Override
+    public String toString() { return String.format("Manufacturer: %s Model: %s Power: %d KW Weight: %d kg", this.manufacturer, this.model, this.kW, this.weight);}
 
 }
 
