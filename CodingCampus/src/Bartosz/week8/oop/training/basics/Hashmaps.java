@@ -6,7 +6,7 @@ public class Hashmaps {
     public static void main(String[] args) {
 
         HashMap<String, Integer> zH = new HashMap<String, Integer>();
-        zH.put("a" , 10);
+        zH.put("a", 10);
         zH.put("b", 0);
         zH.put("c", 69);
         zH.put("d", 69);
