@@ -1,4 +1,4 @@
-package danny.classes.TaskCarSimulation;
+package Danny.classes.TaskCarSimulation;
 
 public class CarSimulationMain {
     static Car auto1 = new Car("Audi","TT",250,DriveTyp.gasoline,1260);
@@ -9,5 +9,8 @@ public class CarSimulationMain {
         System.out.println(auto1.getkW());
         System.out.println(auto1.getDriveTyp());
         System.out.println(auto1.getWeight());
+
+        auto1.driveCar();
     }
+
 }
