@@ -33,6 +33,8 @@ public class CameraMain {
         //Macht ein Foto
         CameraMethoden.takePhoto();
 
+
+
     }
 
 

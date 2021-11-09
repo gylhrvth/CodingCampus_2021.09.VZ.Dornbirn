@@ -40,12 +40,31 @@ public class CameraMethoden {
     public static void takePhoto() throws IOException {
 
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Wollen Sie nun das Foto machen? Ja / Nein");
-        String inputPhoto = scanner.next();
+        System.out.println("Mit welcher Camera wollen Sie ein Foto machen: Canon, Nikon, Sony");
+        String inputCamera = scanner.next();
 
-        if(inputPhoto.equalsIgnoreCase("Ja")) {
-            System.out.println(loadPhoto());
+        if (inputCamera.equalsIgnoreCase("Canon")) {
+            System.out.println("Wollen Sie nun das Foto machen? Ja / Nein");
+            String input = scanner.next();
+
+            if (input.equalsIgnoreCase("Ja")) {
+                System.out.println(loadPhoto());
+            }
+        } else if (inputCamera.equalsIgnoreCase("Nikon")) {
+            System.out.println("Wollen Sie nun das Foto machen? Ja / Nein");
+            String input = scanner.next();
+
+            if (input.equalsIgnoreCase("Ja")) {
+                System.out.println(loadPhoto());
+            }
+        } else if (inputCamera.equalsIgnoreCase("Sony")) {
+            System.out.println("Wollen Sie nun das Foto machen? Ja / Nein");
+            String input = scanner.next();
+
+            if (input.equalsIgnoreCase("Ja")) {
+                System.out.println(loadPhoto());
+            }
         }
-
     }
+
 }
