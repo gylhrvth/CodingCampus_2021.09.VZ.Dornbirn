@@ -1,6 +1,9 @@
 package Danny.classes.TaskCarSimulation;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.Scanner;
 
 public class DriverInteraction {
     private List<Car> carList;
@@ -15,11 +18,11 @@ public class DriverInteraction {
     public void start() {
         whichCar();
         beforeDrive();
-        driveAndAfterDrive();
+
     }
 
     private void generateCars() {
-        Car auto1 = new Car("Audi", "TT", -100, DRIVE_TYP.gasoline, 1370);
+        Car auto1 = new Car("Audi", "TT", 100, DRIVE_TYP.gasoline, 1370);
         Car auto2 = new Car("Ford", "Mondeo", 110, DRIVE_TYP.diesel, 1577);
         Car auto3 = new Car("Fiat", "Panda", 59, DRIVE_TYP.gas, 1155);
         Car auto4 = new Car("Tesla", "Model 3", 350, DRIVE_TYP.electricity, 1847);
@@ -49,11 +52,13 @@ public class DriverInteraction {
         Scanner scanner = new Scanner(System.in);
         System.out.println();
         System.out.println("Wie hoch ist der Tankinhalt. Eingabe: 1 - 80");
-        selectedCar.tank.setTankCapacity(scanner.nextInt());
+        selectedCar.setTankCapacity(scanner.nextInt());
     }
 
     public int howFarDrive() {
         try {
+            System.out.println("Tankinhalt "+ selectedCar.getTankCapacity());
+            System.out.println("Der Tank reicht für " + selectedCar.totalKmOfTankCapacity() + " Km");
             System.out.println("Wieviele Km willst du fahren?");
             Scanner scanner = new Scanner(System.in);
             return scanner.nextInt();
@@ -65,27 +70,36 @@ public class DriverInteraction {
 
     public void driveAndAfterDrive() {
         int kilometerToDrive = howFarDrive();
-        selectedCar.driveCar(kilometerToDrive);
-        if (kilometerToDrive < selectedCar.totalKmOfTankCapacity()) {
+        int kilometerCanDrive = selectedCar.driveCar(kilometerToDrive);
+        if (kilometerCanDrive == kilometerToDrive) {
             drivePrint(kilometerToDrive);
-            coveredDistance(kilometerToDrive);
+            coveredDistancePrint(kilometerToDrive);
             totalCoveredDistance = kilometerToDrive;
+            totalCoveredDistancePrint(totalCoveredDistance);
+            System.out.println("Tankinhalt "+ selectedCar.getTankCapacity());
         } else {
-            int kilometerCanDrive = selectedCar.totalKmOfTankCapacity();
             drivePrint(kilometerCanDrive);
             System.out.println();
             System.out.println("Du bist " + kilometerCanDrive + " km gefahren. Der Tank ist leer!");
             refuel();
             drivePrint(kilometerToDrive - kilometerCanDrive);
-            coveredDistance(kilometerToDrive);
+            coveredDistancePrint(kilometerToDrive);
             totalCoveredDistance = kilometerToDrive;
+            totalCoveredDistancePrint(totalCoveredDistance);
+            System.out.println("Tankinhalt "+ selectedCar.getTankCapacity());
         }
     }
 
-    public void coveredDistance(int kilometerToDrive) {
+    public void coveredDistancePrint(int kilometerToDrive) {
         System.out.println();
         System.out.println();
         System.out.println("Es wurden " + kilometerToDrive + " Km zurückgelegt.");
+    }
+
+    public void totalCoveredDistancePrint(int totalCoveredDistance) {
+        System.out.println();
+        System.out.println();
+        System.out.println("Es wurden insgesammt " + totalCoveredDistance + " Km zurückgelegt.");
     }
 
     public void drivePrint(int kilometerToDrive) {
@@ -109,8 +123,21 @@ public class DriverInteraction {
     public void refuel() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Wieviel willst du tanken? Eingabe: 1 - 80");
-        selectedCar.tank.setTankCapacity(scanner.nextInt());
+        selectedCar.setTankCapacity(scanner.nextInt());
     }
 
-
+    public boolean driveAgain() {
+        Boolean driveAgain;
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Möchtest du weiter fahren");
+        System.out.println("1 = Ja | 2 = Nein");
+        if (scanner.nextInt() == 1) {
+            driveAgain = true;
+            return driveAgain;
+        } else if (scanner.nextInt() == 2) {
+            driveAgain = false;
+            return driveAgain;
+        }
+        return true;
+    }
 }
