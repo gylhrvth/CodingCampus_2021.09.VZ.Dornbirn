@@ -66,6 +66,6 @@ public class Kamera {
 
     @Override
     public String toString() {
-        return String.format("Hersteller:%6s, Model:%8s, Megapixel:%4s, Objektiv:%2s", getProducer(), getModel(), getMp(), getObjektiv());
+        return String.format("Hersteller %3s, Model %3s, Megapixel %3s", getProducer(), getModel(), getMp());
     }
 }

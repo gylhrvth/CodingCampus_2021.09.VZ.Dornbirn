@@ -37,6 +37,6 @@ public class Objektiv {
 
     @Override
     public String toString() {
-        return String.format("Brennweite:%5s Lichtstärke:%4s Blende:%9s ", getFocalLength(), getLightIntensity(), getBlende());
+        return String.format("Brennweite %3s Lichtstärke %3s Blende %3s ", getFocalLength(), getLightIntensity(), getBlende());
     }
 }

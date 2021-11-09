@@ -37,11 +37,11 @@ public class CameraObjSpeiMethoden {
         CameraObjSpeiMethoden.printCameraList(cameraNew);
         String inputCamera = scanner.next();
 
-        if (inputCamera.equalsIgnoreCase("Canon")) {
+        if (inputCamera.equalsIgnoreCase("Nikon")) {
             currentCamera = cameraNew.get(0);
-        } else if (inputCamera.equalsIgnoreCase("Nikon")) {
-            currentCamera = cameraNew.get(1);
         } else if (inputCamera.equalsIgnoreCase("Sony")) {
+            currentCamera = cameraNew.get(1);
+        } else if (inputCamera.equalsIgnoreCase("Canon")) {
             currentCamera = cameraNew.get(2);
         } else {
             System.out.println("Gib einen richtige Kamera ein!!!!");
@@ -54,15 +54,18 @@ public class CameraObjSpeiMethoden {
         String inputObjektiv = scanner.next();
 
         if(inputObjektiv.equalsIgnoreCase("Objektiv1")) {
+            currentObjektiv = objektivs.get(0);
             currentCamera.mountObjectiv(objektivs.get(0));
         } else if (inputObjektiv.equalsIgnoreCase("Objektiv2")) {
+            currentObjektiv = objektivs.get(1);
             currentCamera.mountObjectiv(objektivs.get(1));
         } else if (inputObjektiv.equalsIgnoreCase("Objektiv3")) {
+            currentObjektiv = objektivs.get(2);
             currentCamera.mountObjectiv(objektivs.get(2));
         }
 
 
-        System.out.println(currentCamera);
+        System.out.println("Gewählte Kamera: " + currentCamera + "\nGewähltes Objektiv: " + currentObjektiv);
     }
 
 }
