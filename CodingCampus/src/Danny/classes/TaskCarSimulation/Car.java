@@ -56,12 +56,6 @@ public class Car {
         return 0;
     }
 
-    public void coveredDistance(int kilometerToDrive) {
-        System.out.println();
-        System.out.println();
-        System.out.println("Es wurden " + kilometerToDrive + " Km zurückgelegt.");
-    }
-
     public void setkW(int kW) {
         if (kW < 0) {
             throw new IllegalArgumentException("Provided value is invalid!");
