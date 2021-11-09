@@ -1,4 +1,4 @@
-package Rauan.woche8;
+package Rauan.woche8.personenSort;
 
 import Lukas.week8.day4.MessageType;
 

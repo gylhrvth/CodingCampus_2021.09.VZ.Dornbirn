@@ -1,4 +1,4 @@
-package Rauan.woche8;
+package Rauan.woche8.dataKlasse;
 
 import Lukas.week8.day3.excerciseDataclass.MinMaxAverage;
 
