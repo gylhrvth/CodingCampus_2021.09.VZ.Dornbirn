@@ -22,16 +22,17 @@ public class Car {
     }
 
     public int driveCar(int kilometerToDrive) {
+        DriverInteraction driverInteraction = new DriverInteraction();
         if (kilometerToDrive < totalKmOfTankCapacity()) {
-            DriverInteraction.drivePrint(kilometerToDrive);
+            driverInteraction.drivePrint(kilometerToDrive);
             return kilometerToDrive;
         } else {
             int kilometerCanDrive = totalKmOfTankCapacity();
-            DriverInteraction.drivePrint(kilometerCanDrive);
+            driverInteraction.drivePrint(kilometerCanDrive);
             System.out.println();
             System.out.println("Du bist " + kilometerCanDrive + " km gefahren." +
                     " Der Tank ist leer!");
-            DriverInteraction.drivePrint(kilometerToDrive - kilometerCanDrive);
+            driverInteraction.drivePrint(kilometerToDrive - kilometerCanDrive);
             return kilometerToDrive;
         }
     }

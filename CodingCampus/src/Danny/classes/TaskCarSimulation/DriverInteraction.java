@@ -88,7 +88,7 @@ public class DriverInteraction {
         System.out.println("Es wurden " + kilometerToDrive + " Km zurückgelegt.");
     }
 
-    public static void drivePrint(int kilometerToDrive) {
+    public void drivePrint(int kilometerToDrive) {
         try {
             for (int j = 0; j <= kilometerToDrive; j++) {
                 System.out.println();
