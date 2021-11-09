@@ -7,10 +7,10 @@ public class Car {
     private String manufacturer;
     private String model;
     private int kW;
-    private int tankCapacity;
+    public int tankCapacity;
     private DRIVE_TYP DRIVETYP;
     private int weight;
-
+    private int kilometerToDrive;
 
     public Car(String manufacturer, String model, int kW, DRIVE_TYP DRIVETYP, int weight) {
         this.manufacturer = manufacturer;
@@ -20,29 +20,6 @@ public class Car {
         this.weight = weight;
     }
 
-    public void beforeDrive() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Wie hoch ist der Tankinhalt. Eingabe: 1 - 80");
-        tankCapacity = scanner.nextInt();
-    }
-
-    public void refuel() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Wieviel willst du tanken? Eingabe: 1 - 80");
-        tankCapacity = scanner.nextInt();
-    }
-
-    public int howFarDrive() {
-        try {
-            System.out.println("Wieviele Km willst du fahren?");
-            Scanner scanner = new Scanner(System.in);
-            return scanner.nextInt();
-        } catch (NoSuchElementException e) {
-            System.out.println("Provided value is invalid!");
-        }
-        return 0;
-    }
-
     public int totalTankKm(int tankCapacity) {
         int totalTankKm = (int) (tankCapacity / consumptionOf100Km(getWeight(), getkW(), getDriveTyp())) * 100;
         return totalTankKm;
@@ -50,34 +27,15 @@ public class Car {
 
     public int driveCar(int kilometerToDrive) {
         if (kilometerToDrive < totalTankKm(tankCapacity)) {
-            drivePrint(kilometerToDrive);
+            DriverInteraction.drivePrint(kilometerToDrive);
             return kilometerToDrive;
         } else {
             int kilometerCanDrive = totalTankKm(tankCapacity);
-            drivePrint(kilometerCanDrive);
+            DriverInteraction.drivePrint(kilometerCanDrive);
             System.out.println();
             System.out.println("Du bist " + kilometerCanDrive + " km gefahren. Der Tank ist leer!");
-            refuel();
-            drivePrint(kilometerToDrive-kilometerCanDrive);
+            DriverInteraction.drivePrint(kilometerToDrive-kilometerCanDrive);
             return kilometerToDrive;
-        }
-    }
-
-    public void drivePrint (int kilometerToDrive) {
-        try {
-            for (int j = 0; j <= kilometerToDrive; j++) {
-                System.out.println();
-                System.out.println();
-                String carRepat = " ";
-                System.out.println(carRepat.repeat(j) + "  ___  " + carRepat.repeat(kilometerToDrive - j));
-                carRepat = "_";
-                System.out.print(carRepat.repeat(j) + "=o---o>" + carRepat.repeat(kilometerToDrive - j));
-                Thread.sleep(15);
-                System.out.print("\033[H\033[2J");
-                System.out.flush();
-            }
-        } catch (InterruptedException exc) {
-            //noop
         }
     }
 
@@ -111,8 +69,19 @@ public class Car {
         this.kW = kW;
     }
 
+    public void setTankCapacity(int tankCapacity) {
+        if (kW < 0) {
+            throw new IllegalArgumentException("Provided value is invalid!");
+        }
+        this.tankCapacity = tankCapacity;
+    }
+
     public String getManufacturer() {
         return manufacturer;
+    }
+
+    public int getTankCapacity() {
+        return tankCapacity;
     }
 
     public String getModel() {
@@ -130,8 +99,11 @@ public class Car {
     public int getWeight() {
         return weight;
     }
+
     @Override
-    public String toString() { return String.format("Manufacturer: %s Model: %s Power: %d KW Weight: %d kg", this.manufacturer, this.model, this.kW, this.weight);}
+    public String toString() {
+        return String.format(
+                "| %-6s %-8s | Power: %3d KW | Weight: %4d kg", this.manufacturer, this.model, this.kW, this.weight);}
 
 }
 
