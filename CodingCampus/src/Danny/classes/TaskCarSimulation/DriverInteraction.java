@@ -5,6 +5,7 @@ import java.util.*;
 public class DriverInteraction {
     private List<Car> carList;
     private Car selectedCar;
+    private int totalCoveredDistance;
 
     public DriverInteraction() {
         carList = new ArrayList<>();
@@ -48,7 +49,7 @@ public class DriverInteraction {
         Scanner scanner = new Scanner(System.in);
         System.out.println();
         System.out.println("Wie hoch ist der Tankinhalt. Eingabe: 1 - 80");
-        selectedCar.setTankCapacity(scanner.nextInt());
+        selectedCar.tank.setTankCapacity(scanner.nextInt());
     }
 
     public int howFarDrive() {
@@ -65,17 +66,19 @@ public class DriverInteraction {
     public void driveAndAfterDrive() {
         int kilometerToDrive = howFarDrive();
         selectedCar.driveCar(kilometerToDrive);
-        if (kilometerToDrive < selectedCar.totalTankKm(selectedCar.tankCapacity)) {
+        if (kilometerToDrive < selectedCar.totalKmOfTankCapacity()) {
             drivePrint(kilometerToDrive);
             coveredDistance(kilometerToDrive);
+            totalCoveredDistance = kilometerToDrive;
         } else {
-            int kilometerCanDrive = selectedCar.totalTankKm(selectedCar.tankCapacity);
+            int kilometerCanDrive = selectedCar.totalKmOfTankCapacity();
             drivePrint(kilometerCanDrive);
             System.out.println();
             System.out.println("Du bist " + kilometerCanDrive + " km gefahren. Der Tank ist leer!");
             refuel();
             drivePrint(kilometerToDrive - kilometerCanDrive);
             coveredDistance(kilometerToDrive);
+            totalCoveredDistance = kilometerToDrive;
         }
     }
 
@@ -106,7 +109,7 @@ public class DriverInteraction {
     public void refuel() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Wieviel willst du tanken? Eingabe: 1 - 80");
-        selectedCar.setTankCapacity(scanner.nextInt());
+        selectedCar.tank.setTankCapacity(scanner.nextInt());
     }
 
 

@@ -1,41 +1,36 @@
 package Danny.classes.TaskCarSimulation;
 
-import java.util.NoSuchElementException;
-import java.util.Scanner;
-
 public class Car {
     private String manufacturer;
     private String model;
-    private int kW;
-    public int tankCapacity;
-    private DRIVE_TYP DRIVETYP;
     private int weight;
-    private int kilometerToDrive;
-    private Tank tank;
+    public Tank tank;
     private Engine engine;
 
     public Car(String manufacturer, String model, int kW, DRIVE_TYP DRIVETYP, int weight) {
         this.manufacturer = manufacturer;
         this.model = model;
-        this.setkW(kW);
-        this.DRIVETYP = DRIVETYP;
+        this.engine.setkW(kW);
+        this.engine.getDriveTyp();
         this.weight = weight;
     }
 
-    public int totalTankKm(int tankCapacity) {
-        int totalTankKm = (int) (tankCapacity / consumptionOf100Km(getWeight(), getkW(), getDriveTyp())) * 100;
-        return totalTankKm;
+    public int totalKmOfTankCapacity() {
+        return (int) (tank.getTankCapacity() /
+                consumptionOf100Km(getWeight(),
+                        engine.getkW(), engine.getDriveTyp())) * 100;
     }
 
     public int driveCar(int kilometerToDrive) {
-        if (kilometerToDrive < totalTankKm(tankCapacity)) {
+        if (kilometerToDrive < totalKmOfTankCapacity()) {
             DriverInteraction.drivePrint(kilometerToDrive);
             return kilometerToDrive;
         } else {
-            int kilometerCanDrive = totalTankKm(tankCapacity);
+            int kilometerCanDrive = totalKmOfTankCapacity();
             DriverInteraction.drivePrint(kilometerCanDrive);
             System.out.println();
-            System.out.println("Du bist " + kilometerCanDrive + " km gefahren. Der Tank ist leer!");
+            System.out.println("Du bist " + kilometerCanDrive + " km gefahren." +
+                    " Der Tank ist leer!");
             DriverInteraction.drivePrint(kilometerToDrive - kilometerCanDrive);
             return kilometerToDrive;
         }
@@ -58,38 +53,12 @@ public class Car {
         return 0;
     }
 
-    public void setkW(int kW) {
-        if (kW < 0) {
-            throw new IllegalArgumentException("Provided value is invalid!");
-        }
-        this.kW = kW;
-    }
-
-    public void setTankCapacity(int tankCapacity) {
-        if (kW < 0) {
-            throw new IllegalArgumentException("Provided value is invalid!");
-        }
-        this.tankCapacity = tankCapacity;
-    }
-
     public String getManufacturer() {
         return manufacturer;
     }
 
-    public int getTankCapacity() {
-        return tankCapacity;
-    }
-
     public String getModel() {
         return model;
-    }
-
-    public int getkW() {
-        return kW;
-    }
-
-    public DRIVE_TYP getDriveTyp() {
-        return DRIVETYP;
     }
 
     public int getWeight() {
@@ -99,7 +68,9 @@ public class Car {
     @Override
     public String toString() {
         return String.format(
-                "| %-6s %-8s | Power: %3d KW | Weight: %4d kg", this.manufacturer, this.model, this.kW, this.weight);
+                "| %-6s %-8s | Power: %3d KW | Drive Typ: %8s | Weight: %4d kg",
+                this.manufacturer, this.model,this.engine.getDriveTyp(),
+                this.engine.getkW(), this.weight);
     }
 
 }
