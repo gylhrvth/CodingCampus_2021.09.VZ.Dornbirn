@@ -1,4 +1,4 @@
-package Rauan.woche8.dataKlasse;
+package Rauan.woche8.DataKlasse;
 
 public class datenKlasse {
     private int min;

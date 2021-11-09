@@ -1,4 +1,4 @@
-package Rauan.woche8.personen;
+package Rauan.woche8.Personen;
 import java.util.ArrayList;
 import java.util.List;
 

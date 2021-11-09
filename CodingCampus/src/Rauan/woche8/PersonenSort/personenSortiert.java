@@ -1,4 +1,4 @@
-package Rauan.woche8.personenSort;
+package Rauan.woche8.PersonenSort;
 
 public class personenSortiert {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package Rauan.woche8.personenSort;
+package Rauan.woche8.PersonenSort;
 
 public enum MessageTypee {
     Name,
