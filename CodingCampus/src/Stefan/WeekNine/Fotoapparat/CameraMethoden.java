@@ -19,15 +19,15 @@ public class CameraMethoden {
         }
     }
 
-    public static boolean showPhoto() throws IOException {
+    public static boolean loadPhoto() throws IOException {
         File file = new File("assets/res/jeam-beam.jpg");
         BufferedImage bufferedImage = ImageIO.read(file);
         ImageIcon imageIcon = new ImageIcon(bufferedImage);
-        imageIcon.setImage(imageIcon.getImage().getScaledInstance(400,550,Image.SCALE_DEFAULT));
+        imageIcon.setImage(imageIcon.getImage().getScaledInstance(600,750,Image.SCALE_DEFAULT));
         JFrame jFrame = new JFrame();
 
         jFrame.setLayout(new FlowLayout());
-        jFrame.setSize(400,590);
+        jFrame.setSize(600,790);
         JLabel jLabel = new JLabel();
         jLabel.setIcon(imageIcon);
         jFrame.add(jLabel);
@@ -36,13 +36,16 @@ public class CameraMethoden {
 
         return false;
     }
+
     public static void takePhoto() throws IOException {
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Wollen Sie nun das Foto machen? Ja / Nein");
         String inputPhoto = scanner.next();
 
-        System.out.println((showPhoto()));
+        if(inputPhoto.equalsIgnoreCase("Ja")) {
+            System.out.println(loadPhoto());
+        }
 
     }
 }

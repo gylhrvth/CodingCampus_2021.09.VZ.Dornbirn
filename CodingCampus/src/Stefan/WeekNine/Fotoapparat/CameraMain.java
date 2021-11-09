@@ -30,6 +30,7 @@ public class CameraMain {
 //        CameraMethoden.printCameraList(cameras);
 
 
+        //Macht ein Foto
         CameraMethoden.takePhoto();
 
     }
