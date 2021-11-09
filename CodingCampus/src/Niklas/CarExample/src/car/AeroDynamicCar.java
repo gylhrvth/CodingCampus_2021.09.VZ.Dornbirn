@@ -1,4 +1,4 @@
-package car;
+package Niklas.CarExample.src.car;
 
 public class AeroDynamicCar extends Car{
     public AeroDynamicCar(String producer, String model, int kwPower, double fuelTankStand, MOTOR_TYPE motorType,

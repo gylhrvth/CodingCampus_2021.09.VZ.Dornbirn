@@ -1,4 +1,4 @@
-package car;
+package Niklas.CarExample.src.car;
 
 import java.util.LinkedList;
 import java.util.List;
