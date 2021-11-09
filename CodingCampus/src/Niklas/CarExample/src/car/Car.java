@@ -1,4 +1,4 @@
-package car;
+package Niklas.CarExample.src.car;
 
 public class Car {
     private String producer;

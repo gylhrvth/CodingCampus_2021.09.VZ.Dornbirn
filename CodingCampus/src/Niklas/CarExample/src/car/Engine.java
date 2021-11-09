@@ -1,4 +1,4 @@
-package car;
+package Niklas.CarExample.src.car;
 
 public class Engine {
     private int cubicCapacity;
