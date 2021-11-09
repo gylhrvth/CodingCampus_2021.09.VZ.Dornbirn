@@ -18,7 +18,7 @@ public class DriverInteraction {
     }
 
     private void generateCars() {
-        Car auto1 = new Car("Audi", "TT", 180, DRIVE_TYP.gasoline, 1370);
+        Car auto1 = new Car("Audi", "TT", -100, DRIVE_TYP.gasoline, 1370);
         Car auto2 = new Car("Ford", "Mondeo", 110, DRIVE_TYP.diesel, 1577);
         Car auto3 = new Car("Fiat", "Panda", 59, DRIVE_TYP.gas, 1155);
         Car auto4 = new Car("Tesla", "Model 3", 350, DRIVE_TYP.electricity, 1847);

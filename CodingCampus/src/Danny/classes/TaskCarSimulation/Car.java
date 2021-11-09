@@ -11,6 +11,8 @@ public class Car {
     private DRIVE_TYP DRIVETYP;
     private int weight;
     private int kilometerToDrive;
+    private Tank tank;
+    private Engine engine;
 
     public Car(String manufacturer, String model, int kW, DRIVE_TYP DRIVETYP, int weight) {
         this.manufacturer = manufacturer;
@@ -34,7 +36,7 @@ public class Car {
             DriverInteraction.drivePrint(kilometerCanDrive);
             System.out.println();
             System.out.println("Du bist " + kilometerCanDrive + " km gefahren. Der Tank ist leer!");
-            DriverInteraction.drivePrint(kilometerToDrive-kilometerCanDrive);
+            DriverInteraction.drivePrint(kilometerToDrive - kilometerCanDrive);
             return kilometerToDrive;
         }
     }
@@ -97,7 +99,8 @@ public class Car {
     @Override
     public String toString() {
         return String.format(
-                "| %-6s %-8s | Power: %3d KW | Weight: %4d kg", this.manufacturer, this.model, this.kW, this.weight);}
+                "| %-6s %-8s | Power: %3d KW | Weight: %4d kg", this.manufacturer, this.model, this.kW, this.weight);
+    }
 
 }
 
