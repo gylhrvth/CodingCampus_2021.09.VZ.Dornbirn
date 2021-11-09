@@ -1,4 +1,4 @@
-package Stefan.WeekNine.Fotoapparat;
+package Stefan.WeekNine.CameraObjektivSpeicher;
 
 public class Speicherkarte {
     private int speicherkarte;
@@ -13,5 +13,10 @@ public class Speicherkarte {
 
     public void setSpeicherkarte(int speicherkarte) {
         this.speicherkarte = speicherkarte;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Speichergrösse:%4s\n", getSpeicherkarte());
     }
 }
