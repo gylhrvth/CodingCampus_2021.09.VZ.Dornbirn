@@ -22,10 +22,10 @@ public class DriverInteraction {
     }
 
     private void generateCars() {
-        Car auto1 = new Car("Audi", "TT", 100, DRIVE_TYP.gasoline, 1370);
-        Car auto2 = new Car("Ford", "Mondeo", 110, DRIVE_TYP.diesel, 1577);
-        Car auto3 = new Car("Fiat", "Panda", 59, DRIVE_TYP.gas, 1155);
-        Car auto4 = new Car("Tesla", "Model 3", 350, DRIVE_TYP.electricity, 1847);
+        Car auto1 = new Car("Audi", "TT", new Engine(100, DRIVE_TYP.gasoline), 1370);
+        Car auto2 = new Car("Ford", "Mondeo", new Engine(110, DRIVE_TYP.diesel), 1577);
+        Car auto3 = new Car("Fiat", "Panda", new Engine(59, DRIVE_TYP.gas), 1155);
+        Car auto4 = new Car("Tesla", "Model 3", new Engine(350, DRIVE_TYP.electricity), 1847);
         carList.add(auto1);
         carList.add(auto2);
         carList.add(auto3);
@@ -52,13 +52,14 @@ public class DriverInteraction {
         Scanner scanner = new Scanner(System.in);
         System.out.println();
         System.out.println("Wie hoch ist der Tankinhalt. Eingabe: 1 - 80");
-        selectedCar.setTankCapacity(scanner.nextInt());
+        selectedCar.tank.setTankCapacity(scanner.nextInt());
+
     }
 
     public int howFarDrive() {
         try {
-            System.out.println("Tankinhalt "+ selectedCar.getTankCapacity());
-            System.out.println("Der Tank reicht für " + selectedCar.totalKmOfTankCapacity() + " Km");
+            System.out.println("Tankinhalt "+ selectedCar.tank.getTankCapacity());
+            System.out.println("Der Tank reicht fuer " + selectedCar.totalKmOfTankCapacity() + " Km");
             System.out.println("Wieviele Km willst du fahren?");
             Scanner scanner = new Scanner(System.in);
             return scanner.nextInt();
@@ -76,7 +77,7 @@ public class DriverInteraction {
             coveredDistancePrint(kilometerToDrive);
             totalCoveredDistance += kilometerToDrive;
             totalCoveredDistancePrint(totalCoveredDistance);
-            System.out.println("Tankinhalt "+ selectedCar.getTankCapacity());
+            System.out.println("Tankinhalt "+ selectedCar.tank.getTankCapacity());
         } else {
             drivePrint(kilometerCanDrive);
             System.out.println();
@@ -87,7 +88,7 @@ public class DriverInteraction {
             coveredDistancePrint(kilometerToDrive);
             totalCoveredDistance += kilometerToDrive;
             totalCoveredDistancePrint(totalCoveredDistance);
-            System.out.println("Tankinhalt "+ selectedCar.getTankCapacity());
+            System.out.println("Tankinhalt "+ selectedCar.tank.getTankCapacity());
         }
     }
 
@@ -124,7 +125,7 @@ public class DriverInteraction {
     public void refuel() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Wieviel willst du tanken? Eingabe: 1 - 80");
-        selectedCar.setTankCapacity(scanner.nextInt());
+        selectedCar.tank.setTankCapacity(scanner.nextDouble());
     }
 
     public boolean driveAgain() {
