@@ -3,7 +3,7 @@ package Danny.classes.TaskCarSimulation;
 public class Car {
     private String manufacturer;
     private String model;
-    private Engine engine;
+    protected Engine engine;
     private int weight;
     protected Tank tank;
 
@@ -16,8 +16,6 @@ public class Car {
         this.tank = new Tank(5);
     }
 
-
-
     public int totalKmOfTankCapacity() {
         int totalKmOfTankCapacity = (int) (tank.getTankCapacity() / consumptionOf1Km(getWeight(), engine.getkW(), engine.getDriveTyp()));
         return totalKmOfTankCapacity;
@@ -28,7 +26,11 @@ public class Car {
         do {
             tank.setTankCapacity(tank.getTankCapacity() - (consumptionOf1Km(getWeight(), engine.getkW(), engine.getDriveTyp())));
             kmDrive++;
-        } while (kilometerToDrive != kmDrive && tank.getTankCapacity() > 1.0);
+            engine.setWearValue(engine.getWearValue() + engine.randomDefekt());
+            if (kmDrive % 20 == 0) {
+                engine.setRandomBound(engine.getRandomBound()+1);
+            }
+        } while (kilometerToDrive != kmDrive && tank.getTankCapacity() > 1.0 && engine.getWearValue() < engine.getWearValueToRepair());
         return kmDrive;
 
     }
