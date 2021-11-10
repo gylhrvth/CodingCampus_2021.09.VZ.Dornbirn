@@ -14,11 +14,12 @@ public class Kamera {
         this.mp = mp;
     }
 
-//    public void takePhoto() {
-//        if (speicherkarte != null) {
-//            speicherkarte.setSpeicherkarte(speicherkarte.getSpeicherkarte() - 80);
-//        }
-//    }
+    public boolean takePhoto() {
+        if (speicherkarte != null) {
+            speicherkarte.setSpeicherkarte(speicherkarte.getSpeicherkarte() - 80);
+        }
+        return false;
+    }
 
     public void insertSDCard(Speicherkarte sdCard) {
         this.speicherkarte = sdCard;

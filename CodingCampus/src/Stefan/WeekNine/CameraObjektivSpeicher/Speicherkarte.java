@@ -1,17 +1,17 @@
 package Stefan.WeekNine.CameraObjektivSpeicher;
 
 public class Speicherkarte {
-    private String speicherkarte;
+    private int speicherkarte;
 
-    public Speicherkarte(String speicherkarte) {
+    public Speicherkarte(int speicherkarte) {
         this.speicherkarte = speicherkarte;
     }
 
-    public String getSpeicherkarte() {
+    public int getSpeicherkarte() {
         return speicherkarte;
     }
 
-    public void setSpeicherkarte(String speicherkarte) {
+    public void setSpeicherkarte(int speicherkarte) {
         this.speicherkarte = speicherkarte;
     }
 
