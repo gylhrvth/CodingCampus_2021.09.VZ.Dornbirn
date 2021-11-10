@@ -6,7 +6,7 @@ public class Car {
     private int kW;
     private DRIVE_TYP DRIVETYP;
     private int weight;
-    private int tankCapacity;
+    private double tankCapacity;
 
 
     public Car(String manufacturer, String model, int kW, DRIVE_TYP DRIVETYP, int weight) {
@@ -28,14 +28,13 @@ public class Car {
     }
 
     public int driveCar(int kilometerToDrive) {
-        if (kilometerToDrive <= totalKmOfTankCapacity()) {
-            consumption(kilometerToDrive);
-            return kilometerToDrive;
-        } else {
-            int kilometerCanDrive = totalKmOfTankCapacity();
-            consumption(kilometerCanDrive);
-            return kilometerCanDrive;
-        }
+        int kmDrive = 0;
+        do {
+            tankCapacity -= (consumptionOf100Km(getWeight(), getkW(), getDriveTyp()) / 100);
+            kmDrive++;
+        } while (kilometerToDrive != kmDrive || tankCapacity > 1 );
+        return kmDrive;
+
     }
 
     public double consumptionOf100Km(int weight, int kW, DRIVE_TYP DRIVETYP) {
@@ -59,14 +58,14 @@ public class Car {
         this.DRIVETYP = DRIVETYP;
     }
 
-    public void setTankCapacity(int tankCapacity) {
+    public void setTankCapacity(double tankCapacity) {
         if (tankCapacity < 0) {
             throw new IllegalArgumentException("Provided value is invalid!");
         }
         this.tankCapacity = tankCapacity;
     }
 
-    public int getTankCapacity() {
+    public double getTankCapacity() {
         return tankCapacity;
     }
 

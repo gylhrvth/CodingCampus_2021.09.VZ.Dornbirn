@@ -74,7 +74,7 @@ public class DriverInteraction {
         if (kilometerCanDrive == kilometerToDrive) {
             drivePrint(kilometerToDrive);
             coveredDistancePrint(kilometerToDrive);
-            totalCoveredDistance = kilometerToDrive;
+            totalCoveredDistance += kilometerToDrive;
             totalCoveredDistancePrint(totalCoveredDistance);
             System.out.println("Tankinhalt "+ selectedCar.getTankCapacity());
         } else {
@@ -82,9 +82,10 @@ public class DriverInteraction {
             System.out.println();
             System.out.println("Du bist " + kilometerCanDrive + " km gefahren. Der Tank ist leer!");
             refuel();
-            drivePrint(kilometerToDrive - kilometerCanDrive);
+            kilometerCanDrive = selectedCar.driveCar(kilometerToDrive - kilometerCanDrive);
+            drivePrint(kilometerCanDrive);
             coveredDistancePrint(kilometerToDrive);
-            totalCoveredDistance = kilometerToDrive;
+            totalCoveredDistance += kilometerToDrive;
             totalCoveredDistancePrint(totalCoveredDistance);
             System.out.println("Tankinhalt "+ selectedCar.getTankCapacity());
         }
