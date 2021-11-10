@@ -58,8 +58,8 @@ public class DriverInteraction {
 
     public int howFarDrive() {
         try {
-            System.out.println("Tankinhalt "+ selectedCar.tank.getTankCapacity());
-            System.out.println("Der Tank reicht fuer " + selectedCar.totalKmOfTankCapacity() + " Km");
+            System.out.printf("Tankinhalt: %.0f"+ "\n",selectedCar.tank.getTankCapacity());
+            System.out.printf("Der Tank reicht fuer %d Km"+ "\n",selectedCar.totalKmOfTankCapacity());
             System.out.println("Wieviele Km willst du fahren?");
             Scanner scanner = new Scanner(System.in);
             return scanner.nextInt();
@@ -95,13 +95,13 @@ public class DriverInteraction {
     public void coveredDistancePrint(int kilometerToDrive) {
         System.out.println();
         System.out.println();
-        System.out.println("Es wurden " + kilometerToDrive + " Km zurückgelegt.");
+        System.out.println("Es wurden " + kilometerToDrive + " Km zurueckgelegt.");
     }
 
     public void totalCoveredDistancePrint(int totalCoveredDistance) {
         System.out.println();
         System.out.println();
-        System.out.println("Es wurden insgesammt " + totalCoveredDistance + " Km zurückgelegt.");
+        System.out.println("Es wurden insgesammt " + totalCoveredDistance + " Km zurueckgelegt.");
     }
 
     public void drivePrint(int kilometerToDrive) {
