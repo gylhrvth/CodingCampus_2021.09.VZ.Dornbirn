@@ -28,7 +28,7 @@ public class Car {
             kmDrive++;
             engine.setWearValue(engine.getWearValue() + engine.randomDefekt());
             if (kmDrive % 20 == 0) {
-                engine.setRandomBound(engine.getRandomBound()+1);
+                engine.setRandomBound(engine.getRandomBound() + 1);
             }
         } while (kilometerToDrive != kmDrive && tank.getTankCapacity() > 1.0 && engine.getWearValue() < engine.getWearValueToRepair());
         return kmDrive;

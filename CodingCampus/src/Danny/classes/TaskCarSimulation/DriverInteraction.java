@@ -21,7 +21,6 @@ public class DriverInteraction {
     public void start() {
         whichCar();
         beforeDrive();
-
     }
 
     private void generateCars() {
@@ -52,7 +51,6 @@ public class DriverInteraction {
     public void beforeDrive() {
         System.out.println("\nWie hoch ist der Tankinhalt. Eingabe: 1 - 80");
         selectedCar.tank.setTankCapacity(scanner.nextInt());
-
     }
 
     public int howFarDrive() {
@@ -147,10 +145,8 @@ public class DriverInteraction {
             return kilometerCanDrive;
         } else {
             return kilometerToDrive;
-
         }
     }
-
 
     public boolean driveAgain() {
         Boolean driveAgain;
@@ -164,6 +160,5 @@ public class DriverInteraction {
             return driveAgain;
         }
     }
-
 
 }

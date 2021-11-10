@@ -20,7 +20,7 @@ public class Engine {
 
     public int randomDefekt() {
         Random random = new Random();
-       return random.nextInt(randomBound);
+        return random.nextInt(randomBound);
 
     }
 

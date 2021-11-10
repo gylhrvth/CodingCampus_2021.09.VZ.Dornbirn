@@ -1,7 +1,7 @@
 package Danny.classes.TaskCarSimulation;
 
 public class RepairStation {
-private Car repairCar;
+    private Car repairCar;
 
     public RepairStation(Car repairCar) {
         this.repairCar = repairCar;

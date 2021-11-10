@@ -11,6 +11,4 @@ public class CarSimulationMain {
         System.out.println("Die Fahrt ist beendet.");
     }
 
-
-
 }
