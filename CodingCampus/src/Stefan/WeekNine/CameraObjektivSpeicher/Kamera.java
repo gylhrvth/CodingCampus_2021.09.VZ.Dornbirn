@@ -14,10 +14,11 @@ public class Kamera {
         this.mp = mp;
     }
 
-    public void takePhoto() {
-        if(speicherkarte != null) {
+    public boolean takePhoto() {
+        if (speicherkarte != null) {
             speicherkarte.setSpeicherkarte(speicherkarte.getSpeicherkarte() - 80);
         }
+        return false;
     }
 
     public void insertSDCard(Speicherkarte sdCard) {
@@ -32,12 +33,13 @@ public class Kamera {
         return objektiv;
     }
 
+    public void mountSpeicherkarte(Speicherkarte speicherkarte) {
+        this.speicherkarte = speicherkarte;
+    }
+
     public Speicherkarte getSpeicherkarte() {
         return speicherkarte;
     }
-
-
-
 
 
     public String getModel() {
@@ -66,6 +68,13 @@ public class Kamera {
 
     @Override
     public String toString() {
-        return String.format("Hersteller %3s, Model %3s, Megapixel %3s", getProducer(), getModel(), getMp());
+        String output = String.format("%3s, Model %3s, Megapixel %3s", getProducer(), getModel(), getMp());
+        if (objektiv != null) {
+            output += "\n" + objektiv;
+        }
+        if (speicherkarte != null) {
+            output += "\n" + speicherkarte;
+        }
+        return output;
     }
 }

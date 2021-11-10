@@ -17,9 +17,6 @@ public class main {
         Objektiv objektiv3 = new Objektiv(18, 2.8, 2.0);
 
 
-        // takePhoto
-
-
         Speicherkarte speicherkarte1 = new Speicherkarte(32);
         Speicherkarte speicherkarte2 = new Speicherkarte(64);
         Speicherkarte speicherkarte3 = new Speicherkarte(128);
@@ -50,12 +47,10 @@ public class main {
 
 //        CameraObjSpeiMethoden.printSpeicherkarteList(speicherkarten);
 
-        CameraObjSpeiMethoden.bigPhotoWithPrint(List.of(speicherkarte), objektivs, camerasNew);
+        Configurator.bigPhotoWithPrint(List.of(speicherkarte), objektivs, camerasNew);
 
 
     }
-
-
 
 
 }
