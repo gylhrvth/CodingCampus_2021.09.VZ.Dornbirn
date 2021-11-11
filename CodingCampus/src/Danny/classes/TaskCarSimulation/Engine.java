@@ -9,6 +9,7 @@ public class Engine {
     private int wearValue;
     private int randomBound;
     private int wearValueToRepair;
+    private final Random random = new Random();
 
     public Engine(int kW, DRIVE_TYP DRIVETYP) {
         this.setkW(kW);
@@ -18,10 +19,19 @@ public class Engine {
         this.wearValueToRepair = 10000;
     }
 
-    public int randomDefekt() {
-        Random random = new Random();
-        return random.nextInt(randomBound);
+    public void calculateWearValue(int kmDrive) {
+        setWearValue(getWearValue() + randomDefekt());
+        if (kmDrive % 20 == 0) {
+            setRandomBound(getRandomBound() + 1);
+        }
+    }
 
+    public boolean isBroken() {
+        return getWearValue() >= getWearValueToRepair();
+    }
+
+    public int randomDefekt() {
+        return random.nextInt(randomBound);
     }
 
     public void setDRIVETYP(DRIVE_TYP DRIVETYP) {
@@ -41,6 +51,7 @@ public class Engine {
 
     public void setWearValueToRepair(int wearValueToRepair) {
         this.wearValueToRepair = wearValueToRepair;
+
     }
 
     public int getkW() {

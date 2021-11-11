@@ -9,7 +9,7 @@ public class DriverInteraction {
     private List<Car> carList;
     private Car selectedCar;
     private int totalCoveredDistance;
-    Scanner scanner = new Scanner(System.in);
+    private final Scanner scanner = new Scanner(System.in);
     RepairStation repairHarry = new RepairStation(selectedCar);
 
 

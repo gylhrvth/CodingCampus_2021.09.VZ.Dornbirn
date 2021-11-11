@@ -13,30 +13,42 @@ public class Car {
         this.model = model;
         this.engine = engine;
         this.weight = weight;
-        this.tank = new Tank(5);
+        this.tank = new Tank(5, 80);
+    }
+
+    public void isEngineDefect(int kmDrive) {
+        engine.calculateWearValue(kmDrive);
+    }
+
+    public boolean isBroken() {
+        return engine.isBroken();
+    }
+
+    public boolean isEmpty() {
+        return tank.isTankEmpty();
     }
 
     public int totalKmOfTankCapacity() {
-        int totalKmOfTankCapacity = (int) (tank.getTankCapacity() / consumptionOf1Km(getWeight(), engine.getkW(), engine.getDriveTyp()));
-        return totalKmOfTankCapacity;
+        return (int) (tank.getTankCapacity() / consumptionOf1Km(getWeight(), engine.getkW(), engine.getDriveTyp()));
+    }
+
+    public void calculateFuelConsumtion(int kmDrive) {
+        tank.setTankCapacity(tank.getTankCapacity() - (kmDrive * (consumptionOf1Km(getWeight(), engine.getkW(), engine.getDriveTyp()))));
     }
 
     public int driveCar(int kilometerToDrive) {
         int kmDrive = 0;
         do {
-            tank.setTankCapacity(tank.getTankCapacity() - (consumptionOf1Km(getWeight(), engine.getkW(), engine.getDriveTyp())));
+            calculateFuelConsumtion(kmDrive);
             kmDrive++;
-            engine.setWearValue(engine.getWearValue() + engine.randomDefekt());
-            if (kmDrive % 20 == 0) {
-                engine.setRandomBound(engine.getRandomBound() + 1);
-            }
-        } while (kilometerToDrive != kmDrive && tank.getTankCapacity() > 1.0 && engine.getWearValue() < engine.getWearValueToRepair());
+            isEngineDefect(kmDrive);
+        } while (kilometerToDrive != kmDrive && !isEmpty() && !isBroken());
         return kmDrive;
 
     }
 
     //Verbrauch pro Km in Liter
-    public double consumptionOf1Km(int weight, int kW, DRIVE_TYP DRIVETYP) {
+    public static double consumptionOf1Km(int weight, int kW, DRIVE_TYP DRIVETYP) {
         if (DRIVETYP == DRIVE_TYP.gasoline) {
             double consumptionOf100Km = (weight + kW) / 182;
             double consumptionOf1Km = ((consumptionOf100Km / 100) * 100) / 100;
