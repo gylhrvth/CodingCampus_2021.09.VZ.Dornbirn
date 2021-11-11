@@ -1,4 +1,4 @@
-package Rauan.Aufgaben.woche4;
+package Rauan.Game;
 
 import java.util.Scanner;
 
@@ -31,5 +31,6 @@ public class BlackJackGame {
             System.out.println("payer 2 Wins!");
         else
             System.out.println("should never print");
+
     }
 }
