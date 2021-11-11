@@ -38,7 +38,7 @@ public class ArrayNumbersIntAndFloatWithBubbleSort {
         System.out.println(Arrays.toString(randomNumbers));
     }
 
-    private static void swapFloat(float[] numbers) {
+    protected static void swapFloat(float[] numbers) {
         for (int i = 0; i < numbers.length; i++) {
             for (int j = 0; j < numbers.length - 1 - i; j++) {
                 if (numbers[j] > numbers[j + 1]) {

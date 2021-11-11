@@ -1,4 +1,4 @@
-package danny.files;
+package Danny.files;
 
 import java.io.*;
 

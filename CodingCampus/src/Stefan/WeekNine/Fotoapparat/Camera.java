@@ -1,10 +1,10 @@
 package Stefan.WeekNine.Fotoapparat;
 
 public class Camera {
-    public String modell;
-    public double mp;
-    public double focalDistanceMin;
-    public double focalDistanceMax;
+    private String modell;
+    private double mp;
+    private double focalDistanceMin;
+    private double focalDistanceMax;
 
     public Camera(String modell,  double mp, double focalDistanceMin, double focalDistanceMax) {
         this.modell = modell;

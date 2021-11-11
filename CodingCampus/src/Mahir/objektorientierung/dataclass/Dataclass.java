@@ -13,6 +13,7 @@ public class Dataclass {
     }
 
 
+
     public int getMin() {
         return min;
     }
@@ -25,7 +26,10 @@ public class Dataclass {
         return avrg;
     }
 
+
+    @Override
     public String toString() {
         return String.format("Minvalue: %d Maxvalue: %d Average: %.2f", min, max, avrg);
     }
+
 }
