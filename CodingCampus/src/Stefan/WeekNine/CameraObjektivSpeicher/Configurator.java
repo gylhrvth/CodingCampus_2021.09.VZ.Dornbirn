@@ -1,10 +1,16 @@
 package Stefan.WeekNine.CameraObjektivSpeicher;
 
+import javax.imageio.ImageIO;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
 
 public class Configurator {
-    public static void bigPhotoWithPrint(List<Speicherkarte> speicherkarte, List<Objektiv> objektivs, List<Kamera> cameraNew) {
+    public static void bigPhotoWithPrint(List<Speicherkarte> speicherkarte, List<Objektiv> objektivs, List<Kamera> cameraNew) throws IOException {
         Kamera currentCamera = null;
         Scanner scanner = new Scanner(System.in);
 
@@ -12,6 +18,10 @@ public class Configurator {
         System.out.println("Mit welcher Kamera wollen sie Fotografieren:\n[1]Nikon, [2]Sony, [3]Canon");
         System.out.println();
         CameraObjSpeiMethoden.printCameraList(cameraNew);
+        while (!scanner.hasNextInt()) {
+            System.out.println("Zahl eingeben");
+            scanner.nextLine();
+        }
         int inputCamera = scanner.nextInt();
 
         while (inputCamera > 3 || inputCamera < 0) {
@@ -36,6 +46,10 @@ public class Configurator {
         System.out.println("Welches Objektiv wollen sie verwenden:\n[1]Objektiv1, [2]Objektiv2, [3]Objektiv3");
         System.out.println();
         CameraObjSpeiMethoden.printObjektivList(objektivs);
+        while (!scanner.hasNextInt()) {
+            System.out.println("Zahl eingeben");
+            scanner.nextLine();
+        }
         int inputObjektiv = scanner.nextInt();
 
         while (inputObjektiv > 3 || inputObjektiv < 0) {
@@ -57,10 +71,13 @@ public class Configurator {
 
 
         //Auswahl Speicherkate
-        System.out.println("Welche Speicherkarte wollen sie:\n[1]Speicher1, [2]Speicher2, [3]Speicher3");
+        System.out.println("Welche Speicherkarte wollen sie:\n[1]32GB, [2]64GB, [3]128GB");
         System.out.println();
-        CameraObjSpeiMethoden.printSpeicherkarteList(speicherkarte);
-        double inputSpeicher = scanner.nextInt();
+        while (!scanner.hasNextInt()) {
+            System.out.println("Zahl eingeben");
+            scanner.nextLine();
+        }
+        int inputSpeicher = scanner.nextInt();
 
         while (inputSpeicher > 3 || inputSpeicher < 0) {
             System.out.println("Geben Sie eine Zahl zwischen 1 und 3 ein!!!");
@@ -78,11 +95,51 @@ public class Configurator {
         } else if (inputSpeicher == 3) {
             currentCamera.mountSpeicherkarte(speicherkarte.get(2));
         }
-        System.out.println("Gewählte Konfiguration: " + currentCamera);
+        System.out.println("Gewählte Konfiguration:\n" + currentCamera);
 
-        Speicherkarte photo = currentCamera.getSpeicherkarte();
 
-        
+        //Rechnet aus wievil Photos gemacht werden können mit der gewählten Speicherkarte
+        Speicherkarte photo = currentCamera.makePhotos();
 
+        System.out.println();
+        System.out.printf("Sie können bei der Gewählten %s Fotos machen.", photo);
+
+
+        //Fotos machen
+
+//        photo.setSizeInGB(photo.getSizeInGB() - 1);
+        System.out.println();
+        System.out.println("Wollen Sie gleich mal ein paar bilder machen? [1]Ja / [2]Nein");
+        while (!scanner.hasNextInt()) {
+            System.out.println("Zahl eingeben");
+            scanner.nextLine();
+        }
+        int inputPhoto = scanner.nextInt();
+
+        while (inputPhoto > 2 || inputPhoto < 0) {
+            System.out.println("Geben Sie eine Zahl zwischen 1 und 2 ein!");
+            while (!scanner.hasNextInt()) {
+                System.out.println("Zahl eingeben");
+                scanner.nextInt();
+            }
+            inputPhoto = scanner.nextInt();
+            scanner.nextLine();
+        }
+
+        int sum = 0;
+        while (true) {
+            if (inputPhoto == 1) {
+                sum++;
+                System.out.println("Wollen Sie noch eines machen");
+                inputPhoto = scanner.nextInt();
+                continue;
+            }
+            if (inputPhoto == 2) {
+                System.out.println("Danke das wars");
+                break;
+            }
+        }
+        int endsum = photo.getSizeInGB() - sum;
+        System.out.println("Verbleibende " + endsum + " Bilder!");
     }
 }
