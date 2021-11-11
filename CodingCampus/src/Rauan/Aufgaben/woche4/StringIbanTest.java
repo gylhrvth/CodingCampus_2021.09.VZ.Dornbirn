@@ -1,4 +1,4 @@
-package Rauan.Aufgaben.Woche4;
+package Rauan.Aufgaben.woche4;
 
 public class StringIbanTest {
     public static void main(String[] args) {
