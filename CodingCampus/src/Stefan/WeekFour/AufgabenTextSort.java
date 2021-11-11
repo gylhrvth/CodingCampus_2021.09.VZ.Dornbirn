@@ -1,6 +1,5 @@
 package Stefan.WeekFour;
 
-import Bartosz.week4.FunWithStrings.FwS2Package.GetArrayInit;
 import Lukas.week4.day4.Aufgabe1;
 
 public class AufgabenTextSort {

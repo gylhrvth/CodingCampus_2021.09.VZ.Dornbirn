@@ -7,8 +7,8 @@ public class Tank {
         this.setTankCapacity(tankCapacity);
     }
 
-    public int getTankCapacity() {
-        return (int) tankCapacity;
+    public double getTankCapacity() {
+        return tankCapacity;
     }
 
     public void setTankCapacity(double tankCapacity) {

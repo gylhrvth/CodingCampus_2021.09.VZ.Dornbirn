@@ -8,9 +8,7 @@ public class CarSimulationMain {
         do {
             driverInteraction.driveAndAfterDrive();
         } while (driverInteraction.driveAgain());
-
+        System.out.println("Die Fahrt ist beendet.");
     }
-
-
 
 }

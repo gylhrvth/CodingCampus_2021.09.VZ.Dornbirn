@@ -1,10 +1,12 @@
 package Rauan.Aufgaben;
 
+import java.util.Scanner;
+
 public class Schleifen {
     public static void main(String[] args) {
-       // count1();
-       // count2();
-      //  count3();
+        // count1();
+        // count2();
+        //  count3();
         count4();
     }
 

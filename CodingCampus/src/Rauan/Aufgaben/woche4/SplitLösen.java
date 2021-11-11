@@ -1,4 +1,4 @@
-package Rauan.Aufgaben.Woche4;
+package Rauan.Aufgaben.woche4;
 
 import Lukas.week4.day3.Strings;
 
