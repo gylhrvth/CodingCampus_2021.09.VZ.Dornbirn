@@ -11,10 +11,12 @@ public class main {
         Kamera camera1 = new Kamera("Z7", "Nikon", 64);
         Kamera camera2 = new Kamera("AI", "Sony", 58);
         Kamera camera3 = new Kamera("R6", "Canon", 24);
+        Kamera camera4 = new Kamera("Z6","Nikon",42);
 
-        Objektiv objektiv1 = new Objektiv(24, 2.8, 4.0);
-        Objektiv objektiv2 = new Objektiv(120, 4.8, 5.0);
-        Objektiv objektiv3 = new Objektiv(18, 2.8, 2.0);
+        Objektiv objektiv1 = new Objektiv(24,70,2.8,4.0);
+        Objektiv objektiv2 = new Objektiv(18,35,1.8,2.0);
+        Objektiv objektiv3 = new Objektiv(70,200,2.8,4.0);
+
 
 
         Speicherkarte speicherkarte1 = new Speicherkarte(32);
@@ -25,7 +27,7 @@ public class main {
 //        camera1.insertSDCard(speicherkarte3);
 
         //Gibt die Liste der Kameras aus
-        Kamera[] cameraNew = new Kamera[]{camera1, camera2, camera3};
+        Kamera[] cameraNew = new Kamera[]{camera1, camera2, camera3, camera4};
         List<Kamera> camerasNew = new ArrayList<>();
         camerasNew.addAll(Arrays.asList(cameraNew));
 
@@ -47,7 +49,7 @@ public class main {
 
 //        CameraObjSpeiMethoden.printSpeicherkarteList(speicherkarten);
 
-        Configurator.bigPhotoWithPrint(List.of(speicherkarte), objektivs, camerasNew);
+        ConfiguratorNewOptimiert.bigPhotoWithPrint(List.of(speicherkarte), objektivs, camerasNew);
 
 
     }

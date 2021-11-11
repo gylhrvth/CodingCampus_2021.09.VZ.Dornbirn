@@ -1,31 +1,29 @@
 package Stefan.WeekNine.CameraObjektivSpeicher;
 
-import javax.imageio.ImageIO;
-import javax.swing.*;
-import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
 
-public class Configurator {
+public class ConfiguratorNewOptimiert {
     public static void bigPhotoWithPrint(List<Speicherkarte> speicherkarte, List<Objektiv> objektivs, List<Kamera> cameraNew) throws IOException {
         Kamera currentCamera = null;
         Scanner scanner = new Scanner(System.in);
 
         //Auswahl Camera
-        System.out.println("Mit welcher Kamera wollen sie Fotografieren:\n[1]Nikon, [2]Sony, [3]Canon");
+        System.out.println("Mit welcher Kamera wollen sie Fotografieren:");
+        for (int i = 0; i < cameraNew.size(); i++) {
+            System.out.println("[" + (i + 1) + "] " + cameraNew.get(i).getProducer() + " " + cameraNew.get(i).getModel() + " " + cameraNew.get(i).getMp() + "MP");
+        }
         System.out.println();
-        CameraObjSpeiMethoden.printCameraList(cameraNew);
         while (!scanner.hasNextInt()) {
             System.out.println("Zahl eingeben");
             scanner.nextLine();
         }
         int inputCamera = scanner.nextInt();
 
-        while (inputCamera > 3 || inputCamera < 0) {
-            System.out.println("Geben Sie eine Zahl zwischen 1 und 3 ein!!!");
+
+        while (inputCamera > cameraNew.size() || inputCamera < 1) {
+            System.out.println("Geben Sie eine Zahl ein!!!");
             while (!scanner.hasNextInt()) {
                 System.out.println("Zahl eingeben");
                 scanner.nextLine();
@@ -33,26 +31,22 @@ public class Configurator {
             inputCamera = scanner.nextInt();
             scanner.nextLine();
         }
-        if (inputCamera == 1) {
-            currentCamera = cameraNew.get(0);
-        } else if (inputCamera == 2) {
-            currentCamera = cameraNew.get(1);
-        } else if (inputCamera == 3) {
-            currentCamera = cameraNew.get(2);
-        }
+        currentCamera = cameraNew.get(inputCamera - 1);
 
 
         //Auswahl Objektiv
-        System.out.println("Welches Objektiv wollen sie verwenden:\n[1]Objektiv1, [2]Objektiv2, [3]Objektiv3");
+        System.out.println("Welches Objektiv wollen sie verwenden:");
+        for (int i = 0; i < objektivs.size(); i++) {
+            System.out.println("[" + (i + 1) + "] " + objektivs.get(i).getFocalLengthMin() + "-->>" + objektivs.get(i).getFocalLengthMax() + " f" + objektivs.get(i).getLightIntensity() + " " + objektivs.get(i).getBlende());
+        }
         System.out.println();
-        CameraObjSpeiMethoden.printObjektivList(objektivs);
         while (!scanner.hasNextInt()) {
             System.out.println("Zahl eingeben");
             scanner.nextLine();
         }
         int inputObjektiv = scanner.nextInt();
 
-        while (inputObjektiv > 3 || inputObjektiv < 0) {
+        while (inputObjektiv > objektivs.size() || inputObjektiv < 1) {
             System.out.println("Geben Sie eine Zahl zwischen 1 und 3 ein!!!");
             while (!scanner.hasNextInt()) {
                 System.out.println("Zahl eingeben");
@@ -61,17 +55,14 @@ public class Configurator {
             inputObjektiv = scanner.nextInt();
             scanner.nextLine();
         }
-        if (inputObjektiv == 1) {
-            currentCamera.mountObjectiv(objektivs.get(0));
-        } else if (inputObjektiv == 2) {
-            currentCamera.mountObjectiv(objektivs.get(1));
-        } else if (inputObjektiv == 3) {
-            currentCamera.mountObjectiv(objektivs.get(2));
-        }
+        currentCamera.mountObjectiv(objektivs.get(inputObjektiv - 1));
 
 
         //Auswahl Speicherkate
-        System.out.println("Welche Speicherkarte wollen sie:\n[1]32GB, [2]64GB, [3]128GB");
+        System.out.println("Welche Speicherkarte wollen sie:");
+        for (int i = 0; i < speicherkarte.size(); i++) {
+            System.out.println("[" + (i + 1) + "] " + speicherkarte.get(i).getSizeInGB() + "GB");
+        }
         System.out.println();
         while (!scanner.hasNextInt()) {
             System.out.println("Zahl eingeben");
@@ -79,7 +70,7 @@ public class Configurator {
         }
         int inputSpeicher = scanner.nextInt();
 
-        while (inputSpeicher > 3 || inputSpeicher < 0) {
+        while (inputSpeicher > speicherkarte.size() || inputSpeicher < 1) {
             System.out.println("Geben Sie eine Zahl zwischen 1 und 3 ein!!!");
             while (!scanner.hasNextInt()) {
                 System.out.println("Zahl eingeben");
@@ -88,13 +79,7 @@ public class Configurator {
             inputSpeicher = scanner.nextInt();
             scanner.nextLine();
         }
-        if (inputSpeicher == 1) {
-            currentCamera.mountSpeicherkarte(speicherkarte.get(0));
-        } else if (inputSpeicher == 2) {
-            currentCamera.mountSpeicherkarte(speicherkarte.get(1));
-        } else if (inputSpeicher == 3) {
-            currentCamera.mountSpeicherkarte(speicherkarte.get(2));
-        }
+        currentCamera.mountSpeicherkarte(speicherkarte.get(inputSpeicher - 1));
         System.out.println("Gewählte Konfiguration:\n" + currentCamera);
 
 
