@@ -2,12 +2,10 @@ package Danny.classes.TaskCarSimulation;
 
 public class Tank {
     private double tankCapacity;
-    private int minTank;
     private int maxTank;
 
-    public Tank(int minTank, int maxTank) {
-        this.setTankCapacity(tankCapacity);
-        this.setMinTank(minTank);
+    public Tank(int maxTank) {
+        this.setTankCapacity(5);
         this.setMaxTank(maxTank);
     }
 
@@ -26,17 +24,6 @@ public class Tank {
         this.tankCapacity = tankCapacity;
     }
 
-    public int getMinTank() {
-        return minTank;
-    }
-
-    public void setMinTank(int minTank) {
-        if (minTank < 0) {
-            throw new IllegalArgumentException("Provided value is invalid!");
-        }
-        this.minTank = minTank;
-    }
-
     public int getMaxTank() {
         return maxTank;
     }
@@ -47,4 +34,5 @@ public class Tank {
         }
         this.maxTank = maxTank;
     }
+
 }
