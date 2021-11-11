@@ -1,5 +1,7 @@
 package Ingo.week9.Camera;
 
+import org.w3c.dom.ls.LSOutput;
+
 public class Camera {
     private String hersteller;
     private String model;
@@ -7,7 +9,7 @@ public class Camera {
     private int objektiv;
     private double speicherplatz;
 
-    Camera(String hersteller,String model,int megapixel,int objektiv,double speicherplatz){
+    Camera(String hersteller, String model, int megapixel, int objektiv, double speicherplatz) {
         this.hersteller = hersteller;
         this.model = model;
         this.megapixel = megapixel;
@@ -56,7 +58,31 @@ public class Camera {
         this.speicherplatz = speicherplatz;
     }
 
-    void makeFoto() {
+    @Override
+    public String toString() {
+        return String.format("\nhersteller: %s \nmodel: %s \nmegapixel: %d \nobjektiv: %d \nspeicherplatz: %.2f", hersteller, model, megapixel,
+                objektiv, speicherplatz);
+    }
+
+    void menue() {
+        System.out.println("Drücken Sie 1 für neues Foto !");
+        System.out.println("Drücken Sie 2 für Camera beenden !");
+    }
+
+    void takeFoto() {
+        System.out.println("───▄▀▀▀▄▄▄▄▄▄▄▀▀▀▄───");
+        System.out.println("───█▒▒░░░░░░░░░▒▒█───");
+        System.out.println("────█░░█░░░░░█░░█────");
+        System.out.println("─▄▄──█░░░▀█▀░░░█──▄▄─");
+        System.out.println("█░░█─▀▄░░░░░░░▄▀─█░░█");
+    }
+
+    void closeCamera() {
+        System.out.println("Das Programm wir beendet!");
+    }
+
+    void repeatInput() {
 
     }
 }
+
