@@ -1,4 +1,4 @@
-package danny.classes.TaskCamera;
+package Danny.classes.TaskCamera;
 
 public class CameraMain {
     public static void main(String[] args) {

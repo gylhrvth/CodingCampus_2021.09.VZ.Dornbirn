@@ -1,0 +1,13 @@
+package Danny.string;
+
+public class HelloWorld {
+
+    public static void main(String[] args){
+
+        System.out.println("Hello World:)");
+        System.out.println("Fertig");
+Methods.simpleCal(100,"/",20);
+
+    }
+
+}

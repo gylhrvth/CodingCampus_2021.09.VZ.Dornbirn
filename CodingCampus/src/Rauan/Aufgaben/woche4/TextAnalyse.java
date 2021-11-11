@@ -1,8 +1,7 @@
-package Rauan.Aufgaben.Woche4;
+package Rauan.Aufgaben.woche4;
 
 import Lukas.week4.day4.Aufgabe1;
 
-import java.util.Arrays;
 import java.util.Locale;
 import java.util.Scanner;
 
