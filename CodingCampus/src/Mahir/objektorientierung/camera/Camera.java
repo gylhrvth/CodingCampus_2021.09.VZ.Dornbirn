@@ -1,25 +1,25 @@
 package Mahir.objektorientierung.camera;
 
 public class Camera {
-    private String hersteller;
+    private String manufacturer;
     private String model;
-    private int objektiv, megapixel;
-    private double speicherplatz;
+    private int cameraLens, megapixel;
+    private double memorySpace;
 
-    public Camera(String hersteller, String model, int objektiv, double speicherplatz, int megapixel) {
-        this.hersteller = hersteller;
+    public Camera(String manufacturer, String model, int cameraLens, double memorySpace, int megapixel) {
+        this.manufacturer = manufacturer;
         this.model = model;
-        this.objektiv = objektiv;
-        this.speicherplatz = speicherplatz;
+        this.cameraLens = cameraLens;
+        this.memorySpace = memorySpace;
         this.megapixel = megapixel;
     }
 
-    public String getHersteller() {
-        return hersteller;
+    public String getManufacturer() {
+        return manufacturer;
     }
 
-    public void setHersteller(String hersteller) {
-        this.hersteller = hersteller;
+    public void setManufacturer(String manufacturer) {
+        this.manufacturer = manufacturer;
     }
 
     public String getModel() {
@@ -30,20 +30,20 @@ public class Camera {
         this.model = model;
     }
 
-    public int getObjektiv() {
-        return objektiv;
+    public int getCameraLens() {
+        return cameraLens;
     }
 
-    public void setObjektiv(int objektiv) {
-        this.objektiv = objektiv;
+    public void setCameraLens(int cameraLens) {
+        this.cameraLens = cameraLens;
     }
 
-    public double getSpeicherplatz() {
-        return speicherplatz;
+    public double getMemorySpace() {
+        return memorySpace;
     }
 
-    public void setSpeicherplatz(double speicherplatz) {
-        this.speicherplatz = speicherplatz;
+    public void setMemorySpace(double memorySpace) {
+        this.memorySpace = memorySpace;
     }
 
     public int getMegapixel() {
@@ -64,50 +64,52 @@ public class Camera {
         }
 
     }
+    void  takePhoto6(){
+        System.out.println("─▄▀▀▀▄────▄▀█▀▀█▄\n" +
+                "▄▀─▀─▀▄▄▀█▄▀─▄▀─▄▀▄\n" +
+                "█▄▀█───█─█▄▄▀─▄▀─▄▀▄\n" +
+                "──█▄▄▀▀█▄─▀▀▀▀▀▀▀─▄█\n" +
+                "─────▄████▀▀▀▀████─▀▄");
+    }
+    void  takePhoto5(){
+        System.out.println("──▒▒▒▒▒▒▒▒───▒▒▒▒▒▒▒▒\n" +
+                "─▒▐▒▐▒▒▒▒▌▒─▒▒▌▒▒▐▒▒▌▒\n" +
+                "──▒▀▄█▒▄▀▒───▒▀▄▒▌▄▀▒\n" +
+                "─────██─────────██\n" +
+                "░░░▄▄██▄░░░░░░░▄██▄░░░");
+    }
+    void  takePhoto4(){
+        System.out.println("──────▄▀▄─────▄▀▄\n" +
+                "─────▄█░░▀▀▀▀▀░░█▄\n" +
+                "─▄▄──█░░░░░░░░░░░█──▄▄\n" +
+                "█▄▄█─█░░▀░░┬░░▀░░█─█▄▄█\n");
+    }
+    void takePhoto3(){
+        System.out.println("─▄───────▄█▄───────▄─\n" +
+                "▐█▌──▄──█████──▄──▐█▌\n" +
+                "─█──███▄▄███▄▄███──█─\n" +
+                "░█░░█▄█▄█▀▒▀█▄█▄█░░█░\n" +
+                "██▄▄█▄█▄█▒▒▒█▄█▄█▄▄██");
+    }
     void takePhoto2(){
-        System.out.println("                $$$        $$$$$      $$$$         $$$$     $$$$$           ");
-        System.out.println("                $$$       $$$$$$$     $$$$         $$$$    $$$$$$$          ");
-        System.out.println("                $$$       $$$$$$$     $$$$$       $$$$$    $$$$$$$          ");
-        System.out.println("                $$$       $$$$$$$      $$$$       $$$$     $$$$$$$          ");
-        System.out.println("                $$$      $$$$$$$$$     $$$$$     $$$$$    $$$$$$$$$         ");
-        System.out.println("                $$$      $$$$ $$$$      $$$$     $$$$     $$$$ $$$$         ");
-        System.out.println("                $$$     $$$$$ $$$$$     $$$$     $$$$    $$$$$ $$$$$        ");
-        System.out.println("                $$$     $$$$   $$$$     $$$$$   $$$$$    $$$$   $$$$        ");
-        System.out.println("                $$$     $$$$   $$$$      $$$$   $$$$     $$$$   $$$$        ");
-        System.out.println("                $$$    $$$$$   $$$$$     $$$$$ $$$$$    $$$$$   $$$$$       ");
-        System.out.println("                $$$    $$$$$$$$$$$$$      $$$$ $$$$     $$$$$$$$$$$$$       ");
-        System.out.println("        $$$$   $$$$   $$$$$$$$$$$$$$$     $$$$$$$$$    $$$$$$$$$$$$$$$      ");
-        System.out.println("        $$$$   $$$$   $$$$$$$$$$$$$$$     $$$$$$$$$    $$$$$$$$$$$$$$$      ");
-        System.out.println("        $$$$$$$$$$$   $$$$       $$$$      $$$$$$$     $$$$       $$$$      ");
-        System.out.println("        $$$$$$$$$$$  $$$$$       $$$$$     $$$$$$$    $$$$$       $$$$$     ");
-        System.out.println("         $$$$$$$$$   $$$$         $$$$      $$$$$     $$$$         $$$$     ");
-        System.out.println("          $$$$$$$    $$$$         $$$$      $$$$$     $$$$         $$$$     ");
+        System.out.println("───────────────▄▄───▐█\n" +
+                "───▄▄▄───▄██▄──█▀───█─▄\n" +
+                "─▄██▀█▌─██▄▄──▐█▀▄─▐█▀\n" +
+                "▐█▀▀▌───▄▀▌─▌─█─▌──▌─▌\n" +
+                "▌▀▄─▐──▀▄─▐▄─▐▄▐▄─▐▄─▐▄");
     }
 
     void takePhoto() {
-        System.out.println("/-------------------------\\");
-        System.out.println("|+-----------------------+|");
-        System.out.println("||                       ||  <--------->");
-        System.out.println("||     \"Hello World\"     ||   |       |");
-        System.out.println("||                       ||   |  ---  |");
-        System.out.println("||         /---\\         ||   |       |");
-        System.out.println("||         |   |         ||   |   X   |");
-        System.out.println("||         \\---/         ||   |       |");
-        System.out.println("|+-----------------------+|   |  O O  |");
-        System.out.println("\\-------------------------/   |       |");
-        System.out.println("        /         \\           |  ---  |");
-        System.out.println("       /           \\--\\ /-----|       |");
-        System.out.println("      |-------------|  \\     <--------->");
-        System.out.println("		       |");
-        System.out.println("    /----------------\\/ \\ ");
-        System.out.println("    |   QWERTYUIOP   |   \\");
-        System.out.println("    |   ASDFGHJKL;   |   /^\\");
-        System.out.println("    |    ZXCVBNM     |   \\_/");
-        System.out.println("    \\----------------/   ");
+        System.out.println("───▄▀▀▀▀▀───▄█▀▀▀█▄\n" +
+                "──▐▄▄▄▄▄▄▄▄██▌▀▄▀▐██\n" +
+                "──▐▒▒▒▒▒▒▒▒███▌▀▐███\n" +
+                "───▌▒▓▒▒▒▒▓▒██▌▀▐██\n" +
+                "───▌▓▐▀▀▀▀▌▓─▀▀▀▀▀\n");
     }
 
     @Override
     public String toString() {
-        return String.format("Hersteller: %s Model: %s Objektiv: %d Megapixel: %d Speicherplatz: %.2f", hersteller, model, objektiv, megapixel, speicherplatz);
+        return String.format("Hersteller: %s Model: %s Objektiv: %d Megapixel: %d Speicherplatz: %.2f", manufacturer,
+                model, cameraLens, megapixel, memorySpace);
     }
 }
