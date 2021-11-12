@@ -67,7 +67,7 @@ public class DriverInteraction {
         try {
             System.out.println("\nMotor Verschleiss " + selectedCar.engine.getWearValue() + " von " + selectedCar.engine.getWearValueToRepair());
             System.out.printf("Tankinhalt: %.1f" + "\n", selectedCar.tank.getTankCapacity());
-            System.out.printf("Der Tank reicht fuer %d Km" + "\n", selectedCar.totalKmOfTankCapacity());
+            System.out.printf("Der Tank reicht fuer ca. %d Km" + "\n", selectedCar.totalKmOfTankCapacity());
             System.out.println("Wieviele Km willst du fahren?");
             return scanner.nextInt();
         } catch (NoSuchElementException e) {
