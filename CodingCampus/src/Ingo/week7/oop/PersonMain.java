@@ -22,28 +22,47 @@ public class PersonMain {
 
         System.out.println("-------------------------------");
 
+
         Person[] personArr = new Person[]{person1, person2, person3, person4};
         List<Person> personList = new ArrayList<>();
         personList.addAll(Arrays.asList(personArr));
 
+        System.out.println(Arrays.toString(personArr));
+
         System.out.println(personList);
+
+        System.out.println("-----------------------------------------");
 
         for (int i = 0; i < personArr.length; i++) {
             personList.add(personArr[i]);
             System.out.println(personArr[i]);
         }
+        System.out.println("----------------------------------------");
+        int[] arr = new int[]{1, 3, 55, -11, -88, 66, 34, 23, -99, 100, 44};
+        System.out.println(maxValue(arr));
 
     }
 
-    public static int minMaxAvg(int[] maxArray) {
+    public static int maxValue(int[] maxArray) {
         int maxValue = maxArray[0];
         for (int i = 0; i < maxArray.length; i++) {
-            if(maxArray[i] > maxValue) {
+            if (maxArray[i] > maxValue) {
                 maxValue = maxArray[i];
             }
-        }return maxValue;
-
+        }
+        return maxValue;
     }
+
+    public static int minValue(int[] maxArray) {
+        int minValue = maxArray[0];
+        for (int i = 0; i < maxArray.length; i++) {
+            if (maxArray[i] < minValue) {
+                minValue = maxArray[i];
+            }
+        }
+        return minValue;
+    }
+
 
 }
 
