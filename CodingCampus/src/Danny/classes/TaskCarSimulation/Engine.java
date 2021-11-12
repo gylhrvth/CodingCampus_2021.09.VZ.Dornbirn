@@ -33,12 +33,14 @@ public class Engine {
     }
 
     public void startEngine(Tank tank, int weight){
-        setEngineIsRunning(true);
+        engineIsRunning = true;
         tank.setTankCapacity(tank.getTankCapacity() - consumptionOf1Km(weight, getkW(), getDriveTyp()));
     }
 
+
+
     public void stopEngine(){
-        setEngineIsRunning(false);
+        engineIsRunning = false;
     }
 
     //Verbrauch pro Km in Liter
@@ -85,14 +87,6 @@ public class Engine {
     public void setWearValueToRepair(int wearValueToRepair) {
         this.wearValueToRepair = wearValueToRepair;
 
-    }
-
-    public boolean isEngineIsRunning() {
-        return engineIsRunning;
-    }
-
-    public void setEngineIsRunning(boolean engineIsRunning) {
-        this.engineIsRunning = engineIsRunning;
     }
 
     public int getkW() {

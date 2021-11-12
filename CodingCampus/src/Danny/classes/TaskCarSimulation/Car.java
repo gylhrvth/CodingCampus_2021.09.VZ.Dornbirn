@@ -24,7 +24,7 @@ public class Car {
         return engine.isBroken();
     }
 
-    public boolean isEmpty() {
+    public boolean isFuelEmpty() {
         return tank.isTankEmpty();
     }
 
@@ -35,13 +35,13 @@ public class Car {
     public int driveCar(int kilometerToDrive) {
         int kmDrive = 0;
         do {
-            if (!isEmpty()) {
+            if (!isFuelEmpty()) {
                 engine.startEngine(tank, getWeight());
             }
             kmDrive++;
-            isEmpty();
+            isFuelEmpty();
             isEngineDefect(kmDrive);
-        } while (kilometerToDrive != kmDrive && !isEmpty() && !isBroken());
+        } while (kilometerToDrive != kmDrive && !isFuelEmpty() && !isBroken());
         engine.stopEngine();
         return kmDrive;
 

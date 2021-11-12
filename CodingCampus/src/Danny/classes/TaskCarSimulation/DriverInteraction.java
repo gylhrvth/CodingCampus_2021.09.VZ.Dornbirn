@@ -12,7 +12,6 @@ public class DriverInteraction {
     private final Scanner scanner = new Scanner(System.in);
     RepairStation repairHarry = new RepairStation();
     Gasstation gasLotte = new Gasstation();
-    private Boolean driveAgain;
 
     public DriverInteraction() {
         carList = new ArrayList<>();
@@ -71,6 +70,9 @@ public class DriverInteraction {
         int kilometerToDrive;
         int kilometerCanDrive = 0;
         kilometerToDrive = howFarDrive();
+
+        boolean driveAgain = false;
+
         do {
             if (kilometerCanDrive == kilometerToDrive) {
                 kilometerToDrive = howFarDrive();
@@ -81,14 +83,14 @@ public class DriverInteraction {
                 printCoveredDistance(kilometerToDrive);
                 totalCoveredDistance += kilometerToDrive;
                 printTotalCoveredDistance(totalCoveredDistance);
-                driveAgain();
-            } else if (selectedCar.isEmpty()) {
+                driveAgain = driveAgain();
+            } else if (selectedCar.isFuelEmpty()) {
                 printDrive(kilometerCanDrive);
                 totalCoveredDistance += kilometerCanDrive;
                 System.out.println("\nDu bist " + kilometerCanDrive + " km gefahren. Der Tank ist leer!");
                 refuel();
                 kilometerToDrive = kilometerToDrive - kilometerCanDrive;
-                driveAgain();
+                driveAgain = driveAgain();
             } else if (selectedCar.isBroken()) {
                 printDrive(kilometerCanDrive);
                 totalCoveredDistance += kilometerCanDrive;
@@ -99,17 +101,14 @@ public class DriverInteraction {
                 timeOut();
                 repair();
                 kilometerToDrive = kilometerToDrive - kilometerCanDrive;
-                driveAgain();
+                driveAgain = driveAgain();
             }
         } while (driveAgain);
-
-        if (!driveAgain) {
-            printTotalCoveredDistance(totalCoveredDistance);
-            System.out.printf("Tankinhalt: %.1f" + "\n", selectedCar.tank.getTankCapacity());
-            System.out.println("Motor Verschleiß " + selectedCar.engine.getWearValue()
-                    + " von " + selectedCar.engine.getWearValueToRepair());
-            System.out.println("Die Fahrt ist beendet.");
-        }
+        printTotalCoveredDistance(totalCoveredDistance);
+        System.out.printf("Tankinhalt: %.1f" + "\n", selectedCar.tank.getTankCapacity());
+        System.out.println("Motor Verschleiß " + selectedCar.engine.getWearValue()
+                + " von " + selectedCar.engine.getWearValueToRepair());
+        System.out.println("Die Fahrt ist beendet.");
     }
 
     public void printCoveredDistance(int kilometerToDrive) {
@@ -166,14 +165,11 @@ public class DriverInteraction {
     }
 
 
-    public void driveAgain() {
+    public boolean driveAgain() {
         System.out.println("\nMöchtest du weiter fahren");
         System.out.println("1 = Ja | 2 = Nein");
-        if (scanner.nextInt() == 1) {
-            driveAgain = true;
-        } else {
-            driveAgain = false;
-        }
+
+        return scanner.nextInt() == 1;
     }
 
 }
