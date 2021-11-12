@@ -55,7 +55,7 @@ public class DriverInteraction {
 
     public int howFarDrive() {
         try {
-            System.out.println("\nMotor Verschleiß " + selectedCar.engine.getWearValue() + " von " + selectedCar.engine.getWearValueToRepair());
+            System.out.println("\nMotor Verschleiss " + selectedCar.engine.getWearValue() + " von " + selectedCar.engine.getWearValueToRepair());
             System.out.printf("Tankinhalt: %.1f" + "\n", selectedCar.tank.getTankCapacity());
             System.out.printf("Der Tank reicht fuer %d Km" + "\n", selectedCar.totalKmOfTankCapacity());
             System.out.println("Wieviele Km willst du fahren?");
@@ -94,7 +94,7 @@ public class DriverInteraction {
             } else if (selectedCar.isBroken()) {
                 printDrive(kilometerCanDrive);
                 totalCoveredDistance += kilometerCanDrive;
-                System.out.println("\nMotor Verschleiß " + selectedCar.engine.getWearValue() + " von " + selectedCar.engine.getWearValueToRepair());
+                System.out.println("\nMotor Verschleiss " + selectedCar.engine.getWearValue() + " von " + selectedCar.engine.getWearValueToRepair());
                 System.out.println("Du bist " + kilometerCanDrive + " km gefahren.\n" +
                         "Der Motor ist defekt!\n" +
                         "ÖAMTC ist unterwegs...Das Auto wird in die Werstatt gebracht.");
@@ -106,7 +106,7 @@ public class DriverInteraction {
         } while (driveAgain);
         printTotalCoveredDistance(totalCoveredDistance);
         System.out.printf("Tankinhalt: %.1f" + "\n", selectedCar.tank.getTankCapacity());
-        System.out.println("Motor Verschleiß " + selectedCar.engine.getWearValue()
+        System.out.println("Motor Verschleiss " + selectedCar.engine.getWearValue()
                 + " von " + selectedCar.engine.getWearValueToRepair());
         System.out.println("Die Fahrt ist beendet.");
     }
@@ -120,18 +120,32 @@ public class DriverInteraction {
     }
 
     public void printDrive(int kilometerToDrive) {
+        int lenght = 100;
         try {
-            for (int j = 0; j <= kilometerToDrive; j++) {
-                System.out.println();
-                System.out.println();
-                String carRepat = " ";
-                System.out.println(carRepat.repeat(j) + "  ___  " + carRepat.repeat(kilometerToDrive - j));
-                carRepat = "_";
-                System.out.print(carRepat.repeat(j) + "=o---o>" + carRepat.repeat(kilometerToDrive - j));
-                Thread.sleep(15);
-                System.out.print("\033[H\033[2J");
-                System.out.flush();
-            }
+            do {
+                if (kilometerToDrive >= lenght) {
+                    for (int j = 0; j <= lenght; j++) {
+                        String carRepat = " ";
+                        System.out.println(carRepat.repeat(j) + "  ___  " + carRepat.repeat(lenght - j));
+                        carRepat = "_";
+                        System.out.print(carRepat.repeat(j) + "=o--o>" + carRepat.repeat(lenght - j));
+                        Thread.sleep(15);
+                        System.out.print("\033[H\033[2J");
+                        System.out.flush();
+                    }
+                } else {
+                    for (int j = 0; j <= kilometerToDrive; j++) {
+                        String carRepat = " ";
+                        System.out.println(carRepat.repeat(j) + "  ___  " + carRepat.repeat(kilometerToDrive - j));
+                        carRepat = "_";
+                        System.out.print(carRepat.repeat(j) + "=o--o>" + carRepat.repeat(kilometerToDrive - j));
+                        Thread.sleep(15);
+                        System.out.print("\033[H\033[2J");
+                        System.out.flush();
+                    }
+                }
+                kilometerToDrive -= lenght;
+            } while (kilometerToDrive > 0);
         } catch (InterruptedException exc) {
             //noop
         }
@@ -160,13 +174,13 @@ public class DriverInteraction {
         repairHarry.repairCar(selectedCar);
         timeOut();
         System.out.println("\nDas Auto wurde repariert.");
-        System.out.println("Motor Verschleiß " + selectedCar.engine.getWearValue()
+        System.out.println("Motor Verschleiss " + selectedCar.engine.getWearValue()
                 + " von " + selectedCar.engine.getWearValueToRepair());
     }
 
 
     public boolean driveAgain() {
-        System.out.println("\nMöchtest du weiter fahren");
+        System.out.println("\nMoechtest du weiter fahren");
         System.out.println("1 = Ja | 2 = Nein");
 
         return scanner.nextInt() == 1;
