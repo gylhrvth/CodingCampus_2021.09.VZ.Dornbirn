@@ -10,11 +10,19 @@ public class CarMain {
         Car car4 = new Car("Tesla", "Model 3", 75, 76, 9.0, ENGINE_TYPE.ELECTRIC, 1900);
 
 
-        //   System.out.println(car3.getConsumption());
-        System.out.println(car3.drive(500));
+        System.out.println();
+        car1.refuel(5);
+        System.out.println("-------------------------------");
+        car1.maxDistance();
+        car3.maxDistance();
+        car1.refuel(10);
+        car1.emptyFuel();
+        car1.refuel(10);
+
 
 
     }
+
 
 }
 
