@@ -6,7 +6,7 @@ import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class DriverInteraction {
-    private List<Car> carList;
+    private final List<Car> carList;
     private Car selectedCar;
     private int totalCoveredDistance;
     private final Scanner scanner = new Scanner(System.in);
@@ -33,10 +33,21 @@ public class DriverInteraction {
                 1155, new Tank(85));
         Car auto4 = new Car("Tesla", "Model 3", new Engine(350, DRIVE_TYP.electricity),
                 1847, new Tank(750));
+        AeroDynamicCar auto5 = new AeroDynamicCar("Tesla", "Aero", new Engine(350,DRIVE_TYP.electricity),
+                1847,new Tank(750));
+        SelfRepairingCar auto6 = new SelfRepairingCar("SelfRep", "007", new Engine(350,DRIVE_TYP.electricity),
+                1645,new Tank(750));
+        CrapCar auto7 = new CrapCar("Crapi", "Shit", new Engine(150,DRIVE_TYP.diesel),
+                1145,new Tank(50));
+
+
         carList.add(auto1);
         carList.add(auto2);
         carList.add(auto3);
         carList.add(auto4);
+        carList.add(auto5);
+        carList.add(auto6);
+        carList.add(auto7);
     }
 
     public void printCars() {
@@ -88,7 +99,6 @@ public class DriverInteraction {
                 printDrive(kilometerCanDrive);
                 totalCoveredDistance += kilometerCanDrive;
                 System.out.println("\nDu bist " + kilometerCanDrive + " km gefahren. Der Tank ist leer!");
-                driveAgain = wouldFuel();
                 refuel();
                 kilometerToDrive = kilometerToDrive - kilometerCanDrive;
                 driveAgain = driveAgain();
@@ -99,11 +109,9 @@ public class DriverInteraction {
                 System.out.println("Du bist " + kilometerCanDrive + " km gefahren.\n" +
                         "Der Motor ist defekt!\n" +
                         "ÖAMTC ist unterwegs...Das Auto wird in die Werstatt gebracht.");
-
                 timeOut();
-                repair();
                 kilometerToDrive = kilometerToDrive - kilometerCanDrive;
-                driveAgain = driveAgain();
+                driveAgain = wouldRepair();
             }
         } while (driveAgain);
         printTotalCoveredDistance(totalCoveredDistance);
@@ -130,7 +138,7 @@ public class DriverInteraction {
                         String carRepat = " ";
                         System.out.println(carRepat.repeat(j) + "  ___  " + carRepat.repeat(lenght - j));
                         carRepat = "_";
-                        System.out.print(carRepat.repeat(j) + "=o--o>" + carRepat.repeat(lenght - j));
+                        System.out.println(carRepat.repeat(j) + "=o--o>" + carRepat.repeat(lenght - j));
                         Thread.sleep(15);
                         System.out.print("\033[H\033[2J");
                         System.out.flush();
@@ -140,7 +148,7 @@ public class DriverInteraction {
                         String carRepat = " ";
                         System.out.println(carRepat.repeat(j) + "  ___  " + carRepat.repeat(kilometerToDrive - j));
                         carRepat = "_";
-                        System.out.print(carRepat.repeat(j) + "=o--o>" + carRepat.repeat(kilometerToDrive - j));
+                        System.out.println(carRepat.repeat(j) + "=o--o>" + carRepat.repeat(kilometerToDrive - j));
                         Thread.sleep(15);
                         System.out.print("\033[H\033[2J");
                         System.out.flush();
@@ -166,7 +174,13 @@ public class DriverInteraction {
 
     public void refuel() {
         System.out.println("\nWieviel willst du tanken? Eingabe: 1 - " + selectedCar.tank.getMaxTank());
-        gasLotte.refuel(selectedCar, scanner.nextInt());
+        int fuel = scanner.nextInt();
+        while (fuel > selectedCar.tank.getMaxTank() || fuel < 1) {
+                System.out.println("Falsche Eingabe!!!");
+                System.out.println("\nWieviel willst du tanken? Eingabe: 1 - " + selectedCar.tank.getMaxTank());
+                fuel = scanner.nextInt();
+        }
+        gasLotte.refuel(selectedCar, fuel);
         System.out.println("\nDas Auto wird betankt.");
         timeOut();
     }
@@ -180,7 +194,6 @@ public class DriverInteraction {
                 + " von " + selectedCar.engine.getWearValueToRepair());
     }
 
-
     public boolean driveAgain() {
         System.out.println("\nMoechtest du weiter fahren");
         System.out.println("1 = Ja | 2 = Nein");
@@ -188,14 +201,15 @@ public class DriverInteraction {
         return scanner.nextInt() == 1;
     }
 
-    public boolean wouldFuel() {
-        System.out.println("\nMoechtest du Tanken");
+    public boolean wouldRepair() {
+        System.out.println("\nMoechtest du das Auto reparieren");
         System.out.println("1 = Ja | 2 = Nein");
         if (scanner.nextInt() == 1) {
-            refuel();
+            repair();
+            return driveAgain();
         } else {
             return false;
         }
-        return false;
     }
+
 }

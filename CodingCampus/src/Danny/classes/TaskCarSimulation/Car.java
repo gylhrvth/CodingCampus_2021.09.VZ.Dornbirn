@@ -17,7 +17,7 @@ public class Car {
     }
 
     public void isEngineDefect(int kmDrive) {
-        engine.calculateWearValue(kmDrive);
+        engine.uppedWearValue(kmDrive);
     }
 
     public boolean isBroken() {
@@ -68,7 +68,7 @@ public class Car {
     @Override
     public String toString() {
         return String.format(
-                "| %-6s %-8s | Power: %3d KW | Drive Typ: %12s | Weight: %4d kg | TankCapacity: %4d",
+                "| %-8s %-8s | Power: %3d KW | Drive Typ: %12s | Weight: %4d kg | TankCapacity: %4d",
                 this.manufacturer, this.model, this.engine.getkW(),
                 this.engine.getDriveTyp(), this.weight, this.tank.getMaxTank());
     }

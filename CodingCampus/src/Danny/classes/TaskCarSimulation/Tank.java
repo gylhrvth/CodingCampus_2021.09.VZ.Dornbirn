@@ -17,11 +17,12 @@ public class Tank {
         return tankCapacity;
     }
 
-    public void setTankCapacity(double tankCapacity) {
-        if (tankCapacity < 0) {
+    public void setTankCapacity(double refuel) {
+        if (refuel < 0) {
             throw new IllegalArgumentException("Provided value is invalid!");
         }
-        this.tankCapacity = tankCapacity;
+            this.tankCapacity = refuel;
+
     }
 
     public int getMaxTank() {

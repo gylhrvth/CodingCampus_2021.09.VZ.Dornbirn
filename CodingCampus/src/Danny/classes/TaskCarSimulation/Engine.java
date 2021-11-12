@@ -23,7 +23,7 @@ public class Engine {
 
     }
 
-    public void calculateWearValue(int kmDrive) {
+    public void uppedWearValue(int kmDrive) {
         setWearValue(getWearValue() + (randomDefekt()*wearConsumtionFactor));
         if (kmDrive % 20 == 0) {
             setRandomBound(getRandomBound() + 1);
