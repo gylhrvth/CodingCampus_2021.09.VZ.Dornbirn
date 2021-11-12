@@ -20,11 +20,10 @@ public class Engine {
         this.wearValue = 0;
         this.randomBound = 2;
         this.wearValueToRepair = 10000;
-
     }
 
     public void uppedWearValue(int kmDrive) {
-        setWearValue(getWearValue() + (randomDefekt()*wearConsumtionFactor));
+        setWearValue(getWearValue() + (randomDefekt() * wearConsumtionFactor));
         if (kmDrive % 20 == 0) {
             setRandomBound(getRandomBound() + 1);
         }
@@ -34,8 +33,9 @@ public class Engine {
         return getWearValue() >= getWearValueToRepair();
     }
 
-    public void startEngine(){
-        engineIsRunning = true;}
+    public void startEngine() {
+        engineIsRunning = true;
+    }
 
     public void runEngine(Tank tank, int weight) {
         if (engineIsRunning) {
@@ -43,7 +43,7 @@ public class Engine {
         }
     }
 
-    public void stopEngine(){
+    public void stopEngine() {
         engineIsRunning = false;
     }
 
@@ -52,19 +52,19 @@ public class Engine {
         if (DRIVETYP == DRIVE_TYP.gasoline) {
             double consumptionOf100Km = (weight + kW) / 182;
             double consumptionOf1Km = ((consumptionOf100Km / 100) * 100) / 100;
-            return consumptionOf1Km* fuelConsumtionFactor;
+            return consumptionOf1Km * fuelConsumtionFactor;
         } else if (DRIVETYP == DRIVE_TYP.diesel) {
             double consumptionOf100Km = (weight + kW) / 290;
             double consumptionOf1Km = ((consumptionOf100Km / 100) * 100) / 100;
-            return consumptionOf1Km* fuelConsumtionFactor;
+            return consumptionOf1Km * fuelConsumtionFactor;
         } else if (DRIVETYP == DRIVE_TYP.gas) {
             double consumptionOf100Km = (weight + kW) / 140;
             double consumptionOf1Km = ((consumptionOf100Km / 100) * 100) / 100;
-            return consumptionOf1Km* fuelConsumtionFactor;
+            return consumptionOf1Km * fuelConsumtionFactor;
         } else if (DRIVETYP == DRIVE_TYP.electricity) {
             double consumptionOf100Km = (weight + kW) / 20;
             double consumptionOf1Km = ((consumptionOf100Km / 100) * 100) / 100;
-            return consumptionOf1Km* fuelConsumtionFactor;
+            return consumptionOf1Km * fuelConsumtionFactor;
         }
         return 0;
     }

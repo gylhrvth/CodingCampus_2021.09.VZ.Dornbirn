@@ -1,10 +1,9 @@
 package Danny.classes.TaskCarSimulation;
 
-public class SelfRepairingCar extends Car{
+public class SelfRepairingCar extends Car {
     public SelfRepairingCar(String manufacturer, String model, Engine engine, int weight, Tank tank) {
         super(manufacturer, model, engine, weight, tank);
     }
-
 
     public int driveCar(int kilometerToDrive) {
         int kmDrive = 0;
@@ -27,7 +26,6 @@ public class SelfRepairingCar extends Car{
     }
 
     public void repairCar() {
-
         System.out.println("\nDas Autto wird repariert.");
         try {
             for (int i = 0; i < 25; i++) {

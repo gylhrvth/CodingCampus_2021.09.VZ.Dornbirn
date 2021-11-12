@@ -33,13 +33,12 @@ public class DriverInteraction {
                 1155, new Tank(85));
         Car auto4 = new Car("Tesla", "Model 3", new Engine(350, DRIVE_TYP.electricity),
                 1847, new Tank(750));
-        AeroDynamicCar auto5 = new AeroDynamicCar("Tesla", "Aero", new Engine(350,DRIVE_TYP.electricity),
-                1847,new Tank(750));
-        SelfRepairingCar auto6 = new SelfRepairingCar("SelfRep", "007", new Engine(350,DRIVE_TYP.electricity),
-                1645,new Tank(750));
-        CrapCar auto7 = new CrapCar("Crapi", "Shit", new Engine(150,DRIVE_TYP.diesel),
-                1145,new Tank(50));
-
+        AeroDynamicCar auto5 = new AeroDynamicCar("Tesla", "Aero", new Engine(350, DRIVE_TYP.electricity),
+                1847, new Tank(750));
+        SelfRepairingCar auto6 = new SelfRepairingCar("SelfRep", "007", new Engine(350, DRIVE_TYP.electricity),
+                1645, new Tank(750));
+        CrapCar auto7 = new CrapCar("Crapi", "Shit", new Engine(150, DRIVE_TYP.diesel),
+                1145, new Tank(50));
 
         carList.add(auto1);
         carList.add(auto2);
@@ -176,9 +175,9 @@ public class DriverInteraction {
         System.out.println("\nWieviel willst du tanken? Eingabe: 1 - " + selectedCar.tank.getMaxTank());
         int fuel = scanner.nextInt();
         while (fuel > selectedCar.tank.getMaxTank() || fuel < 1) {
-                System.out.println("Falsche Eingabe!!!");
-                System.out.println("\nWieviel willst du tanken? Eingabe: 1 - " + selectedCar.tank.getMaxTank());
-                fuel = scanner.nextInt();
+            System.out.println("Falsche Eingabe!!!");
+            System.out.println("\nWieviel willst du tanken? Eingabe: 1 - " + selectedCar.tank.getMaxTank());
+            fuel = scanner.nextInt();
         }
         gasLotte.refuel(selectedCar, fuel);
         System.out.println("\nDas Auto wird betankt.");

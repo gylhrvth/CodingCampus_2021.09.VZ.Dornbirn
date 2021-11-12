@@ -21,7 +21,7 @@ public class Tank {
         if (refuel < 0) {
             throw new IllegalArgumentException("Provided value is invalid!");
         }
-            this.tankCapacity = refuel;
+        this.tankCapacity = refuel;
 
     }
 
