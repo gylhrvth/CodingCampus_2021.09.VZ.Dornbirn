@@ -67,10 +67,20 @@ public class Car {
 
     @Override
     public String toString() {
+        if (engine.getDriveTyp() == DRIVE_TYP.electricity) {
+            return String.format(
+                    "| %-8s %-8s | Power: %3d KW | Drive Typ: %12s | Weight: %4d kg | TankCapacity: %4d kWh",
+                    this.manufacturer, this.model, this.engine.getkW(),
+                    this.engine.getDriveTyp(), this.weight, this.tank.getMaxTank());
+        } else if (engine.getDriveTyp() == DRIVE_TYP.gas) {
+            return String.format(
+                    "| %-8s %-8s | Power: %3d KW | Drive Typ: %12s | Weight: %4d kg | TankCapacity: %4d kg",
+                    this.manufacturer, this.model, this.engine.getkW(),
+                    this.engine.getDriveTyp(), this.weight, this.tank.getMaxTank());
+        }
         return String.format(
-                "| %-8s %-8s | Power: %3d KW | Drive Typ: %12s | Weight: %4d kg | TankCapacity: %4d",
+                "| %-8s %-8s | Power: %3d KW | Drive Typ: %12s | Weight: %4d kg | TankCapacity: %4d Liter",
                 this.manufacturer, this.model, this.engine.getkW(),
                 this.engine.getDriveTyp(), this.weight, this.tank.getMaxTank());
     }
 }
-
