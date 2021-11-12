@@ -1,22 +1,32 @@
 package Stefan.WeekNine.CameraObjektivSpeicher;
 
 public class Objektiv {
-    private int focalLength;
+    private int focalLengthMin;
+    private int focalLengthMax;
     private double lightIntensity;
     private double blende;
 
-    public Objektiv(int focalLength, double lightIntensity, double blende) {
-        this.focalLength = focalLength;
+    public Objektiv(int focalLength, int focalLengthMax, double lightIntensity, double blende) {
+        this.focalLengthMin = focalLength;
+        this.focalLengthMax = focalLengthMax;
         this.lightIntensity = lightIntensity;
         this.blende = blende;
     }
 
-    public int getFocalLength() {
-        return focalLength;
+    public int getFocalLengthMin() {
+        return focalLengthMin;
     }
 
-    public void setFocalLength(int focalLength) {
-        this.focalLength = focalLength;
+    public void setFocalLengthMin(int focalLengthMin) {
+        this.focalLengthMin = focalLengthMin;
+    }
+
+    public int getFocalLengthMax() {
+        return focalLengthMax;
+    }
+
+    public void setFocalLengthMax(int focalLengthMax) {
+        this.focalLengthMax = focalLengthMax;
     }
 
     public double getLightIntensity() {
@@ -37,6 +47,6 @@ public class Objektiv {
 
     @Override
     public String toString() {
-        return String.format("Brennweite %3s Lichtstärke %3s Blende %3s ", getFocalLength(), getLightIntensity(), getBlende());
+        return String.format("Brennweite %3s-->>%3s, Lichtstärke %3s, Blende %3s ", getFocalLengthMin(), getFocalLengthMax(), getLightIntensity(), getBlende());
     }
 }
