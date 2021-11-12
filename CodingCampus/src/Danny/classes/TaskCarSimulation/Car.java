@@ -34,21 +34,27 @@ public class Car {
 
     public int driveCar(int kilometerToDrive) {
         int kmDrive = 0;
+        if (!isFuelEmpty()) {
+            engine.startEngine();
+        }
         do {
-            if (!isFuelEmpty()) {
-                engine.startEngine(tank, getWeight());
-            }
+            fuelConsumtionFactor();
+            wearConsumtionFactor();
+            engine.runEngine(tank, getWeight());
             kmDrive++;
             isFuelEmpty();
             isEngineDefect(kmDrive);
         } while (kilometerToDrive != kmDrive && !isFuelEmpty() && !isBroken());
         engine.stopEngine();
         return kmDrive;
-
     }
 
-    public String getManufacturer() {
-        return manufacturer;
+    public void fuelConsumtionFactor() {
+        engine.setFuelConsumtionFactor(1);
+    }
+
+    public void wearConsumtionFactor() {
+        engine.setWearConsumtionFactor(1);
     }
 
     public String getModel() {
@@ -66,6 +72,5 @@ public class Car {
                 this.manufacturer, this.model, this.engine.getkW(),
                 this.engine.getDriveTyp(), this.weight, this.tank.getMaxTank());
     }
-
 }
 

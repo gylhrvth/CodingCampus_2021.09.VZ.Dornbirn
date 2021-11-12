@@ -88,6 +88,7 @@ public class DriverInteraction {
                 printDrive(kilometerCanDrive);
                 totalCoveredDistance += kilometerCanDrive;
                 System.out.println("\nDu bist " + kilometerCanDrive + " km gefahren. Der Tank ist leer!");
+                driveAgain = wouldFuel();
                 refuel();
                 kilometerToDrive = kilometerToDrive - kilometerCanDrive;
                 driveAgain = driveAgain();
@@ -98,6 +99,7 @@ public class DriverInteraction {
                 System.out.println("Du bist " + kilometerCanDrive + " km gefahren.\n" +
                         "Der Motor ist defekt!\n" +
                         "ÖAMTC ist unterwegs...Das Auto wird in die Werstatt gebracht.");
+
                 timeOut();
                 repair();
                 kilometerToDrive = kilometerToDrive - kilometerCanDrive;
@@ -186,4 +188,14 @@ public class DriverInteraction {
         return scanner.nextInt() == 1;
     }
 
+    public boolean wouldFuel() {
+        System.out.println("\nMoechtest du Tanken");
+        System.out.println("1 = Ja | 2 = Nein");
+        if (scanner.nextInt() == 1) {
+            refuel();
+        } else {
+            return false;
+        }
+        return false;
+    }
 }

@@ -11,6 +11,8 @@ public class Engine {
     private int wearValueToRepair;
     private final Random random = new Random();
     private boolean engineIsRunning = false;
+    private double fuelConsumtionFactor = 1;
+    private int wearConsumtionFactor = 1;
 
     public Engine(int kW, DRIVE_TYP DRIVETYP) {
         this.setkW(kW);
@@ -22,7 +24,7 @@ public class Engine {
     }
 
     public void calculateWearValue(int kmDrive) {
-        setWearValue(getWearValue() + randomDefekt());
+        setWearValue(getWearValue() + (randomDefekt()*wearConsumtionFactor));
         if (kmDrive % 20 == 0) {
             setRandomBound(getRandomBound() + 1);
         }
@@ -32,12 +34,14 @@ public class Engine {
         return getWearValue() >= getWearValueToRepair();
     }
 
-    public void startEngine(Tank tank, int weight){
-        engineIsRunning = true;
-        tank.setTankCapacity(tank.getTankCapacity() - consumptionOf1Km(weight, getkW(), getDriveTyp()));
+    public void startEngine(){
+        engineIsRunning = true;}
+
+    public void runEngine(Tank tank, int weight) {
+        if (engineIsRunning) {
+            tank.setTankCapacity(tank.getTankCapacity() - consumptionOf1Km(weight, getkW(), getDriveTyp()));
+        }
     }
-
-
 
     public void stopEngine(){
         engineIsRunning = false;
@@ -48,19 +52,19 @@ public class Engine {
         if (DRIVETYP == DRIVE_TYP.gasoline) {
             double consumptionOf100Km = (weight + kW) / 182;
             double consumptionOf1Km = ((consumptionOf100Km / 100) * 100) / 100;
-            return consumptionOf1Km;
+            return consumptionOf1Km* fuelConsumtionFactor;
         } else if (DRIVETYP == DRIVE_TYP.diesel) {
             double consumptionOf100Km = (weight + kW) / 290;
             double consumptionOf1Km = ((consumptionOf100Km / 100) * 100) / 100;
-            return consumptionOf1Km;
+            return consumptionOf1Km* fuelConsumtionFactor;
         } else if (DRIVETYP == DRIVE_TYP.gas) {
             double consumptionOf100Km = (weight + kW) / 140;
             double consumptionOf1Km = ((consumptionOf100Km / 100) * 100) / 100;
-            return consumptionOf1Km;
+            return consumptionOf1Km* fuelConsumtionFactor;
         } else if (DRIVETYP == DRIVE_TYP.electricity) {
             double consumptionOf100Km = (weight + kW) / 20;
             double consumptionOf1Km = ((consumptionOf100Km / 100) * 100) / 100;
-            return consumptionOf1Km;
+            return consumptionOf1Km* fuelConsumtionFactor;
         }
         return 0;
     }
@@ -111,5 +115,13 @@ public class Engine {
 
     public void setRandomBound(int randomBound) {
         this.randomBound = randomBound;
+    }
+
+    public void setFuelConsumtionFactor(double fuelConsumtionFactor) {
+        this.fuelConsumtionFactor = fuelConsumtionFactor;
+    }
+
+    public void setWearConsumtionFactor(int wearConsumtionFactor) {
+        this.wearConsumtionFactor = wearConsumtionFactor;
     }
 }
