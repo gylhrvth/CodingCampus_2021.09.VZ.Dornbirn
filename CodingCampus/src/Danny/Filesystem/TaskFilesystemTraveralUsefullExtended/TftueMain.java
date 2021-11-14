@@ -1,12 +1,9 @@
 package Danny.Filesystem.TaskFilesystemTraveralUsefullExtended;
 
-import Danny.Filesystem.TaskFilesystemTraversalUsefull.FileReceiver;
-import Danny.Filesystem.TaskFilesystemTraversalUsefull.FileReceiverHashMap;
-import Danny.Filesystem.TaskFilesystemTraversalUsefull.FileReceiverSize;
-import Danny.Filesystem.TaskFilesystemTraversalUsefull.SelectionFileCounter;
-
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.LinkedList;
+import java.util.List;
 
 public class TftueMain {
 
@@ -24,6 +21,9 @@ public class TftueMain {
         FileReceiverSize1.onFileReceived(file,depht);
         SelectionFileCounter1.main(file, depht,".xml");
         FileReceiverHashMap1.main(file,depht);
+
+        List<File> receiverLists = new LinkedList<>();
+
 
     }
 
