@@ -6,7 +6,7 @@ public class Car {
     private String model;
     private int kw;
     private double fuelCapacity;
-    private ENGINE_TYPE ENGINE_TYPE;
+    private EngineType engineType;
     private int weight;
     private double consumption;
 
@@ -14,12 +14,12 @@ public class Car {
         return consumption;
     }
 
-    public Car(String manufacturer, String model, int kw, double fuelCapacity, double consumption, ENGINE_TYPE ENGINE_TYPE, int weight) {
+    public Car(String manufacturer, String model, int kw, double fuelCapacity, double consumption, EngineType engineType, int weight) {
         this.manufacturer = manufacturer;
         this.model = model;
         this.kw = kw;
         this.fuelCapacity = fuelCapacity;
-        this.ENGINE_TYPE = ENGINE_TYPE;
+        this.engineType = engineType;
         this.weight = weight;
         this.consumption = consumption;
     }
@@ -40,7 +40,7 @@ public class Car {
     }
 
     public void driveCar(double km) {
-        System.out.printf(consumption / 100 * km + "%.2f");
+        System.out.print(consumption / 100 * km + "%.2f");
     }
 
     public void maxDistance() {
@@ -53,12 +53,12 @@ public class Car {
 
     public double fuelCapacity(double getFuel){
         getFormattedFuelCapacity();
-        return fuelCapacity;
+        return getFuel;
     }
     public String carModel(){
         return getModel();
     }
-    public void autoModel() {
+    public void printAutoModel() {
         System.out.println(getModel());
     }
     public void maxDistanceWithFullTank() {
@@ -86,8 +86,8 @@ public class Car {
         return fuelCapacity;
     }
 
-    public ENGINE_TYPE getEngineType() {
-        return ENGINE_TYPE;
+    public EngineType getEngineType() {
+        return engineType;
     }
 
     public int getWeight() {
@@ -101,7 +101,7 @@ public class Car {
                 ", model='" + model + '\'' +
                 ", kw=" + kw +
                 ", fuelCapacity=" + fuelCapacity +
-                ", ENGINE_TYPE=" + ENGINE_TYPE +
+                ", ENGINE_TYPE=" + engineType +
                 ", weight=" + weight +
                 ", comsumption=" + consumption +
                 '}';
