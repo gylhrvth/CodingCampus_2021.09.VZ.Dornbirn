@@ -1,4 +1,4 @@
-package Danny.files;
+package Danny.Files;
 
 
 import java.io.BufferedReader;
