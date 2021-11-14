@@ -6,22 +6,17 @@ import java.io.FileNotFoundException;
 public class FsTraversalMain {
 
     public static void main(String[] args) throws FileNotFoundException {
-
-
         String path = new String("C:\\Users\\DanGO\\IdeaProjects\\CodingCampus_2021.09.VZ.Dornbirn\\CodingCampus\\src\\Lukas");
         File file = new File(path);
         if (!file.exists()) {
-            throw new FileNotFoundException("Datei no exist");
+            throw new FileNotFoundException("Datei not exist");
         }
         System.out.println(file);
         int deep = 0;
         listFile(file, deep);
-
-
     }
 
     public static void listFile(File file, int deep) {
-
         for (File child : file.listFiles()) {
             if (child.isFile()) {
                 printIndentation(deep);
@@ -35,13 +30,9 @@ public class FsTraversalMain {
                 System.out.println("|--" + child.getName());
                 listFile(child, deep + 1);
             }
-
-
         }
         if (file.listFiles().length == (deep)) {
             deep--;
-
-
         }
     }
 
