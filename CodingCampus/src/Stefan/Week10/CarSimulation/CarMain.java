@@ -1,4 +1,4 @@
-package Stefan.Week10;
+package Stefan.Week10.CarSimulation;
 
 import java.util.ArrayList;
 import java.util.Arrays;

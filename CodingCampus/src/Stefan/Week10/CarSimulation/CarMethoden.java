@@ -1,4 +1,6 @@
-package Stefan.Week10;
+package Stefan.Week10.CarSimulation;
+
+import Stefan.Week10.CarSimulation.Car;
 
 import java.util.List;
 

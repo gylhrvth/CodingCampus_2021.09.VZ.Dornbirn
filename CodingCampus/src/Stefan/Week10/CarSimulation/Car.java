@@ -1,4 +1,4 @@
-package Stefan.Week10;
+package Stefan.Week10.CarSimulation;
 
 public class Car {
     private String producer;
