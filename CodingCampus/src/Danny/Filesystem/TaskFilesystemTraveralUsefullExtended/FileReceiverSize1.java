@@ -4,7 +4,7 @@ import java.io.File;
 
 public class FileReceiverSize1 extends FileReceiver1 {
 
-    public static void onFileReceived(File child, int depht) {
+    public void onFileReceived(File child, int depht) {
         if (child.isFile()) {
             printIndentation(depht);
             System.out.println("|--" + child.getName() + " Size: " + child.length());

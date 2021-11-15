@@ -1,5 +1,7 @@
 package Danny.Filesystem.TaskFilesystemTraveralUsefullExtended;
 
+import Danny.Filesystem.TaskFilesystemTraversal.FsTraversalMain;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.LinkedList;
@@ -8,8 +10,7 @@ import java.util.List;
 public class TftueMain {
 
     public static void main(String[] args) throws FileNotFoundException {
-        String path = new String("C:\\Users\\DanGO\\IdeaProjects\\CodingCampus_2021.09.VZ.Dornbirn\\CodingCampus\\src\\Lukas");
-        File file = new File(path);
+        File file = new File(FsTraversalMain.PATH);
         if (!file.exists()) {
             throw new FileNotFoundException("Datei not exist!");
         }

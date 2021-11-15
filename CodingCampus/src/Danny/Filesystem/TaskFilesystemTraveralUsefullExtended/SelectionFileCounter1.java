@@ -6,15 +6,17 @@ import java.util.List;
 
 public class SelectionFileCounter1 extends FileReceiver1 {
 
+
     static List<File> files = new LinkedList<>();
 
     public static void main(File file, int depht,String searchWord) {
         String searchFileExtension = (searchWord);
-        onFileReceived(file, depht);
+ //       onFileReceived(file, depht, searchWord);
         selectFiles(searchFileExtension);
     }
 
     public static void selectFiles(String searchFileExtension) {
+
         int counter = 0;
         for (File selectfile : files) {
             if (selectfile.getName().endsWith(searchFileExtension)) {
@@ -26,7 +28,13 @@ public class SelectionFileCounter1 extends FileReceiver1 {
         System.out.println("Es wurden " + counter + " Dateie(n) gefunden.");
     }
 
-    public static void onFileReceived(File child, int depht) {
+
+     //@Override
+    public void onFileReceived(File child, int depht, String extension) {
+           if(child.isFile() && child.getName().endsWith(extension)) {
+               System.out.println(child.getName());
+           }
+
             if (child.isFile()) {
                 printIndentation(depht);
                 System.out.println("|--" + child.getName());

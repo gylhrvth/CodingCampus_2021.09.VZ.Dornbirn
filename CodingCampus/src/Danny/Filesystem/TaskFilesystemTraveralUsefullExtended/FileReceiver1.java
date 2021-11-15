@@ -4,7 +4,8 @@ import java.io.File;
 
 public class FileReceiver1 {
 
-    public static void onFileReceived(File child, int depht) {
+
+    public void onFileReceived(File child, int depht) {
         if (child.isFile()) {
             printIndentation(depht);
             System.out.println("|--" + child.getName());
