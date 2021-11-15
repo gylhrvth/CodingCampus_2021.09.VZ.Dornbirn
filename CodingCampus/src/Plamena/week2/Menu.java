@@ -70,8 +70,7 @@ public class Menu {
             System.out.println("Press a number between 0 and 6!");
             scanner.nextLine();
         }
-        int input = scanner.nextInt();
-        return input;
+        return scanner.nextInt();
     }
 
 }

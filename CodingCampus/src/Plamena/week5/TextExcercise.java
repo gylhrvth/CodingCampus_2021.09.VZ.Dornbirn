@@ -41,8 +41,8 @@ public class TextExcercise {
         //    words = Plamena.week4.TextAnalysis.wordsCount(text);
         text = text.replaceAll("[·'£–„“†():;,.\\[\\]| \n\\-]", " ")
                 .replaceAll("\n+", " ")
-                .replaceAll("\s+", " ");
-        String[] wordCounter = text.split("\s");
+                .replaceAll("\\s+", " ");
+        String[] wordCounter = text.split("\\s");
         words = wordCounter.length;
         return words;
     }
@@ -76,10 +76,10 @@ public class TextExcercise {
 
     private static void sortWordsAlph(String text) {
 
-        text = text.replaceAll("[·'£–„“†():;,.\\t\\[\\]| \n\\-]", " ")
+        text = text.replaceAll("[·'£–„“†():;,./\\t\\[\\]| \n\\-]", " ")
                 .replaceAll("\n+", " ")
-                .replaceAll("\s+", " ");
-        String[] words = text.split("\s");
+                .replaceAll("\\s+", " ");
+        String[] words = text.split("\\s");
 
         for (int i = 0; i < words.length - 1; i++) {
             for (int j = 0; j < words.length - 1 - j; j++) {
@@ -88,13 +88,10 @@ public class TextExcercise {
                     words[j] = words[j + 1];
                     words[j + 1] = tmp;
                 }
-                if (words[j + 1].compareTo(words[j]) == 0) {
-                    words[j + 1] = "";
-                }
             }
         }
         for (int i = 0; i < words.length; i++) {
-            if (words[i].compareTo("") != 0) {
+            if (i > 0 && words[i].compareTo(words[i - 1]) != 0) {
                 System.out.println(words[i]);
             }
         }
@@ -103,8 +100,8 @@ public class TextExcercise {
     private static void sortWordsLength(String text) {
         text = text.replaceAll("[·'£–„“†():;,.\\t\\[\\]| \n\\-]", " ")
                 .replaceAll("\n+", " ")
-                .replaceAll("\s+", " ");
-        String[] words = text.split("\s");
+                .replaceAll("\\s+", " ");
+        String[] words = text.split("\\s");
         for (int i = 0; i < words.length - 1; i++) {
             for (int k = 0; k < words.length - 1 - i; k++) {
                 boolean swap = false;
@@ -125,8 +122,8 @@ public class TextExcercise {
         }
 
         for (int i = 0; i < words.length; i++) {
-            if(i > 0 && words[i-1].compareTo(words[i]) != 0 && !words[i].matches("[A-ZÄÖÜ]*[a-z]+[A-Z].*"))
-                System.out.println(words[i]+" ["+words[i].length()+"]");
+            if (i > 0 && words[i - 1].compareTo(words[i]) != 0 && !words[i].matches("[A-ZÄÖÜ]*[a-z]+[A-Z].*"))
+                System.out.println(words[i] + " [" + words[i].length() + "]");
         }
     }
 
