@@ -1,57 +1,57 @@
 package Rauan.woche8.Car;
 
 public class CarKlasse {
-    private String Hersteller;
-    private String Modell;
-    private String Antriebsart;
-    private double Tankinhalt;
-    private int Gewicht;
-    private int Kilowatt;
+    private String hersteller;
+    private String modell;
+    private double tankinhalt;
+    private String antriebsart;
+    private int gewicht;
+    private int kilowatt;
 
-    public CarKlasse(String hersteller, String modell, String antriebsart, double tankinhalt, int gewicht, int kilowatt) {
-        this.Hersteller = hersteller;
-        this.Modell = modell;
-        this.Antriebsart = antriebsart;
-        this.Tankinhalt = tankinhalt;
-        this.Gewicht = gewicht;
-        this.Kilowatt = kilowatt;
+    public CarKlasse(String hersteller, String modell, double tankinhalt, String antriebsart, int gewicht, int kilowatt) {
+        this.hersteller = hersteller;
+        this.modell = modell;
+        this.tankinhalt = tankinhalt;
+        this.antriebsart = antriebsart;
+        this.gewicht = gewicht;
+        this.kilowatt = kilowatt;
     }
 
     public String getHersteller() {
-        return Hersteller;
+        return hersteller;
     }
 
     public String getModell() {
-        return Modell;
-    }
-
-    public String getAntriebsart() {
-        return Antriebsart;
+        return modell;
     }
 
     public double getTankinhalt() {
-        return Tankinhalt;
+        return tankinhalt;
+    }
+
+    public String getAntriebsart() {
+        return antriebsart;
     }
 
     public int getGewicht() {
-        return Gewicht;
+        return gewicht;
     }
 
     public int getKilowatt() {
-        return Kilowatt;
+        return kilowatt;
     }
 
-    public void carKlasse(String Hersteller, String Modell, String Antriebsart, double Tankinhalt, int Gewicht, int Kilowatt) {
-
+    public void setTankinhalt(double tankinhalt) {
+        this.tankinhalt = tankinhalt;
     }
 
     @Override
     public String toString() {
-        return String.format("Alle Auto Daten" + "Hersteller = " + Hersteller + '\n'
-                + "Modell = " + Modell + '\n' +
-                "Antribsart= " + Antriebsart + '\n' +
-                "Tankinhalt = " + Tankinhalt + "Liter\n" +
-                "Gewicht = " + Gewicht + "KG\n" +
-                "KilloWatt = " + Kilowatt + '\n');
+        return String.format("Herstellr: " + hersteller + '\n' +
+                            "Modell: " + modell + '\n' +
+                            "TankInhalt: " + tankinhalt + "Liter\n" +
+                           "AntriebsArt: " + antriebsart + '\n' +
+                           "Gewicht :" + gewicht + "KG\n" +
+                           "KilloWatt: " + kilowatt + '\n');
     }
 }
