@@ -30,13 +30,13 @@ public class DriverInteraction {
         Car auto2 = new Car("Ford", "Mondeo", new Engine(110, DRIVE_TYP.diesel),
                 1577, new Tank(60));
         Car auto3 = new Car("Fiat", "Panda", new Engine(59, DRIVE_TYP.gas),
-                1155, new Tank(85));
+                1155, new Tank(12));
         Car auto4 = new Car("Tesla", "Model 3", new Engine(350, DRIVE_TYP.electricity),
-                1847, new Tank(750));
+                1847, new Tank(82));
         AeroDynamicCar auto5 = new AeroDynamicCar("Tesla", "Aero", new Engine(350, DRIVE_TYP.electricity),
-                1847, new Tank(750));
+                1847, new Tank(82));
         SelfRepairingCar auto6 = new SelfRepairingCar("SelfRep", "007", new Engine(350, DRIVE_TYP.electricity),
-                1645, new Tank(750));
+                1645, new Tank(82));
         CrapCar auto7 = new CrapCar("Crapi", "Shit", new Engine(150, DRIVE_TYP.diesel),
                 1145, new Tank(50));
 
@@ -66,8 +66,8 @@ public class DriverInteraction {
     public int howFarDrive() {
         try {
             System.out.println("\nMotor Verschleiss " + selectedCar.engine.getWearValue() + " von " + selectedCar.engine.getWearValueToRepair());
-            System.out.printf("Tankinhalt: %.1f" + "\n", selectedCar.tank.getTankCapacity());
-            System.out.printf("Der Tank reicht fuer ca. %d Km" + "\n", selectedCar.totalKmOfTankCapacity());
+            System.out.printf("Tankinhalt: %.1f\n", selectedCar.tank.getTankCapacity());
+            System.out.printf("Der Tank reicht fuer ca. %d Km\n", selectedCar.totalKmOfTankCapacity());
             System.out.println("Wieviele Km willst du fahren?");
             return scanner.nextInt();
         } catch (NoSuchElementException e) {
@@ -97,7 +97,7 @@ public class DriverInteraction {
             } else if (selectedCar.isFuelEmpty()) {
                 printDrive(kilometerCanDrive);
                 totalCoveredDistance += kilometerCanDrive;
-                System.out.println("\nDu bist " + kilometerCanDrive + " km gefahren. Der Tank ist leer!");
+                System.out.println("\nDu bist " + kilometerCanDrive + " km gefahren. Der Tank ist fast leer!");
                 refuel();
                 kilometerToDrive = kilometerToDrive - kilometerCanDrive;
                 driveAgain = driveAgain();
@@ -114,7 +114,7 @@ public class DriverInteraction {
             }
         } while (driveAgain);
         printTotalCoveredDistance(totalCoveredDistance);
-        System.out.printf("Tankinhalt: %.1f" + "\n", selectedCar.tank.getTankCapacity());
+        System.out.printf("Tankinhalt: %.1f\n", selectedCar.tank.getTankCapacity());
         System.out.println("Motor Verschleiss " + selectedCar.engine.getWearValue()
                 + " von " + selectedCar.engine.getWearValueToRepair());
         System.out.println("Die Fahrt ist beendet.");
@@ -172,6 +172,7 @@ public class DriverInteraction {
     }
 
     public void refuel() {
+        System.out.printf("\nTankinhalt: %.1f", selectedCar.tank.getTankCapacity());
         System.out.println("\nWieviel willst du tanken? Eingabe: 1 - " + selectedCar.tank.getMaxTank());
         int fuel = scanner.nextInt();
         while (fuel > selectedCar.tank.getMaxTank() || fuel < 1) {

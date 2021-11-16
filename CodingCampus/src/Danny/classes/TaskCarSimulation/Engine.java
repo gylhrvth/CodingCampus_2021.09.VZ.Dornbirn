@@ -58,11 +58,11 @@ public class Engine {
             double consumptionOf1Km = ((consumptionOf100Km / 100) * 100) / 100;
             return consumptionOf1Km * fuelConsumtionFactor;
         } else if (DRIVETYP == DRIVE_TYP.gas) {
-            double consumptionOf100Km = (weight + kW) / 140;
+            double consumptionOf100Km = (weight + kW) / 340;
             double consumptionOf1Km = ((consumptionOf100Km / 100) * 100) / 100;
             return consumptionOf1Km * fuelConsumtionFactor;
         } else if (DRIVETYP == DRIVE_TYP.electricity) {
-            double consumptionOf100Km = (weight + kW) / 20;
+            double consumptionOf100Km = (weight + kW) / 140;
             double consumptionOf1Km = ((consumptionOf100Km / 100) * 100) / 100;
             return consumptionOf1Km * fuelConsumtionFactor;
         }
