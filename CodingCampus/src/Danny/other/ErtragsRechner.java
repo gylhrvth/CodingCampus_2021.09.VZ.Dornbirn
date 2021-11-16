@@ -5,37 +5,39 @@ import java.text.DecimalFormat;
 public class ErtragsRechner {
 
     public static void main(String[] args) {
-        int startKapital = 200;
-        int lots = 3;
-        int ertragProTag = 9;
-        int ertragProLot = ertragProTag / lots;
+        int kapitalGewinnVerhältniss = 2000;
+        int lotsGewinnVerhältniss = 30;
+        int ertragProTagGewinnVerhältniss = 90;
+        int ertragProLot = ertragProTagGewinnVerhältniss / lotsGewinnVerhältniss;
         int tradesPerMonth = 15;
         int tradesPerYaer = 10;
+        int startKapital = 2000;
         int profitAll = startKapital;
         int laufZeit = 10;
 
-        calc(startKapital,ertragProTag,tradesPerMonth,tradesPerYaer, profitAll,lots,ertragProLot,laufZeit);
+        calc(kapitalGewinnVerhältniss,ertragProTagGewinnVerhältniss,tradesPerMonth,tradesPerYaer, profitAll,lotsGewinnVerhältniss,ertragProLot,laufZeit, startKapital);
 
     }
 
-    public static void calc(int startKapital, int ertragProTag, int tradesPerMonth,
-                            int tradesPerYaer, int profitAll, int lots, int ertragProLot, int laufZeit) {
+    public static void calc(int kapitalGewinnVerhältniss, int ertragProTagGewinnVerhältniss, int tradesPerMonth,
+                            int tradesPerYaer, int profitAll, int lots, int ertragProLot, int laufZeit,int startKapital ) {
         System.out.println("Startkapital " + startKapital + "€");
         DecimalFormat decimalFormat = new DecimalFormat("###,###,###");
-        int lotAktuell = 3;
+        int lotAktuell = 30;
         for (int i = 1; i <= laufZeit; i++) {
 
-            int profitPerYaer = ertragProTag * tradesPerMonth * tradesPerYaer;
-            System.out.println("Gewinn im Jahr " + decimalFormat.format(profitPerYaer) + "€");
+            int profitPerYaer = ertragProTagGewinnVerhältniss * tradesPerMonth * tradesPerYaer;
+            System.out.println("Gewinn Ende Jahr " + decimalFormat.format(profitPerYaer) + "€");
+            System.out.println("mit " + (lotAktuell) + " Lots");
             profitAll += profitPerYaer;
-            System.out.println(i + " Jahr Gesammtgewinn " + decimalFormat.format(profitAll) + "€");
-            int lotsNextYear = (profitAll * lots) / startKapital;
+            System.out.println(i + ". Jahr Gesammtgewinn " + decimalFormat.format(profitAll) + "€");
+            int lotsNextYear = (profitAll * lots) / kapitalGewinnVerhältniss;
             if (lotsNextYear > 250) {
                 lotsNextYear = 250;
             }
-            System.out.println("mit " + (lotAktuell) + " Lots");
+
             lotAktuell = lotsNextYear;
-            ertragProTag = lotsNextYear * ertragProLot;
+            ertragProTagGewinnVerhältniss = lotsNextYear * ertragProLot;
             System.out.println("----------");
 
 
