@@ -10,7 +10,11 @@ import java.util.List;
 public class TftueMain {
 private static List fileReceiverList = new LinkedList();
 
+
     public static void main(String[] args) throws FileNotFoundException {
+FileReceiver1 fileReceiver1 = new FileReceiver1();
+FileReceiverSize1 fileReceiverSize1 = new FileReceiverSize1();
+
 
 
         File file = new File(FsTraversalMain.PATH);
@@ -30,7 +34,6 @@ private static List fileReceiverList = new LinkedList();
         System.out.println("Es wurden " + FileReceiverHashMap1.counterXml + " Dateie(n) mit der Endung .xml gefunden.");
 
 
-
     }
 
     public static void fileListingRecusiv(File file, int depht) throws FileNotFoundException {
@@ -47,8 +50,8 @@ private static List fileReceiverList = new LinkedList();
 //                SelectionFileCounter1.onFileReceived(child,".xml");
 //                FileReceiverHashMap1.onFileReceived(child);
             } else {
-                FileReceiver1.onFileReceived(child);
-                FileReceiverSize1.onFileReceived(child);
+//                FileReceiver1.onFileReceived(child);
+//                FileReceiverSize1.onFileReceived(child);
                 fileListingRecusiv(child, depht + 1);
             }
         }
