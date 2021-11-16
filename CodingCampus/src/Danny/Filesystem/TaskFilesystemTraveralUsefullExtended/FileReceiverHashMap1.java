@@ -4,35 +4,22 @@ import java.io.File;
 import java.util.HashMap;
 
 public class FileReceiverHashMap1 extends SelectionFileCounter1 {
-    public static void main(File file, int depht) {
+    public static int counterJava = 0;
+    public static int counterXml = 0;
 
-        onFileReceived(file, depht);
-        System.out.println();
+    public static void onFileReceived(File file) {
 
         HashMap<Integer, String> fileExtension = new HashMap<Integer, String>();
         fileExtension.put(1, ".java");
         fileExtension.put(2, ".xml");
-        fileExtension.put(3, ".txt");
 
-        hashMap(fileExtension);
+          if (file.getName().endsWith(fileExtension.get(1))) {
+              counterJava++;
+          } else if (file.getName().endsWith(fileExtension.get(2))) {
+              counterXml++;
 
-    }
+          }
 
-    public static void hashMap(HashMap<Integer, String> fileExtension) {
-
-        for (int key : fileExtension.keySet()) {
-            selectFiles(fileExtension.get(key));
-        }
-    }
-
-    public static void selectFiles(String Extension) {
-        int counter = 0;
-        for (File selectfile : files) {
-            if (selectfile.getName().endsWith(Extension)) {
-                counter++;
-            }
-        }
-        System.out.println("Es wurden " + counter + " Dateie(n) mit der Endung " + Extension + " gefunden.");
     }
 
 }

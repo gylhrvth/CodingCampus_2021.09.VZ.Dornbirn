@@ -1,34 +1,19 @@
 package Danny.Filesystem.TaskFilesystemTraveralUsefullExtended;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 
 public class FileReceiver1 {
 
-    public static void onFileReceived(File child, int depht) {
-        if (child.isFile()) {
-            printIndentation(depht);
-            System.out.println("|--" + child.getName());
-        } else {
-            if (depht == 0) {
-                System.out.println("|");
+
+    public static void onFileReceived(File child) throws FileNotFoundException {
+        File[] fileArry = child.listFiles();
+        if (fileArry != null) {
+            if (child.isFile()) {
+
+            } else {
+
             }
-            printTurnover(depht);
-            printIndentation(depht);
-            System.out.println("|--" + child.getName());
         }
-    }
-
-    public static void printIndentation(int depht) {
-        for (int i = 0; i < depht; i++) {
-            System.out.print("|  ");
-        }
-    }
-
-    public static void printTurnover(int depht) {
-        for (int i = 0; i < depht; i++) {
-            System.out.print("|  ");
-        }
-        System.out.print("|");
-        System.out.println();
     }
 }
