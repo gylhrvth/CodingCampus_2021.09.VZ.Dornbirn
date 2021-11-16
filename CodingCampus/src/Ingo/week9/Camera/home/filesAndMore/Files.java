@@ -19,7 +19,6 @@ public class Files {
             exc.printStackTrace();
         }
 
-
         try {
             BufferedWriter bw = new BufferedWriter(new FileWriter("C:\\Users\\DCV\\Desktop\\TxtNeu.txt"));
             bw.write("Das ist eine neue Text Datei!\n" +
@@ -29,7 +28,6 @@ public class Files {
         } catch (IOException exc) {
             exc.printStackTrace();
         }
-
 
         try {
             File file = new File("C:\\Users\\DCV\\Desktop\\TopSecret.txt");

@@ -68,7 +68,7 @@ public class Kamera {
 
     @Override
     public String toString() {
-        String output = String.format("%3s, Model %3s, Megapixel %3s", getProducer(), getModel(), getMp());
+        String output = String.format("%-6s %3s %3sMP", getProducer(), getModel(), getMp());
         if (objektiv != null) {
             output += "\n" + objektiv;
         }
