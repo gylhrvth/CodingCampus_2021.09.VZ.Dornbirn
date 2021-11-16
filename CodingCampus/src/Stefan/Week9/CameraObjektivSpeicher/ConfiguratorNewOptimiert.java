@@ -1,6 +1,6 @@
 package Stefan.Week9.CameraObjektivSpeicher;
 
-import Stefan.WeekNine.Fotoapparat.CameraMethoden;
+import Stefan.Week9.Fotoapparat.CameraMethoden;
 
 import java.io.IOException;
 import java.util.List;
