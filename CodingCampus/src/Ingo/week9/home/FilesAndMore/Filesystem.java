@@ -1,4 +1,4 @@
-package Ingo.week9.Camera.home.filesAndMore;
+package Ingo.week9.home.FilesAndMore;
 
 import java.io.File;
 

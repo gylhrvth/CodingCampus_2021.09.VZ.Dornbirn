@@ -1,6 +1,8 @@
 package Ingo.week7.oop.car;
 
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class CarMain {
@@ -12,12 +14,17 @@ public class CarMain {
         Car car3 = new Car("VW", "Käfer", 32, 38, 3.2, EngineType.DIESEL, 770);
         Car car4 = new Car("Tesla", "Model 3", 75, 76, 9.0, EngineType.ELECTRIC, 1900);
 
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Which car do you want to use?  Car 1 = " + car1.getManufacturer());
-        String input = scanner.nextLine();
-        input = car1.getManufacturer();
+        List<Car> cars = new ArrayList<>();
+        cars.add(car1);
+        cars.add(car2);
+        cars.add(car3);
+        cars.add(car4);
+        System.out.println(cars);
 
+        System.out.println(car1.drive(300));
+        car3.refuel(10);
 
+        System.out.println(car3.getEngineType());
 
 
     }
