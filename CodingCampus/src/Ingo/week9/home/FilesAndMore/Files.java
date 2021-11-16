@@ -1,7 +1,6 @@
-package Ingo.week9.Camera.home.filesAndMore;
+package Ingo.week9.home.FilesAndMore;
 
 import java.io.*;
-import java.util.Locale;
 import java.util.Scanner;
 
 public class Files {
