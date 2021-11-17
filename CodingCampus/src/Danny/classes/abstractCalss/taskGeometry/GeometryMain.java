@@ -7,10 +7,10 @@ public class GeometryMain {
 
 
     public static void main(String[] args) {
-        Geometry circle = new Circle(5);
-        Geometry square = new Square(5);
-        Geometry rectangle = new Rectangle(4,5);
-        Geometry triangle = new Triangle(3,4,5);
+        Geometry circle = new Circle("Circle", 5);
+        Geometry square = new Square("Square", 5);
+        Geometry rectangle = new Rectangle("Rectangle", 4, 5);
+        Geometry triangle = new Triangle("Triangle", 3, 4, 5);
 
         List<Geometry> geometry = new ArrayList<>();
 
@@ -20,8 +20,10 @@ public class GeometryMain {
         geometry.add(triangle);
 
 
-
-
+        for (Geometry geometryChild : geometry) {
+            System.out.printf("Der Umfang von " + geometryChild.getName() + " beträgt: %.2f\n", geometryChild.getCircumference());
+            System.out.printf("Der Flächeninhalt von " + geometryChild.getName() + " beträgt: %.2f\n\n", geometryChild.getArea());
+        }
     }
 
 }

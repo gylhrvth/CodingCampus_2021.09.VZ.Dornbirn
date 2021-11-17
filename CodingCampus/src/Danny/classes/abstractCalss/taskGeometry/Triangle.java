@@ -5,7 +5,8 @@ public class Triangle extends Geometry{
     private int b;
     private int c;
 
-    public Triangle(int a, int b, int c) {
+    public Triangle(String name, int a, int b, int c) {
+        super(name);
         this.a = a;
         this.b = b;
         this.c = c;
@@ -13,11 +14,15 @@ public class Triangle extends Geometry{
 
     @Override
     public double getCircumference() {
-        return 0;
+        double circum = a + b + c;
+        return circum;
     }
 
     @Override
     public double getArea() {
-        return 0;
+        //Herons Formel
+        double s = getCircumference()/2;
+        double area = Math.sqrt(s*(s-a)*(s-b)*(s-c));
+        return area;
     }
 }

@@ -4,18 +4,21 @@ public class Rectangle extends Geometry{
     private int a;
     private int b;
 
-    public Rectangle(int a, int b) {
+    public Rectangle(String name, int a, int b) {
+        super(name);
         this.a = a;
         this.b = b;
     }
 
     @Override
     public double getCircumference() {
-        return 0;
+        double circum = (a + b) * 2;
+        return circum;
     }
 
     @Override
     public double getArea() {
-        return 0;
+        double area = a * b;
+        return area;
     }
 }
