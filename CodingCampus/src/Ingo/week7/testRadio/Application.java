@@ -11,7 +11,7 @@ public class Application {
         r1.setClock();
         r1.setFrequency(90);
         r1.setOn(true);
-        r1.setName("Hallo Omis altes Radio");
+        r1.setName("Hallo Ingo altes Radio");
         r1.setAge();
         r1.volumeUp();
         r1.volumeDown();

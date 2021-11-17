@@ -36,13 +36,15 @@ public class Radio {
         return frequency;
     }
 
-    // @Override
+    @Override
     public String toString() {
         return "Radio{" +
-                "name='" + getName() + '\'' +
+                "name='" + name + '\'' +
                 ", isOn=" + isOn +
                 ", frequency=" + frequency +
                 ", volume=" + volume +
+                ", age=" + age +
+                ", clock=" + clock +
                 '}';
     }
 

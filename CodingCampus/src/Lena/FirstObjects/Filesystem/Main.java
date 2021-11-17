@@ -5,30 +5,38 @@ import java.io.File;
 public class Main {
 
     public static void main(String[] args) {
-        File file = new File("CodingCampus/src/Lukas");
+        File file = new File("CodingCampus/src/Lena");
 
-        printFileSystem(file);
+        useFileReceiver(file,0);
     }
 
-    public static void printFileSystem(File file) {
+    public static void useFileReceiver(File file, int depth){
         File[] files = file.listFiles();
         String dictionaryPrefix = "|--";
-        String filePrefix = "---";
-        int depth = 0;
+        String filePrefix = "|--";
+        String depthPrefix = "|  ";
+        CountedFileTypes cft = new CountedFileTypes();
 
         for (File f : files) {
 
             if (f.isDirectory()) {
-                System.out.println(dictionaryPrefix + f.getName());
-                printFileSystem(f, depth + 1);
+                for (int i = 0; i < depth; i++) {
+                    System.out.print(depthPrefix);
+                }
+               // System.out.println(dictionaryPrefix + f.getName());
+               useFileReceiver(f, depth+1);
+                System.out.println(cft);
 
             } else {
-                System.out.println(filePrefix + f.getName());
+                cft.onFileReceived(f, depth + 1);
+
             }
 
         }
 
+
     }
+
 
     public static void printFileSystem(File file, int depth) {
         File[] files = file.listFiles();

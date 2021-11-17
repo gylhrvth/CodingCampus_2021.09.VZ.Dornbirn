@@ -17,6 +17,6 @@ public class Speicherkarte {
 
     @Override
     public String toString() {
-        return String.format("Speichergrösse %2s", getSizeInGB());
+        return String.format("Speichergrösse %2sGB", getSizeInGB());
     }
 }

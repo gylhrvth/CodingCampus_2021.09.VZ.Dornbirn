@@ -1,7 +1,6 @@
-package Ingo.week9.Camera.home.filesAndMore;
+package Ingo.week9.home.FilesAndMore;
 
 import java.io.*;
-import java.util.Locale;
 import java.util.Scanner;
 
 public class Files {
@@ -19,7 +18,6 @@ public class Files {
             exc.printStackTrace();
         }
 
-
         try {
             BufferedWriter bw = new BufferedWriter(new FileWriter("C:\\Users\\DCV\\Desktop\\TxtNeu.txt"));
             bw.write("Das ist eine neue Text Datei!\n" +
@@ -29,7 +27,6 @@ public class Files {
         } catch (IOException exc) {
             exc.printStackTrace();
         }
-
 
         try {
             File file = new File("C:\\Users\\DCV\\Desktop\\TopSecret.txt");
