@@ -2,7 +2,7 @@ package Plamena.week6.TestExcercises;
 
 public class Loops {
     public static void main(String[] args) {
-
+        printTriangle("o", 10);
     }
     private static void printX(String character, int height) {
         for (int i = 0; i < height; i++) {
@@ -68,9 +68,9 @@ public class Loops {
     }
 
     private static void printTriangle(String character, int height) {
-        for (int i = 0; i < height; i++) {
-            for (int j = 0; j < (height * 2) - 1; j++) {
-                if (i <= height - 2 && (j == height / 2 - i || j == height / 2 + i)) {
+        for (int i = 0; i < height; i--) {
+            for (int j = (height * 2) - 1; j > 0; j--) {
+                if (i <= height - 2 && (j == height/2+i || j == (height / 2)-i)) {
                     System.out.print(character);
                 }
                 if (i == height - 1) {

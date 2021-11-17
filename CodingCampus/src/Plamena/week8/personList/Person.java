@@ -6,6 +6,7 @@ public class Person {
     private String name;
     private int weight;
 
+
     public Person(int height, int age, String name, int weight) {
         this.age = age;
         this.height = height;
@@ -44,6 +45,11 @@ public class Person {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public String toString(){
+        return "Person: " + name + ", age: " + age + ", height: " + height + ", weight: " + weight + System.lineSeparator();
     }
 }
 
