@@ -10,7 +10,7 @@ public class SelectionFileCounter1 extends FileReceiver1 {
     public static int counter = 0;
 
     @Override
-    public void onFileReceived(File child) {
+    public void onFileReceived(File child) throws FileNotFoundException{
         if (child.isFile() && child.getName().endsWith(extension)) {
             counter++;
         }

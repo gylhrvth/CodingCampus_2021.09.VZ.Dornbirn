@@ -4,31 +4,35 @@ import Danny.Filesystem.TaskFilesystemTraversal.FsTraversalMain;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
 public class TftueMain {
-private static List fileReceiverList = new LinkedList();
+
+    static List<FileReceiver1> fileReceiverList = new ArrayList<>();
 
 
     public static void main(String[] args) throws FileNotFoundException {
-FileReceiver1 fileReceiver1 = new FileReceiver1();
-FileReceiverSize1 fileReceiverSize1 = new FileReceiverSize1();
+        FileReceiver1 fileReceiver1 = new FileReceiver1();
+        FileReceiverSize1 fileReceiverSize1 = new FileReceiverSize1();
+        SelectionFileCounter1 selectionFileCounter1 = new SelectionFileCounter1();
+        FileReceiverHashMap1 fileReceiverHashMap1 = new FileReceiverHashMap1();
 
-
+        fileReceiverList.add(fileReceiver1);
+        fileReceiverList.add(fileReceiverSize1);
+        fileReceiverList.add(selectionFileCounter1);
+        fileReceiverList.add(fileReceiverHashMap1);
 
         File file = new File(FsTraversalMain.PATH);
         int depht = 0;
 
+        for (int i = 0; i < fileReceiverList.size(); i++) {
+            fileListingRecusiv(file, depht, fileReceiverList.get(i));
 
+        }
 
-        fileReceiverList.add("FileReceiver1.onFileReceived(child);");
-        fileReceiverList.add("FileReceiverSize1.onFileReceived(child);");
-        fileReceiverList.add("SelectionFileCounter1.onFileReceived(child,\".xml\");");
-        fileReceiverList.add("FileReceiverHashMap1.onFileReceived(child);");
-
-        fileListingRecusiv(file, depht);
-        System.out.println("Die Größe aller Dateien beträgt: " + FileReceiverSize1.size );
+        System.out.println("Die Größe aller Dateien beträgt: " + FileReceiverSize1.size);
         System.out.println("Es wurden " + SelectionFileCounter1.counter + " Dateie(n) mit der Endung .xml gefunden.");
         System.out.println("Es wurden " + FileReceiverHashMap1.counterJava + " Dateie(n) mit der Endung .java gefunden.");
         System.out.println("Es wurden " + FileReceiverHashMap1.counterXml + " Dateie(n) mit der Endung .xml gefunden.");
@@ -36,7 +40,7 @@ FileReceiverSize1 fileReceiverSize1 = new FileReceiverSize1();
 
     }
 
-    public static void fileListingRecusiv(File file, int depht) throws FileNotFoundException {
+    public static void fileListingRecusiv(File file, int depht, FileReceiver1 fileReceiver) throws FileNotFoundException {
         if (!file.exists()) {
             throw new FileNotFoundException("Datei not exist!");
         }
@@ -44,15 +48,18 @@ FileReceiverSize1 fileReceiverSize1 = new FileReceiverSize1();
         for (File child : file.listFiles()) {
             if (child.isFile()) {
 
-                fileReceiverList.get(1);
+                fileReceiver.onFileReceived(child);
+
+
 //                FileReceiver1.onFileReceived(child);
 //                FileReceiverSize1.onFileReceived(child);
 //                SelectionFileCounter1.onFileReceived(child,".xml");
 //                FileReceiverHashMap1.onFileReceived(child);
             } else {
+                fileReceiver.onFileReceived(child);
 //                FileReceiver1.onFileReceived(child);
 //                FileReceiverSize1.onFileReceived(child);
-                fileListingRecusiv(child, depht + 1);
+                fileListingRecusiv(child, depht + 1, fileReceiver);
             }
         }
     }

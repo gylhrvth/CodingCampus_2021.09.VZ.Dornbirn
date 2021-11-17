@@ -5,15 +5,15 @@ import java.text.DecimalFormat;
 public class ErtragsRechner {
 
     public static void main(String[] args) {
-        int kapitalGewinnVerhältniss = 2000;
-        int lotsGewinnVerhältniss = 30;
-        int ertragProTagGewinnVerhältniss = 90;
+        int kapitalGewinnVerhältniss = 200;
+        int lotsGewinnVerhältniss = 3;
+        int ertragProTagGewinnVerhältniss = 9;
         int ertragProLot = ertragProTagGewinnVerhältniss / lotsGewinnVerhältniss;
         int tradesPerMonth = 15;
         int tradesPerYaer = 10;
-        int startKapital = 2000;
+        int startKapital = 200;
         int profitAll = startKapital;
-        int laufZeit = 10;
+        int laufZeit = 8;
 
         calc(kapitalGewinnVerhältniss,ertragProTagGewinnVerhältniss,tradesPerMonth,tradesPerYaer, profitAll,lotsGewinnVerhältniss,ertragProLot,laufZeit, startKapital);
 
