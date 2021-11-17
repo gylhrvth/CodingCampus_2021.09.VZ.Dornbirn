@@ -1,9 +1,9 @@
 package Danny.classes.abstractCalss.taskGeometry;
 
 public class Triangle extends Geometry{
-    private int a;
-    private int b;
-    private int c;
+    private final int a;
+    private final int b;
+    private final int c;
 
     public Triangle(String name, int a, int b, int c) {
         super(name);
@@ -14,15 +14,13 @@ public class Triangle extends Geometry{
 
     @Override
     public double getCircumference() {
-        double circum = a + b + c;
-        return circum;
+        return a + b + c;
     }
 
     @Override
     public double getArea() {
         //Herons Formel
         double s = getCircumference()/2;
-        double area = Math.sqrt(s*(s-a)*(s-b)*(s-c));
-        return area;
+        return Math.sqrt(s*(s-a)*(s-b)*(s-c));
     }
 }

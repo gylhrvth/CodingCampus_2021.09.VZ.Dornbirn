@@ -5,7 +5,6 @@ import java.util.List;
 
 public class GeometryMain {
 
-
     public static void main(String[] args) {
         Geometry circle = new Circle("Circle", 5);
         Geometry square = new Square("Square", 5);
@@ -18,7 +17,6 @@ public class GeometryMain {
         geometry.add(square);
         geometry.add(rectangle);
         geometry.add(triangle);
-
 
         for (Geometry geometryChild : geometry) {
             System.out.printf("Der Umfang von " + geometryChild.getName() + " beträgt: %.2f\n", geometryChild.getCircumference());

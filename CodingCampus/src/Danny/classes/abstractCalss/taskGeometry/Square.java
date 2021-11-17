@@ -1,7 +1,7 @@
 package Danny.classes.abstractCalss.taskGeometry;
 
 public class Square extends Geometry {
-    private int a;
+    private final int a;
 
     public Square(String name, int a) {
         super(name);
@@ -10,13 +10,11 @@ public class Square extends Geometry {
 
     @Override
     public double getCircumference() {
-        double circum = a * 4;
-        return circum;
+        return a * 4;
     }
 
     @Override
     public double getArea() {
-        double area = a * a;
-        return area;
+        return a * a;
     }
 }

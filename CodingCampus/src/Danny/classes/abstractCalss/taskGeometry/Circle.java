@@ -2,7 +2,7 @@ package Danny.classes.abstractCalss.taskGeometry;
 
 public class Circle extends Geometry {
 
-    private int radius;
+    private final int radius;
 
     public Circle(String name, int radius) {
         super(name);
@@ -11,13 +11,11 @@ public class Circle extends Geometry {
 
     @Override
     public double getCircumference() {
-        double circum = Math.PI * 2 * radius;
-        return circum;
+        return Math.PI * 2 * radius;
     }
 
     @Override
     public double getArea() {
-        double area = Math.PI * (radius*radius);
-        return area;
+        return Math.PI * (radius*radius);
     }
 }
