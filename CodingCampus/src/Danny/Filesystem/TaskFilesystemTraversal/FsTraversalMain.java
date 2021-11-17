@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 
 public class FsTraversalMain {
-    public static final String PATH = "CodingCampus\\src\\Luka";
+    public static final String PATH = "CodingCampus\\src\\Lukas";
 
     public static void main(String[] args) throws FileNotFoundException {
 
