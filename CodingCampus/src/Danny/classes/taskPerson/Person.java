@@ -1,4 +1,4 @@
-package Danny.classes.TaskPerson;
+package Danny.classes.taskPerson;
 public class Person extends java.lang.Object {
     private String name;
     private int size;

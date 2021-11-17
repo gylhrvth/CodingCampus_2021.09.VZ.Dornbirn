@@ -1,4 +1,4 @@
-package Danny.classes.TaskDataclass;
+package Danny.classes.taskDataclass;
 import java.util.Random;
 
 public class EcerciseDataclass {

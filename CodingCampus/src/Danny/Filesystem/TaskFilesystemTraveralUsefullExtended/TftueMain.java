@@ -5,7 +5,6 @@ import Danny.Filesystem.TaskFilesystemTraversal.FsTraversalMain;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
 public class TftueMain {
@@ -44,21 +43,11 @@ public class TftueMain {
         if (!file.exists()) {
             throw new FileNotFoundException("Datei not exist!");
         }
-
         for (File child : file.listFiles()) {
             if (child.isFile()) {
-
                 fileReceiver.onFileReceived(child);
-
-
-//                FileReceiver1.onFileReceived(child);
-//                FileReceiverSize1.onFileReceived(child);
-//                SelectionFileCounter1.onFileReceived(child,".xml");
-//                FileReceiverHashMap1.onFileReceived(child);
             } else {
                 fileReceiver.onFileReceived(child);
-//                FileReceiver1.onFileReceived(child);
-//                FileReceiverSize1.onFileReceived(child);
                 fileListingRecusiv(child, depht + 1, fileReceiver);
             }
         }

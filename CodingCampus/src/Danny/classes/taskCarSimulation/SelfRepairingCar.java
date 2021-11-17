@@ -1,4 +1,4 @@
-package Danny.classes.TaskCarSimulation;
+package Danny.classes.taskCarSimulation;
 
 public class SelfRepairingCar extends Car {
     public SelfRepairingCar(String manufacturer, String model, Engine engine, int weight, Tank tank) {

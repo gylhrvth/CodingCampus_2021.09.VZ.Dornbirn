@@ -1,4 +1,4 @@
-package Danny.classes.TaskCamera;
+package Danny.classes.taskCamera;
 
 public class CameraClass extends java.lang.Object {
 

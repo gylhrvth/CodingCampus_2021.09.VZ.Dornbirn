@@ -1,4 +1,4 @@
-package Danny.classes.TaskPerson;
+package Danny.classes.taskPerson;
 public class MinMaxAverage2 {
 
     private final double avgAge;

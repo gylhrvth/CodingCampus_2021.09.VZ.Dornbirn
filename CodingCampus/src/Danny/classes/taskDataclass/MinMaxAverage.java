@@ -1,4 +1,4 @@
-package Danny.classes.TaskDataclass;
+package Danny.classes.taskDataclass;
 
 public class MinMaxAverage extends java.lang.Object {
     private final int min;

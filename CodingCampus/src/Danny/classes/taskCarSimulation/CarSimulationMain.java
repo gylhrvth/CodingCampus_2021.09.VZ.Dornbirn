@@ -1,4 +1,4 @@
-package Danny.classes.TaskCarSimulation;
+package Danny.classes.taskCarSimulation;
 
 public class CarSimulationMain {
 

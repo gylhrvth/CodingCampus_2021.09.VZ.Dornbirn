@@ -1,4 +1,4 @@
-package Danny.classes.TaskPerson;
+package Danny.classes.taskPerson;
 import java.util.ArrayList;
 import java.util.List;
 
