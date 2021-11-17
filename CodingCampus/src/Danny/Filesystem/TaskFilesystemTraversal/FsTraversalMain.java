@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 
 public class FsTraversalMain {
-    public static final String PATH = "CodingCampus\\src\\Lukas";
+    public static final String PATH = "CodingCampus\\src\\Luka";
 
     public static void main(String[] args) throws FileNotFoundException {
 
@@ -15,10 +15,12 @@ public class FsTraversalMain {
         int deep = 0;
         listFile(file, deep);
     }
-
+// FileNotFoundException ist falsch richtig siehe
+// TaskFilesystemTraveralUsefullExtended;
+//TftueMain
     public static void listFile(File file, int deep) throws FileNotFoundException {
         if (!file.exists()) {
-            throw new FileNotFoundException("Datei not exist");
+            throw new FileNotFoundException("Datei not exist!");
         }
         File[] fileArray = file.listFiles();
         if (fileArray != null) {
