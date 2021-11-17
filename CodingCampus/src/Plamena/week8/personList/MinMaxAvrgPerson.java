@@ -35,6 +35,7 @@ public class MinMaxAvrgPerson {
         this.tallestPers = tallestPers;
         this.smallestPers = smallestPers;
         this.oldestPers = oldestPers;
+
     }
 
     public double getAvrgAge() {
