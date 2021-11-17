@@ -1,5 +1,7 @@
 package Stefan.Week9.CameraObjektivSpeicher;
 
+import Stefan.Week9.Fotoapparat.CameraMethoden;
+
 import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
@@ -12,27 +14,13 @@ public class ConfiguratorNewOptimiert {
         //Auswahl Camera
         System.out.println("Mit welcher Kamera wollen sie Fotografieren:");
         for (int i = 0; i < cameraNew.size(); i++) {
-            System.out.println("[" + (i + 1) + "] " + cameraNew.get(i).getProducer() + " " + cameraNew.get(i).getModel() + " " + cameraNew.get(i).getMp() + "MP");
+            //System.out.println("[" + (i + 1) + "] " + cameraNew.get(i).getProducer() + " " + cameraNew.get(i).getModel() + " " + cameraNew.get(i).getMp() + "MP");
+            System.out.println("[" + (i + 1) + "] " + cameraNew.get(i));
         }
         System.out.println();
-        while (!scanner.hasNextInt()) {
-            System.out.println("Zahl eingeben");
-            scanner.nextLine();
-        }
-        int inputCamera = scanner.nextInt();
 
-
-        while (inputCamera > cameraNew.size() || inputCamera < 1) {
-            System.out.println("Geben Sie eine Zahl ein!!!");
-            while (!scanner.hasNextInt()) {
-                System.out.println("Zahl eingeben");
-                scanner.nextLine();
-            }
-            inputCamera = scanner.nextInt();
-            scanner.nextLine();
-        }
+        int inputCamera = queryInput(cameraNew.size());
         currentCamera = cameraNew.get(inputCamera - 1);
-
 
         //Auswahl Objektiv
         System.out.println("Welches Objektiv wollen sie verwenden:");
@@ -40,23 +28,9 @@ public class ConfiguratorNewOptimiert {
             System.out.println("[" + (i + 1) + "] " + objektivs.get(i).getFocalLengthMin() + "-->>" + objektivs.get(i).getFocalLengthMax() + " f" + objektivs.get(i).getLightIntensity() + " " + objektivs.get(i).getBlende());
         }
         System.out.println();
-        while (!scanner.hasNextInt()) {
-            System.out.println("Zahl eingeben");
-            scanner.nextLine();
-        }
-        int inputObjektiv = scanner.nextInt();
 
-        while (inputObjektiv > objektivs.size() || inputObjektiv < 1) {
-            System.out.println("Geben Sie eine Zahl zwischen 1 und 3 ein!!!");
-            while (!scanner.hasNextInt()) {
-                System.out.println("Zahl eingeben");
-                scanner.nextLine();
-            }
-            inputObjektiv = scanner.nextInt();
-            scanner.nextLine();
-        }
+        int inputObjektiv = queryInput(objektivs.size());
         currentCamera.mountObjectiv(objektivs.get(inputObjektiv - 1));
-
 
         //Auswahl Speicherkate
         System.out.println("Welche Speicherkarte wollen sie:");
@@ -64,58 +38,33 @@ public class ConfiguratorNewOptimiert {
             System.out.println("[" + (i + 1) + "] " + speicherkarte.get(i).getSizeInGB() + "GB");
         }
         System.out.println();
-        while (!scanner.hasNextInt()) {
-            System.out.println("Zahl eingeben");
-            scanner.nextLine();
-        }
-        int inputSpeicher = scanner.nextInt();
 
-        while (inputSpeicher > speicherkarte.size() || inputSpeicher < 1) {
-            System.out.println("Geben Sie eine Zahl zwischen 1 und 3 ein!!!");
-            while (!scanner.hasNextInt()) {
-                System.out.println("Zahl eingeben");
-                scanner.nextLine();
-            }
-            inputSpeicher = scanner.nextInt();
-            scanner.nextLine();
-        }
+        int inputSpeicher = queryInput(speicherkarte.size());
         currentCamera.mountSpeicherkarte(speicherkarte.get(inputSpeicher - 1));
+
+        System.out.println();
         System.out.println("Gewählte Konfiguration:\n" + currentCamera);
 
-
-        //Rechnet aus wievil Photos gemacht werden können mit der gewählten Speicherkarte
+        //Rechnet aus wieviel Photos gemacht werden können mit der gewählten Speicherkarte
         Speicherkarte photo = currentCamera.makePhotos();
 
         System.out.println();
-        System.out.printf("Sie können bei der Gewählten %s Fotos machen.", photo);
-
+        System.out.printf("Sie können mit der Gewählten Speicherkarte %d Fotos machen.", photo.getSizeInGB());
 
         //Fotos machen
-
-//        photo.setSizeInGB(photo.getSizeInGB() - 1);
+        photo.setSizeInGB(photo.getSizeInGB() - 1);
         System.out.println();
         System.out.println("Wollen Sie gleich mal ein paar bilder machen? [1]Ja / [2]Nein");
-        while (!scanner.hasNextInt()) {
-            System.out.println("Zahl eingeben");
-            scanner.nextLine();
-        }
-        int inputPhoto = scanner.nextInt();
 
-        while (inputPhoto > 2 || inputPhoto < 0) {
-            System.out.println("Geben Sie eine Zahl zwischen 1 und 2 ein!");
-            while (!scanner.hasNextInt()) {
-                System.out.println("Zahl eingeben");
-                scanner.nextInt();
-            }
-            inputPhoto = scanner.nextInt();
-            scanner.nextLine();
-        }
+        int inputPhoto = queryInput(2);
 
         int sum = 0;
         while (true) {
             if (inputPhoto == 1) {
                 sum++;
+                System.out.println(CameraMethoden.loadPhoto());
                 System.out.println("Wollen Sie noch eines machen");
+
                 inputPhoto = scanner.nextInt();
                 continue;
             }
@@ -126,5 +75,25 @@ public class ConfiguratorNewOptimiert {
         }
         int endsum = photo.getSizeInGB() - sum;
         System.out.println("Verbleibende " + endsum + " Bilder!");
+    }
+
+    //Scanner eingabe Prüfung
+    public static int queryInput(int maxInput) {
+        Scanner scanner = new Scanner(System.in);
+        int input = 0;
+        while (true) {
+            if (!scanner.hasNextInt()) {
+                System.out.println("Zahl eingeben!");
+                scanner.nextLine();
+            } else {
+                input = scanner.nextInt();
+                if (input >= 1 && input <= maxInput) {
+
+                    break;
+                }
+                System.out.println("Geben Sie eine korrekte Zahl ein");
+            }
+        }
+        return input;
     }
 }

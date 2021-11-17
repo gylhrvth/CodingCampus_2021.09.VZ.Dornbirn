@@ -1,7 +1,5 @@
 package Stefan.Week10.CarSimulation;
 
-import Stefan.Week10.CarSimulation.Car;
-
 import java.util.List;
 
 public class CarMethoden {

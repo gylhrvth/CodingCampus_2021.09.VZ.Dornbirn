@@ -33,7 +33,7 @@ public class GetMinMaxAvrg {
         String tallestPers ="";
         String oldestPers = "";
         String heaviestPers ="";
-        String smallestPers = "";
+        String smallestPers ="";
 
         for (Person person:personList) {
             if(person.getAge() < minAge){
