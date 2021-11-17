@@ -1,4 +1,4 @@
-package Eray.week8.carSimulation;
+package Eray.week8.carSimulation.aufgabe1;
 
 public class CarDatas {
     private String hersteller;
