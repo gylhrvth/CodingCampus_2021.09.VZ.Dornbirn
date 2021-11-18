@@ -2,31 +2,55 @@ package Eray.week8andweek9.fileSystem.filesytemUsefullUebung2.fileReceivers;
 
 import java.io.File;
 import java.util.HashMap;
+import java.util.Map;
 
 public class HashMapCounter extends FileReceiver {
+    private String[] fileEndings;
 
-    public HashMap<Integer, String> hashMap = new HashMap<Integer, String>();
+    public Map<String, Integer> hashMap = new HashMap<>();
 
+    public HashMapCounter(String... fileEndings) {
+        this.fileEndings = fileEndings;
+    }
 
     @Override
     public void onFileReceived(int depth, File file) {
-        hashMap.put(1, ".java");
-        hashMap.put(2, ".csv");
-        hashMap.put(3, ".txt");
-        hashMap.put(4, ".png");
-
-
-        for (int i = 0; i < hashMap.size(); i++) {
-            getFileEndings(hashMap.get(i), file);
+        if (checkFileEnding(file)) {
+            for (int i = 0; i < fileEndings.length; i++) {
+                if (fileEndings[i].equals(getFileEnding(file))) {
+                    addOneToHashmap(fileEndings[i]);
+                    break;
+                }
+            }
         }
     }
 
-    public void getFileEndings(String fileEnding, File file) {
-        int counter = 0;
-        while (fileEnding.endsWith(file.getName())) {
+    protected void addOneToHashmap(String fileEnding) {
+        if (hashMap.containsKey(fileEnding)) {
+            //Autoboxing
+            int counter = hashMap.get(fileEnding);
             counter++;
+            hashMap.put(fileEnding, counter);
+        } else {
+            hashMap.put(fileEnding, 1);
         }
+    }
 
-        System.out.println("Die Datei mit der Endung " + fileEnding + " kommt " + counter + " mal vor!");
+    protected String getFileEnding(File file) {
+        String fileName = file.getName();
+        int lastIndexOf = fileName.lastIndexOf(".");
+        return fileName.substring(lastIndexOf);
+    }
+
+
+    private boolean checkFileEnding(File file) {
+        if (file.isFile()) {
+            for (String fileExtension : fileEndings) {
+                if (file.getName().endsWith(fileExtension)) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 }
