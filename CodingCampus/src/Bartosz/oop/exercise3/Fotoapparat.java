@@ -1,4 +1,4 @@
-package Bartosz.week8.oop.exercise3;
+package Bartosz.oop.exercise3;
 
 public class Fotoapparat {
     private String model;

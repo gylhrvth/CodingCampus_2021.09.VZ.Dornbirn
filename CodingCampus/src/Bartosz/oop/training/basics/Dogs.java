@@ -1,4 +1,4 @@
-package Bartosz.week8.oop.training.basics;
+package Bartosz.oop.training.basics;
 
 public class Dogs {
     private int age;

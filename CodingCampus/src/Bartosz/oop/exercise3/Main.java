@@ -1,8 +1,5 @@
-package Bartosz.week8.oop.exercise3;
+package Bartosz.oop.exercise3;
 
-import Bartosz.week8.oop.exercise2.Person;
-
-import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
