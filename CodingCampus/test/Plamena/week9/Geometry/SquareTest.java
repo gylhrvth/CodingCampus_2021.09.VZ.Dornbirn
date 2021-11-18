@@ -1,5 +1,5 @@
 package Plamena.week9.Geometry;
-
+/*
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -15,3 +15,6 @@ public class SquareTest {
         Assertions.assertEquals(4.0, new Square(2.0));
     }
 }
+
+
+ */
