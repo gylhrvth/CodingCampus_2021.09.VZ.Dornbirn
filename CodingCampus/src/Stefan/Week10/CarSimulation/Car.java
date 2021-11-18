@@ -85,31 +85,37 @@ public class Car {
 
         if (aktuellerVerbrauch < this.tankCapacity) {
             System.out.println("Ich fahre.......");
-            for (int i = 0; i <= kilometer; i++) {
-                if (i % 50 == 0) {
-                    System.out.printf("...%4d km .....%n", i);
-                }
-            }
+//            for (int i = 0; i <= kilometer; i++) {
+//                if (i % 50 == 0) {
+//                    System.out.printf("...%4d km .....%n", i);
+//                }
+//            }
             gefahreneStrecke += kilometer;
             this.tankCapacity -= aktuellerVerbrauch;
             System.out.println();
             System.out.printf("%.2f L sind noch verfügbar", this.tankCapacity);
             System.out.println();
-        }
+        } else if (aktuellerVerbrauch > this.tankCapacity) {
 
+            double nochMoeglicheKilometer = this.tankCapacity / this.verbrauch;
 
+            this.tankCapacity = 0;
 
-
-
-        if (aktuellerVerbrauch > this.tankCapacity) {
-            double restVolumen = ((this.tankCapacity * 100) / this.verbrauch) / 100;
-            System.out.printf("Sie können nur noch %.2f km Fahren. Wollen Sie Tanken gehen [1]Ja, [2]Nein", restVolumen);
+            System.out.printf("Du bist gefahren %.2fkm. Tanken gehen [1]Ja, [2]Nein", nochMoeglicheKilometer);
             System.out.println();
-            while (!scanner.hasNextInt()) {
-                System.out.println("Zahl eingeben!");
-                scanner.nextLine();
-            }
+
             refuel();
+
+            double restKilometer = kilometer - nochMoeglicheKilometer;
+            System.out.println();
+            System.out.printf("Wollen Sie die restlichen %.2f Kilometer fahren? [1]Ja, [2]Nein", restKilometer);
+            System.out.println();
+            int input = scanner.nextInt();
+            if (input == 1) {
+                System.out.printf("Sie siend die %.2f gefahren!\n", restKilometer);
+                double restVerbrauch = restKilometer * this.verbrauch;
+                this.tankCapacity = this.tankCapacity - restVerbrauch;
+            }
 
         }
         return gefahreneStrecke;
@@ -117,17 +123,18 @@ public class Car {
 
     public void refuel() {
         boolean refuelTank = true;
+        double fullTank = this.tankCapacity;
+        int input = scanner.nextInt();
         while (refuelTank) {
-            double fullTank = this.tankCapacity;
-            int input = scanner.nextInt();
+
             if (input == 1) {
                 System.out.println("Wieviel Liter wollen sie tanken?");
                 int inputFuell = scanner.nextInt();
 
-                if (inputFuell < maxTankCapacity - fullTank) {
+                if (inputFuell <= maxTankCapacity - fullTank) {
                     double refuel = inputFuell + this.tankCapacity;
                     this.tankCapacity = refuel;
-                    System.out.printf("Es sind wieder %.2fL", this.tankCapacity);
+                    System.out.printf("Es sind wieder %.2fL im Tank", this.tankCapacity);
                     refuelTank = false;
                 }
 
@@ -142,7 +149,7 @@ public class Car {
                         this.tankCapacity = maxTankCapacity;
                     } else if (inputFuellTank.equals("y")) {
                         CarMain.driving = false;
-                        System.out.println("Ihr Auro wurde blockiert");
+                        System.out.println("Ihr Auto wurde blockiert");
                     }
                     return;
                 }

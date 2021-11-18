@@ -15,10 +15,12 @@ public class FsTraversalMain {
         int deep = 0;
         listFile(file, deep);
     }
-
+// FileNotFoundException ist falsch richtig siehe
+// TaskFilesystemTraveralUsefullExtended;
+//TftueMain
     public static void listFile(File file, int deep) throws FileNotFoundException {
         if (!file.exists()) {
-            throw new FileNotFoundException("Datei not exist");
+            throw new FileNotFoundException("Datei not exist!");
         }
         File[] fileArray = file.listFiles();
         if (fileArray != null) {

@@ -1,13 +1,9 @@
 package Plamena.week9.Geometry;
 
-public class Geometry {
+public abstract class Geometry {
 
-   public double getCircumference(){
-       return 0.0;
-   }
+   public abstract double getCircumference();
 
-   public double getArea(){
-       return 0.0;
-   }
+   public abstract double getArea();
 
 }

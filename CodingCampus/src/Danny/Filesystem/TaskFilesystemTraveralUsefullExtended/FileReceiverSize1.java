@@ -1,21 +1,16 @@
 package Danny.Filesystem.TaskFilesystemTraveralUsefullExtended;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 
 public class FileReceiverSize1 extends FileReceiver1 {
-   public static int size = 0;
+    public int size = 0;
 
-
-
-@Override
-    public void onFileReceived(File child) throws FileNotFoundException {
+    @Override
+    public void onFileReceived(File child) {
         if (child.isFile()) {
             size += child.length();
-
         }
     }
-
 
 
     public int getSize() {

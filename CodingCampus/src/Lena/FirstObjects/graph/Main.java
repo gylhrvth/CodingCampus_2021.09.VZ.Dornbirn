@@ -19,7 +19,7 @@ public class Main {
 
         Graph graph = new Graph();
         graph.fillNodeList(nodeMatrix);
-        GraphFrame graphFrame = new GraphFrame(graph);
+        new GraphFrame(graph);
 
     }
 

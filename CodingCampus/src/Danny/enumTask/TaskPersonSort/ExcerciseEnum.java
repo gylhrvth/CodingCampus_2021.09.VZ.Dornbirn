@@ -1,9 +1,9 @@
 package Danny.enumTask.TaskPersonSort;
-import Danny.classes.TaskPerson.Person;
+import Danny.classes.taskPerson.Person;
 
 import java.util.List;
 
-import static Danny.classes.TaskPerson.ExerciseClass.*;
+import static Danny.classes.taskPerson.ExerciseClass.*;
 
 public class
 ExcerciseEnum {

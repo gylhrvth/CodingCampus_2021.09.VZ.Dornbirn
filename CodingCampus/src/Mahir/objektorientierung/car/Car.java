@@ -25,9 +25,48 @@ public class Car {
 
     Scanner scanner = new Scanner(System.in);
 
-    public void autoCarSimulation(){
+    public void autoCarSimulation() {
+        System.out.println("Enter distance to drive");
+        int input = scanner.nextInt();
+        int drivenDistance = 0;
+        int drive = 0;
+        double usedFuel = 0;
+        while (drivenDistance <= input) {
+            for (int i = 0; i <= drive; i++) {
+                System.out.print(" ");
+                if (drive == 50){
+                    drive -= 50;
+                }
+            }
+            System.out.print("~ ~ o==o>");
 
+            secondCounter();
+            clearScreen();
+            if (fuelCapacity <= 0) {
+                refuel(usedFuel);
+                continue;
+            }
+            drivenDistance++;
+            drive++;
+            fuelCapacity -= consumption / 100;
+            usedFuel += consumption / 100;
+        }
+        System.out.println();
+        System.out.println("\nyou arrived!! \nDriven Distance: " + input + "KM\n used Fuel: " + String.format("%.2f", consumption / 100 * input) + "L");
 
+    }
+
+    public static void secondCounter() {
+        try {
+            //sending the actual Thread of execution to sleep X milliseconds
+            Thread.sleep(200);
+        } catch (InterruptedException ignored) {
+        }
+    }
+
+    public static void clearScreen() {
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
     }
 
     public void carSimulation() {
@@ -51,6 +90,7 @@ public class Car {
                     }
                     if (input == 2) {
                         System.out.println("U Left ur Car and Walked Home ");
+                        break;
                     }
                 }
             }
@@ -63,7 +103,7 @@ public class Car {
 
 
     public void refuel(double usedFuel) {
-        System.out.println("Refueled:" + usedFuel);
+        System.out.println("Refueled:" +String.format("%.2f",usedFuel));
         setFuelCapacity(getFuelCapacity() + usedFuel);
 
 
@@ -117,8 +157,8 @@ public class Car {
 
     @Override
     public String toString() {
-        return String.format("Manufacturer: %s Model: %s Kw: %d Fuel capacity: %.2f Weight: %d",
-                manufacturer, model, kW, fuelCapacity, weight);
+        return String.format("Manufacturer: %s Model: %s Kw: %d Fuel capacity: %.2f Weight: %d Consumption %.2f",
+                manufacturer, model, kW, fuelCapacity, weight, consumption);
 
     }
 }

@@ -43,7 +43,7 @@ public class UserInput {
                 //Save Photo
                 if (input == 1) {
                     currentCamera.setMemorySpace(currentCamera.getMemorySpace() - currentCamera.getMegapixel() * 0.3);
-                    System.out.println(currentCamera.getMemorySpace());
+                    System.out.printf("%.2f\n", currentCamera.getMemorySpace());
 
                 }
                 //Delete Photo

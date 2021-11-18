@@ -4,8 +4,8 @@ import java.io.File;
 import java.util.HashMap;
 
 public class FileReceiverHashMap1 extends SelectionFileCounter1 {
-    public static int counterJava = 0;
-    public static int counterXml = 0;
+    public int counterJava = 0;
+    public int counterXml = 0;
 
     public void onFileReceived(File file) {
 
@@ -22,4 +22,11 @@ public class FileReceiverHashMap1 extends SelectionFileCounter1 {
 
     }
 
+    public int getCounterJava() {
+        return counterJava;
+    }
+
+    public int getCounterXml() {
+        return counterXml;
+    }
 }

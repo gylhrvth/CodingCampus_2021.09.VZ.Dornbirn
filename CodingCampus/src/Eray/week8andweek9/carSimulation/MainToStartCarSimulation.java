@@ -10,7 +10,8 @@ public class MainToStartCarSimulation {
     }
 
     static Scanner scanner = new Scanner(System.in);
-    private final static CarDatas car = new CarDatas("Mercedes", "C63 AMG", "Benziner", 1725, 70.00, 375);
+    private final static CarDatas car = new CarDatas("Mercedes", "C63 AMG", "Benziner", 1725,
+            70.00, 375);
 
     public static void printAll() {
 
@@ -28,7 +29,8 @@ public class MainToStartCarSimulation {
         while (driving) {
             System.out.println();
             System.out.println("Zum aufhören zum Fahren drücken sie [1]");
-            System.out.println("Gebe ein wie viele Kilometer du mit deinem " + car.getHersteller() + " " + car.getModell() + " fahren willst");
+            System.out.println("Gebe ein wie viele Kilometer du mit deinem " + car.getHersteller() + " "
+                    + car.getModell() + " fahren willst");
             System.out.println();
             int kilometer = scanner.nextInt();
 
