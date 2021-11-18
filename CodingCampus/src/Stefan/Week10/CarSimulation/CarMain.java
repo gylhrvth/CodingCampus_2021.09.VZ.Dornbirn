@@ -32,7 +32,7 @@ public class CarMain {
             if (userInput.equals("d")) {
                 System.out.println("Wie viel Kilometer wollen sie fahren: ");
                 int kilometer = scanner.nextInt();
-                car1.drive(kilometer);
+                car2.drive(kilometer);
             } else if (userInput.equals("x")) {
                 driving = false;
                 System.out.println("Das Auto wurde erfolgreich ausgeschaltet");

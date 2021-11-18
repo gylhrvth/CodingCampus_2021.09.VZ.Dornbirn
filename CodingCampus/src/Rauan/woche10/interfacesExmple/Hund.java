@@ -1,6 +1,6 @@
-package Rauan.woche10.interfaces;
+package Rauan.woche10.interfacesExmple;
 
-public class Hund implements Lebewesen{
+public class Hund implements Lebewesen {
     @Override
     public void atme() {
         System.out.println("Tief");
