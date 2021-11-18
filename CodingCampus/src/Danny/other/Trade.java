@@ -5,7 +5,7 @@ import java.text.DecimalFormat;
 public class Trade {
     public static void main(String[] args) {
 
-        int startmoney = 5000;
+        int startmoney = 1000;
         int profitDax5YearWith7Lots = 42475;
         int profit1JWith1Lot = (profitDax5YearWith7Lots / 5) / 7;
         int price1Lot = 774;
