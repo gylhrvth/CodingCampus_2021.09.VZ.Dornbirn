@@ -4,31 +4,25 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Graph {
-
-
-    private List<Node> nodeList = new ArrayList<>();
-
-    public Graph() {
-
-    }
+    private final List<Node> nodeList = new ArrayList<>();
 
     public void fillNodeList(Node[][] nodeMatrix) {
-        for (int i = 0; i < nodeMatrix.length; i++) {
-            for (int j = 0; j < nodeMatrix[i].length; j++) {
-                if (nodeMatrix[i][j] != null) {
-                    this.nodeList.add(nodeMatrix[i][j]);
+        for (Node[] matrix : nodeMatrix) {
+            for (Node node : matrix) {
+                if (node != null) {
+                    this.nodeList.add(node);
                 }
             }
         }
     }
 
-    public List<Node>getNodeList(){
+    public List<Node> getNodeList() {
         return this.nodeList;
     }
 
-    public Node findNode(int xKoord, int yKoord){
-        for (Node n: nodeList){
-            if(n.getxKoordinate()==xKoord && n.getyKoordinate()==yKoord){
+    public Node findNode(int x, int y) {
+        for (Node n : nodeList) {
+            if (n.getxKoordinate() == x && n.getyKoordinate() == y) {
                 return n;
             }
         }
@@ -38,7 +32,6 @@ public class Graph {
 
     @Override
     public String toString() {
-
-        return "Graph "+this.nodeList.size();
+        return "Graph " + this.nodeList.size();
     }
 }
