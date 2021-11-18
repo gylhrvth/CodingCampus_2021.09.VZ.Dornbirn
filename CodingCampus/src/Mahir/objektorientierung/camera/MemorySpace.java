@@ -27,6 +27,6 @@ public class MemorySpace {
 
     @Override
     public String toString() {
-        return String.format("Name: %s Memory: %.2f GB",name,memory);
+        return String.format("Name: %s Memory: %.2f MB",name,memory);
     }
 }

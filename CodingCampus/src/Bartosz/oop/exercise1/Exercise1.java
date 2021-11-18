@@ -1,4 +1,4 @@
-package Bartosz.week8.oop.exercise1;
+package Bartosz.oop.exercise1;
 
 import java.util.Arrays;
 import java.util.Random;

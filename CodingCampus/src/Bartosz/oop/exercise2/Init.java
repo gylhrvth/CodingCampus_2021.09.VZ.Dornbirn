@@ -1,4 +1,4 @@
-package Bartosz.week8.oop.exercise2;
+package Bartosz.oop.exercise2;
 
 import java.util.ArrayList;
 
