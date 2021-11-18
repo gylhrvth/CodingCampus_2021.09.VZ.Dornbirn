@@ -1,4 +1,4 @@
-package Rauan.woche10.interfaces;
+package Rauan.woche10.interfacesExmple;
 
 public class Tier implements Lebewesen {
     int beine;

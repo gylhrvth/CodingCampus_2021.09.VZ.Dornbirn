@@ -1,4 +1,4 @@
-package Rauan.woche10.Absractionexample;
+package Rauan.woche10.Absraction;
 
 public class Auto extends Fahrzeug{
     @Override

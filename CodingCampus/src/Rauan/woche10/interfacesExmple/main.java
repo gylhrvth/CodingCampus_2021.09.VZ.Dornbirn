@@ -1,4 +1,4 @@
-package Rauan.woche10.interfaces;
+package Rauan.woche10.interfacesExmple;
 
 public class main {
     public static void main(String[] args) {
