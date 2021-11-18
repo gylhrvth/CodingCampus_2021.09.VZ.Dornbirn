@@ -7,13 +7,15 @@ public class FileReceiverSize1 extends FileReceiver1 {
 
 
 
- //   @Override
-    public static void onFileReceived(File child) {
+@Override
+    public void onFileReceived(File child) {
         if (child.isFile()) {
             size += child.length();
 
         }
     }
+
+
 
     public int getSize() {
         return size;

@@ -1,8 +1,5 @@
 package Rauan.woche8.FotoApparat;
 
-import Eray.week8.fotoapparat.FotoApparatStativUebung2;
-import Eray.week8.fotoapparat.SpeicherKarteDatenUebung2;
-
 public class FotoApparat {
 
     private String Model;

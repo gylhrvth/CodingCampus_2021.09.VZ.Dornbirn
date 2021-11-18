@@ -7,7 +7,7 @@ public class FileReceiverHashMap1 extends SelectionFileCounter1 {
     public static int counterJava = 0;
     public static int counterXml = 0;
 
-    public static void onFileReceived(File file) {
+    public void onFileReceived(File file) {
 
         HashMap<Integer, String> fileExtension = new HashMap<Integer, String>();
         fileExtension.put(1, ".java");
