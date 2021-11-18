@@ -5,6 +5,8 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.Objects;
+import java.util.Random;
 import java.util.Scanner;
 
 public class CSVExcercise {
@@ -13,12 +15,79 @@ public class CSVExcercise {
         String path = "assets/population-figures-by-country-csv_csv.csv";
 
 
-        matrixToString(fillMatrix(readFile(path)));
-        sortByUserInput(fillMatrix(readFile(path)));
+
+        String[] countries = new String [] {"Kuba", "Schweiz", "Griechenland", "Finnland", "Mexiko", "Indien",
+        "Thailand", "Ägypten", "Türkei", "Japan", "Portugal", "China", "Kanada", "Brasilien", "Russland", "USA",
+                "Marokko", "Irland", "Argentinien", "Montenegro"};
+        String[] randomCountries = getRandomCountries(countries);
+        drawingWichtel(randomCountries);
+
+     //   for (int i = 0; i < randomCountries.length; i++) {
+       //     System.out.println(randomCountries[i]);
+       // }
+
+
+       // matrixToString(fillMatrix(readFile(path)));
+       // sortByUserInput(fillMatrix(readFile(path)));
 
     }
 
+    public static void drawingWichtel(String[]randomCountries){
+        Random random = new Random();
+        String[]names = new String[]{"Hermann", "Margit", "Lisa", "Daniel", "Philipp M.", "Christiane",
+                "Dietmar", "Beate", "Anna", "Ulli", "Greta", "Franz-Josef",
+        "Otmar", "Annette", "Niklas", "Anja", "Philipp B.", "Lena"};
 
+        String[][]draw = new String[randomCountries.length][2];
+
+        int randNameI;
+        int randCounI;
+
+        for (int i = 0; i < draw.length; i++) {
+            do{
+                randNameI = random.nextInt(names.length);
+                randCounI = random.nextInt(randomCountries.length);
+            }while (names[randNameI]==null || randomCountries[randCounI]==null);
+
+            draw[i][0]= names[randNameI];
+            names[randNameI]=null;
+            draw[i][1]=randomCountries[randCounI];
+            randomCountries[randCounI]=null;
+        }
+
+        for (int i = 0; i < draw.length; i++) {
+            System.out.println(draw[i][0]+" --> "+draw[i][1]);
+        }
+
+    }
+
+    public static String[] getRandomCountries(String[] countries) {
+        Random random = new Random();
+        String[] randomCountries = new String[18];
+        int randomIndex;
+
+        for (int i = 0; i < randomCountries.length; i++) {
+            do {
+                randomIndex = random.nextInt(countries.length);
+            } while (countries[randomIndex] == null || Objects.equals(countries[randomIndex], "Unknown"));
+
+            randomCountries[i] = countries[randomIndex];
+            countries[randomIndex] = null;
+
+        }
+
+        return randomCountries;
+    }
+
+
+    public static String[] getCountries(String[][] matrix) {
+        String[] countries = new String[matrix.length];
+
+        for (int i = 1; i < matrix.length; i++) {
+            countries[i] = matrix[i][0];
+        }
+        return countries;
+    }
 
     public static String readFile(String path) throws IOException {
         StringBuilder sb = new StringBuilder();

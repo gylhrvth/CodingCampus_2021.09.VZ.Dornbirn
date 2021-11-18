@@ -16,8 +16,8 @@ public class Main {
         List<Car> cars = new LinkedList(List.of(tesla, porsche));
 
         porsche.setFuelTankStand(68);
-        UserInputhandler userInputhandler = new UserInputhandler(cars);
-        userInputhandler.startDialog();
+       // UserInputhandler userInputhandler = new UserInputhandler(cars);
+       // userInputhandler.startDialog();
 
         RepairStation repairStation = new RepairStation();
 

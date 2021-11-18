@@ -6,7 +6,7 @@ public class Car {
     private String model;
     private int kw;
     private double fuelCapacity;
-    private ENGINE_TYPE ENGINE_TYPE;
+    private EngineType engineType;
     private int weight;
     private double consumption;
 
@@ -14,33 +14,36 @@ public class Car {
         return consumption;
     }
 
-    public Car(String manufacturer, String model, int kw, double fuelCapacity, double consumption, ENGINE_TYPE ENGINE_TYPE, int weight) {
+    public Car(String manufacturer, String model, int kw, double fuelCapacity, double consumption, EngineType engineType, int weight) {
         this.manufacturer = manufacturer;
         this.model = model;
         this.kw = kw;
         this.fuelCapacity = fuelCapacity;
-        this.ENGINE_TYPE = ENGINE_TYPE;
+        this.engineType = engineType;
         this.weight = weight;
         this.consumption = consumption;
     }
+
     public double drive(double km) {
+
         return consumption / 100 * km;
     }
 
     public boolean refuel(int fuel) {
         System.out.println("How much do you want to refuel?");
-        setFuelCapacity(getFuelCapacity()+ fuel);
+        setFuelCapacity(getFuelCapacity() + fuel);
         System.out.println(getFuelCapacity());
         return false;
     }
+
     public void emptyFuel() {
-        if(fuelCapacity == 0) {
+        if (fuelCapacity == 0) {
             System.out.println(refuel(10));
         }
     }
 
     public void driveCar(double km) {
-        System.out.printf(consumption / 100 * km + "%.2f");
+        System.out.print(consumption / 100 * km + "%.2f");
     }
 
     public void maxDistance() {
@@ -51,16 +54,19 @@ public class Car {
         return String.format("%.2f", fuelCapacity);
     }
 
-    public double fuelCapacity(double getFuel){
+    public double fuelCapacity(double getFuel) {
         getFormattedFuelCapacity();
-        return fuelCapacity;
+        return getFuel;
     }
-    public String carModel(){
+
+    public String carModel() {
         return getModel();
     }
-    public void autoModel() {
+
+    public void printAutoModel() {
         System.out.println(getModel());
     }
+
     public void maxDistanceWithFullTank() {
         double maxDistance = fuelCapacity / consumption * 100;
         System.out.println(maxDistance);
@@ -86,8 +92,8 @@ public class Car {
         return fuelCapacity;
     }
 
-    public ENGINE_TYPE getEngineType() {
-        return ENGINE_TYPE;
+    public EngineType getEngineType() {
+        return engineType;
     }
 
     public int getWeight() {
@@ -96,14 +102,10 @@ public class Car {
 
     @Override
     public String toString() {
-        return "Car{" +
-                "manufacturer='" + manufacturer + '\'' +
-                ", model='" + model + '\'' +
-                ", kw=" + kw +
-                ", fuelCapacity=" + fuelCapacity +
-                ", ENGINE_TYPE=" + ENGINE_TYPE +
-                ", weight=" + weight +
-                ", comsumption=" + consumption +
-                '}';
+        return String.format("Manufacturer: %-10s Model: %-5s kw: %-5d FuelCapacity: %-5.2f EngineType: %-5s Weight: %-5d Consumption: %-5.2f\n",
+                manufacturer, model, kw, fuelCapacity, engineType, weight, consumption);
     }
+
+
+
 }
