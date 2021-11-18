@@ -79,13 +79,7 @@ public class Trial {
 //        }
 
 
-        double sideA = 6.0;
-        double sideB = 6.0;
-        double sideC = 6.0;
 
-        double area = sideC * (Math.acos((Math.pow(sideB, 2) + Math.pow(sideC, 2) - Math.pow(sideA, 2)) / (2 * sideB * sideC))) / 2 ;
-
-        System.out.println(area);
     }
 
 
