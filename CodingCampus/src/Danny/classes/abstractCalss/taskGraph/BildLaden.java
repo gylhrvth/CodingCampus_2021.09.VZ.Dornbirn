@@ -31,7 +31,7 @@ public class BildLaden extends JFrame {
     private ImageIcon showImg() {
         BufferedImage img = null;
         try {
-            img = ImageIO.read(getClass().getResource("assets/labyrinth/Labyrinth.png"));
+            img = ImageIO.read(getClass().getResource("/taskGraph/Labyrinth.png"));
         } catch (IOException e) {
             e.printStackTrace();
         }

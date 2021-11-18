@@ -5,11 +5,11 @@ import java.text.DecimalFormat;
 public class ErtragsRechner {
 
     public static void main(String[] args) {
-        int startKapital = 5000;
+        int startKapital = 1000;
         int kapitalGewinnVerhältniss = startKapital;
         int factorBetrag = 200;
         int factorLots = 3;
-        double factorErtragPerTag = 16.83;
+        double factorErtragPerTag = 3.84;
         int lotsGewinnVerhältniss = (int) (startKapital/factorBetrag)*factorLots;
         double ertragProTagGewinnVerhältniss = (factorErtragPerTag/factorLots)*lotsGewinnVerhältniss;
         double ertragProLot = ertragProTagGewinnVerhältniss / lotsGewinnVerhältniss;
