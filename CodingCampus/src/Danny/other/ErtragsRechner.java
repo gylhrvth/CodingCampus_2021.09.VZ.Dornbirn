@@ -5,14 +5,14 @@ import java.text.DecimalFormat;
 public class ErtragsRechner {
 
     public static void main(String[] args) {
-        int startKapital = 200;
+        int startKapital = 5000;
         int kapitalGewinnVerhältniss = startKapital;
         int factorBetrag = 200;
         int factorLots = 3;
-        int factorErtragPerTag = 15;
-        int lotsGewinnVerhältniss = (startKapital/factorBetrag)*factorLots;
-        int ertragProTagGewinnVerhältniss = (factorErtragPerTag/factorLots)*lotsGewinnVerhältniss;
-        int ertragProLot = ertragProTagGewinnVerhältniss / lotsGewinnVerhältniss;
+        double factorErtragPerTag = 16.83;
+        int lotsGewinnVerhältniss = (int) (startKapital/factorBetrag)*factorLots;
+        double ertragProTagGewinnVerhältniss = (factorErtragPerTag/factorLots)*lotsGewinnVerhältniss;
+        double ertragProLot = ertragProTagGewinnVerhältniss / lotsGewinnVerhältniss;
         int tradesPerMonth = 15;
         int tradesPerYaer = 10;
         int profitAll = startKapital;
@@ -22,14 +22,14 @@ public class ErtragsRechner {
 
     }
 
-    public static void calc(int kapitalGewinnVerhältniss, int ertragProTagGewinnVerhältniss, int tradesPerMonth,
-                            int tradesPerYaer, int profitAll, int lots, int ertragProLot, int laufZeit,int startKapital,int lotsGewinnVerhältniss ) {
+    public static void calc(int kapitalGewinnVerhältniss, double ertragProTagGewinnVerhältniss, int tradesPerMonth,
+                            int tradesPerYaer, int profitAll, int lots, double ertragProLot, int laufZeit,int startKapital,int lotsGewinnVerhältniss ) {
         System.out.println("\nStartkapital " + startKapital + "€\n");
         DecimalFormat decimalFormat = new DecimalFormat("###,###,###");
         int lotAktuell = lotsGewinnVerhältniss;
         for (int i = 1; i <= laufZeit; i++) {
 
-            int profitPerYaer = ertragProTagGewinnVerhältniss * tradesPerMonth * tradesPerYaer;
+            int profitPerYaer = (int) ertragProTagGewinnVerhältniss * tradesPerMonth * tradesPerYaer;
             System.out.println(i + ". Jahr " );
             System.out.println("Gewinn Ende Jahr " + decimalFormat.format(profitPerYaer) + "€");
             System.out.println("mit " + (lotAktuell) + " Lots");
