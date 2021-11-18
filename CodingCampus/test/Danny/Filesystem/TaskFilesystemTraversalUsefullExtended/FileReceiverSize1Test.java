@@ -13,7 +13,7 @@ public class FileReceiverSize1Test {
     public void testSizeOfBootFolder() {
         FileReceiverSize1 receiverSize1 = new FileReceiverSize1();
         try {
-            TftueMain.fileListingRecusiv(new File("C:\\windows\\boot"), 0, receiverSize1);
+            TftueMain.fileListingRecusiv(new File("C:\\windows\\boot"), 0);
             Assertions.assertEquals(40886702, receiverSize1.getSize());
         } catch (FileNotFoundException exc) {
             Assertions.fail("Datei sollte gefunden werden!", exc);
@@ -22,9 +22,8 @@ public class FileReceiverSize1Test {
 
     @Test
     public void checkFileNotFoundException() {
-        FileReceiverSize1 receiverSize1 = new FileReceiverSize1();
         try {
-            TftueMain.fileListingRecusiv(new File("C:\\xyz"), 0, receiverSize1);
+            TftueMain.fileListingRecusiv(new File("C:\\xyz"), 0);
             Assertions.fail("Ausnahme wurde nicht geworfen!!!");
         } catch (FileNotFoundException exc) {
             //Success
