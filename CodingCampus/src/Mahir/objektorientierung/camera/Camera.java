@@ -109,7 +109,7 @@ public class Camera {
 
     @Override
     public String toString() {
-        return String.format("Hersteller: %s Model: %s Objektiv: %d Megapixel: %d Speicherplatz: %.2f", manufacturer,
+        return String.format("Hersteller: %s Model: %s Objektiv: %d Megapixel: %d Memory Space: %.2f", manufacturer,
                 model, cameraLens, megapixel, memorySpace);
     }
 }
