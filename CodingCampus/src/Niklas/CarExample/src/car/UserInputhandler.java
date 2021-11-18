@@ -2,7 +2,7 @@ package Niklas.CarExample.src.car;
 
 import java.util.List;
 import java.util.Scanner;
-
+/*
 public class UserInputhandler {
     private Scanner scanner;
     private List<Car> cars;
@@ -42,4 +42,8 @@ public class UserInputhandler {
 
         System.out.println(this.currentSelectedCar.drive(km));
     }
+
+
 }
+
+ */
