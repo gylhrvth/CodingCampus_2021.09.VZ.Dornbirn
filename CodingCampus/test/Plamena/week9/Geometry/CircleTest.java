@@ -1,20 +1,17 @@
 package Plamena.week9.Geometry;
-/*
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class SquareTest {
+public class CircleTest {
 
     @Test
     public void getCircumferenceTest(){
-        Assertions.assertEquals(8.0, new Square(2.0).getCircumference());
+        Assertions.assertEquals(31.416, new Circle(5.0).getCircumference(), 0.001);
     }
 
     @Test
     public void getAreaTest(){
-        Assertions.assertEquals(4.0, new Square(2.0).getArea());
+        Assertions.assertEquals(78.54, new Circle(5.0).getArea(), 0.01);
     }
 }
-
-
- */
