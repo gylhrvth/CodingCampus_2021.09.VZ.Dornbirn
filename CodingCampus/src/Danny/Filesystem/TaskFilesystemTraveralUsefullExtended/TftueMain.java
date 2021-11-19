@@ -9,7 +9,7 @@ import java.util.List;
 
 public class TftueMain {
 
-    private static List<FileReceiver1> fileReceiverList = new ArrayList<>();
+
     private static File file = new File(FsTraversalMain.PATH);
 
     public static void main(String[] args) {
@@ -18,16 +18,16 @@ public class TftueMain {
         SelectionFileCounter1 selectionFileCounter1 = new SelectionFileCounter1();
         FileReceiverHashMap1 fileReceiverHashMap1 = new FileReceiverHashMap1();
 
+        List<FileReceiver1> fileReceiverList = new ArrayList<>();
         fileReceiverList.add(fileReceiver1);
         fileReceiverList.add(fileReceiverSize1);
         fileReceiverList.add(selectionFileCounter1);
         fileReceiverList.add(fileReceiverHashMap1);
 
-
         int depht = 0;
 
         try {
-                fileListingRecusiv(file, depht);
+            fileListingRecursiv(file, depht, fileReceiverList);
         } catch (FileNotFoundException exc) {
             System.out.println("\nDatei not exist!\n");
         }
@@ -37,7 +37,6 @@ public class TftueMain {
         System.out.println("Es wurden " + fileReceiverHashMap1.getCounterJava() + " Dateie(n) mit der Endung .java gefunden.");
         System.out.println("Es wurden " + fileReceiverHashMap1.getCounterXml() + " Dateie(n) mit der Endung .xml gefunden.");
 
-
         System.out.println("------------------------------------");
 
         FileReceiverSize1 fr = new FileReceiverSize1();
@@ -46,8 +45,8 @@ public class TftueMain {
         long start = System.currentTimeMillis();
 
         try {
-            fileListingRecusiv(new File("c:\\windows\\boot\\"), 0);
-            fileListingRecusiv(new File(FsTraversalMain.PATH), 0);
+            fileListingRecursiv(new File("c:\\windows\\boot\\"), 0, fileReceiverList);
+            fileListingRecursiv(file, 0, fileReceiverList);
         } catch (FileNotFoundException exc) {
             //noop
         }
@@ -61,7 +60,7 @@ public class TftueMain {
         System.out.println("------------------------------------");
     }
 
-    public static void fileListingRecusiv(File file, int depht) throws FileNotFoundException {
+    public static void fileListingRecursiv(File file, int depth, List<FileReceiver1> fileReceiverList) throws FileNotFoundException {
         if (!file.exists()) {
             throw new FileNotFoundException();
         }
@@ -75,7 +74,7 @@ public class TftueMain {
                 receiver1.onFileReceived(child);
             }
             if (!child.isFile()) {
-                fileListingRecusiv(child, depht + 1);
+                fileListingRecursiv(child, depth + 1, fileReceiverList);
             }
         }
     }
