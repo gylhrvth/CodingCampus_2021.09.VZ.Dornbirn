@@ -4,7 +4,7 @@ import java.io.File;
 
 public class MainToStart {
     public static void main(String[] args) {
-        File file = new File("C:\\Users\\DCV\\IdeaProjects\\CodingCampus_2021.09.VZ.Dornbirn\\CodingCampus\\src\\Eray\\week1");
+        File file = new File("C:\\Users\\DCV\\IdeaProjects\\CodingCampus_2021.09.VZ.Dornbirn\\assets");
 
         //1  Size of All files
 //        FileSizeCalculator fileSizeCalculator = new FileSizeCalculator();
@@ -22,11 +22,17 @@ public class MainToStart {
 
         //3  Count Different Endings with HashMap
 
-        HashMapCounter hashMapCounter = new HashMapCounter();
-
+        HashMapCounter hashMapCounter = new HashMapCounter(".java", ".csv", ".txt", ".png",".jpg");
         FileTree fileTree = new FileTree(hashMapCounter);
         fileTree.fileTree(file);
 
+        System.out.println(hashMapCounter.hashMap);
+
+        hashMapCounter = new HashMapAllCounter();
+        fileTree = new FileTree(hashMapCounter);
+        fileTree.fileTree(file);
+
+        System.out.println(hashMapCounter.hashMap);
 
     }
 }

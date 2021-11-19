@@ -1,4 +1,4 @@
-package Danny.recursivMeth;
+package Danny.recursion;
 
 public class LogicPuzzleRecursiv {
 
