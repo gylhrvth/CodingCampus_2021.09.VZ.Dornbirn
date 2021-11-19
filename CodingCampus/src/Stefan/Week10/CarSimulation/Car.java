@@ -110,11 +110,15 @@ public class Car {
             System.out.println();
             System.out.printf("Wollen Sie die restlichen %.2f Kilometer fahren? [1]Ja, [2]Nein", restKilometer);
             System.out.println();
+//            refuel();
+
             int input = scanner.nextInt();
             if (input == 1) {
-                System.out.printf("Sie siend die %.2f gefahren!\n", restKilometer);
+                System.out.printf("Sie sind die %.2f gefahren!\n", restKilometer);
                 double restVerbrauch = restKilometer * this.verbrauch;
                 this.tankCapacity = this.tankCapacity - restVerbrauch;
+            } else if (input == 2) {
+                System.out.println("Selber schuld!");
             }
 
         }
@@ -135,6 +139,7 @@ public class Car {
                     double refuel = inputFuell + this.tankCapacity;
                     this.tankCapacity = refuel;
                     System.out.printf("Es sind wieder %.2fL im Tank", this.tankCapacity);
+                    System.out.println();
                     refuelTank = false;
                 }
 
@@ -160,7 +165,6 @@ public class Car {
                 System.out.println("Danke das wars");
             }
         }
-
     }
 
 
