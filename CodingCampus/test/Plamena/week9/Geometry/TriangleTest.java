@@ -1,5 +1,5 @@
 package Plamena.week9.Geometry;
-
+/*
 import Plamena.week9.Geometry.Triangle;
 
 
@@ -18,3 +18,6 @@ public class TriangleTest {
         Assertions.assertEquals(0.97, new Triangle(1,2,2).getArea(), 0.01);
     }
 }
+
+
+ */

@@ -1,5 +1,5 @@
 package Lukas.week9.day3;
-
+/*
 import org.junit.jupiter.api.*;
 
 public class SimpleCalculatorTest {
@@ -45,4 +45,6 @@ public class SimpleCalculatorTest {
     }
 }
 
+
+ */
 

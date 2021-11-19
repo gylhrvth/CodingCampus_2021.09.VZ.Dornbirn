@@ -1,5 +1,5 @@
 package Plamena.week9.Geometry;
-
+/*
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -15,3 +15,6 @@ public class RectangleTest {
         Assertions.assertEquals(8.0, new Rectangle(2.0, 4.0).getArea());
     }
 }
+
+
+ */
