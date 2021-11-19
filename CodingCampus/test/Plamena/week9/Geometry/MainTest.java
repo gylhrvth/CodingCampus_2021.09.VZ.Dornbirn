@@ -1,5 +1,5 @@
 package Plamena.week9.Geometry;
-
+/*
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -29,3 +29,6 @@ public class MainTest {
         Assertions.assertEquals(83.5, Main.getAreaOverall(geometricFigures), 0.2);
     }
 }
+
+
+ */

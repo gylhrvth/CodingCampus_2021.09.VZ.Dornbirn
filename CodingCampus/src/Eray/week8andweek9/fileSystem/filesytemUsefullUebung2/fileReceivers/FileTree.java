@@ -15,11 +15,14 @@ public class FileTree {
 
     private void fileTree(File file, int depth) {
         File[] files = file.listFiles();
-        for (File f : files) {
-            if (f.isDirectory()) {
-                fileTree(file, depth + 1);
-            } else {
-                fr.onFileReceived(depth, f);
+
+        if(files != null) {
+            for (File f : files) {
+                if (f.isDirectory()) {
+                    fileTree(f, depth + 1);
+                } else {
+                    fr.onFileReceived(depth, f);
+                }
             }
         }
     }
