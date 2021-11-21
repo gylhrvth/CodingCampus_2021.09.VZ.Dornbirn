@@ -9,7 +9,7 @@ public class ErtragsRechner {
         int kapitalGewinnVerhältniss = startKapital;
         int factorBetrag = 200;
         int factorLots = 3;
-        double factorErtragPerTag = 3.84;
+        double factorErtragPerTag = 10;
         int lotsGewinnVerhältniss = (int) (startKapital / factorBetrag) * factorLots;
         double ertragProTagGewinnVerhältniss = (factorErtragPerTag / factorLots) * lotsGewinnVerhältniss;
         double ertragProLot = ertragProTagGewinnVerhältniss / lotsGewinnVerhältniss;
