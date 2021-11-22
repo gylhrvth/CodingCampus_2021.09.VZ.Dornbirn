@@ -1,17 +1,19 @@
 package Danny.graph.taskGraph;
 
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 public class Node {
-    int xCooordinateImage;
+    int xCoordinateImage;
     int yCoordinateImage;
-
+    Map<Node, Double> neighborsMap = new HashMap<Node, Double>();
     List<Neighbor> neighborsList = new LinkedList<>();
 
 
     public Node(int x, int y) {
-        setxCooordinateImage(x);
+        setxCoordinateImage(x);
         setyCoordinateImage(y);
     }
 
@@ -29,23 +31,20 @@ public class Node {
     }
 
 
-
-
-
     public List<Neighbor> getNeighborsList() {
-        return neighborsList;
+        return this.neighborsList;
     }
 
-    public void setxCooordinateImage(int xCooordinateImage) {
-        this.xCooordinateImage = xCooordinateImage;
+    public void setxCoordinateImage(int xCoordinateImage) {
+        this.xCoordinateImage = xCoordinateImage;
     }
 
     public void setyCoordinateImage(int yCoordinateImage) {
         this.yCoordinateImage = yCoordinateImage;
     }
 
-    public int getxCooordinateImage() {
-        return xCooordinateImage;
+    public int getxCoordinateImage() {
+        return xCoordinateImage;
     }
 
     public void setNeighborsList(List<Neighbor> neighborsList) {
@@ -54,5 +53,13 @@ public class Node {
 
     public int getyCoordinateImage() {
         return yCoordinateImage;
+    }
+
+    public Map<Node, Double> getNeighborsMap() {
+        return neighborsMap;
+    }
+
+    public void putNeighborsMap(Node node,double distance) {
+        this.neighborsMap.put(node,distance);
     }
 }

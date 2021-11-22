@@ -14,4 +14,8 @@ public class Neighbor extends Node{
     public String getName() {
         return name;
     }
+
+    public double getDistance() {
+        return this.distance;
+    }
 }

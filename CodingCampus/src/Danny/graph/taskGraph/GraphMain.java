@@ -3,8 +3,6 @@ package Danny.graph.taskGraph;
 
 import java.awt.*;
 import java.io.IOException;
-import java.util.LinkedList;
-import java.util.List;
 
 class GraphMain {
 
@@ -30,19 +28,24 @@ class GraphMain {
         for (int i = 0; i < nodeMatrix.length; i++) {
             for (int j = 0; j < nodeMatrix[i].length; j++) {
                 if (nodeMatrix[i][j] != null) {
-                    currentNode = new Node(j, i);
-                    currentNode.createNeighborsList(j, i);
-                    List<Neighbor> tmp = new LinkedList<>();
-                    for (Neighbor neighbor : currentNode.neighborsList) {
+                    nodeMatrix[i][j].createNeighborsList(j, i);
+                    for (Neighbor neighbor : nodeMatrix[i][j].neighborsList) {
                         if (neighbor.getyCoordinateImage() >= 0 && neighbor.getyCoordinateImage() < nodeMatrix.length
-                                && neighbor.getxCooordinateImage() >= 0 && neighbor.getxCooordinateImage() < nodeMatrix[i].length) {
-                            if (nodeMatrix[neighbor.getyCoordinateImage()][neighbor.getxCooordinateImage()] != null)
-
-                                tmp.add(neighbor);
-//                            System.out.println(neighbor.getName());
+                                && neighbor.getxCoordinateImage() >= 0 && neighbor.getxCoordinateImage() < nodeMatrix[i].length) {
+                            if (nodeMatrix[neighbor.getyCoordinateImage()][neighbor.getxCoordinateImage()] != null)
+                                nodeMatrix[i][j].putNeighborsMap(nodeMatrix[neighbor.getyCoordinateImage()][neighbor.getxCoordinateImage()],neighbor.getDistance());
                         }
                     }
-                    currentNode.setNeighborsList(tmp);
+
+//                    System.out.println(nodeMatrix[i][j].getxCoordinateImage());
+//                    System.out.println(nodeMatrix[i][j].getyCoordinateImage());
+//                    System.out.println();
+//                    for (Map.Entry<Node,Double> entry : nodeMatrix[i][j].neighborsMap.entrySet()) {
+//                        System.out.println(entry.getKey().getxCoordinateImage());
+//                        System.out.println(entry.getKey().getyCoordinateImage());
+//                        System.out.println(entry.getValue());
+
+
                 }
 
             }

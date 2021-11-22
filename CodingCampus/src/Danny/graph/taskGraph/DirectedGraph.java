@@ -1,35 +1,52 @@
 package Danny.graph.taskGraph;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 public class DirectedGraph {
 
-    private List<Node> nodeList = new ArrayList<>();
+    private Map<Node, Integer> nodeMap = new HashMap<Node, Integer>();
+    private int count = 0;
+
     private int[][] adjazenzMatrix;
 
     public DirectedGraph(Node[][] nodeMatrix) {
-        fillNodeList(nodeMatrix);
-
+        fillNodeMap(nodeMatrix);
+fillAdjazenzMatrix();
     }
 
 
-    public void fillAdjazenzMatrix(Node node){
+    public void fillAdjazenzMatrix() {
+        adjazenzMatrix = new int[20000][20000];
+
+
+        for (Map.Entry<Node,Integer> entryNode : nodeMap.entrySet()) {
+            for (Map.Entry<Node,Double> entryNeighbor : entryNode.getKey().neighborsMap.entrySet()) {
+
+                System.out.println(nodeMap.get(entryNeighbor.getKey()));
+
+
+
+
+//                adjazenzMatrix[entryNode.getValue()][[nodeMap.get(entryNeighbor.getKey())] = 0;
+
+            }
+
+        }
 
 
     }
 
-    public void fillNodeList(Node[][] nodeMatrix) {
+    public void fillNodeMap(Node[][] nodeMatrix) {
 
         for (int i = 0; i < nodeMatrix.length; i++) {
             for (int j = 0; j < nodeMatrix[i].length; j++) {
                 if (nodeMatrix[i][j] != null) {
-                    nodeList.add(nodeMatrix[i][j]);
+                    nodeMap.put(nodeMatrix[i][j], count);
+                    count++;
                 }
             }
         }
-        System.out.println(nodeList);
-
 
     }
 
