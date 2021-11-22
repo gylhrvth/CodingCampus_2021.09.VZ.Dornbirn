@@ -21,26 +21,28 @@ class GraphMain {
         Node[][] nodeMatrix = createNodeMatrix(labyrinth);
 //        System.out.println(Arrays.deepToString(nodeMatrix));
         checkForNeighbors(nodeMatrix);
-
+        DirectedGraph graph = new DirectedGraph(nodeMatrix);
 
     }
+
 
     public static void checkForNeighbors(Node[][] nodeMatrix) {
         for (int i = 0; i < nodeMatrix.length; i++) {
             for (int j = 0; j < nodeMatrix[i].length; j++) {
                 if (nodeMatrix[i][j] != null) {
                     currentNode = new Node(j, i);
-                    currentNode.createNeighborsList(j,i);
+                    currentNode.createNeighborsList(j, i);
                     List<Neighbor> tmp = new LinkedList<>();
                     for (Neighbor neighbor : currentNode.neighborsList) {
-                        if (nodeMatrix[neighbor.getyCoordinateImage()][neighbor.getxCooordinateImage()] != null){
-                            tmp.add(neighbor);
+                        if (neighbor.getyCoordinateImage() >= 0 && neighbor.getyCoordinateImage() < nodeMatrix.length
+                                && neighbor.getxCooordinateImage() >= 0 && neighbor.getxCooordinateImage() < nodeMatrix[i].length) {
+                            if (nodeMatrix[neighbor.getyCoordinateImage()][neighbor.getxCooordinateImage()] != null)
+
+                                tmp.add(neighbor);
 //                            System.out.println(neighbor.getName());
                         }
                     }
-
-
-
+                    currentNode.setNeighborsList(tmp);
                 }
 
             }

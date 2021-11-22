@@ -29,6 +29,9 @@ public class Node {
     }
 
 
+
+
+
     public List<Neighbor> getNeighborsList() {
         return neighborsList;
     }
@@ -43,6 +46,10 @@ public class Node {
 
     public int getxCooordinateImage() {
         return xCooordinateImage;
+    }
+
+    public void setNeighborsList(List<Neighbor> neighborsList) {
+        this.neighborsList = neighborsList;
     }
 
     public int getyCoordinateImage() {
