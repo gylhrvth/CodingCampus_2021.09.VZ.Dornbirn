@@ -11,10 +11,14 @@ public class Database {
     public Database() {
         this("jdbc:mysql://localhost:3306/bank2?user=root&password=root");
     }
+
     public Database(String url) {
         this.url = url;
     }
 
+    public Connection getConnection() {
+        return connection;
+    }
 
     public void connect() throws SQLException {
         connection = DriverManager.getConnection(url);
