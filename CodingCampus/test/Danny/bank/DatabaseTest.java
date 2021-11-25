@@ -6,9 +6,13 @@ import org.junit.jupiter.api.Test;
 import java.sql.SQLException;
 
 public class DatabaseTest {
+
+
+
+
     @Test
     public void testConnectAndDisconnect() {
-        Database database = new Database();
+        Database database = new Database("jdbc:mysql://localhost:3306/bank2test?user=root&password=Voegel79");
         try {
             database.connect();
         } catch (SQLException exc) {
@@ -20,5 +24,16 @@ public class DatabaseTest {
             Assertions.fail("Database disconnection failed...", exc);
         }
 
+    }
+
+    @Test
+    public void testFailedConnection() {
+        Database database = new Database("jdbc:mysql://localhost:3306/bank2?user=root&password=Voegel79__123");
+        try {
+            database.connect();
+            Assertions.fail("Database should not be connected...");
+        } catch (SQLException exc) {
+// success
+        }
     }
 }
