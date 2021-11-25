@@ -5,10 +5,17 @@ public class Triangle extends Geometry {
     double sideB;
     double sideC;
 
-    public Triangle(double sideA, double sideB, double sideC) {
+    public Triangle (double sideA, double sideB, double sideC) throws Exception{
         this.sideA = sideA;
         this.sideB = sideB;
         this.sideC = sideC;
+        checkInput();
+    }
+
+    public void checkInput () throws Exception{
+        if (sideA + sideB < sideC && sideA + sideC < sideB && sideB + sideC < sideA){
+            throw new Exception("That is not a triangle! Please try again!");
+        }
     }
 
 
@@ -19,6 +26,7 @@ public class Triangle extends Geometry {
 
     @Override
     public double getArea() {
-        return (sideC * (Math.acos((Math.pow(sideB, 2) + Math.pow(sideC, 2) - Math.pow(sideA, 2)) / (2 * sideB * sideC)))) / 2;
+        return Math.sqrt((sideA+sideB+sideC)*(sideA+sideB-sideC)*(sideB+sideC-sideA)*(sideC+sideA-sideB))/4;
     }
+
 }
