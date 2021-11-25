@@ -16,7 +16,6 @@ public class FileEndingCalculator extends FileReceiver {
         if(fileName.endsWith(fileEndingName)) {
             countFileEnding++;
         }
-
     }
 
 
