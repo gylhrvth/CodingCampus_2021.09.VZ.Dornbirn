@@ -1,7 +1,5 @@
 package Bartosz.oop.exercise4;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -33,25 +31,98 @@ public class Main {
 
         System.out.println("Wie lange ist die Strecke?");
         int length = uI();
+        Car selectedCar = car1;
 
         switch (carInput) {
-            case 1 -> System.out.println(car1.drive(length) + " Liter Sprit übrig.");
+            case 1 -> {
+                int currentTank = selectedCar.leftForFuel(selectedCar, length);// berechnet wie viel Sprit übrig ist.
 
-            case 2 -> System.out.println(car2.drive(length) + " Liter Sprit übrig.");
+                do {
+                    firstStop(selectedCar, currentTank);  //gibt aus wie viel sprit übrig ist, wie weit man damit kommt und Userabfrage Tanken
+                    int refuel = uI();  //User Input ja / nein
 
-            case 3 -> System.out.println(car3.drive(length) + " kWh übrig.");
+                    // If Else refuel ja / nein
+                    if (refuel == 1) {
+                        currentTank = refueledTo_uI(selectedCar, currentTank);
+                    }
+                    else {
+                        int tmp = calcKmLeft(selectedCar,currentTank);
+                        System.out.println("Sie sollten innerhalb der nächsten [" + tmp +"] Km tanken!");
+                    }
 
-            case 4 -> System.out.println(car4.drive(length) + " Liter Sprit übrig.");
+                    System.out.println("Wollen Sie weiterfahren?");
+                    int tmp = uI();
+
+                } while (currentTank > 0);
+            }
+
+            case 2 -> {
+                selectedCar = car2;
+                int leftoverFuel = selectedCar.leftForFuel(selectedCar, length);
+                ;// berechnet wie viel Sprit übrig ist.
+                firstStop(car2, leftoverFuel);
+
+                int refuelInput = uI();
+
+            }
+
+            case 3 -> {
+                selectedCar = car3;
+                int leftoverFuel = car3.drive(length);
+                System.out.println(car3.drive(length) + " kWh übrig.");
+                firstStop(car3, leftoverFuel);
+
+                int refuelInput = uI();
+            }
+
+            case 4 -> {
+                selectedCar = car4;
+                int leftoverFuel = car4.drive(length);
+                System.out.println(car4.drive(length) + " Liter Sprit übrig.");
+                firstStop(car4, leftoverFuel);
+
+                int refuelInput = uI();
+            }
 
         }
-        ;
 
 
     }
 
+    // User Input
     private static int uI() {
         Scanner uI = new Scanner(System.in);
         return uI.nextInt();
+    }
+
+    // User Input wie viel getankt werden soll
+    private static int refueledTo_uI(Car selectedCar, int leftoverFuel) {
+        System.out.println("Wie viel möchten Sie tanken? max. [" + (selectedCar.getTankCap()-leftoverFuel) +"] L");
+        int tmp = uI();
+        int refueledTank =0;
+        if(tmp > selectedCar.getTankCap()-leftoverFuel){
+            System.out.println("Ihr Auto wurde voll aufgetankt.");
+            refueledTank = selectedCar.getTankCap();
+        }
+        else {
+            refueledTank = (selectedCar.getTankCap()-leftoverFuel) + tmp;
+        }
+
+        return refueledTank;
+    }
+
+    // Calculates how far you get with the rest of your Fuel
+    private static int calcKmLeft(Car car, int leftOverFuel) {
+        return car.leftForKM(leftOverFuel);
+    }
+
+    // 1st Stop
+    private static void firstStop(Car car, int leftoverFuel) {
+        System.out.println(leftoverFuel + " Liter Sprit übrig.");   // Tankstand
+        calcKmLeft(car, leftoverFuel);     // wie weit kommt man noch ohne zu tanken.
+        System.out.println();
+        System.out.println("Möchten Sie tanken? \n[1] Ja \n[2] Nein");
+        int tanken = uI();
     }
 }
 
