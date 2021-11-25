@@ -57,11 +57,34 @@ public class CRUDTest {
             Assertions.assertEquals(1, rows);
 
             ResultSet resultSet = statement.getGeneratedKeys();
+
+            long kundenNr = 0;
             if (resultSet.next()) {
-                long kontoNr = resultSet.getLong(1);
-                Assertions.assertTrue(kontoNr > 0);
+                kundenNr = resultSet.getLong(1);
+                Assertions.assertTrue(kundenNr > 0);
             } else {
                 Assertions.fail("No primary key returned...");
+            }
+
+            String query = "SELECT kundenNr, adresse, geburtsdatum, name FROM kunde";
+            statement = connection.prepareStatement(query);
+            resultSet = statement.executeQuery();
+            if(resultSet.next()) {
+                long queriedKundenNr = resultSet.getLong(1);
+                String adresse = resultSet.getString(2);
+                java.sql.Date geburtsdatum = resultSet.getDate(3);
+                String name = resultSet.getString(4);
+
+                Assertions.assertEquals(kundenNr, queriedKundenNr);
+                Assertions.assertEquals("Nüziders", adresse);
+                Assertions.assertEquals("2018-01-01", geburtsdatum.toString());
+                Assertions.assertEquals("Alfons", name);
+
+                if(resultSet.next()) {
+                    Assertions.fail("Too many customers...");
+                }
+            } else {
+                Assertions.fail("No customer found...");
             }
         } catch (SQLException exc) {
             Assertions.fail("Could not insert kunde", exc);
