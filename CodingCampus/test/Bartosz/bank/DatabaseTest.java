@@ -8,7 +8,7 @@ import java.sql.SQLException;
 public class DatabaseTest {
     @Test
     public void testConnectAndDisconnect() {
-        Database database = new Database();
+        Database database = new Database("jdbc:mysql://localhost:3306/bank?user=root&password=Eka1Re15.");
         try {
             database.connect();
         } catch(SQLException exc) {
@@ -23,7 +23,7 @@ public class DatabaseTest {
 
     @Test
     public void testFailedConnection(){
-        Database database = new Database("jdbc:mysql://localhost:3306/bank?user=root&password=root");
+        Database database = new Database("jdbc:mysql://localhost:3306/bank?user=root&password=Eka1Re15.");
         try {
             database.connect();
             Assertions.fail("Database should not be connected....");
