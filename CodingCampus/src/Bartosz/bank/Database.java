@@ -9,7 +9,7 @@ public class Database {
     private Connection connection;
 
     public Database() {
-        this("jdbc:mysql://localhost:3306/bank?user=root&password=root");
+        this("jdbc:mysql://localhost:3306/bank?user=root&password=Eka1Re15.");
     }
 
     public Database(String url) {
@@ -18,7 +18,7 @@ public class Database {
 
     public void connect() throws SQLException {
         //              Method
-        DriverManager.getConnection(url);
+        connection = DriverManager.getConnection(url);
     }
 
     public void disconnect() throws SQLException {
