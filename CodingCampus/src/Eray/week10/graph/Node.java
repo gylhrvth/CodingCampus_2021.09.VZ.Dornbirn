@@ -6,7 +6,6 @@ import java.util.List;
 public class Node {
    private int x;
    private int y;
-
    private List<Node> nodeList = new LinkedList<>();
 
     public Node(int x, int y) {

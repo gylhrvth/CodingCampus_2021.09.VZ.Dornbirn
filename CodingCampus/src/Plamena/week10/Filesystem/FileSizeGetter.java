@@ -2,25 +2,19 @@ package Plamena.week10.Filesystem;
 
 import java.io.File;
 
-public class FilesystemMain {
-    public static void main(String[] args) {
-        File dir = new File("C:\\Users\\DCV\\Desktop\\USB\\Camera");
-        listFilesAndDirectories(dir, 0);
-//        FileSizeGetter fsg = new FileSizeGetter();
-//        fsg.onFileReceived(0, dir);
-        FileEndingsGetter feg = new FileEndingsGetter();
-        feg.onFileReceived(0, dir);
-    }
+public class FileSizeGetter  extends FileReceiver{
 
-    private static String listFilesAndDirectories(File dir, int depth) {
 
+    @Override
+    public void onFileReceived(int depth, File dir) {
         try {
             if (dir.isFile()) {
+                double fileSize = Math.round((double)(dir.length()/1024));
                 System.out.println();
                 for (int i = 0; i < depth*2; i++) {
                     System.out.print(" ");
                 }
-                System.out.print(dir.getName());
+                System.out.print(dir.getName() + " " + fileSize + "KB");
             } else if (dir.isDirectory()) {
                 System.out.println();
                 for (int i = 0; i < depth*2; i++) {
@@ -29,13 +23,12 @@ public class FilesystemMain {
                 System.out.print(dir.getName());
                 File[] dirContent = dir.listFiles();
                 for (File file : dirContent) {
-                    listFilesAndDirectories(file, depth + 1);
+                    onFileReceived( depth + 1, file);
                 }
 
             }
         } catch (NullPointerException npe) {
             npe.fillInStackTrace();
         }
-        return "";
     }
 }

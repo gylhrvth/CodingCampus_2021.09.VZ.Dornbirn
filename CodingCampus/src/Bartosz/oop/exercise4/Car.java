@@ -17,19 +17,35 @@ public class Car {
         this.power = power;
     }
 
-    public int drive(int wayLength){
-        int maxCap = this.getTankCap();
-        int gasLeft = ((this.getTankCap() * 100) / wayLength);
+    public int drive(int wayLength) {
+        int maxTankCap = this.getTankCap();
+        int consumptionRate = this.weight / this.power;
 
-        return gasLeft;
+        int consumedTank = ((consumptionRate * wayLength) / 100);
+        int updatedTank = maxTankCap - consumedTank;
+        return updatedTank;
     }
 
+    public int refuel_Recharge(int refueledTank) {
+        this.setTankCap(refueledTank);
+        return getTankCap();
+    }
 
+    // Berechne für wie viel KM der Sprit ausreicht
+    public int leftForKM(int updatedTank) {
+        int tmp = ((updatedTank * 100) / (this.weight / this.power));
+        return tmp;
+    }
 
+    // Berechne wie viel Sprit noch übrig ist
+    public int leftForFuel(Car selectedCar, int length){
+        return selectedCar.drive(length);
+    }
 
     public String getBrand() {
         return brand;
     }
+
     public void setBrand(String brand) {
         this.brand = brand;
     }
@@ -37,6 +53,7 @@ public class Car {
     public String getModel() {
         return model;
     }
+
     public void setModel(String model) {
         this.model = model;
     }
@@ -44,6 +61,7 @@ public class Car {
     public Type getType() {
         return type;
     }
+
     public void setType(Type type) {
         this.type = type;
     }
@@ -51,6 +69,7 @@ public class Car {
     public int getTankCap() {
         return tankCap;
     }
+
     public void setTankCap(int tankCap) {
         this.tankCap = tankCap;
     }
@@ -58,6 +77,7 @@ public class Car {
     public int getWeight() {
         return weight;
     }
+
     public void setWeight(int weight) {
         this.weight = weight;
     }
@@ -65,6 +85,7 @@ public class Car {
     public int getPower() {
         return power;
     }
+
     public void setPower(int power) {
         this.power = power;
     }
@@ -72,12 +93,12 @@ public class Car {
     @Override
     public String toString() {
         return
-                 brand +
-                ", model= " + model +
-                ", type= " + type +
-                ", tankCap= " + tankCap +
-                ", weight= " + weight +
-                ", power= " + power;
+                brand +
+                        ", model= " + model +
+                        ", type= " + type +
+                        ", tankCap= " + tankCap +
+                        ", weight= " + weight +
+                        ", power= " + power;
     }
 }
 
