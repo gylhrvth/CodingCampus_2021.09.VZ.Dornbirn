@@ -1,4 +1,4 @@
-package Danny.bank;
+package Danny.database.bank;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -23,7 +23,7 @@ public class DatabaseTest {
 
     @Test
     public void testFailedConnection() {
-        Database database = new Database("jdbc:mysql://localhost:3306/bank2?user=root&password=Voegel79");
+        Database database = new Database("jdbc:mysql://localhost:3306/bank2?user=root&password=Voegel79_FALSCH");
         try {
             database.connect();
             Assertions.fail("Database should not be connected...");

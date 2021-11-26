@@ -1,4 +1,4 @@
-package Danny.bank;
+package Danny.database.bank;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
