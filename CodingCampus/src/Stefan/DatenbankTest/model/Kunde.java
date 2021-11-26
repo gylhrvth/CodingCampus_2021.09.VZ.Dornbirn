@@ -1,4 +1,4 @@
-package Lukas.bank.model;
+package Stefan.DatenbankTest.model;
 
 import java.util.Date;
 
@@ -31,7 +31,7 @@ public class Kunde {
         this.name = name;
     }
 
-    public String getAdresse() {
+    public String getAdress() {
         return adress;
     }
 
