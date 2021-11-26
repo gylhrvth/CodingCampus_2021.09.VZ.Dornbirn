@@ -5,25 +5,15 @@ import org.junit.jupiter.api.Test;
 
 import java.sql.*;
 
-public class CRUIDTestKonto extends CRUIDTest{
-
-    public CRUIDTestKonto() throws SQLException {
-
-    }
-
-
-
-
-
-
+public class CRUIDTestKonto extends CRUIDTest {
 
     @Test
     public void testInsertAndSelect() {
         Connection connection = database.getConnection();
 
         try {
-            /** Konto in Datenbank einfügen
-             *
+            /* Konto in Datenbank einfügen
+
              */
             String sql = "INSERT INTO konto(KontoNr, Kontostand, Name) VALUES (?,?,?);";
             PreparedStatement statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
@@ -34,8 +24,8 @@ public class CRUIDTestKonto extends CRUIDTest{
             //Hier wird das statement ausgeführt
             int rows = statement.executeUpdate();
 
-            /**
-             * Ergebniss überprüfen
+            /*
+              Ergebniss überprüfen
              */
             Assertions.assertEquals(1, rows);
             ResultSet resultSet = statement.getGeneratedKeys();

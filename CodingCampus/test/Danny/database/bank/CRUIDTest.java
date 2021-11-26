@@ -10,9 +10,7 @@ import java.sql.SQLException;
 public class CRUIDTest {
     public Database database;
 
-    public CRUIDTest() throws SQLException {
-
-
+    public CRUIDTest() {
     }
 
     @BeforeEach

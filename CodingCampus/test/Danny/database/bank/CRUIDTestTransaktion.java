@@ -9,11 +9,8 @@ import java.util.Date;
 
 public class CRUIDTestTransaktion extends CRUIDTest {
 
-    public CRUIDTestTransaktion() throws SQLException {
-    }
-
     @Test
-    public void testInsertAndSelect() throws SQLException{
+    public void testInsertAndSelect() {
         Connection connection = database.getConnection();
         try {
             // Transaktion in Datenbank einfügen
@@ -22,7 +19,7 @@ public class CRUIDTestTransaktion extends CRUIDTest {
             PreparedStatement statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             statement.setInt(1, 1000);
             Calendar calendar = Calendar.getInstance();
-            calendar.set(2021, 10, 26,1,1,1);
+            calendar.set(2021, Calendar.NOVEMBER, 26, 1, 1, 1);
             calendar.set(Calendar.MILLISECOND, 0);
             Date date = calendar.getTime();
             java.sql.Timestamp sqlDate = new java.sql.Timestamp(date.getTime());

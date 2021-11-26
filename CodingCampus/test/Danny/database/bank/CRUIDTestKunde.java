@@ -9,22 +9,19 @@ import java.util.Date;
 
 public class CRUIDTestKunde extends CRUIDTest {
 
-    public CRUIDTestKunde() throws SQLException {
-    }
-
     @Test
-    public void testInsertAndSelect()throws SQLException {
+    public void testInsertAndSelect() {
         Connection connection = database.getConnection();
         try {
-            /**
-             * Kunde in Datenbank einfügen
+            /*
+              Kunde in Datenbank einfügen
              */
             String sql = "INSERT INTO kunde(name, adresse, GebDatum) VALUES (?, ?, ?);";
             PreparedStatement statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             statement.setString(1, "Alfons");
             statement.setString(2, "Nüziders");
             Calendar calendar = Calendar.getInstance();
-            calendar.set(2018, 0, 1);
+            calendar.set(2018, Calendar.JANUARY, 1);
             Date date = calendar.getTime();
             java.sql.Date sqlDate = new java.sql.Date(date.getTime());
             statement.setDate(3, sqlDate);
@@ -32,8 +29,8 @@ public class CRUIDTestKunde extends CRUIDTest {
             //Hier wird das statement ausgeführt
             int rows = statement.executeUpdate();
 
-            /**
-             * Ergebnis überprüfen
+            /*
+              Ergebnis überprüfen
              */
             Assertions.assertEquals(1, rows);
             ResultSet resultSet = statement.getGeneratedKeys();

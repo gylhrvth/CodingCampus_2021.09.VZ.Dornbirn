@@ -2,6 +2,7 @@ package Danny.database.bank;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
 import java.sql.SQLException;
 
 public class DatabaseTest {
@@ -18,7 +19,6 @@ public class DatabaseTest {
         } catch (SQLException exc) {
             Assertions.fail("Database disconnection failed...", exc);
         }
-
     }
 
     @Test
