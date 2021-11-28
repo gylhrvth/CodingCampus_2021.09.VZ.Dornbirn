@@ -2,7 +2,7 @@ package Stefan.Week2.Scanner;
 
 public class christmasTree {
     public static void main(String[] args) {
-        christmasTree(6);
+        christmasTree(8);
 
     }
 
