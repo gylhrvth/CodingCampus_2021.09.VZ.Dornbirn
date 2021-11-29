@@ -9,11 +9,12 @@ public class BankKontoMain {
         DatabaseManager dbManager = new DatabaseManager(database);
 
         database.connect();
-        dbManager.insertKunde();
-//        dbManager.insertKonto();
+//        dbManager.insertKunde();
         System.out.println(dbManager.readKunde());
-//        System.out.println(dbManager.readKonto());
+
+//        dbManager.insertKonto();
+        System.out.println(dbManager.readKonto());
+
 
     }
-
 }

@@ -40,7 +40,7 @@ public class DatabaseManagerTest {
     }
 
     @Test
-    public void testInsertKunde() {
+    public void testInsertKunde(Stefan.Datenbank.BankKonto.Kunde kunde) {
         DatabaseManager databaseManager = new DatabaseManager(database);
 
         try {
@@ -67,7 +67,7 @@ public class DatabaseManagerTest {
         Assertions.assertEquals(kundenNr1, kunde1.getKundenNr());
         Assertions.assertEquals("Test", kunde1.getName());
         Assertions.assertEquals("Testdorf2", kunde1.getAdresse());
-        Assertions.assertEquals(createDate(1900, 0, 1), kunde1.getGebutrsdatum());
+        Assertions.assertEquals(createDate(1900, 0, 1), kunde1.getGeburtsdatum());
     }
 
     private Date createDate(int year, int month, int day) {

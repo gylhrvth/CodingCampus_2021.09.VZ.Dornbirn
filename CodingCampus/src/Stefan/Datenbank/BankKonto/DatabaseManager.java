@@ -15,8 +15,11 @@ public class DatabaseManager {
         this.database = database;
     }
 
+
     //Kunden erstellen
-    public void insertKunde() {
+    public void insertKunde() throws SQLException {
+//        PreparedStatement statement = database.getConnection().prepareStatement("DELETE FROM kunde");
+//        statement.executeUpdate();
         DatabaseManager databaseManager = new DatabaseManager(database);
         try {
             long kundenNr = databaseManager.createKunde(new Kunde(0,"Jasmine Hengstberger","Stutgarterweg 18", createDate(1999,12,12)));
@@ -48,7 +51,9 @@ public class DatabaseManager {
     }
 
     //Konto erstellen
-    public void insertKonto() {
+    public void insertKonto() throws SQLException {
+//        PreparedStatement statement = database.getConnection().prepareStatement("DELETE FROM konto");
+//        statement.executeUpdate();
         DatabaseManager databaseManager = new DatabaseManager(database);
         try {
             long kontoNr = databaseManager.createKonto((new Konto(0,3000,"Sparkonto")));
