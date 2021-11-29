@@ -1,6 +1,6 @@
 package Mahir;
 
-import Mahir.sql.bank.Database;
+import Mahir.sql.Database;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -11,15 +11,9 @@ public class DatabaseTest {
     public void testConnectionAndDisconnection(){
         Database database= new Database();
         try {
-            database.connect();
+            database.conect();
         }catch(SQLException exc){
             Assertions.fail("Database connection faild...", exc);
-        }
-
-        try {
-            database.disconnect();
-        } catch(SQLException exc) {
-            Assertions.fail("Database disconnect failed...", exc);
         }
 
     }
