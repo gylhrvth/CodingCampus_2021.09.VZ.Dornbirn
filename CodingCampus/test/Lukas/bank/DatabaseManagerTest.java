@@ -17,7 +17,7 @@ public class DatabaseManagerTest {
 
     @BeforeEach
     public void setUp() throws SQLException {
-        database = new Database("jdbc:mysql://localhost:3306/bank2test?user=root&password=root");
+        database = new Database("jdbc:mysql://localhost:3306/bank3test?user=root&password=root");
         database.connect();
 
         deleteTable("kunde");

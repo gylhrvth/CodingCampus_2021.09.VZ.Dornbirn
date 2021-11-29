@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class fileReader {
     public static void main(String[] args) {
-        String path = "/Users/DCV/CodingCampus_2021.09.VZ.Dornbirn/CodingCampus/src/Stefan/FileReader/textTest";
+        String path = "C:\\Users\\stefa\\IdeaProjects\\CodingCampus_2021.09.VZ.Dornbirn\\CodingCampus\\src\\Stefan\\FileReader\\textTest";
         System.out.println(readFile(path));
     }
 

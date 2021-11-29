@@ -16,7 +16,7 @@ public class CRUDTest {
 
     @BeforeEach
     public void setUp() throws SQLException {
-        database = new Database("jdbc:mysql://localhost:3306/bank2test?user=root&password=root");
+        database = new Database("jdbc:mysql://localhost:3306/bank2?user=root&password=ingo");
         database.connect();
 
         deleteTable("kunde");
@@ -40,7 +40,7 @@ public class CRUDTest {
         Connection connection = database.getConnection();
 
         try {
-            String sql = "INSERT INTO kunde(name, adresse, geburtsdatum) VALUES (?, ?, ?);";
+            String sql = "INSERT INTO inhaber(id, vorname, nachname) VALUES (?, ?, ?);";
 
             PreparedStatement statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             statement.setString(1, "Alfons");
@@ -68,7 +68,7 @@ public class CRUDTest {
                 Assertions.fail("No primary key returned...");
             }
 
-            String query = "SELECT kundenNr, adresse, geburtsdatum, name FROM kunde";
+            String query = "SELECT id, vorname, nachnname FROM inhaber";
             statement = connection.prepareStatement(query);
             resultSet = statement.executeQuery();
             if(resultSet.next()) {

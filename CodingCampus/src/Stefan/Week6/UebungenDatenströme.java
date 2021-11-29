@@ -11,8 +11,8 @@ public class UebungenDatenströme {
         String text = fileReader(path);
 
         //Methode 1
-        //Lies das File mit Hilfe von Scanner oder BufferedRead ein und gib es aus.
-        //System.out.println(text);
+//        Lies das File mit Hilfe von Scanner oder BufferedRead ein und gib es aus.
+        System.out.println(text);
 
         //Methode 2
         //Liest den Text ein und zählt die Wörter -> mit Ausagbe
@@ -26,7 +26,7 @@ public class UebungenDatenströme {
 
         //Methode 4
         //Tauscht ein eingegebenes Wort mit einem anderem eingegebenen Wort
-        wordChangeInput(text);
+//        wordChangeInput(text);
 
     }
 
