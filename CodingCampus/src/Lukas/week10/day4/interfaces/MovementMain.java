@@ -7,7 +7,6 @@ public class MovementMain {
     public static void main(String[] args) {
         List<CanDrive> drivingThings = new ArrayList<>();
 
-
         List<CanSwim> swimmingThings = new ArrayList<>();
 
         AmphibienVehicle amphibi = new AmphibienVehicle();

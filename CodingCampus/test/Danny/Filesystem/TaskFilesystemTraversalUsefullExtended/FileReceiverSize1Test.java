@@ -1,16 +1,15 @@
 package Danny.Filesystem.TaskFilesystemTraversalUsefullExtended;
 
 import Danny.Filesystem.TaskFilesystemTraveralUsefullExtended.*;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
 
+/*
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class FileReceiverSize1Test {
-    @Test
+
     public void testSizeOfBootFolder() {
         FileReceiver1 fileReceiver1 = new FileReceiver1();
         FileReceiverSize1 fileReceiverSize1 = new FileReceiverSize1();
@@ -31,7 +30,6 @@ public class FileReceiverSize1Test {
         }
     }
 
-    @Test
     public void checkFileNotFoundException() {
         FileReceiver1 fileReceiver1 = new FileReceiver1();
         FileReceiverSize1 fileReceiverSize1 = new FileReceiverSize1();
@@ -51,3 +49,5 @@ public class FileReceiverSize1Test {
         }
     }
 }
+
+ */

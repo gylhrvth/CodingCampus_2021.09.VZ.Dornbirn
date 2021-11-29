@@ -41,17 +41,18 @@ public class Kalender1 {
             System.out.print("| ");
             if (i == actualDayOfMonth) {
                 System.out.printf("%s%2d%s ", ANSI_PURPLE, i, ANSI_RESET);
-            } else if ((offset + i) % 7 == 0) {
+            }
+
+            else if (isWeekend(i)) {
                 System.out.printf("%s%2d%s ", ANSI_RED, i, ANSI_RESET);
-            } else {
+            }
+            else {
                 System.out.printf("%2d ", i);
             }
 
             if ((offset + i) % 7 == 0) {
                 System.out.println("|");
             }
-
-
         }
 
         int restDaysOfMonth = offset + maxDays;
@@ -62,10 +63,20 @@ public class Kalender1 {
             }
             System.out.println("|");
         }
+    }
 
+    public static boolean isWeekend(int i) {
+        GregorianCalendar today = new GregorianCalendar();
+        GregorianCalendar weekday = new GregorianCalendar(
+                today.get(Calendar.YEAR),
+                today.get(Calendar.MONTH),
+                i);
+        int day = weekday.get(Calendar.DAY_OF_WEEK);
 
-        {
-
+        if (day == 7 || day == 1) {
+            return true;
+        } else {
+            return false;
         }
     }
 }

@@ -7,9 +7,9 @@ import java.util.Scanner;
 public class textManipulation {
     public static void main(String[] args) {
 
-        String path = "/Users/DCV/CodingCampus_2021.09.VZ.Dornbirn/CodingCampus/src/Stefan/FileReader/textTest";
+        String path = "C:\\Users\\stefa\\IdeaProjects\\CodingCampus_2021.09.VZ.Dornbirn\\CodingCampus\\src\\Stefan\\FileReader\\textTest";
 
-        flipLines(path);
+        System.out.println(countLines(path));
 
         //Dreht jede einzelne Zeile um vom Anfang bis Ende
 //        try {

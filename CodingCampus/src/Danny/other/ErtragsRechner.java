@@ -5,7 +5,7 @@ import java.text.DecimalFormat;
 public class ErtragsRechner {
 
     public static void main(String[] args) {
-        int startKapital = 219;
+        int startKapital = 200;
         int kapitalGewinnVerhältniss = startKapital;
         int factorBetrag = 200;
         int factorLots = 3;
