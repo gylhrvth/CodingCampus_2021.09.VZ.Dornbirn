@@ -1,15 +1,16 @@
-package Mahir.sql.bank;
+package Ingo.sqlDatabase;
 
+import Lukas.bank.model.Kunde;
 
-
-
-import Mahir.sql.model.Kunde;
-
-import java.sql.*;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
 public class DatabaseManager {
+
     private Database database;
 
     public DatabaseManager(Database database) {
@@ -22,7 +23,7 @@ public class DatabaseManager {
 
         statement.setString(1, kunde.getName());
         statement.setString(2, kunde.getAdresse());
-        statement.setDate(3,new Date(kunde.getGeburtsdatum().getTime()));
+        statement.setDate(3, new java.sql.Date(kunde.getGeburtsdatum().getTime()));
 
         int rows = statement.executeUpdate();
         if(rows > 0) {
@@ -55,4 +56,5 @@ public class DatabaseManager {
 
         return kunden;
     }
+
 }
