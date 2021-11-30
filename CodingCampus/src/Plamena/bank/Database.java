@@ -23,4 +23,8 @@ public class Database {
     public void disconnect() throws SQLException {
         connection.close();
     }
+
+    public Connection getConnection() {
+        return connection;
+    }
 }
