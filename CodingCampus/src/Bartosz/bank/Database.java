@@ -9,15 +9,18 @@ public class Database {
     private Connection connection;
 
     public Database() {
-        this("jdbc:mysql://localhost:3306/bank?user=root&password=Eka1Re15.");
+        this("jdbc:mysql://localhost:3306/bank2?user=root&password=root");
     }
 
     public Database(String url) {
         this.url = url;
     }
 
+    public Connection getConnection() {
+        return connection;
+    }
+
     public void connect() throws SQLException {
-        //              Method
         connection = DriverManager.getConnection(url);
     }
 
