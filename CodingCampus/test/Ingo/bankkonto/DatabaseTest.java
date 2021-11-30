@@ -25,7 +25,7 @@ public class DatabaseTest {
 
     @Test
     public void testFailedConnection() {
-        Database database = new Database("jdbc:mysql://localhost:3306/bank888?user=root&password=root");
+        Database database = new Database("jdbc:mysql://localhost:3306/bank2?user=root&password=ingo11");
         try {
             database.connect();
             Assertions.fail("Database should not be connected...");
