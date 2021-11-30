@@ -10,7 +10,7 @@ public class DatabaseTest {
     public void testConnectAndDisconnect() {
         Database database = new Database();
         try {
-            database.connect();
+            database.getConnection();
         } catch (SQLException exc) {
             Assertions.fail("Database connection failed...", exc);
         }
@@ -25,7 +25,7 @@ public class DatabaseTest {
     public void testFailedConnection() {
         Database database = new Database("jdbc:mysql://localhost:3306/bank2?user=root&password=Voegel79_FALSCH");
         try {
-            database.connect();
+            database.getConnection();
             Assertions.fail("Database should not be connected...");
         } catch (SQLException exc) {
 // success

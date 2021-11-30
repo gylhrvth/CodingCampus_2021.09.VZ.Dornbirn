@@ -1,14 +1,20 @@
 package Danny.database.bank;
 
 public class Konto {
-    int kontoNr;
-    double kontoSt;
-    String name;
+    private int kontoNr;
+    private double kontoStand;
 
-    public Konto(int kontoNr, double kontoSt, String name) {
+    private String nameKonto;
+
+    public Konto(String name) {
+        this.nameKonto = name;
+    }
+
+    public Konto(int kontoNr,double kontoStand,String name) {
         this.kontoNr = kontoNr;
-        this.kontoSt = kontoSt;
-        this.name = name;
+        this.kontoStand = kontoStand;
+        this.nameKonto = name;
+
     }
 
     public int getKontoNr() {
@@ -19,25 +25,25 @@ public class Konto {
         this.kontoNr = kontoNr;
     }
 
-    public double getKontoSt() {
-        return this.kontoSt;
+    public double getKontoStand() {
+        return this.kontoStand;
     }
 
-    public void setKontoSt(double kontoSt) {
-        this.kontoSt = kontoSt;
+    public void setKontoStand(double kontoSt) {
+        this.kontoStand = kontoSt;
     }
 
     public String getName() {
-        return this.name;
+        return this.nameKonto;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.nameKonto = name;
     }
 
 
     @Override
     public String toString() {
-        return String.format("| KontoNr: %d | Name %s | Kontostand: %f |", this.kontoNr, this.name, this.kontoSt);
+        return String.format("| KontoNr: %d | KontoTyp: %s | Kontostand: %.2f € |", this.kontoNr, this.nameKonto, this.kontoStand);
     }
 }

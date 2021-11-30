@@ -10,7 +10,7 @@ import java.util.Date;
 public class CRUIDTestKunde extends CRUIDTest {
 
     @Test
-    public void testInsertAndSelect() {
+    public void testInsertAndSelect() throws SQLException {
         Connection connection = database.getConnection();
         try {
             /*

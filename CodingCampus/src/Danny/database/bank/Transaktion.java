@@ -4,13 +4,20 @@ import java.sql.Timestamp;
 
 public class Transaktion {
 
-    int transaktionsNr;
-    int betrag;
+    long transaktionsNr;
+    double betrag;
     Timestamp zeitstemel;
     int quelleKontoNr;
     int zielKontoNr;
 
-    public Transaktion(int transaktionsNr, int betrag, Timestamp zeitstemel, int quelleKontoNr, int zielKontoNr) {
+    public Transaktion(double betrag, int quelleKontoNr, int zielKontoNr) {
+        this.betrag = betrag;
+        this.zeitstemel = zeitstemel;
+        this.quelleKontoNr = quelleKontoNr;
+        this.zielKontoNr = zielKontoNr;
+    }
+
+    public Transaktion(long transaktionsNr,double betrag,Timestamp zeitstemel, int quelleKontoNr, int zielKontoNr) {
         this.transaktionsNr = transaktionsNr;
         this.betrag = betrag;
         this.zeitstemel = zeitstemel;
@@ -18,19 +25,20 @@ public class Transaktion {
         this.zielKontoNr = zielKontoNr;
     }
 
-    public int getTransaktionsNr() {
+
+    public long getTransaktionsNr() {
         return transaktionsNr;
     }
 
-    public void setTransaktionsNr(int transaktionsNr) {
+    public void setTransaktionsNr(long transaktionsNr) {
         this.transaktionsNr = transaktionsNr;
     }
 
-    public int getBetrag() {
+    public double getBetrag() {
         return betrag;
     }
 
-    public void setBetrag(int betrag) {
+    public void setBetrag(double betrag) {
         this.betrag = betrag;
     }
 
@@ -60,7 +68,7 @@ public class Transaktion {
 
     @Override
     public String toString() {
-        return String.format("| TransaktionsNr: %d | Betrag %d | Zeitstempel: %t | QuelleKontoNr: %s | ZielKontoNr: %s" , this.transaktionsNr, this.betrag, this.zeitstemel,this.quelleKontoNr, this.zielKontoNr);
+        return String.format("| TransaktionsNr: %d | Betrag %.2f € | Zeitstempel: %s | QuelleKontoNr: %s | ZielKontoNr: %s" , this.transaktionsNr, this.betrag, this.zeitstemel,this.quelleKontoNr, this.zielKontoNr);
     }
 
 }

@@ -8,7 +8,7 @@ import java.sql.*;
 public class CRUIDTestKonto extends CRUIDTest {
 
     @Test
-    public void testInsertAndSelect() {
+    public void testInsertAndSelect() throws SQLException {
         Connection connection = database.getConnection();
 
         try {

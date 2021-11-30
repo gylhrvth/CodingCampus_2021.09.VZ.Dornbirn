@@ -6,22 +6,26 @@ import java.sql.SQLException;
 
 public class Database {
     public String url = "jdbc:mysql://localhost:3306/bank2?user=root&password=Voegel79";
-    private Connection connection;
+    private Connection connection = null;
 
     public Database() {}
 
     public Database(String url) {this.url = url;}
 
-    public Connection getConnection() {
+    public Connection getConnection() throws SQLException {
+        if (connection == null){
+            System.out.println("Create Connection\n");
+            connection = DriverManager.getConnection(url);
+        }
         return connection;
     }
 
-    public void connect() throws SQLException {
-        connection = DriverManager.getConnection(this.url);
-    }
-
     public void disconnect() throws SQLException {
-        connection.close();
+        if (connection != null) {
+            connection.close();
+            connection = null;
+            System.out.println("\nClose Connection");
+        }
     }
 
 
