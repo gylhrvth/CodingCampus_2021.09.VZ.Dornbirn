@@ -5,13 +5,13 @@ import java.util.Date;
 public class Kunde {
         private long kundenNr;
         private String name;
-        private String address;
+        private String addresse;
         private Date geburtsdatum;
 
-        public Kunde(long kundenNr, String name, String address, Date geburtsdatum) {
+        public Kunde(long kundenNr, String name, String addresse, Date geburtsdatum) {
             this.kundenNr = kundenNr;
             this.name = name;
-            this.address = address;
+            this.addresse = addresse;
             this.geburtsdatum = geburtsdatum;
         }
 
@@ -32,11 +32,11 @@ public class Kunde {
         }
 
         public String getAdresse() {
-            return address;
+            return addresse;
         }
 
         public void setAddress(String address) {
-            this.address = address;
+            this.addresse = address;
         }
 
         public Date getGeburtsdatum() {
@@ -52,7 +52,7 @@ public class Kunde {
             return "Kunde{" +
                     "kundenNr=" + kundenNr +
                     ", name='" + name + '\'' +
-                    ", address='" + address + '\'' +
+                    ", addresse='" + addresse + '\'' +
                     ", geburtsdatum=" + geburtsdatum +
                     '}';
         }

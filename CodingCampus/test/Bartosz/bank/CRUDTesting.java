@@ -23,9 +23,9 @@ public class CRUDTesting {
         database = new Database("jdbc:mysql://localhost:3306/bank2test?user=root&password=Eka1Re15.");
         database.connect();
 
-        deleteTable("kunde");
         deleteTable("konto");
         deleteTable("konto_kunde");
+        deleteTable("kunde");
         deleteTable("transaktion");
     }
 
@@ -40,7 +40,7 @@ public class CRUDTesting {
     }
 
     private long createKunde(String name, String adresse, Date geburtsdatum) throws SQLException {
-        String sql = "INSERT INTO kunde(name, adresse, geburtsdatum) VALUES (?, ?, ?);";
+        String sql = "INSERT INTO kunde(name, addresse, geburtsdatum) VALUES (?, ?, ?);";
 
         PreparedStatement statement = database.getConnection().prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
         statement.setString(1, name);
@@ -67,7 +67,7 @@ public class CRUDTesting {
     }
 
     private List<Kunde> queryKunden(String whereClause) throws SQLException {
-        String query = "SELECT kundenNr, adresse, geburtsdatum, name FROM kunde " + whereClause + ";";
+        String query = "SELECT kundenNr, addresse, geburtsdatum, name FROM kunde " + whereClause + ";";
         PreparedStatement statement = database.getConnection().prepareStatement(query);
         ResultSet resultSet = statement.executeQuery();
         List<Kunde> kunden = new ArrayList<>();
