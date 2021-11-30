@@ -15,12 +15,12 @@ import java.util.Date;
 import java.util.List;
 
 
-public class DatabaseManagerTest {
+public class DatabaseManagerTesting {
         private Bartosz.bank.Database database;
 
         @BeforeEach
         public void setUp() throws SQLException {
-            database = new Database("jdbc:mysql://localhost:3306/bank2test?user=root&password=root");
+            database = new Database("jdbc:mysql://localhost:3306/bank2test?user=root&password=Eka1Re15.");
             database.connect();
 
             deleteTable("kunde");

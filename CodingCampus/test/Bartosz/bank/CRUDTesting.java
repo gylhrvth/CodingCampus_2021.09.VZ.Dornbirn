@@ -20,7 +20,7 @@ public class CRUDTesting {
 
     @BeforeEach
     public void setUp() throws SQLException {
-        database = new Database("jdbc:mysql://localhost:3306/bank2test?user=root&password=root");
+        database = new Database("jdbc:mysql://localhost:3306/bank2test?user=root&password=Eka1Re15.");
         database.connect();
 
         deleteTable("kunde");
