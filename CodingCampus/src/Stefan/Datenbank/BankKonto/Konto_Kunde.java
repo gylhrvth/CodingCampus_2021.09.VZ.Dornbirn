@@ -1,11 +1,11 @@
 package Stefan.Datenbank.BankKonto;
 
-public class konto_kunde {
+public class Konto_Kunde {
     private int kundenNr_fk;
     private int kontoNr_fk;
     private String rolle;
 
-    public konto_kunde(int kundenNr_fk, int kontoNr_fk, String rolle) {
+    public Konto_Kunde(int kundenNr_fk, int kontoNr_fk, String rolle) {
         this.kundenNr_fk = kundenNr_fk;
         this.kontoNr_fk = kontoNr_fk;
         this.rolle = rolle;

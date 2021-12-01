@@ -1,4 +1,4 @@
-package Lena.FirstObjects.graph;
+package Lena.FirstObjects.graph.businessLogic;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +22,7 @@ public class Graph {
 
     public Node findNode(int x, int y) {
         for (Node n : nodeList) {
-            if (n.getxKoordinate() == x && n.getyKoordinate() == y) {
+            if (n.getX() == x && n.getY() == y) {
                 return n;
             }
         }
