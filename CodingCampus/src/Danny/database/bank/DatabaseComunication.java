@@ -99,18 +99,27 @@ public class DatabaseComunication {
 
     public void addTransaktionTable(Transaktion transaktion) throws SQLException {
         Connection connection = database.getConnection();
-        String sql = "INSERT INTO transaktion(betrag, zeitstempel, quelle_kontoNr_fk, ziel_kontoNr_fk) VALUES (?,?,?,?)";
-        PreparedStatement statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-        statement.setDouble(1, transaktion.getBetrag());
-        Calendar calendar = new GregorianCalendar();
-        java.util.Date date = calendar.getTime();
-        java.sql.Timestamp sqlDate = new java.sql.Timestamp(date.getTime());
-        statement.setTimestamp(2, sqlDate);
-        statement.setInt(3, transaktion.getQuelleKontoNr());
-        statement.setInt(4, transaktion.getZielKontoNr());
-        statement.executeUpdate();
-        changeKonto(transaktion.getQuelleKontoNr(), transaktion.getBetrag() * -1);
-        changeKonto(transaktion.getZielKontoNr(), transaktion.getBetrag());
+        connection.setAutoCommit(false);
+        try {
+            String sql = "INSERT INTO transaktion(betrag, zeitstempel, quelle_kontoNr_fk, ziel_kontoNr_fk) VALUES (?,?,?,?)";
+            PreparedStatement statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+            statement.setDouble(1, transaktion.getBetrag());
+            Calendar calendar = new GregorianCalendar();
+            java.util.Date date = calendar.getTime();
+            java.sql.Timestamp sqlDate = new java.sql.Timestamp(date.getTime());
+            statement.setTimestamp(2, sqlDate);
+            statement.setInt(3, transaktion.getQuelleKontoNr());
+            statement.setInt(4, transaktion.getZielKontoNr());
+            statement.executeUpdate();
+            changeKonto(transaktion.getQuelleKontoNr(), transaktion.getBetrag() * -1);
+            changeKonto(transaktion.getZielKontoNr(), transaktion.getBetrag());
+            connection.commit();
+        } catch(SQLException exc) {
+            connection.rollback();
+            throw exc;
+        } finally {
+            connection.setAutoCommit(true);
+        }
     }
 
     public void readPrintCustomerTabel() throws SQLException, ParseException {
