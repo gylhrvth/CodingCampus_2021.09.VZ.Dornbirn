@@ -1,4 +1,4 @@
-package Mahir.sql.bank;
+package Mahir.sql.dbBank;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
