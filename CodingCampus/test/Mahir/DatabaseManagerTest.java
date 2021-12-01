@@ -1,9 +1,13 @@
 package Mahir;
 
 
-import Lukas.bank.Database;
-import Lukas.bank.DatabaseManager;
-import Lukas.bank.model.Kunde;
+
+
+
+
+import Mahir.sql.bank.Database;
+import Mahir.sql.bank.DatabaseManager;
+import Mahir.sql.model.Kunde;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -16,7 +20,7 @@ import java.util.Date;
 import java.util.List;
 
 public class DatabaseManagerTest {
-    private Lukas.bank.Database database;
+    private Database database;
 
     @BeforeEach
     public void setUp() throws SQLException {
@@ -30,7 +34,7 @@ public class DatabaseManagerTest {
     }
 
     private void deleteTable(String table) throws SQLException {
-        PreparedStatement statement = database.getConnection().prepareStatement("DELETE FROM "+table);
+        PreparedStatement statement = database.getConnection().prepareStatement("DELETE FROM " + table);
         statement.executeUpdate();
     }
 
@@ -40,13 +44,13 @@ public class DatabaseManagerTest {
     }
 
     @Test
-    public void testInsertKunde(Stefan.Datenbank.BankKonto.Kunde kunde) {
+    public void testInsertKunde() {
         DatabaseManager databaseManager = new DatabaseManager(database);
 
         try {
             long kontoNr = databaseManager.createKunde(new Kunde(0, "Test", "Testdorf", createDate(2000, 0, 1)));
             Assertions.assertTrue(kontoNr > 0);
-        } catch(SQLException exc) {
+        } catch (SQLException exc) {
             Assertions.fail("Customer could not be created...");
         }
     }

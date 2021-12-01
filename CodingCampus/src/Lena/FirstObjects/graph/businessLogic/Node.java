@@ -1,4 +1,4 @@
-package Lena.FirstObjects.graph;
+package Lena.FirstObjects.graph.businessLogic;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -6,16 +6,26 @@ import java.util.Set;
 
 public class Node {
 
-    private int yKoordinate;
-    private int xKoordinate;
+    private int y;
+    private int x;
+    private int weight;
     private final Map<Node, Double> neighbours = new HashMap<>();
-    private double distance;
+    private double distance=Integer.MAX_VALUE;
     private Node preNode = null;
 
 
-    public Node(int xKoordinate, int yKoordinate) {
-        setxKoordinate(xKoordinate);
-        setyKoordinate(yKoordinate);
+    public Node(int xKoordinate, int yKoordinate, int weight) {
+        setX(xKoordinate);
+        setY(yKoordinate);
+        setWeight(weight);
+    }
+
+    public int getWeight() {
+        return weight;
+    }
+
+    public void setWeight(int weight) {
+        this.weight = weight;
     }
 
     public Node getPreNode() {
@@ -26,20 +36,20 @@ public class Node {
         this.preNode = preNode;
     }
 
-    public int getyKoordinate() {
-        return yKoordinate;
+    public int getY() {
+        return y;
     }
 
-    public void setyKoordinate(int yKoordinate) {
-        this.yKoordinate = yKoordinate;
+    public void setY(int y) {
+        this.y = y;
     }
 
-    public int getxKoordinate() {
-        return xKoordinate;
+    public int getX() {
+        return x;
     }
 
-    public void setxKoordinate(int xKoordinate) {
-        this.xKoordinate = xKoordinate;
+    public void setX(int x) {
+        this.x = x;
     }
 
     public Set<Node> getNeighbours() {
@@ -67,8 +77,8 @@ public class Node {
     @Override
     public String toString() {
         return "Node{" +
-                "yKoordinate=" + yKoordinate +
-                ", xKoordinate=" + xKoordinate;
+                "yKoordinate=" + y +
+                ", xKoordinate=" + x;
 
     }
 }

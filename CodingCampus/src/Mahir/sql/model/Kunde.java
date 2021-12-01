@@ -3,11 +3,10 @@ package Mahir.sql.model;
 import java.util.Date;
 
 public class Kunde {
-
     private long kundenNr;
     private String name;
     private String adress;
-    private static Date geburtsdatum;
+    private Date geburtsdatum;
 
     public Kunde(long kundenNr, String name, String adress, Date geburtsdatum) {
         this.kundenNr = kundenNr;
@@ -40,7 +39,7 @@ public class Kunde {
         this.adress = adress;
     }
 
-    public static Date getGebutrsdatum() {
+    public Date getGeburtsdatum() {
         return geburtsdatum;
     }
 
@@ -58,3 +57,4 @@ public class Kunde {
                 '}';
     }
 }
+

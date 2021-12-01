@@ -1,4 +1,4 @@
-package Lena.FirstObjects.graph;
+package Lena.FirstObjects.graph.businessLogic;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,6 +10,8 @@ public class Dijkstra {
     }
 
     public static List<Node> findBestWay(OnNodeInteractionListener listener, Graph graph, Node start, Node end) {
+        long timeStart = System.currentTimeMillis();
+        int count =0;
 
         for (Node n : graph.getNodeList()) {
             n.setDistance(Integer.MAX_VALUE);
@@ -31,6 +33,10 @@ public class Dijkstra {
             }
             actualNode = newNodeWithLowestDistance;
             q.remove(newNodeWithLowestDistance);
+            if(count++==10) {
+                listener.onCalculation();
+                count=0;
+            }
 
             for (Node neighbour : actualNode.getNeighbours()) {
                 if (neighbour.getDistance() == Integer.MAX_VALUE) {
@@ -42,7 +48,6 @@ public class Dijkstra {
                     }
                 }
             }
-listener.onCalculation();
         }
 
         List<Node> shortestPath = new ArrayList<>();
@@ -53,7 +58,9 @@ listener.onCalculation();
 
         }
 
-        System.out.println("Returned path");
+        long timeEnd = System.currentTimeMillis();
+
+        System.out.println("Time to find best Way:  "+(timeEnd-timeStart)+"ms");
         return shortestPath;
 
     }

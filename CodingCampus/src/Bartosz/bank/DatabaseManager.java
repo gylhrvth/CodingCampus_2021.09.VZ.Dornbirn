@@ -1,9 +1,6 @@
-package Mahir.sql.bank;
+package Bartosz.bank;
 
-
-
-
-import Mahir.sql.model.Kunde;
+import Bartosz.bank.model.Kunde;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -22,7 +19,7 @@ public class DatabaseManager {
 
         statement.setString(1, kunde.getName());
         statement.setString(2, kunde.getAdresse());
-        statement.setDate(3,new Date(kunde.getGeburtsdatum().getTime()));
+        statement.setDate(3, new java.sql.Date(kunde.getGeburtsdatum().getTime()));
 
         int rows = statement.executeUpdate();
         if(rows > 0) {

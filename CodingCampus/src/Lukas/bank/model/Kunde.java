@@ -56,4 +56,5 @@ public class Kunde {
                 ", geburtsdatum=" + geburtsdatum +
                 '}';
     }
+
 }

@@ -1,9 +1,6 @@
-package Mahir;
+package Bartosz.bank;
 
-
-
-import Mahir.sql.bank.Database;
-import Mahir.sql.model.Kunde;
+import Bartosz.bank.model.Kunde;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -18,17 +15,17 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
-public class CRUDTest {
+public class CRUDTesting {
     private Database database;
 
     @BeforeEach
     public void setUp() throws SQLException {
-        database = new Database("jdbc:mysql://localhost:3306/bank2test?user=root&password=root");
+        database = new Database("jdbc:mysql://localhost:3306/bank2test?user=root&password=Eka1Re15.");
         database.connect();
 
-        deleteTable("kunde");
         deleteTable("konto");
         deleteTable("konto_kunde");
+        deleteTable("kunde");
         deleteTable("transaktion");
     }
 
@@ -43,7 +40,7 @@ public class CRUDTest {
     }
 
     private long createKunde(String name, String adresse, Date geburtsdatum) throws SQLException {
-        String sql = "INSERT INTO kunde(name, adresse, geburtsdatum) VALUES (?, ?, ?);";
+        String sql = "INSERT INTO kunde(name, addresse, geburtsdatum) VALUES (?, ?, ?);";
 
         PreparedStatement statement = database.getConnection().prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
         statement.setString(1, name);
@@ -70,7 +67,7 @@ public class CRUDTest {
     }
 
     private List<Kunde> queryKunden(String whereClause) throws SQLException {
-        String query = "SELECT kundenNr, adresse, geburtsdatum, name FROM kunde " + whereClause + ";";
+        String query = "SELECT kundenNr, addresse, geburtsdatum, name FROM kunde " + whereClause + ";";
         PreparedStatement statement = database.getConnection().prepareStatement(query);
         ResultSet resultSet = statement.executeQuery();
         List<Kunde> kunden = new ArrayList<>();
@@ -107,7 +104,7 @@ public class CRUDTest {
             Assertions.assertEquals(1, kunden.size());
             Assertions.assertEquals(kundenNr, kunden.get(0).getKundenNr());
             Assertions.assertEquals("Nüziders", kunden.get(0).getAdresse());
-            Assertions.assertEquals(calendar.getTime(),kunden.get(0).getGeburtsdatum());
+            Assertions.assertEquals(calendar.getTime(), kunden.get(0).getGeburtsdatum());
             Assertions.assertEquals("Alfons", kunden.get(0).getName());
 
             for (int i = 0; i < 10; i++) {
@@ -129,5 +126,4 @@ public class CRUDTest {
             Assertions.fail("Could not insert kunde", exc);
         }
     }
-
 }
