@@ -6,13 +6,13 @@ public class Kunde {
     private long kundeNr;
     private String name;
     private String adresse;
-    private Date Geburtsdatum;
+    private Date geburtsdatum;
 
-    public Kunde(long kundeNr, String name, String adresse, Date Geburtsdatum) {
+    public Kunde(long kundeNr, String name, String adresse, Date geburtsdatum) {
         this.kundeNr = kundeNr;
         this.name = name;
         this.adresse = adresse;
-        this.Geburtsdatum = Geburtsdatum;
+        this.geburtsdatum = geburtsdatum;
     }
 
     public long getKundeNr() {
@@ -40,11 +40,11 @@ public class Kunde {
     }
 
     public Date getGeburtsdatum() {
-        return Geburtsdatum;
+        return geburtsdatum;
     }
 
     public void setGeburtsdatum(Date geburtsdatum) {
-        Geburtsdatum = geburtsdatum;
+        this.geburtsdatum = geburtsdatum;
     }
 
     @Override
@@ -53,7 +53,7 @@ public class Kunde {
                 "kundeNr=" + kundeNr +
                 ", name='" + name + '\'' +
                 ", adresse='" + adresse + '\'' +
-                ", Geburtsdatum=" + Geburtsdatum +
+                ", Geburtsdatum=" + geburtsdatum +
                 '}';
     }
 }

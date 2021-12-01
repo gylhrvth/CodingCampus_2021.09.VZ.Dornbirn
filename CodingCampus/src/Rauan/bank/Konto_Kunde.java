@@ -1,22 +1,22 @@
-package Stefan.Datenbank.BankKonto;
+package Rauan.bank;
 
-public class konto_kunde {
-    private int kundenNr_fk;
+public class Konto_Kunde {
+    private int kundeNr_fk;
     private int kontoNr_fk;
     private String rolle;
 
-    public konto_kunde(int kundenNr_fk, int kontoNr_fk, String rolle) {
-        this.kundenNr_fk = kundenNr_fk;
-        this.kontoNr_fk = kontoNr_fk;
-        this.rolle = rolle;
+    public Konto_Kunde(int kundeNr_fk,int kontoNr_fk, String rolle){
+        this.kundeNr_fk=kundeNr_fk;
+        this.kontoNr_fk=kontoNr_fk;
+        this.rolle=rolle;
     }
 
-    public int getKundenNr_fk() {
-        return kundenNr_fk;
+    public int getKundeNr_fk() {
+        return kundeNr_fk;
     }
 
-    public void setKundenNr_fk(int kundenNr_fk) {
-        this.kundenNr_fk = kundenNr_fk;
+    public void setKundeNr_fk(int kundeNr_fk) {
+        this.kundeNr_fk = kundeNr_fk;
     }
 
     public int getKontoNr_fk() {
@@ -37,8 +37,8 @@ public class konto_kunde {
 
     @Override
     public String toString() {
-        return "konto_kunde{" +
-                "kundenNr_fk=" + kundenNr_fk +
+        return "Konto_Kunde{" +
+                "kundeNr_fk=" + kundeNr_fk +
                 ", kontoNr_fk=" + kontoNr_fk +
                 ", rolle='" + rolle + '\'' +
                 '}';

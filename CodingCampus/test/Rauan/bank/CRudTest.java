@@ -24,7 +24,7 @@ public class CRudTest {
         deletTable("transaktion");
     }
     private void deletTable(String table) throws SQLException {
-        PreparedStatement statement = database.getconnection.prepareStatement("DELETE FROM " + table);
+        PreparedStatement statement = database.getConnection().prepareStatement("DELETE FROM " + table);
         statement.executeUpdate();
     }
 
@@ -39,7 +39,7 @@ public class CRudTest {
     }
     @Test
     public void testInsertAndSelect(){
-        Connection connection= database.getconnection;
+        Connection connection= database.getConnection();
         try {
             String sql = "Insert Into Kunde(Name, Adresse, Geburtsdatum)Values (?,?,?)";
             PreparedStatement statement= connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
