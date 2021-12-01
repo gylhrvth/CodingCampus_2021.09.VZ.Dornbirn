@@ -1,8 +1,6 @@
 package Mahir;
 
-
-
-import Mahir.sql.bank.Database;
+import Mahir.sql.dbBank.Database;
 import Mahir.sql.model.Kunde;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
@@ -23,7 +21,7 @@ public class CRUDTest {
 
     @BeforeEach
     public void setUp() throws SQLException {
-        database = new Database("jdbc:mysql://localhost:3306/bank2test?user=root&password=root");
+        database = new Database("jdbc:mysql://localhost:3306/banktest?user=root&password=Mahirmahir0");
         database.connect();
 
         deleteTable("kunde");
@@ -107,7 +105,7 @@ public class CRUDTest {
             Assertions.assertEquals(1, kunden.size());
             Assertions.assertEquals(kundenNr, kunden.get(0).getKundenNr());
             Assertions.assertEquals("Nüziders", kunden.get(0).getAdresse());
-            Assertions.assertEquals(calendar.getTime(),kunden.get(0).getGeburtsdatum());
+            Assertions.assertEquals(calendar.getTime(), kunden.get(0).getGeburtsdatum());
             Assertions.assertEquals("Alfons", kunden.get(0).getName());
 
             for (int i = 0; i < 10; i++) {

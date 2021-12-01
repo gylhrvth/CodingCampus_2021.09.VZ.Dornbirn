@@ -3,6 +3,7 @@ package Mahir.sql.bank;
 
 
 
+import Mahir.sql.dbBank.Database;
 import Mahir.sql.model.Kunde;
 
 import java.sql.*;

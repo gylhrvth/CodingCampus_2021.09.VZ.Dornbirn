@@ -1,7 +1,6 @@
 package Mahir;
 
-
-import Mahir.sql.bank.Database;
+import Mahir.sql.dbBank.Database;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

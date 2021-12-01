@@ -1,11 +1,6 @@
 package Mahir;
 
-
-
-
-
-
-import Mahir.sql.bank.Database;
+import Mahir.sql.dbBank.Database;
 import Mahir.sql.bank.DatabaseManager;
 import Mahir.sql.model.Kunde;
 import org.junit.jupiter.api.AfterEach;
