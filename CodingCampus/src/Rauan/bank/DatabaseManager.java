@@ -14,9 +14,9 @@ public class DatabaseManager {
         this.database = database;
     }
 
-    public long creatKunde(Kunde kunde) throws SQLException {
-        String sql = "Insert into kunde (Name , Adresse, Geburtsdatum) Values(?, ?, ?)...!";
-        PreparedStatement statement = database.getconnection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+    public long createKunde(Kunde kunde) throws SQLException {
+        String sql = "Insert into kunde(Name, Adresse, Geburtsdatum) Values(?, ?, ?)";
+        PreparedStatement statement = database.getConnection().prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 
         statement.setString(1, kunde.getName());
         statement.setString(2, kunde.getAdresse());
@@ -32,14 +32,13 @@ public class DatabaseManager {
             }
         } else {
             return 0;
-
-
         }
-
     }
+
+
     public List<Kunde>readKunden () throws SQLException {
         String sql="SELECT kundeNr, name, adresse, Geburtsdatum From Kunde";
-        PreparedStatement statement=database.getconnection.prepareStatement(sql);
+        PreparedStatement statement=database.getConnection().prepareStatement(sql);
         ResultSet resultSet= statement.executeQuery();
         List<Kunde> kundes = new ArrayList<>();
 
@@ -47,9 +46,9 @@ public class DatabaseManager {
             long kundeNr = resultSet.getLong(1);
             String name = resultSet.getString(2);
             String adresse = resultSet.getString(3);
-            java.sql.Date Geburtsdatum = resultSet.getDate(4);
+            java.sql.Date geburtsdatum = resultSet.getDate(4);
 
-            Kunde kunde = new Kunde(kundeNr,  name, adresse,Geburtsdatum);
+            Kunde kunde = new Kunde(kundeNr,  name, adresse, geburtsdatum);
             kundes.add(kunde);
         }
         return kundes;

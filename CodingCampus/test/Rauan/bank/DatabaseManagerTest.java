@@ -27,7 +27,7 @@ public class DatabaseManagerTest {
     }
 
     private void deletTable(String table) throws SQLException {
-        PreparedStatement statement = database.getconnection.prepareStatement("DELETE FROM " + table);
+        PreparedStatement statement = database.getConnection().prepareStatement("DELETE FROM " + table);
         statement.executeUpdate();
     }
 
@@ -40,7 +40,7 @@ public class DatabaseManagerTest {
     public void testInsertKunde() {
         DatabaseManager databaseManager = new DatabaseManager(database);
         try {
-            long kontoNr = databaseManager.creatKunde(new Kunde(0, "Sara", "testDorf",
+            long kontoNr = databaseManager.createKunde(new Kunde(0, "Sara", "testDorf",
                     createDate(1990, 01, 01)));
             Assertions.assertTrue(kontoNr > 0);
         } catch (SQLException exc) {
@@ -52,11 +52,11 @@ public class DatabaseManagerTest {
     public void testReadKunden() throws SQLException {
         DatabaseManager databaseManager = new DatabaseManager(database);
 
-        long kundenNr1 = databaseManager.creatKunde(new Kunde(1, "sara",
+        long kundenNr1 = databaseManager.createKunde(new Kunde(1, "sara",
                 "Dorf", createDate(2000, 4, 4)));
-        long kundenNr2 = databaseManager.creatKunde(new Kunde(1, "sara",
+        long kundenNr2 = databaseManager.createKunde(new Kunde(1, "sara",
                 "Dorf", createDate(2000, 4, 4)));
-        long kundenNr3 = databaseManager.creatKunde(new Kunde(1, "sara",
+        long kundenNr3 = databaseManager.createKunde(new Kunde(1, "sara",
                 "Dorf", createDate(2000, 4, 4)));
         List<Kunde> kundes = databaseManager.readKunden();
         Assertions.assertEquals(3, kundes.size());
