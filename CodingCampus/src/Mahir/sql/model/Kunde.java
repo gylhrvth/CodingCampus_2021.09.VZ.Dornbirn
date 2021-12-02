@@ -8,6 +8,10 @@ public class Kunde {
     private String adress;
     private Date geburtsdatum;
 
+    public Kunde(String name, String address, Date birthdate) {
+        this(-1, name, address, birthdate);
+    }
+
     public Kunde(long kundenNr, String name, String adress, Date geburtsdatum) {
         this.kundenNr = kundenNr;
         this.name = name;

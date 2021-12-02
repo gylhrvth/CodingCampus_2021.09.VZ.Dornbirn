@@ -49,6 +49,28 @@ public class DatabaseManagerTest {
     }
 
     @Test
+    public void updateKunde() throws SQLException {
+        DatabaseManager databaseManager = new DatabaseManager(database);
+
+        Kunde originKunde = new Kunde(0, "Test", "Testdorf", createDate(2000, 0, 1));
+
+        long kundenNr = databaseManager.createKunde(originKunde);
+
+        originKunde.setKundenNr(kundenNr);
+        originKunde.setName("Test2");
+        originKunde.setAdress("Testdorf2");
+
+        Assertions.assertTrue(databaseManager.updateKunde(originKunde));
+
+        Kunde updatedKunde = databaseManager.readKunde(kundenNr);
+
+        Assertions.assertNotNull(updatedKunde);
+
+        Assertions.assertEquals("Test2", updatedKunde.getName());
+        Assertions.assertEquals("Testdorf2", updatedKunde.getAdresse());
+    }
+
+    @Test
     public void testReadKunden() throws SQLException {
         DatabaseManager databaseManager = new DatabaseManager(database);
 
