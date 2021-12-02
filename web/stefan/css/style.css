@@ -1,0 +1,64 @@
+body {
+    background-color: #1B1B1B;
+    color: #cdcdcd;
+    font-size: 16px;
+}
+
+h3 {
+    padding: 0;
+    margin: 0;
+}
+
+.justify-content-center {
+    justify-content: center !important;
+    margin: 1em 0em;
+}
+
+.nav-link {
+    display: block;
+    font-size: 18px;
+    padding: 0.5rem 1rem;
+    color: #cdcdcd;
+    text-decoration: none;
+    transition: color .15s ease-in-out,
+        background-color .15s ease-in-out,
+        border-color .15s ease-in-out;
+}
+
+.container {
+    min-width: 100% !important;
+}
+
+.carousel-caption {
+    right: 20%;
+    left: 20%;
+    padding-bottom: 10px;
+    background: rgba(205, 205, 205, 0.4);
+    padding-top: 3px;
+    color: #000000;
+    text-shadow: none;
+    font-weight: bolder;
+}
+
+.listing {
+    width: 100%;
+    margin-top: 30px;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: transparent;
+    background-clip: border-box;
+    border: 1px solid rgba(205,205,205);
+    border-radius: .25rem;
+}
+
+.row {
+    margin-right: -15px;
+    margin-left: -15px;
+    margin-top: 30px;
+}
