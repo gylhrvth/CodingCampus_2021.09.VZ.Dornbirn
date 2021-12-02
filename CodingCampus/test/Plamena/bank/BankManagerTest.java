@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
-public class CRUDTest {
+public class BankManagerTest {
     private Database database;
 
     @BeforeEach

@@ -17,12 +17,6 @@ public class Account {
         this.designation = designation;
     }
 
-    public void createAccount(Account account) throws SQLException {
-        String sql = "INSERT INTO accounts(balance, designation) VALUES(" + account.getBalance() + ", " + account.getDesignation() + ";";
-        PreparedStatement statement = database.getConnection().prepareStatement(sql);
-        statement.executeUpdate();
-    };
-
     public long getIdaccount() {
         return idaccount;
     }
