@@ -36,7 +36,7 @@ public class FileReaderAndWriterNew {
     }
 
 
-    private static String fileReader(String path) throws IOException {
+    public static String fileReader(String path) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new FileReader(path));
         try {
             StringBuilder stringBuilder = new StringBuilder();

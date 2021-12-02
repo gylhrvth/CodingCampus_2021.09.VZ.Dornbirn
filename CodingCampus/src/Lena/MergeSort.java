@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class MergeSort {
 
     public static void gyulaMerge(String prefix, int[] data, int start, int end){
-        System.out.println(prefix + "gyulaMerge " + start + " " + end);
+        System.out.println(prefix + "Merge " + start + " " + end);
 
         if (end - start > 1){
             int middle = start + (end - start) / 2;

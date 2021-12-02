@@ -8,8 +8,14 @@ public class StringExercise {
 
     public static void main(String[] args) {
 
+        for (int i = 1; i<=26;i++){
+            System.out.println(caeserDecryption("Zmojmz|{", i));
+        }
 
-        System.out.println(caeserDecryption("Hallo", 1));
+
+        System.out.println(caeserDecryption("VikfivxwVypi~6465", 4));
+
+
 
     }
 
@@ -122,7 +128,7 @@ public class StringExercise {
         char[]charArray = string.toUpperCase().toCharArray();
 
        for (int i = 0; i < charArray.length; i++) {
-           charArray[i]=(char)(charArray[i]+key);
+           charArray[i]=(char)(charArray[i]-key);
        }
 
        for (int i = 0; i < charArray.length; i++) {
