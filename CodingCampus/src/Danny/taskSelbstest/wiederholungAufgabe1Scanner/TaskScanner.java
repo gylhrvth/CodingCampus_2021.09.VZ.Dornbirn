@@ -11,7 +11,6 @@ public class TaskScanner {
         System.out.println("Bitte geben Sie einen Text ein:");
         String scan = scanner.nextLine();
         do {
-
             if (scan.isEmpty()) {
                 System.out.println("Bitte geben Sie einen Text ein:");
                 scan = scanner.nextLine();

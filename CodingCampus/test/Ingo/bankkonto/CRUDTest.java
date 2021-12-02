@@ -18,12 +18,12 @@ public class CRUDTest {
     public void setUp() throws SQLException {
         database = new Database("jdbc:mysql://localhost:3306/bank2test?user=root&password=root");
         database.connect();
-
+/*
         deleteTable("kunde");
         deleteTable("konto");
         deleteTable("konto_kunde");
         deleteTable("transaktion");
-    }
+*/    }
 
     private void deleteTable(String table) throws SQLException {
         PreparedStatement statement = database.getConnection().prepareStatement("DELETE FROM " + table);
@@ -54,16 +54,16 @@ public class CRUDTest {
 
             statement.setDate(3, sqlDate);
 
-            int rows = statement.executeUpdate();
+//            int rows = statement.executeUpdate();
 
-            Assertions.assertEquals(1, rows);
+//            Assertions.assertEquals(1, rows);
 
             ResultSet resultSet = statement.getGeneratedKeys();
 
-            long kundenNr = 0;
+            long id = 0;    // kundenNr ersetzt
             if (resultSet.next()) {
-                kundenNr = resultSet.getLong(1);
-                Assertions.assertTrue(kundenNr > 0);
+                id = resultSet.getLong(1);
+                Assertions.assertTrue(id > 0);
             } else {
                 Assertions.fail("No primary key returned...");
             }
@@ -72,12 +72,12 @@ public class CRUDTest {
             statement = connection.prepareStatement(query);
             resultSet = statement.executeQuery();
             if(resultSet.next()) {
-                long queriedKundenNr = resultSet.getLong(1);
+                long queriedid = resultSet.getLong(1);
                 String adresse = resultSet.getString(2);
                 java.sql.Date geburtsdatum = resultSet.getDate(3);
                 String name = resultSet.getString(4);
 
-                Assertions.assertEquals(kundenNr, queriedKundenNr);
+                Assertions.assertEquals(id, queriedid);
                 Assertions.assertEquals("Nüziders", adresse);
                 Assertions.assertEquals("2018-01-01", geburtsdatum.toString());
                 Assertions.assertEquals("Alfons", name);

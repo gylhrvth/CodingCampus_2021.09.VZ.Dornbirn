@@ -5,7 +5,6 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class Database {
-    public Connection getconnection;
     private String url;
     private Connection connection;
 
@@ -17,13 +16,28 @@ public class Database {
         this.url = url;
     }
 
-    public void connect() throws SQLException {
-        connection = DriverManager.getConnection(url);
+    public void connect(){
+        try {
+            connection = DriverManager.getConnection(url);
+        } catch (SQLException sqle){
+            sqle.printStackTrace();
+        }
     }
 
-    public void disconnect() throws SQLException {
-        connection.close();
+    public void disconnect() {
+        if (connection != null) {
+            try {
+                connection.close();
+            } catch (SQLException sqle) { // do nothing
+            }
+            connection = null;
+        }
     }
 
-
+    public Connection getConnection() {
+        if (connection == null){
+            connect();
+        }
+        return connection;
+    }
 }
