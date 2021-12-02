@@ -3,7 +3,14 @@ package Saadaq.Week6;
 import java.io.*;
 
 public class ReadFileWriter {
-    public static void main(String[] args) throws IOException {
+
+
+
+    public static void main(String[] args)
+
+
+
+            throws IOException {
 
 
         try {
@@ -12,6 +19,7 @@ public class ReadFileWriter {
             String input = readFile(path);
             System.out.println(input);
              fileWriter("assets/tmp/output.txt", input);
+
 
         } catch (FileNotFoundException exc) {
             exc.printStackTrace();
@@ -25,10 +33,14 @@ public class ReadFileWriter {
         BufferedReader reader = new BufferedReader(new FileReader(path));
         try {
             StringBuilder sb = new StringBuilder();
-            String line;
+            String line ;
             while ((line = reader.readLine()) != null) {
-                sb
-                        .append(line)
+
+
+                sb.reverse(); // reverse
+
+
+                sb.append(line)
                         .append(System.lineSeparator());
 
             }
@@ -60,6 +72,12 @@ public class ReadFileWriter {
             }
         }
     }
+
+
+
+
+
+
 
 
 }// End of Class
