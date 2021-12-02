@@ -81,7 +81,7 @@ public class Aufgabe1 {
         /*
          * <h1>Textanalyse</h1>
          *
-         * <br>Verschiedene Aufgaben zur Stringmanipulation und Analyse.
+         * <br>Verschiedene TestAufgabe zur Stringmanipulation und Analyse.
          *
          *
          *
@@ -106,7 +106,7 @@ public class Aufgabe1 {
          *    <li>Zähle jedes Zeichen im Text und gib dessen Häufigkeit aus.
          *    <br>Weiters gib die Häufigkeit in Prozent in relation zur Gesamtlänge des Textes aus.
          *    <li>Siehe 6), beschränke dich aber nun auf das Alphabet</li>
-         *    <li>Verwende Aufgaben 5) und 6) und analysiere ebenfalls TEXT_TO_ANALYSE_2,TEXT_TO_ANALYSE_3,TEXT_TO_ANALYSE_4
+         *    <li>Verwende TestAufgabe 5) und 6) und analysiere ebenfalls TEXT_TO_ANALYSE_2,TEXT_TO_ANALYSE_3,TEXT_TO_ANALYSE_4
          *    <br>Gibt es einen unterschied zwischen den deutschen und den englischen Texten?
          *    </li>
          * </ol>

@@ -1,8 +1,13 @@
 package Saadaq.week5.Friday;
 
+import javax.swing.*;
+
 public class AfugabeCampus {
 
     public static void main(String[] args) {
+
+
+
 
  /*       int size = 20;
         String str = "I";
