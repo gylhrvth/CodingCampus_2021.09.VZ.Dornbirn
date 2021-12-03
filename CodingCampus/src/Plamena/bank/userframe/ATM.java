@@ -1,4 +1,4 @@
-package Plamena.bank.framework;
+package Plamena.bank.userframe;
 import javax.swing.*;
 
 public class ATM {
