@@ -1,2 +1,4 @@
-package Lena.bank.userInterface;public class NeuesKontoFrame {
+package Lena.bank.userInterface;
+
+public class NeuesKontoFrame {
 }

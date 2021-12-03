@@ -42,6 +42,7 @@ public class CustomerFrame1 extends JFrame {
 
         auszahlungButton.addActionListener(e -> {
             AuszahlungsFrame auszahlungsFrame = new AuszahlungsFrame(atm, customer);
+            this.AccountList.setListData(this.customer.getAccounts().toArray());
         });
 
         ueberweisungButton.addActionListener(e -> {
