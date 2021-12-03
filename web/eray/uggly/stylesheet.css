@@ -1,0 +1,42 @@
+* {
+    text-align: center;
+    padding: 0;
+}
+
+body{
+    margin: 0;
+    background-color: RGB(255, 13, 191);
+    min-height: 100vh;
+}
+
+#myVideo {
+    position: center;
+    right: 0;
+    bottom: 0;
+    width: 90%;
+    height: 95%;
+  }
+
+
+
+.background{
+    width: 100%;
+    height:100%;
+     background: fuchsia;
+    background-size:cover;
+    overflow: hidden;
+  }
+
+  .fish{
+      height: 20;
+      width: 5;
+      
+  }
+
+.videoDiv, .imageDiv {
+    width: 100%!important;
+    display: flex;
+    justify-content: center;
+}
+
+

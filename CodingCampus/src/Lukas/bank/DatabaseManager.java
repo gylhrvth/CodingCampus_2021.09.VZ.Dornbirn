@@ -34,6 +34,39 @@ public class DatabaseManager {
         }
     }
 
+    public Kunde readKunde(long kundenNr) throws SQLException {
+        String sql = "SELECT name, adresse, geburtsdatum FROM kunde WHERE kundenNr = ?";
+        PreparedStatement statement = database.getConnection().prepareStatement(sql);
+        statement.setLong(1, kundenNr);
+        ResultSet resultSet = statement.executeQuery();
+
+        if(resultSet.next()) {
+            String name = resultSet.getString(1);
+            String adresse = resultSet.getString(2);
+            java.sql.Date geburtsdatum = resultSet.getDate(3);
+
+            return new Kunde(kundenNr, name, adresse, geburtsdatum);
+        } else {
+            return null;
+        }
+    }
+
+    public boolean updateKunde(Kunde kunde) throws SQLException {
+        String sql = "UPDATE kunde SET name = ?, adresse = ?, geburtsdatum = ? WHERE (kundenNr = ?)";
+        PreparedStatement statement = database.getConnection().prepareStatement(sql);
+        statement.setString(1, kunde.getName());
+        statement.setString(2, kunde.getAdresse());
+        statement.setDate(3, new java.sql.Date(kunde.getGeburtsdatum().getTime()));
+        statement.setLong(4, kunde.getKundenNr());
+
+        int rows = statement.executeUpdate();
+        if(rows > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     public List<Kunde> readKunden() throws SQLException {
         String sql = "SELECT kundenNr, name, adresse, geburtsdatum FROM kunde";
         PreparedStatement statement = database.getConnection().prepareStatement(sql);

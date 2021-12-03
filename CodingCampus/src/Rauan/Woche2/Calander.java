@@ -128,4 +128,28 @@ public class Calander {
         }
         return days;
     }
+    /*
+    SimpleDateFormat fmt = new SimpleDateFormat("dd.MM.yyyy");
+    String str = fmt.format(new java.util.Date());
+        System.out.println(str);
+
+
+    String headDays = "| Mo | DI | MI | Do | FR | SA | So |";
+        System.out.println(headDays);
+
+    int maxDays = 30;
+        System.out.print("| ");
+        for (int i = 1; i <=maxDays ; i++) {
+        System.out.printf("%2d ",i);
+        System.out.print("| ");
+
+        if (i%7 == 0){
+            System.out.println();
+            System.out.print("| ");
+
+        }
+
+    }
+
+     */
 }

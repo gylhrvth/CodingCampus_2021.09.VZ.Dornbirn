@@ -1,0 +1,126 @@
+/*-------------------------font import-----------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;400;700&family=Roboto:wght@400;500;700&display=swap');
+/*---------------------css---------------------*/
+html, body{
+    margin: 0!important;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+body {
+    margin: 0!important;
+    background: #dedede;
+    font-size: 16px!important;
+    font-family: 'Lato', 'Roboto', sans-serif;
+    min-height: 100vh!important;
+}
+
+h1,h2,h3 {
+    font-family: 'Roboto', sans-serif;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+}
+
+.content {
+    background: #fff;
+    width: 85%!important;
+    padding: 0px 20px
+}
+
+
+/*------------------------Header-----------------------*/
+#Header { height: 23vh;}
+
+#Header .content{
+    background: #000000b8; 
+    display: flex;
+    justify-content: space-between;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+#Header .cols {
+    width: auto;
+    height: fit-content;
+}
+/*--------------Profilbild-----------*/
+#PB{
+}
+
+#PB img {
+    max-width: 200px;
+    max-height: 200px;
+    width: 200px!important;
+    height: 100%!important;
+    border-radius: 100%;
+    transition-duration: 0.25s;
+}
+
+#PB img:hover {
+    border-radius: 0%!important;
+    transition-duration:  0.25s;
+}
+
+#PB_text {
+    width: 100%!important;
+    text-align: center;
+    font-weight: 500!important;
+    color: #fff;
+    padding: 10px 0px 5px 0px;
+}
+/*--------naviagation-----------*/
+#navigation{
+    margin-right: -20px;
+    margin-top: 40px;
+}
+
+#mainnav {
+    list-style: none;
+    padding:0;
+    width: fit-content;
+    display: flex;
+    justify-content: flex-end;
+    align-content: center;
+}
+
+ul#mainnav li+li a{
+} 
+
+ul#mainnav a {
+    text-decoration: none;
+    color: #fff;
+    line-height: 20px;
+    font-size: 16px;
+    padding: 20px;
+    background-color: #b97b32c7;
+}
+
+ul#mainnav li a:hover {
+    background: #563c1f!important;
+}
+
+/*-----------------Main------------------------*/
+#Main {
+    min-height:56.6vh
+}
+
+
+/*---------------Footer-----------------*/
+#Footer {height: 15vh}
+
+#Footer .content {
+    background: #000000b8; 
+    display: flex;
+    justify-content: space-between;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+/*--------------Bottomline----------------*/
+#Bottomline {text-align: center;}
+
+#Bottomline .content {
+    background: #b97b32c7!important;
+}
