@@ -10,7 +10,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
 
-public class AuszahlungsFrame extends JFrame{
+public class AuszahlungsFrame extends JFrame {
 
     private JPanel transactionPanel;
     private JLabel TransaktionsTyp;
@@ -25,10 +25,10 @@ public class AuszahlungsFrame extends JFrame{
     private Bankomat atm;
     private Customer customer;
 
-    public AuszahlungsFrame(Bankomat atm, Customer customer){
-        this.setLocation(600,300);
-        this.customer=customer;
-        this.atm=atm;
+    public AuszahlungsFrame(Bankomat atm, Customer customer) {
+        this.setLocation(600, 300);
+        this.customer = customer;
+        this.atm = atm;
 
         this.setContentPane(transactionPanel);
         fillComboBox();
@@ -43,26 +43,26 @@ public class AuszahlungsFrame extends JFrame{
         this.setVisible(true);
 
     }
-    private void fillComboBox(){
 
-        for(Account account:customer.getAccounts()){
+    private void fillComboBox() {
+
+        for (Account account : customer.getAccounts()) {
             this.selectAccountBox.addItem(account);
         }
     }
 
     private void executeAuszahlung() {
-        Account toAccount =(Account) selectAccountBox.getSelectedItem();
+        Account toAccount = (Account) selectAccountBox.getSelectedItem();
 
         try {
             atm.executePayout(toAccount.getAcountNr(), Double.parseDouble(tamount.getText()));
-            atm.calcBalance(toAccount.getAcountNr());
             JOptionPane.showMessageDialog(this, "Transaktion wurde erfolgreich durchgeführt");
             this.setVisible(false);
-        }catch (SQLException sqlException){
+        } catch (SQLException sqlException) {
             sqlException.printStackTrace();
-            JOptionPane.showMessageDialog(this, "Es ist ein Fehler bei der Verbindung aufgetreten. \n Transaktion wurde abgebrochen");
-        }catch (BalanceToLowException balanceToLowException){
-            JOptionPane.showMessageDialog(this, "Der Kontostand reicht nicht aus. \n Transaktion konnte nicht durchgeführt werden");
+            JOptionPane.showMessageDialog(this, "Es ist ein Fehler bei der Verbindung aufgetreten.\nTransaktion wurde abgebrochen");
+        } catch (BalanceToLowException balanceToLowException) {
+            JOptionPane.showMessageDialog(this, "Der Kontostand reicht nicht aus.\nTransaktion konnte nicht durchgeführt werden");
         }
 
 
