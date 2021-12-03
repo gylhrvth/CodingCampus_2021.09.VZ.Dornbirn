@@ -16,4 +16,11 @@ h1 {
 
 .tenor-gif-embed {
     padding-top: 50px;
+    width: 80% !important;
+    margin: 0 auto;
+}
+
+.breite {
+    width: 80%;
+    margin: 0 auto;
 }

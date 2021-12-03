@@ -89,3 +89,9 @@ h3 {
 .tenor-gif-embed {
     margin: 15px;
 }
+
+.headliner {
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+}
