@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comforter&display=swap');
+
+.superStyle {
+    color: #ffffff7f;
+    width: fit-content;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.coolFontStyle {
+    font-family: 'Comforter', cursive;
+}
+
+.turboSuperStyle {
+    background-color:rgba(255,0,255,1);
+    transition-duration: 3000ms;
+}
+
+.turboSuperStyle:hover {
+    background-color:rgb(142, 204, 136);
+    transition-duration: 3000ms;
+}
+
+img:hover {
+}
+
+body {
+    color: green;
+}
+
+.content {
+    background-color: indigo;
+}
+
+section h1 {
+    font-size: 10px;
+    font-family: 'M PLUS 1 Code', sans-serif;
+}
+
+section h1:hover {
+    filter: blur(3px)
+}
+
+html:hover {
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+}

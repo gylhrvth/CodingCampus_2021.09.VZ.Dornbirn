@@ -1,7 +1,5 @@
 package Lena.FirstTries;
 
-import Saadaq.weekOne.ChristBaum;
-
 public class AAA {
 
 
