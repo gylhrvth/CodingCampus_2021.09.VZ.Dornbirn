@@ -29,6 +29,7 @@ public class DatabaseComunication {
         PreparedStatement statementKonto = database.getConnection().prepareStatement(sql);
         statementKonto.executeUpdate();
         statementKonto.close();
+
     }
 
     public void readPrintKundeAndKonto(int kundenNr) throws SQLException {

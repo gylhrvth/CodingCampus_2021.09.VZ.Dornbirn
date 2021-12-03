@@ -1,9 +1,6 @@
 package Rauan.bank;
 
 import java.sql.SQLException;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.GregorianCalendar;
 
 public class Main {
@@ -30,5 +27,7 @@ public class Main {
         } catch (SQLException sqle){
             sqle.printStackTrace();
         }
+
     }
+
 }
