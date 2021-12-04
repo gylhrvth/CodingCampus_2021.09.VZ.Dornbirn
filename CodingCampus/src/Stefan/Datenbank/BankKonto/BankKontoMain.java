@@ -20,7 +20,7 @@ public class BankKontoMain {
 
 //        dbManager.insertKundeZuKonto();
         dbManager.readKontoKunde();
-
+        dbMangerTest.insertTransaktion();
         System.out.println();
     }
 }
