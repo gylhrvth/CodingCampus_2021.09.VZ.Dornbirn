@@ -1,0 +1,118 @@
+
+
+body {
+    background-color: rgb(201, 199, 189);
+  }
+
+
+.navbar {
+    background-color: #5e5757;
+    height: 190px;
+}
+
+@media (min-width: 500px) {
+    .navbar-expand-lg .navbar-collapse {
+        display: flex!important;
+        flex-basis: auto;
+    }
+}
+    
+@media (min-width: 500px){
+    .navbar-expand-lg .navbar-nav .nav-link {
+        padding-right: 0.8rem;
+        padding-left: 0.8rem;
+    }
+}
+
+.welcome {
+    text-align: center;
+   color: rgb(59, 48, 35);
+font-size: 40px;
+padding: 40px;
+}
+
+li, p {
+    font-size: 25px; 
+    
+}
+
+h2, p , a, th, li, td, table{
+    color: #464141;
+}
+
+table, th, td {
+border: 1px solid black;
+font-size: 25px;
+padding: 10px;
+}
+
+div.box-container {
+    width: 500px;
+    padding: 20px;
+    padding-left: 50px;
+    margin-left: 135px;
+    margin-bottom: 50px;
+    margin-top: 40px;
+    background-color: rgb(151, 123, 78);
+}
+
+div.box {
+            background-color: rgb(151, 123, 78);
+            width: 500px;
+            padding: 40px;
+            padding-left: 50px;
+            margin-left: 40px;
+            margin-top: 40px;
+            margin-bottom: 40px;
+}
+
+div.box-progress {
+    background-color: rgb(151, 123, 78);
+    width: 500px;
+    padding: 40px;
+    padding-left: 50px;
+    margin-left: 40px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    
+}
+
+div.box-impressum {
+    background-color: rgb(151, 123, 78);
+    width: 1000px;
+    padding: 40px;
+    padding-left: 50px;
+    margin-left: 140px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    
+    
+}
+
+
+div.box-container-background {
+    background-color: rgba(201, 199, 189, 0);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+div.box-container-stripe {
+    background-color: rgb(119, 111, 88);
+    width: 100%;
+   margin-top: 150px;
+}
+
+
+ul.a {
+            list-style-type: disc;
+}
+
+a {
+    font-size: 35px;
+   
+}
+
+
+

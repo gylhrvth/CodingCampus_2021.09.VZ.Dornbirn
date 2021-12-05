@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class Account {
+
     private Database database;
     private long idaccount;
     private double balance;
