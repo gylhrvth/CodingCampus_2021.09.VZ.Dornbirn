@@ -75,6 +75,7 @@ public class AufgabenVonLukas {
                 tmp[counter] = letters[i];
                 counter++;
         }
+
         String reverseString = new String(tmp);
         return reverseString;
     }
@@ -89,7 +90,10 @@ public class AufgabenVonLukas {
             letters[i] = letters[swapper];
             letters[swapper] = t;
         }
+
+
             return new String(letters);
+
     }
 
     public static String readLine() {

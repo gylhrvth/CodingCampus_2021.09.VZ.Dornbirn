@@ -15,8 +15,8 @@ public class CRUIDTest {
 
     @BeforeEach
     public void setUp() throws SQLException {
-        database = new Database("jdbc:mysql://localhost:3306/bank2test?user=root&password=Voegel79");
-        database.connect();
+        database = new Database("jdbc:mysql://localhost:3306/bank2?user=root&password=Voegel79");
+        database.getConnection();
 
         deleteTabele("kunde");
         deleteTabele("konto");

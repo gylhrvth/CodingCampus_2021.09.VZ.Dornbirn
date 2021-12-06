@@ -5,7 +5,6 @@ import Stefan.DatenbankTest.model.Kunde;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Date;
 
 public class DatabaseManager {
     private Database database;

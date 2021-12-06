@@ -17,11 +17,8 @@ public class Man extends Person {
         this.athletic = athletic;
     }
 
-
     @Override
     public String toString() {
         return String.format("Name:%11s\nALter:%6s\nGrösse:%6s\nGewicht:%4s\nAtletic:%9s\n", getName(), getAge(), getHeight(), getWeight(), getAthletic());
     }
-
-
 }

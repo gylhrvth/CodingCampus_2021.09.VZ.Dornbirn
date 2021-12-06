@@ -26,18 +26,6 @@ public class PersonMethoden {
         }
     }
 
-    public static void sortPersonListAge1(List<Person> persons) {
-        for (int i = 0; i < persons.size(); i++) {
-            for (int j = 0; j < persons.size() - 1 - i; j++) {
-                    if (persons.get(j).getAge() > persons.get(j + 1).getAge()) {
-                        Person temp = persons.get(j);
-                        persons.set(j, persons.get((j + 1)));
-                        persons.set(j + 1, temp);
-                    }
-                }
-        }
-    }
-
     public static void sortPersonListHight(List<Person> persons, PersonAtributes attribute) {
         for (int i = 0; i < persons.size(); i++) {
             for (int j = 0; j < persons.size() - 1 - i; j++) {
@@ -79,5 +67,4 @@ public class PersonMethoden {
             }
         }
     }
-
 }

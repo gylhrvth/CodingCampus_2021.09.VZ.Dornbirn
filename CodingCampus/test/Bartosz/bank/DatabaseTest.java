@@ -1,7 +1,6 @@
 package Bartosz.bank;
 
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.sql.SQLException;
@@ -9,7 +8,7 @@ import java.sql.SQLException;
 public class DatabaseTest {
     @Test
     public void testConnectAndDisconnect() {
-        Database database = new Database("jdbc:mysql://localhost:3306/bank2test?user=root&password=Eka1Re15.");
+        Database database = new Database("jdbc:mysql://localhost:3306/bank?user=root&password=Eka1Re15.");
         try {
             database.connect();
         } catch(SQLException exc) {
@@ -24,7 +23,7 @@ public class DatabaseTest {
 
     @Test
     public void testFailedConnection(){
-        Database database = new Database("jdbc:mysql://localhost:3306/bank2?user=root&password=Eka1Re15.");
+        Database database = new Database("jdbc:mysql://localhost:3306/bank?user=root&password=Eka1Re15.");
         try {
             database.connect();
             Assertions.fail("Database should not be connected....");

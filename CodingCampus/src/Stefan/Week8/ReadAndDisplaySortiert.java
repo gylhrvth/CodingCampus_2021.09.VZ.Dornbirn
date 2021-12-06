@@ -10,7 +10,7 @@ public class ReadAndDisplaySortiert {
 
     public static void main(String[] args) throws IOException {
 
-        String text = readFile("C:\\Users\\stefa\\IdeaProjects\\CodingCampus_2021.09.VZ.Dornbirn\\CodingCampus\\src\\Stefan\\Week8\\sales.csv");
+        String text = readFile("C:\\Users\\DCV\\CodingCampus_2021.09.VZ.Dornbirn\\CodingCampus\\src\\Stefan\\WeekEight\\sales.csv");
 
         printCsv(printCsvFormatet(text));
 

@@ -9,6 +9,10 @@ public class Customer {
     private long customerid;
     private Date birthdate;
 
+    public Customer(String name, String address, Date birthdate) {
+        this(-1, name, address,birthdate);
+    }
+
     public Customer(long customerid, String name, String address, Date birthdate) {
         this.name = name;
         this.address = address;
@@ -48,5 +52,13 @@ public class Customer {
         this.birthdate = birthdate;
     }
 
-
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "name='" + name + '\'' +
+                ", address='" + address + '\'' +
+                ", customerid=" + customerid +
+                ", birthdate=" + birthdate +
+                '}';
+    }
 }

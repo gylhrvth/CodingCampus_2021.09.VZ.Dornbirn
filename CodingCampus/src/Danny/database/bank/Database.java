@@ -5,22 +5,33 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class Database {
-    private final String url;
-    private Connection connection;
+    public String url = "jdbc:mysql://localhost:3306/bank2?user=root&password=Voegel79";
+    private Connection connection = null;
 
-    public Database() {this("jdbc:mysql://localhost:3306/bank2?user=root&password=Voegel79");}
+    public Database() {
+    }
 
-    public Database(String url) {this.url = url;}
+    public Database(String url) {
+        this.url = url;
+    }
 
-    public Connection getConnection() {
+    public Connection getConnection() throws SQLException {
+        if (connection == null) {
+            System.out.println("Create Connection\n");
+            connection = DriverManager.getConnection(url);
+        }
         return connection;
     }
 
-    public void connect() throws SQLException {
-        connection = DriverManager.getConnection(url);
-    }
+//    public void connection()
 
     public void disconnect() throws SQLException {
-        connection.close();
+        if (connection != null) {
+            connection.close();
+            connection = null;
+            System.out.println("\nClose Connection");
+        }
     }
+
+
 }

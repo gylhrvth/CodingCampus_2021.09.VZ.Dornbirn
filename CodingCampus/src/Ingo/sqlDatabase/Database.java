@@ -11,7 +11,7 @@ public class Database {
 
     public Database() {
 
-        this("jdbc:mysql://localhost:3306/bank2?user=root&password=ingo");
+        this("jdbc:mysql://localhost:3306/bank888?user=root&password=root");
     }
 
     public Database(String url) {

@@ -1,28 +1,19 @@
 package Mahir.objektorientierung.filesystem;
 
 
-
-
-
-
 import java.io.File;
 import java.io.FileNotFoundException;
 
 public class Filesystem {
     public static void main(String[] args) throws FileNotFoundException {
 
-        String path = "CodingCampus\\src";
+        String path = "C:\\Users\\mahir\\IdeaProjects\\CodingCampus_2021.09.VZ.Dornbirn\\CodingCampus";
         File file = new File(path);
         if (!file.exists()) {
             throw new FileNotFoundException("File does not exist");
         }
-//        System.out.println(file);
-//        listFile(file, 0);
-        FileReceiver.onFileRecived(file,0);
-        FileRecieverSize.onFileReceived(file,0);
-        SelectionFileCounter.main(file,0,"xml");
-        FileHashMap.main(file,0);
-
+        System.out.println(file);
+        listFile(file, 0);
 
     }
 
