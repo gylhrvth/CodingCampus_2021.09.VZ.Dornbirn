@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+textarea {
+    height: 100px;
+    width: 200px;
+
+}
+.content {
+    width: 200px;
+    padding-top: 100px;
+    margin: 0 auto;
+}
+#text {
+    display: none;
+}
+
+#textAusgabe {
+    font-size: 20px;
+}
+
+#displayCount {
+    color: brown;
+}
+
+#countButton, #loeschen {
+    padding: 15px;
+    border: none;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
