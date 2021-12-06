@@ -11,11 +11,15 @@ function clickedIncrease() {
     counter++;
     localStorage.setItem("counter", counter);
     printCounter();
+}
 
-
+function clickedDelete() {
+    counter = 0;
+    localStorage.setItem("counter", counter);
+    printCounter();
 }
 
 function printCounter() {
-    document.getElementById("Text").innerHTML = "Clicked so many times: " + counter;
+    document.getElementById("counter").innerHTML = counter;
 
 }
