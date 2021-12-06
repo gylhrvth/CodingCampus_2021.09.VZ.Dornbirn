@@ -1,0 +1,23 @@
+.headers {
+  margin-left: 40%;
+}
+
+.topImage {
+  border-radius: 75px;
+  object-fit: cover;
+}
+
+.list {
+  width: 320px;
+  transform: translateX(35%);
+  font-size: x-large;
+}
+
+.flex-container {
+  display: flex;
+}
+
+.flex-container > div {
+  margin: 20px;
+  padding: 30px;
+}
