@@ -1,4 +1,3 @@
-let intitCount = 0;
 let element;
 
 function clickButton1() {
@@ -40,7 +39,10 @@ function getIndex(button) {
 }
 
 window.onload = () => {
+  let initcount = 0;
+  if (localStorage.getItem("count")) {
+    initcount = localStorage.getItem("count");
+  }
   element = document.getElementById("text");
-  element.innerHTML =
-    "Clicked this many times: " + localStorage.getItem("count");
+  element.innerHTML = "Clicked this many times: " + initcount;
 };

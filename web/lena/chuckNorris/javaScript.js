@@ -1,6 +1,6 @@
 let joke;
 
-async function getJoke() {
+async function getRandomJoke() {
   let request = await fetch("https://api.chucknorris.io/jokes/random");
   let data = await request.json();
 
