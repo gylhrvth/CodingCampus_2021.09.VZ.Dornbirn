@@ -108,9 +108,6 @@ public class DatabaseManager {
         return kunden1;
     }
 
-
-
-
     //Konto erstellen
     public void insertKonto() throws SQLException {
 //        PreparedStatement statement = database.getConnection().prepareStatement("DELETE FROM konto");
@@ -145,7 +142,7 @@ public class DatabaseManager {
 
     //Konten auflisten
     public List<Konto> readKonto() throws SQLException {
-        String sql = "SELECT kontoNR, kontostand, name FROM konto";
+        String sql = "SELECT kontoNr, kontostand, name FROM konto";
         PreparedStatement statement = database.getConnection().prepareStatement(sql);
         ResultSet resultSet = statement.executeQuery();
         List<Konto> kontos = new ArrayList<>();
@@ -159,6 +156,23 @@ public class DatabaseManager {
             kontos.add(konto);
         }
         return kontos;
+    }
+
+    public Konto readKonto(int kontoNr) throws SQLException {
+        String sql = "SELECT kontoNr, kontostand, name FROM konto WHERE kontoNr = ?";
+        PreparedStatement statement = database.getConnection().prepareStatement(sql);
+        statement.setInt(1, kontoNr);
+        ResultSet resultSet = statement.executeQuery();
+
+        if(resultSet.next()) {
+            int kontostand = resultSet.getInt(2);
+            String name = resultSet.getString(3);
+
+            Konto konto = new Konto(kontoNr, kontostand, name);
+            return konto;
+        } else {
+            return null;
+        }
     }
 
     private Date createDate(int year, int month, int day) {
