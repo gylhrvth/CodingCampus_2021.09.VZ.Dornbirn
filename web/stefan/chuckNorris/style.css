@@ -7,12 +7,24 @@
     font-size: 22px;
 }
 
+html::-webkit-scrollbar {
+    display: none;
+}
+
+html {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+
 .wrapper {
     width: 800px;
     margin: 0 auto;
+    padding-top: 50px;
 }
 
 button {
+    margin: 0px 20px 15px 0px;
     padding: 10px;
     font-size: 24px;
     font-weight:600;
@@ -32,11 +44,14 @@ button:hover {
 
 .headliner {
     font-weight: 400;
-    font-size: 24px;
+    font-size: 1.6em;
     text-align: center;
+    margin: 12px 0px 15px 0px;
 }
 
-#text {
-    font-size: 30px;
-    text-align: center;
+li {
+    padding: 10px;
+    font-size: 1.3em;
+    list-style: none;
+    margin-left: -1.7em;
 }
