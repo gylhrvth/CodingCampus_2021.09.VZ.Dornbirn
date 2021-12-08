@@ -6,9 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="javaScript.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <p id="random">Hallo</p>
-    <button onclick="getRandomJoke()">get Joke</button>
+    <h1 class="head">Chuck Norris Jokes</h1>
+    <div id="random">
+ 
+    </div>
+    <div">
+        <button onclick="getRandomJoke()" class="bn30">get random Joke</button>
+       </div>
+    <br>
+    <div>
+        <h2>Joke nach Schlagwort suchen:</h2>
+     <input id="input" class="form-field"></input>
+     <button onclick="getJokeswithInput()" class="bn30" id="getJokes">get Jokes</button>
+    </div>
+    
 </body>
 </html>

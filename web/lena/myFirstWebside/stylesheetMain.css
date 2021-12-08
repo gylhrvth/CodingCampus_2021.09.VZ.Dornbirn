@@ -2,12 +2,12 @@ body {
   background-color: rgb(202, 240, 230);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   text-align: center;
-  margin: 0;
 }
 
 .content {
   color: rgb(42, 70, 62);
-  width: 100%;
+  padding-left: 20%;
+  padding-right: 20%;
 }
 
 .topnav {
@@ -29,6 +29,11 @@ body {
   font-size: 17px;
 }
 
+h1,
+h2 {
+  width: 100%;
+}
+
 .topnav a:hover {
   background-color: rgb(202, 250, 234);
   color: black;
@@ -40,6 +45,8 @@ body {
 }
 
 .footer {
+  display: flex;
+  flex-direction: column;
   background-color: white;
   height: 48px;
   border: transparent;
@@ -72,25 +79,23 @@ body {
 .box {
   text-align: start;
   width: 100%;
-  height: 400px;
-  margin-left: 20%;
-  margin-right: 20%;
+  max-height: 50%;
   display: flex;
   flex-direction: row;
+  margin-bottom: 3%;
 }
 
-.box img {
-  width: 20%;
-  height: 400px;
+.boximg {
   float: left;
-
+  max-width: 30%;
+  height: auto;
   background-color: whitesmoke;
   margin-right: 10px;
 }
 
 .contentbox {
-  width: 39%;
-  height: 370px;
+  width: 80%;
+  height: auto;
   background-color: rgb(136, 182, 170);
   display: flex;
   flex-direction: column;
@@ -103,60 +108,83 @@ p {
   color: whitesmoke;
   font-weight: 400;
 }
-br {
-  height: 100px;
+.seperate {
+  width: 1%;
+  height: 20%;
 }
 
 .mealsbox {
-  width: 20%;
-  height: 370px;
+  max-width: 32.6%;
+  height: auto;
   background-color: rgb(136, 182, 170);
   display: flex;
   flex-direction: column;
-  margin-right: 1%;
 }
 .mealsbox img {
   width: 100%;
-  height: 50%;
+  max-height: 40%;
+  max-width: 100%;
+}
+@media screen and (max-width: 800px) {
+  .box {
+    flex-direction: column;
+  }
+  .mealsbox {
+    max-width: 100%;
+    margin-bottom: 10px;
+  }
+  .boximg {
+    max-width: 100%;
+    margin-right: 0px;
+    margin-bottom: 10px;
+  }
+  .videoboxright,
+  .videoboxleft {
+    max-width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  iframe {
+    max-width: 100%;
+  }
+  .contentbox {
+    max-width: 100%;
+  }
 }
 
 .mealsbox p {
   width: 85%;
   padding: 5%;
-  font-size: 15px;
+  font-size: 18px;
   color: whitesmoke;
 }
 
+iframe {
+  width: 40%;
+  height: 30%;
+  height: auto;
+}
+
 .videoboxright {
-  width: 20%;
-  height: 80%;
+  width: 55%;
+  height: auto;
   background-color: rgb(136, 182, 170);
   display: flex;
   flex-direction: column;
   margin-left: 1%;
 }
 .videoboxleft {
-  width: 20%;
-  height: 80%;
+  width: 55%;
+  height: auto;
   background-color: rgb(136, 182, 170);
   display: flex;
   flex-direction: column;
   margin-right: 1%;
 }
-.videoboxright p {
-  width: 85%;
-  height: 80%;
-  padding: 5%;
-  font-size: 15px;
-  color: whitesmoke;
-  align-items: center;
-}
-
+.videoboxright p,
 .videoboxleft p {
-  width: 85%;
-  height: 80%;
   padding: 5%;
-  font-size: 15px;
+  font-size: 18px;
   color: whitesmoke;
   align-items: center;
 }
