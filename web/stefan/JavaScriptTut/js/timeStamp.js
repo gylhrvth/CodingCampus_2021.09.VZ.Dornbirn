@@ -2,9 +2,9 @@ let element;
 
 function timeStamp() {
     let newElement = document.createElement("li");
-    const d = new Date();
+    const date = new Date();
     newElement.innerHTML =
-        "Clicked at: " + d.toLocaleDateString() + " " + d.toLocaleTimeString();
+        "Clicked at: " + date.toLocaleDateString() + " " + date.toLocaleTimeString();
     document.getElementById("list").appendChild(newElement);
 
     let newButton = document.createElement("button");
