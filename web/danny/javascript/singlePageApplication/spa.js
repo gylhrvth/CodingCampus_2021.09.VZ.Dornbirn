@@ -21,7 +21,23 @@ async function searchJokeByText() {
         let response = await fetch("https://api.chucknorris.io/jokes/search?query=God")
         if (response.ok) {
             let data = await response.json();
-            document.getElementById("jokeText").innerHTML = data["value"];
+            console.log(data)
+            //let json = JSON.parse(data);
+
+            //let jsonArry = [];
+            //jsonArry.push(json);
+            //let value = {value};
+
+            let text = "";
+            data.result.forEach(i => {
+
+                let row = document.createElement('p');
+                row.innerHTML = i.value + ",";
+                document.getElementById("jokeByText").appendChild(row);
+            });
+
+
+
         } else {
             document.getElementById("jokeText").innerHTML = "Request war nicht erfolgreich. Statuscode: " + response.status + " " + response.statusText;
         }
