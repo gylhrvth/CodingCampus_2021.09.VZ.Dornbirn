@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,20 +9,42 @@
     <script src="javaScript.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <h1 class="head">Chuck Norris Jokes</h1>
-    <div id="random">
- 
+
+    <div class="contentbox">
+        <div class="savedbox">
+            <h2>My saved Jokes:</h2>
+            <div id="savedJokes">
+
+            </div>
+
+        </div>
+
+
+        <div class="searchbox">
+            <h2>Get random Joke:</h2>
+            <div id="random">
+
+            </div>
+            <div>
+                <button onclick="getRandomJoke()" class="bn30">random Joke</button>
+            </div>
+
+
+            <br>
+            <div id="searchedJokes">
+                <h2>Joke nach Schlagwort suchen:</h2>
+                <form onsubmit="getJokeswithInput(); return false;">
+                    <input id="input" class="form-field"></input>
+                </form>
+                <button class="bn30" id="getJokes" title="get Jokes" onclick="getJokeswithInput()">get Jokes</button>
+
+            </div>
+        </div>
     </div>
-    <div">
-        <button onclick="getRandomJoke()" class="bn30">get random Joke</button>
-       </div>
-    <br>
-    <div>
-        <h2>Joke nach Schlagwort suchen:</h2>
-     <input id="input" class="form-field"></input>
-     <button onclick="getJokeswithInput()" class="bn30" id="getJokes">get Jokes</button>
-    </div>
-    
+
 </body>
+
 </html>

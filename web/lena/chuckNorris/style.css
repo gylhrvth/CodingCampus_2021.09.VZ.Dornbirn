@@ -8,7 +8,7 @@ body {
 .form-field {
   background-color: rgb(216, 130, 216);
   position: relative;
-  flex: 1 1 auto;
+
   width: 1%;
   margin-top: 0;
   margin-bottom: 0;
@@ -23,11 +23,35 @@ body {
   text-align: center;
 }
 
+.jokeContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.contentbox {
+  display: flex;
+  flex-direction: row;
+}
+
+.searchbox {
+  display: flex;
+  flex-direction: column;
+  margin: 2%;
+  flex-basis: 50%;
+}
+.savedbox {
+  display: flex;
+  flex-direction: column;
+  margin: 2%;
+  flex-basis: 40%;
+}
+
 .bn30 {
   border: 5em;
   cursor: pointer;
   outline: none;
-  margin: 20px;
+  margin: 10px;
   font-size: 16px;
   -webkit-transform: translate(0);
   transform: translate(0);
@@ -70,7 +94,7 @@ body {
   border: solid 2px;
   box-shadow: 15px 15px 0 0 blue;
   text-align: center;
-  padding: 40px;
+  padding: 20px;
   margin: 30px;
 }
 
@@ -80,7 +104,6 @@ body {
   font-size: 90px;
   font-weight: 700;
   margin: 40px;
-  margin-bottom: 10%;
   color: blue;
   text-shadow: 1px 1px 1px rgb(216, 130, 216), 1px 2px 1px rgb(216, 130, 216),
     1px 3px 1px rgb(216, 130, 216), 1px 4px 1px rgb(216, 130, 216),
@@ -89,4 +112,8 @@ body {
     1px 9px 1px rgb(216, 130, 216), 1px 10px 1px rgb(216, 130, 216),
     1px 18px 6px rgba(16, 16, 16, 0.4), 1px 22px 10px rgba(16, 16, 16, 0.2),
     1px 25px 35px rgba(16, 16, 16, 0.2), 1px 30px 60px rgba(16, 16, 16, 0.4);
+}
+
+#randomJoke {
+  flex-grow: 2;
 }

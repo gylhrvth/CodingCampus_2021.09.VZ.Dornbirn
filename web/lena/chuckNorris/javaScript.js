@@ -1,5 +1,39 @@
 let joke;
 
+let jokesArray = [];
+
+window.onload = () => {
+  if (localStorage.getItem("savedJokes")) {
+    let jokes = localStorage.getItem("savedJokes");
+    jokesArray = JSON.parse(jokes);
+
+    jokesArray.forEach((element) => {
+      let savedJokeElement = document.createElement("p");
+      savedJokeElement.innerHTML = element;
+      savedJokeElement.className = "shadowbox";
+      let parent = document.getElementById("savedJokes");
+      parent.appendChild(savedJokeElement);
+    });
+  }
+};
+
+function getJokeContainer() {
+  let jokeContainer = document.createElement("div");
+  jokeContainer.classList.add("jokeContainer", "shadowbox");
+  jokeContainer.id = "jokecontainer";
+  return jokeContainer;
+}
+
+function getSaveButton() {
+  let saveJokeButton = document.createElement("button");
+  saveJokeButton.innerHTML = "save";
+  saveJokeButton.className = "bn30";
+  saveJokeButton.onclick = function () {
+    savejoke(saveJokeButton);
+  };
+  return saveJokeButton;
+}
+
 async function getRandomJoke() {
   let request = await fetch("https://api.chucknorris.io/jokes/random");
   let data = await request.json();
@@ -9,20 +43,25 @@ async function getRandomJoke() {
   } else {
     let joke = document.createElement("p");
     joke.innerHTML = data["value"];
-    joke.className = "shadowbox";
-    joke.id = "randomJoke";
+    joke.id = "joke";
+
     let parent = document.getElementById("random");
-    parent.appendChild(joke);
+    let jokeContainer = getJokeContainer();
+    jokeContainer.appendChild(joke);
+    jokeContainer.appendChild(getSaveButton());
+    parent.appendChild(jokeContainer);
   }
 }
 
 async function getJokeswithInput() {
+  let parent = document.getElementById("searchedJokes");
+
   if (document.getElementById("input").value) {
     let input = document.getElementById("input").value;
     let data = await fetchData(input);
 
     if (document.getElementById("jokeresults")) {
-      document.body.removeChild(document.getElementById("jokeresults"));
+      parent.removeChild(document.getElementById("jokeresults"));
     }
     let container = document.createElement("div");
     container.id = "jokeresults";
@@ -33,13 +72,17 @@ async function getJokeswithInput() {
       container.appendChild(noReslut);
     } else {
       for (let key in data.result) {
+        let jokeAndButton = getJokeContainer();
         let newJoke = document.createElement("p");
         newJoke.innerHTML = data.result[key]["value"];
-        newJoke.className = "shadowbox";
-        container.appendChild(newJoke);
+        newJoke.id = "joke";
+        jokeAndButton.appendChild(newJoke);
+        jokeAndButton.appendChild(getSaveButton());
+        container.appendChild(jokeAndButton);
       }
     }
-    document.body.appendChild(container);
+
+    parent.appendChild(container);
   } else {
     window.alert("keine Eingabe vorhanden");
   }
@@ -53,10 +96,14 @@ async function fetchData(input) {
   return data;
 }
 
-var input = document.getElementById("input");
-input.addEventListener("keyup", function (event) {
-  if (event.key.value === "Enter") {
-    window.alert("Hi");
-    document.getElementById("getJokes").click();
-  }
-});
+function savejoke(button) {
+  let parentOfButton = button.parentElement;
+  let joke = parentOfButton.childNodes[0];
+  let savedJoke = document.createElement("p");
+  savedJoke.innerHTML = joke.innerHTML;
+  savedJoke.className = "shadowbox";
+  let parent = document.getElementById("savedJokes");
+  parent.appendChild(savedJoke);
+  jokesArray.push(savedJoke.innerHTML);
+  localStorage.setItem("savedJokes", JSON.stringify(jokesArray));
+}
