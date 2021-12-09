@@ -1,6 +1,5 @@
-window.onload () => {
+window.onload = () => {
     createItem();
-
 }
 
 
