@@ -1,0 +1,1 @@
+var myName = window.prompt("enter your name");
