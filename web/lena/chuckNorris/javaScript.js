@@ -10,9 +10,11 @@ window.onload = () => {
     jokesArray.forEach((element) => {
       let savedJokeElement = document.createElement("p");
       savedJokeElement.innerHTML = element;
-      savedJokeElement.className = "shadowbox";
+      jokeContainer = getJokeContainer();
       let parent = document.getElementById("savedJokes");
-      parent.appendChild(savedJokeElement);
+      jokeContainer.appendChild(savedJokeElement);
+      jokeContainer.appendChild(getDeleteButton());
+      parent.appendChild(jokeContainer);
     });
   }
 };
@@ -34,6 +36,16 @@ function getSaveButton() {
   return saveJokeButton;
 }
 
+function getDeleteButton() {
+  let deleteJokeButton = document.createElement("button");
+  deleteJokeButton.innerHTML = "delete";
+  deleteJokeButton.className = "bn30";
+  deleteJokeButton.onclick = function () {
+    deleteJoke(deleteJokeButton);
+  };
+  return deleteJokeButton;
+}
+
 async function getRandomJoke() {
   let request = await fetch("https://api.chucknorris.io/jokes/random");
   let data = await request.json();
@@ -43,8 +55,7 @@ async function getRandomJoke() {
   } else {
     let joke = document.createElement("p");
     joke.innerHTML = data["value"];
-    joke.id = "joke";
-
+    joke.id = "randomJoke";
     let parent = document.getElementById("random");
     let jokeContainer = getJokeContainer();
     jokeContainer.appendChild(joke);
@@ -99,11 +110,32 @@ async function fetchData(input) {
 function savejoke(button) {
   let parentOfButton = button.parentElement;
   let joke = parentOfButton.childNodes[0];
+  let jokeContainer = getJokeContainer();
   let savedJoke = document.createElement("p");
   savedJoke.innerHTML = joke.innerHTML;
-  savedJoke.className = "shadowbox";
   let parent = document.getElementById("savedJokes");
-  parent.appendChild(savedJoke);
+  jokeContainer.appendChild(savedJoke);
+  jokeContainer.appendChild(getDeleteButton());
+  parent.appendChild(jokeContainer);
   jokesArray.push(savedJoke.innerHTML);
+  localStorage.setItem("savedJokes", JSON.stringify(jokesArray));
+}
+
+function deleteJoke(button) {
+  let parentOfButton = button.parentElement;
+  let joke = parentOfButton.childNodes[0];
+  deleteFromLocalStorage(joke.innerHTML);
+  parentOfButton.parentElement.removeChild(parentOfButton);
+}
+
+function deleteFromLocalStorage(joke) {
+  let storedJokes = localStorage.getItem("savedJokes");
+  let jokesArray = JSON.parse(storedJokes);
+
+  for (let i in jokesArray) {
+    if (jokesArray[i] === joke) {
+      jokesArray.splice(i, 1);
+    }
+  }
   localStorage.setItem("savedJokes", JSON.stringify(jokesArray));
 }
