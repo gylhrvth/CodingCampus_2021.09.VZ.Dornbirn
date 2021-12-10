@@ -35,6 +35,7 @@ window.onload = () => {
             window.localStorage.clear('counter');
             count = 0;
             data_save = 0;
+            location.reload();
         } else {
             data.innerHTML = '';
         }

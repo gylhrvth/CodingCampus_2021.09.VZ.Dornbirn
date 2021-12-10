@@ -19,6 +19,22 @@ h1,h2,h3 {
     font-family: 'Roboto', sans-serif;
 }
 
+a {
+    color: #ea9128;
+    text-shadow: 0px 1px 2px #000000b0;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
 section {
     display: flex;
     justify-content: center;
@@ -56,7 +72,7 @@ section {
     width: 200px!important;
     height: 100%!important;
     border-radius: 100%;
-    transition-duration: 0.25s;
+    transition-duration: 0.25s!important;
 }
 
 #PB img:hover {
@@ -108,13 +124,25 @@ ul#mainnav li a:hover {
 }
 
 
+
 /*---------------Footer-----------------*/
-#Footer {height: 15vh}
+#Footer {height: 10vh}
+
+#Footer ul {
+   display: flex;
+    justify-content: space-between;
+    height: 66%;
+    align-items: center;
+}
+
+.fl {
+    width: 33%;
+}
 
 #Footer .content {
     background: #000000b8; 
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     padding-top: 15px;
     padding-bottom: 15px;
 }
@@ -123,4 +151,98 @@ ul#mainnav li a:hover {
 
 #Bottomline .content {
     background: #b97b32c7!important;
+}
+
+
+/*=======================Spezifikationen======================*/
+
+/*----------index: Main --------*/
+
+
+#index.ml {
+    display: grid;    
+    justify-items: center;
+}
+
+.index-Text-heading {
+    font-size: 30px!important;
+    width: 100%!important;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.index-Text {
+    background: #ddd!important;
+    width: 80%;
+    padding: 20px!important;
+    border-radius: 20px;
+    border: 1px solid #606060;
+}
+#index-content {
+    padding: 0px 20px 40px  20px
+}
+
+/*--------------about: main-------------*/
+.about-parent {
+    display: flex;
+    justify-content: space-between;
+}
+
+/*----------imprint: main---------------*/
+h1.adsimple-121896133, h2.adsimple-121896133  {
+    width: 100%!important;
+    text-align: center;
+    padding: 10px 0px
+}
+
+/*--------------summery: main---------------*/
+.fa {
+    font-size: 16px!important;
+    height: 18px;
+    width: 18px;
+    text-align: center;
+    line-height: 18px;
+    color: #000;
+    margin-right: 5px;
+}
+
+.wrapper{
+    display: flex;
+    justify-content: space-between;
+}
+
+#highlight {
+    margin-left: 0!important;
+}
+
+.summery-child {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.summery-grand-child {
+    width: fit-content!important;
+}
+
+#summery.ml {
+    padding: 20px 0px 23px 0px;
+}
+
+#summery.ml h3{
+    margin-left: 30px;
+}
+
+#summery.ml h1{
+    width: 100%!important;
+    text-align: center;
+}
+
+.summery ul {
+    width: fit-content;
+}
+
+.summery-child li {
+    padding-left: 30px;
+    width: fit-content!important;
 }
