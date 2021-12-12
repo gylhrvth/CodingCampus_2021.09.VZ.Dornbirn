@@ -26,7 +26,8 @@ body {
 .jokeContainer {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-end;
+  flex-grow: 4;
 }
 
 .contentbox {
@@ -62,6 +63,7 @@ body {
   -webkit-transition: box-shadow 0.25s;
   transition: box-shadow 0.25s;
   color: white;
+  flex-shrink: 1;
 }
 
 .bn30 .text {
@@ -96,6 +98,9 @@ body {
   text-align: center;
   padding: 20px;
   margin: 30px;
+  display: flex;
+  justify-content: space-between;
+  justify-items: center;
 }
 
 .head {
@@ -112,8 +117,4 @@ body {
     1px 9px 1px rgb(216, 130, 216), 1px 10px 1px rgb(216, 130, 216),
     1px 18px 6px rgba(16, 16, 16, 0.4), 1px 22px 10px rgba(16, 16, 16, 0.2),
     1px 25px 35px rgba(16, 16, 16, 0.2), 1px 30px 60px rgba(16, 16, 16, 0.4);
-}
-
-#randomJoke {
-  flex-grow: 2;
 }
