@@ -41,9 +41,9 @@ h2, p , a, th, li, td, table{
 }
 
 table, th, td {
-border: 1px solid black;
-font-size: 25px;
-padding: 10px;
+    font-size: 25px;
+    padding: 10px;
+    border: 1px solid black;
 }
 
 div.box-container {
@@ -57,13 +57,13 @@ div.box-container {
 }
 
 div.box {
-            background-color:rgb(149, 155, 92);
-            width: 500px;
-            padding: 40px;
-            padding-left: 20px;
-            margin-left: 40px;
-            margin-top: 40px;
-            margin-bottom: 40px;
+    width: 500px;
+    padding: 40px;
+    padding-left: 20px;
+    margin-left: 40px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    background-color:rgb(149, 155, 92);
 }
 
 div.box-progress {
@@ -74,7 +74,6 @@ div.box-progress {
     margin-left: 40px;
     margin-top: 40px;
     margin-bottom: 40px;
-    
 }
 
 div.box-impressum {
