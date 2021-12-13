@@ -1,15 +1,11 @@
 
-
-
 window.onload = () => {
-    let counter = 0;
-    
-    document.getElementById("counter").innerHTML = counter +=1;
-    
+
 }
-/*
+
+let counter = 0;
+
 function countClicks() {
-    counter +=1;
+    document.getElementById("counter").innerHTML = parseInt(counter +=1);
 }
-*/
 
